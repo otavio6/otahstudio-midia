@@ -38,3 +38,7 @@ Notas de copy entre 6,1 e 6,3 e de visual entre 6,4 e 7,1. Os problemas se repet
 1. Gancho provocativo em 1ª pessoa ("quase recusei um cliente por ego") contra gancho de dado.
 2. Postar às 10h–12h contra 18h.
 3. Carrossel com imagem nos slides de miolo contra só texto.
+
+
+## Regra do Otávio (21/11/2026): legenda humana
+Legenda na voz dele, em primeira pessoa, falando com uma pessoa só, coloquial como nos reels. Nunca "siga @otaviohenriqve" nem terceira pessoa. Chamada para seguir só como "me segue que…", com um motivo.

@@ -108,7 +108,14 @@ Leia `aprendizados.md`: se um formato está performando muito melhor, puxe para 
    - feche com um princípio curto e salvável, que deixe a sensação de "aprendi algo de verdade";
    - termine com uma chamada simples (salvar, enviar, seguir ou comentar).
 5. **Forma:** frases curtas, voz ativa, acentos corretos, nada de clichê de coach. Reel no jeito de falar do Otávio ("cara", "pô", "olha só"), com 30 a 45 s e o texto do gancho na tela.
-6. **Legenda:** 4 a 8 linhas e 3 a 5 hashtags.
+6. **Legenda:** 4 a 8 linhas e 3 a 5 hashtags, **na voz do Otávio**, como se ele estivesse falando com uma pessoa só:
+   - primeira pessoa e "você": "eu vejo isso toda semana", "você corta o preço e…";
+   - coloquial, do jeito que ele fala nos reels: "cara", "olha", "pô", "tá", "pra", "pera", frases curtas;
+   - **nunca terceira pessoa**: nada de "siga @otaviohenriqve", "o Otávio explica", "confira". Chamada para seguir só em primeira pessoa e com motivo: "me segue que essa semana eu só falo de preço em clínica";
+   - pergunta no fim como se fosse conversa: "me conta aqui", "me fala aqui embaixo";
+   - nada de tom de agência ou de release ("descubra", "neste post", "confira", "não perca").
+   - Exemplo ruim: "Responde SIM ou NÃO e o porquê. E segue @otaviohenriqve: esta semana é só sobre preço em clínica."
+   - Exemplo bom: "E aí, você vai fazer Black esse ano? Me conta aqui embaixo, SIM ou NÃO, e por quê. Me segue que essa semana eu só vou falar de preço em clínica."
 
 ### A5 · Revisor de copy (subagente, com visão de mercado)
 Dá nota de 0 a 10 em cada critério:
@@ -120,7 +127,8 @@ Dá nota de 0 a 10 em cada critério:
 - fecho salvável;
 - tom: provocativo sem ofender;
 - impacto de mercado: isso se destaca no feed de quem segue perfis de marketing?
-- conformidade: acentos certos, nada proibido, sem promessa.
+- conformidade: acentos certos, nada proibido, sem promessa;
+- voz da legenda: soa como o Otávio falando com uma pessoa (primeira pessoa, coloquial)? Qualquer "siga @…", terceira pessoa ou tom de agência deixa este critério abaixo de 7 e reprova.
 
 Para passar, a **média precisa ser ≥ 8,5 e nenhum critério pode ficar abaixo de 7**. Se não passar, o copywriter reescreve com os comentários do revisor, no máximo 2 vezes. Se ainda assim não passar, descarte a ideia ou faça a melhor versão e registre a nota.
 
