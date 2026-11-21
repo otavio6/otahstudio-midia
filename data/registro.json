@@ -1,0 +1,77 @@
+[
+ {
+  "id": "2026-11-23-post-de-clinica",
+  "data": "2026-11-23",
+  "formato": "carrossel",
+  "tema": "Detalhes de design que fazem post de clínica parecer amador",
+  "fonte": null,
+  "angulo": "erro comum",
+  "metodo": "PAS",
+  "gancho": "Seu post de clínica parece amador",
+  "ganchos_reserva": [],
+  "assinatura": "capa:frase-escura | lista-erros | exemplo | princípio | cta",
+  "notas": {
+   "potencia": null,
+   "copy": null,
+   "qualidade": null
+  },
+  "metricool": {
+   "id": 436964650,
+   "uuid": "-8125514126748728692",
+   "horario": "2026-11-23T18:00:00"
+  },
+  "status": "rascunho",
+  "instagram_media_id": null,
+  "permalink": null
+ },
+ {
+  "id": "2026-11-25-efeito-halo",
+  "data": "2026-11-25",
+  "formato": "carrossel",
+  "tema": "Efeito halo: o perfil decide antes da consulta",
+  "fonte": "Thorndike, E. L. (1920). A constant error in psychological ratings. Journal of Applied Psychology.",
+  "angulo": "fenômeno com nome",
+  "metodo": "Hook-Story-Lesson",
+  "gancho": "Uma boa primeira impressão contamina todo o resto.",
+  "ganchos_reserva": [],
+  "assinatura": "capa:frase-escura+bolinhas | numero-grande-claro | lista-escura | frase-clara | lista-numerada-escura | cta-claro",
+  "notas": {
+   "potencia": null,
+   "copy": null,
+   "qualidade": null
+  },
+  "metricool": {
+   "id": 436964659,
+   "uuid": "-7426934061143669556",
+   "horario": "2026-11-25T18:00:00"
+  },
+  "status": "rascunho",
+  "instagram_media_id": null,
+  "permalink": null
+ },
+ {
+  "id": "2026-11-27-copiar-concorrente",
+  "data": "2026-11-27",
+  "formato": "carrossel",
+  "tema": "Quem copia o concorrente vira mais um",
+  "fonte": null,
+  "angulo": "crença errada",
+  "metodo": "PAS",
+  "gancho": "Quem copia o concorrente vira mais um",
+  "ganchos_reserva": [],
+  "assinatura": "capa:frase | comparação | grade-igual | princípio | cta",
+  "notas": {
+   "potencia": null,
+   "copy": null,
+   "qualidade": null
+  },
+  "metricool": {
+   "id": 436964664,
+   "uuid": "1929816209844553164",
+   "horario": "2026-11-27T18:00:00"
+  },
+  "status": "rascunho",
+  "instagram_media_id": null,
+  "permalink": null
+ }
+]

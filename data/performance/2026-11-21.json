@@ -1,0 +1,114 @@
+{
+ "analisado_em": "2026-11-21T16:45-03:00",
+ "fonte": "Metricool brandId 8094677",
+ "conta": {
+  "seguidores": 135,
+  "seguidores_13_11": 134,
+  "ganhos_30d": 2,
+  "perdidos_30d": 1,
+  "alcance_diario": {
+   "2026-11-06": 154,
+   "2026-11-07": 67,
+   "2026-11-14": 41,
+   "2026-10-24": 38,
+   "2026-11-11": 25
+  }
+ },
+ "reels": [
+  {
+   "data": "2026-11-06T15:40",
+   "views": 288,
+   "alcance": 198,
+   "compart": 1,
+   "salvos": 0,
+   "tempo_medio_s": 13.38,
+   "taxa_pulo_pct": 57.5
+  }
+ ],
+ "posts_feed": [
+  {
+   "data": "2026-10-30",
+   "tema": "gestao: microgerenciar (Comente GESTAO)",
+   "views": 92,
+   "alcance": 27,
+   "seguidores": 0
+  },
+  {
+   "data": "2026-10-29",
+   "tema": "logo nao faz a marca (Comente LOGO)",
+   "views": 77,
+   "alcance": 19,
+   "seguidores": 0
+  },
+  {
+   "data": "2026-10-22",
+   "tema": "criador virou midia de performance (Nike)",
+   "views": 50,
+   "alcance": 28,
+   "seguidores": 0
+  },
+  {
+   "data": "2026-10-20",
+   "tema": "duas bolinhas / Mastercard",
+   "views": 70,
+   "alcance": 24,
+   "seguidores": 0
+  },
+  {
+   "data": "2026-10-15",
+   "tema": "busca por IA / L'Oreal",
+   "views": 109,
+   "alcance": 32,
+   "seguidores": 0
+  },
+  {
+   "data": "2026-10-13",
+   "tema": "consistencia / Coca-Cola",
+   "views": 63,
+   "alcance": 26,
+   "seguidores": 0
+  },
+  {
+   "data": "2026-10-10",
+   "tema": "fundador fora do rebrand / Airbnb",
+   "views": 110,
+   "alcance": 32,
+   "seguidores": 0
+  },
+  {
+   "data": "2026-09-30",
+   "tema": "logo Formula E / Pepsi",
+   "views": 70,
+   "alcance": 29,
+   "seguidores": 0
+  },
+  {
+   "data": "2026-09-25",
+   "tema": "McLaren sistema unico",
+   "views": 67,
+   "alcance": 24,
+   "seguidores": 0
+  },
+  {
+   "data": "2026-09-23",
+   "tema": "identidade visual = percepcao de valor",
+   "views": 55,
+   "alcance": 25,
+   "seguidores": 0
+  },
+  {
+   "data": "2026-09-22",
+   "tema": "Duolingo x Brawl Stars",
+   "views": 63,
+   "alcance": 25,
+   "seguidores": 0
+  },
+  {
+   "data": "2026-09-13",
+   "tema": "consistencia nao e postar todo dia",
+   "views": 59,
+   "alcance": 27,
+   "seguidores": 0
+  }
+ ]
+}
