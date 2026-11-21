@@ -12,6 +12,23 @@
 - **Legendas sem acento** ("GESTAO", "LOGO") passaram em 2 posts. A esteira revisa acentos sempre.
 - **Melhores horários (Metricool, Instagram):** dias úteis às 10h (pico), depois 11h–12h e 18h. Fim de semana bem mais fraco.
 
+## Lições da primeira revisão independente (21/11, 3 carrosséis reprovados)
+Notas de copy entre 6,1 e 6,3 e de visual entre 6,4 e 7,1. Os problemas se repetiram nos três:
+1. **Tema batido** ("não copie o concorrente", "efeito halo", "assim não / assim sim" de fontes) não se destaca. É preciso um ângulo novo ou uma prova própria.
+2. **Gancho sem tensão.** Pergunta de sim ou não e frase abstrata não funcionam. Use dinheiro, número, conflito, ou chame o público pelo nome ("dono de clínica", "dentista").
+3. **Nicho ausente.** Os exemplos precisam parecer post de clínica de verdade (foto de consultório, oferta, preço), e não esqueletos genéricos.
+4. **Zero prova.** Inclua um bastidor ("nas marcas de saúde que eu dirijo, o primeiro item auditado é…"), um número ou um antes e depois real.
+5. **Último slide fraco.** Não deixe vazio grande. Precisa ter algo salvável (checklist ou teste), **CTA de seguir** com motivo e um gatilho de comentário.
+6. **Legenda:** abra com o gancho, nunca com "Salve…" nem com data. Termine com pergunta ou palavra-chave. Use hashtags de nicho (#marketingparaclinicas, #marketingodontologico, #clinicadeestetica).
+7. **Visual:**
+   - o grid de fundo não pode passar por trás do texto;
+   - nada encostando em outra coisa;
+   - vazios grandes ganham imagem;
+   - o acento lime ou azul só significa "certo" (nunca colorir o exemplo errado);
+   - um acento por peça;
+   - nada de dois contadores no mesmo slide.
+8. **Selo de verificado no cabeçalho:** só use se a conta for verificada. Até o Otávio confirmar, use `verified: false`.
+
 ## Regras atuais
 1. Priorize reel quando a ideia for forte; o carrossel serve para converter quem chega.
 2. Gancho com conflito, número ou pergunta incômoda nos primeiros 3 s.

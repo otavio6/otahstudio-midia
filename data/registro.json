@@ -12,17 +12,18 @@
   "assinatura": "capa:frase-escura | lista-erros | exemplo | princípio | cta",
   "notas": {
    "potencia": null,
-   "copy": null,
-   "qualidade": null
+   "copy": 6.1,
+   "qualidade": 6.6
   },
   "metricool": {
    "id": 436964650,
    "uuid": "-8125514126748728692",
    "horario": "2026-11-23T18:00:00"
   },
-  "status": "rascunho",
+  "status": "reprovado",
   "instagram_media_id": null,
-  "permalink": null
+  "permalink": null,
+  "motivo": "Revisão independente 21/11: tema batido, sem prova própria, gancho sem tensão, sem CTA de seguir, vazios sem imagem, grid cruzando texto."
  },
  {
   "id": "2026-11-25-efeito-halo",
@@ -37,17 +38,18 @@
   "assinatura": "capa:frase-escura+bolinhas | numero-grande-claro | lista-escura | frase-clara | lista-numerada-escura | cta-claro",
   "notas": {
    "potencia": null,
-   "copy": null,
-   "qualidade": null
+   "copy": 6.1,
+   "qualidade": 6.4
   },
   "metricool": {
    "id": 436964659,
    "uuid": "-7426934061143669556",
    "horario": "2026-11-25T18:00:00"
   },
-  "status": "rascunho",
+  "status": "reprovado",
   "instagram_media_id": null,
-  "permalink": null
+  "permalink": null,
+  "motivo": "Revisão independente 21/11: tema batido, sem prova própria, gancho sem tensão, sem CTA de seguir, vazios sem imagem, grid cruzando texto."
  },
  {
   "id": "2026-11-27-copiar-concorrente",
@@ -62,16 +64,17 @@
   "assinatura": "capa:frase | comparação | grade-igual | princípio | cta",
   "notas": {
    "potencia": null,
-   "copy": null,
-   "qualidade": null
+   "copy": 6.3,
+   "qualidade": 7.1
   },
   "metricool": {
    "id": 436964664,
    "uuid": "1929816209844553164",
    "horario": "2026-11-27T18:00:00"
   },
-  "status": "rascunho",
+  "status": "reprovado",
   "instagram_media_id": null,
-  "permalink": null
+  "permalink": null,
+  "motivo": "Revisão independente 21/11: tema batido, sem prova própria, gancho sem tensão, sem CTA de seguir, vazios sem imagem, grid cruzando texto."
  }
 ]
