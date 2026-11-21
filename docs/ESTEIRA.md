@@ -194,9 +194,29 @@ Faça commit e push.
 
 ---
 
+## Conector Instagram OTAHSTUDIO (API oficial da Meta)
+
+O Otávio conectou um servidor MCP próprio, que aparece como as ferramentas `Instagram_OTAHSTUDIO`. A cota é de 100 publicações a cada 24 h. Esse conector **publica na hora**: ele não agenda.
+
+- **Leitura (use à vontade):**
+  - `account_overview`: seguidores e cota;
+  - `list_recent_media`: posts com id, link, curtidas e comentários;
+  - `media_insights`: reach, views, saved, shares e total_interactions por post;
+  - `account_insights`: métricas da conta no período;
+  - `list_comments`: comentários de cada post.
+
+  A esteira de análise (Parte B) usa essas ferramentas como fonte principal, com o Metricool como reserva. `list_comments` também serve para achar leads: quem comentou palavra-chave ou pediu diagnóstico. Liste essas pessoas para o Otávio responder.
+- **Publicação:** `publish_carousel`, `publish_image`, `publish_reel` (com `trial: true` para Trial Reel) e `publish_story`. **Só com o "ok" do Otávio.** As URLs são as do GitHub (raw.githubusercontent.com).
+  - Enquanto o plano do Metricool tiver folga (menos de 16 posts no mês), **agende pelo Metricool**: rascunho e, depois do ok, `draft: false`.
+  - Se o Metricool estiver cheio e o Otávio aprovar, publique pelo conector **na hora da aprovação**, se for entre 9h e 21h. Fora desse horário, crie uma tarefa única (`create_trigger` com `run_once_at`) para o próximo bom horário, com o post exato a publicar.
+- **Responder comentários** (`reply_comment`): só com o texto aprovado pelo Otávio.
+- **Segurança:** nunca repita tokens ou links com `access_token` em mensagens, arquivos ou commits.
+
+---
+
 ## Limites técnicos
 
-- **Plano grátis do Metricool:** 20 posts por mês somando reels. O servidor da API própria (quando estiver no ar) remove esse limite.
+- **Plano grátis do Metricool:** 20 posts por mês somando reels. Acima disso, publique pelo conector Instagram OTAHSTUDIO, que não tem esse limite.
 - **Daqui não dá para enviar arquivo direto para outro servidor.** A mídia sempre passa pelo GitHub, neste repositório público.
 - **Repositório:** clone com `--depth 1` e faça push com `git -c push.negotiate=true push`.
 - **Erros:** se algo der errado no push ou no Metricool, não fique tentando em loop. Entregue os arquivos e diga o erro em 1 linha.
