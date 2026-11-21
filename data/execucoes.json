@@ -1,0 +1,19 @@
+{
+ "tarefas": [
+  {
+   "id": "criacao",
+   "nome": "Criação",
+   "horario": "06:47",
+   "desde": "2026-11-22",
+   "faz": "Pesquisa, cria, passa pelos revisores e manda para a sua aprovação"
+  },
+  {
+   "id": "analise",
+   "nome": "Análise",
+   "horario": "23:17",
+   "desde": "2026-11-21",
+   "faz": "Mede o desempenho, confere o que saiu e atualiza os aprendizados"
+  }
+ ],
+ "execucoes": []
+}

@@ -4,7 +4,7 @@ Este é o manual que as tarefas automáticas seguem. A meta é **chegar a 1.000 
 
 Sobre o que a esteira lê e grava:
 - **O que lê antes de começar:** este manual, `data/aprendizados.md`, `data/registro.json` e os últimos arquivos em `data/performance/`.
-- **O que grava ao terminar:** atualiza `data/registro.json` e faz commit no repositório.
+- **O que grava:** `data/execucoes.json` no começo e no fim (veja "Diário de execução"), e `data/registro.json` ao terminar, sempre com commit no repositório.
 
 **Regra de ouro:** nada vai ao ar sem o "ok" explícito do Otávio na conversa da execução.
 
@@ -20,6 +20,26 @@ Sobre o que a esteira lê e grava:
 | Público | Donos de clínica, profissionais de saúde e donos de negócio que querem uma marca que vende. |
 | Tom | Direto, provocativo, de quem está dentro da operação. Confronta crenças sem ofender pessoas ou grupos. |
 | Nunca | Faturamento de cliente, dados ou fotos de paciente, conversas internas, estratégia não lançada, nome de hospital sem autorização (Dr. Felipe e Realizza são permitidos), política partidária, tragédias, promessa de resultado. |
+
+---
+
+## Diário de execução (vale para a Parte A e a Parte B)
+
+O painel do Otávio mostra se cada tarefa rodou, quando e como terminou, lendo `data/execucoes.json`. Toda execução, agendada ou manual, escreve nele:
+
+1. **Logo depois do clone**, antes de qualquer outra etapa: acrescente em `execucoes` uma entrada e faça commit e push na hora.
+   ```json
+   {"id":"criacao-2026-11-22T06:49","tarefa":"criacao","inicio":"2026-11-22T06:49:00-03:00","status":"rodando","fim":null,"resumo":"","etapas":{}}
+   ```
+   `tarefa` é `criacao` (Parte A) ou `analise` (Parte B). Use a hora real (`TZ=America/Sao_Paulo date -Iseconds`).
+2. **Ao terminar**, atualize a mesma entrada e faça commit e push:
+   - `fim`: a hora real;
+   - `status`: `ok` (tudo feito), `parcial` (terminou, mas alguma etapa falhou ou foi pulada) ou `erro` (parou no meio);
+   - `resumo`: uma frase do que aconteceu, por exemplo "2 peças aprovadas pelos revisores e 1 roteiro; esperando o ok do Otávio" ou "Metricool sem dados de hoje; aprendizados não atualizados";
+   - `etapas`: os números da execução, como `{"ideias":6,"aprovadas_potencia":2,"pecas":2,"reels":1,"rascunhos":2}` na criação ou `{"posts_medidos":9,"seguidores":137,"publicados_conferidos":1}` na análise.
+3. **Se der erro**, grave `status: "erro"` com o motivo em `resumo` antes de parar. Se nem isso for possível, o painel mostra "não rodou" sozinho quando passar do horário.
+4. Na criação, quando o Otávio responder e você agendar (A8), acrescente ao `resumo` o que foi agendado.
+5. Mantenha só as 60 entradas mais recentes. Não mexa na lista `tarefas` do arquivo, a não ser que o horário de uma tarefa agendada mude.
 
 ---
 
