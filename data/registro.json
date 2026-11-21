@@ -1,5 +1,39 @@
 [
  {
+  "id": "2026-11-22-reel-teaser-black",
+  "data": "2026-11-22",
+  "horario": "18:00",
+  "formato": "reel",
+  "tema": "Cliente · teaser Black",
+  "titulo": "ARTE EM 1 DIA ÚTIL. SEM LIMITE.",
+  "angulo": null,
+  "metodo": null,
+  "gancho": "Sua clínica espera uma semana por uma arte? Na Black Friday eu vou abrir 2 vagas pra acabar com isso.",
+  "roteiro": {
+   "tela": "ARTE EM 1 DIA ÚTIL. SEM LIMITE. · Rodapé na tela: Black OTAHSTUDIO · só estáticos · 1 pedido por vez · 2 vagas",
+   "fala": [
+    "Sua clínica espera uma semana por uma arte? Na Black Friday eu vou abrir 2 vagas pra acabar com isso.",
+    "Criativo estático ilimitado: post, carrossel, story, arte de anúncio.",
+    "Funciona assim: você manda um pedido, recebe em até 1 dia útil e manda o próximo. Um por vez, sem limite de quantidade.",
+    "A produção é com IA. A direção de cada peça é minha, com o olhar de quem dirige o marketing de um grupo de saúde.",
+    "São só 2 vagas pra eu manter a entrega em 1 dia útil.",
+    "Manda BLACK no meu direct que eu te explico antes de abrir."
+   ],
+   "tipo": "Cliente · teaser Black"
+  },
+  "assinatura": "reel",
+  "notas": {
+   "potencia": null,
+   "copy": null,
+   "qualidade": null
+  },
+  "status": "roteiro",
+  "metricool": null,
+  "instagram_media_id": null,
+  "permalink": null,
+  "fonte": null
+ },
+ {
   "id": "2026-11-23-post-de-clinica",
   "data": "2026-11-23",
   "formato": "carrossel",
@@ -23,59 +57,43 @@
   "status": "reprovado",
   "instagram_media_id": null,
   "permalink": null,
-  "motivo": "Revisão independente 21/11: tema batido, sem prova própria, gancho sem tensão, sem CTA de seguir, vazios sem imagem, grid cruzando texto."
+  "motivo": "Revisão independente 21/11: tema batido, sem prova própria, gancho sem tensão, sem CTA de seguir, vazios sem imagem, grid cruzando texto.",
+  "titulo": "Detalhes de design que fazem post de clínica parecer amador",
+  "slides": 6
  },
  {
-  "id": "2026-11-25-efeito-halo",
-  "data": "2026-11-25",
-  "formato": "carrossel",
-  "tema": "Efeito halo: o perfil decide antes da consulta",
-  "fonte": "Thorndike, E. L. (1920). A constant error in psychological ratings. Journal of Applied Psychology.",
-  "angulo": "fenômeno com nome",
-  "metodo": "Hook-Story-Lesson",
-  "gancho": "Uma boa primeira impressão contamina todo o resto.",
-  "ganchos_reserva": [],
-  "assinatura": "capa:frase-escura+bolinhas | numero-grande-claro | lista-escura | frase-clara | lista-numerada-escura | cta-claro",
+  "id": "2026-11-23-reel-black-friday",
+  "data": "2026-11-23",
+  "horario": "12:00",
+  "formato": "reel",
+  "tema": "Seguidor · Black Friday",
+  "titulo": "45% DOS PRODUTOS DA BLACK FRIDAY: ZERO DESCONTO REAL",
+  "angulo": null,
+  "metodo": null,
+  "gancho": "Se a sua clínica vai fazer Black Friday, olha isso: quase metade das promoções do ano passado não tinha desconto nenhum.",
+  "roteiro": {
+   "tela": "45% DOS PRODUTOS DA BLACK FRIDAY: ZERO DESCONTO REAL",
+   "fala": [
+    "Se a sua clínica vai fazer Black Friday, olha isso: quase metade das promoções do ano passado não tinha desconto nenhum.",
+    "Não sou eu que tô falando. A FutureBrand acompanhou mais de 2 mil produtos todo dia: 45% não tiveram desconto real. E 21% ficaram até mais caros durante a promoção.",
+    "E o consumidor percebeu: metade das críticas nas redes era sobre preço maquiado.",
+    "Agora pensa na sua clínica anunciando 40% off. Muito paciente não pensa \"que sorte\". Pensa: \"então o preço normal era inflado?\"",
+    "No varejo, desconto falso custa uma venda. Na saúde, custa confiança.",
+    "Segue, que no próximo post eu mostro o que fazer no lugar do desconto. E manda pro sócio que quer fazer Black Friday na clínica."
+   ],
+   "tipo": "Seguidor · Black Friday"
+  },
+  "assinatura": "reel",
   "notas": {
    "potencia": null,
-   "copy": 6.1,
-   "qualidade": 6.4
+   "copy": 8.4,
+   "qualidade": null
   },
-  "metricool": {
-   "id": 436964659,
-   "uuid": "-7426934061143669556",
-   "horario": "2026-11-25T18:00:00"
-  },
-  "status": "reprovado",
+  "status": "roteiro",
+  "metricool": null,
   "instagram_media_id": null,
   "permalink": null,
-  "motivo": "Revisão independente 21/11: tema batido, sem prova própria, gancho sem tensão, sem CTA de seguir, vazios sem imagem, grid cruzando texto."
- },
- {
-  "id": "2026-11-27-copiar-concorrente",
-  "data": "2026-11-27",
-  "formato": "carrossel",
-  "tema": "Quem copia o concorrente vira mais um",
-  "fonte": null,
-  "angulo": "crença errada",
-  "metodo": "PAS",
-  "gancho": "Quem copia o concorrente vira mais um",
-  "ganchos_reserva": [],
-  "assinatura": "capa:frase | comparação | grade-igual | princípio | cta",
-  "notas": {
-   "potencia": null,
-   "copy": 6.3,
-   "qualidade": 7.1
-  },
-  "metricool": {
-   "id": 436964664,
-   "uuid": "1929816209844553164",
-   "horario": "2026-11-27T18:00:00"
-  },
-  "status": "reprovado",
-  "instagram_media_id": null,
-  "permalink": null,
-  "motivo": "Revisão independente 21/11: tema batido, sem prova própria, gancho sem tensão, sem CTA de seguir, vazios sem imagem, grid cruzando texto."
+  "fonte": "https://mercadoeconsumo.com.br/16/10/2026/ecommerce/black-friday-45-dos-produtos-nao-tiveram-desconto-real-em-2025-aponta-estudo/amp/"
  },
  {
   "id": "2026-11-24-black-friday-clinica",
@@ -103,7 +121,105 @@
   },
   "status": "rascunho",
   "instagram_media_id": null,
-  "permalink": null
+  "permalink": null,
+  "horario": "11:00",
+  "titulo": "Carrossel Black Friday",
+  "slides": 7
+ },
+ {
+  "id": "2026-11-24-reel-concorrente",
+  "data": "2026-11-24",
+  "horario": "18:00",
+  "formato": "reel",
+  "tema": "Seguidor",
+  "titulo": "POR QUE ELE COBRA MAIS QUE VOCÊ?",
+  "angulo": null,
+  "metodo": null,
+  "gancho": "Tem clínica pior que a sua cobrando mais caro. E com agenda cheia.",
+  "roteiro": {
+   "tela": "POR QUE ELE COBRA MAIS QUE VOCÊ?",
+   "fala": [
+    "Tem clínica pior que a sua cobrando mais caro. E com agenda cheia.",
+    "Eu sou diretor de marketing de um grupo de saúde, e te falo por quê: o paciente não testa seu atendimento antes de marcar. Ele abre o Instagram e compara.",
+    "Faz o teste agora: abre o seu perfil e o desse concorrente, lado a lado. Qual parece mais caro?",
+    "Se for o dele, você já sabe de onde vem o pedido de desconto.",
+    "Você não perde paciente pro concorrente. Perde pra sua própria imagem.",
+    "Manda isso pro colega que vive dando desconto."
+   ],
+   "tipo": "Seguidor"
+  },
+  "assinatura": "reel",
+  "notas": {
+   "potencia": null,
+   "copy": null,
+   "qualidade": null
+  },
+  "status": "roteiro",
+  "metricool": null,
+  "instagram_media_id": null,
+  "permalink": null,
+  "fonte": null
+ },
+ {
+  "id": "2026-11-25-efeito-halo",
+  "data": "2026-11-25",
+  "formato": "carrossel",
+  "tema": "Efeito halo: o perfil decide antes da consulta",
+  "fonte": "Thorndike, E. L. (1920). A constant error in psychological ratings. Journal of Applied Psychology.",
+  "angulo": "fenômeno com nome",
+  "metodo": "Hook-Story-Lesson",
+  "gancho": "Uma boa primeira impressão contamina todo o resto.",
+  "ganchos_reserva": [],
+  "assinatura": "capa:frase-escura+bolinhas | numero-grande-claro | lista-escura | frase-clara | lista-numerada-escura | cta-claro",
+  "notas": {
+   "potencia": null,
+   "copy": 6.1,
+   "qualidade": 6.4
+  },
+  "metricool": {
+   "id": 436964659,
+   "uuid": "-7426934061143669556",
+   "horario": "2026-11-25T18:00:00"
+  },
+  "status": "reprovado",
+  "instagram_media_id": null,
+  "permalink": null,
+  "motivo": "Revisão independente 21/11: tema batido, sem prova própria, gancho sem tensão, sem CTA de seguir, vazios sem imagem, grid cruzando texto.",
+  "titulo": "Efeito halo: o perfil decide antes da consulta",
+  "slides": 6
+ },
+ {
+  "id": "2026-11-25-reel-perfil-10-segundos",
+  "data": "2026-11-25",
+  "horario": "12:00",
+  "formato": "reel",
+  "tema": "Cliente · gera lead",
+  "titulo": "SEU PERFIL REPROVA EM 10 SEGUNDOS?",
+  "angulo": null,
+  "metodo": null,
+  "gancho": "Eu levo 10 segundos pra saber se um perfil de clínica tá perdendo paciente. Olho 3 coisas.",
+  "roteiro": {
+   "tela": "SEU PERFIL REPROVA EM 10 SEGUNDOS?",
+   "fala": [
+    "Eu levo 10 segundos pra saber se um perfil de clínica tá perdendo paciente. Olho 3 coisas.",
+    "Um: a bio. Em 3 segundos dá pra saber o que você faz e pra quem? Na maioria, não dá.",
+    "Dois: os últimos 9 posts. Parece uma marca só, ou cada post parece de uma empresa diferente?",
+    "Três: o caminho pra agendar. Quem quer marcar acha o botão em um toque, ou desiste?",
+    "Manda DIAGNÓSTICO no meu direct. Eu olho o seu pessoalmente e te digo qual dos três tá falhando."
+   ],
+   "tipo": "Cliente · gera lead"
+  },
+  "assinatura": "reel",
+  "notas": {
+   "potencia": null,
+   "copy": null,
+   "qualidade": null
+  },
+  "status": "roteiro",
+  "metricool": null,
+  "instagram_media_id": null,
+  "permalink": null,
+  "fonte": null
  },
  {
   "id": "2026-11-26-preco-explicacao",
@@ -128,52 +244,105 @@
   },
   "status": "rascunho",
   "instagram_media_id": null,
-  "permalink": null
+  "permalink": null,
+  "horario": "11:00",
+  "titulo": "Estático: seu preço não é caro",
+  "slides": 1
  },
  {
-  "id": "2026-11-23-reel-black-friday",
-  "data": "2026-11-23",
+  "id": "2026-11-26-reel-paciente-nao-sabe",
+  "data": "2026-11-26",
+  "horario": "18:00",
   "formato": "reel",
-  "tema": "Black Friday: 45% sem desconto real",
-  "fonte": "https://mercadoeconsumo.com.br/16/10/2026/ecommerce/black-friday-45-dos-produtos-nao-tiveram-desconto-real-em-2025-aponta-estudo/amp/",
-  "angulo": "dado + virada",
-  "metodo": "PAS",
-  "gancho": "Se a sua clínica vai fazer Black Friday, olha isso: quase metade das promoções do ano passado não tinha desconto nenhum.",
-  "ganchos_reserva": [
-   "1 em cada 5 produtos da Black Friday estava mais caro do que no dia normal."
-  ],
-  "assinatura": "reel:selfie",
+  "tema": "Seguidor · Trial Reel",
+  "titulo": "SEU PACIENTE NÃO SABE SE VOCÊ É BOM",
+  "angulo": null,
+  "metodo": null,
+  "gancho": "Seu paciente não sabe se você é bom.",
+  "roteiro": {
+   "tela": "SEU PACIENTE NÃO SABE SE VOCÊ É BOM",
+   "fala": [
+    "Seu paciente não sabe se você é bom.",
+    "Ele não entende de técnica, de protocolo, de material. Não tem como avaliar.",
+    "Então ele avalia o que consegue ver: sua foto, seu perfil, como você responde no direct.",
+    "Foto escura, cada post com uma fonte, bio que não diz o que você faz. Pra ele, isso é o seu trabalho.",
+    "É injusto? É. Mas é assim que ele escolhe.",
+    "Eu sou diretor de marketing de um grupo de saúde. Segue que toda semana eu mostro um ajuste desses."
+   ],
+   "tipo": "Seguidor · Trial Reel"
+  },
+  "assinatura": "reel",
   "notas": {
-   "potencia": 8.6,
-   "copy": 8.4,
+   "potencia": null,
+   "copy": null,
    "qualidade": null
   },
-  "metricool": null,
   "status": "roteiro",
+  "metricool": null,
   "instagram_media_id": null,
-  "permalink": null
+  "permalink": null,
+  "fonte": null
+ },
+ {
+  "id": "2026-11-27-copiar-concorrente",
+  "data": "2026-11-27",
+  "formato": "carrossel",
+  "tema": "Quem copia o concorrente vira mais um",
+  "fonte": null,
+  "angulo": "crença errada",
+  "metodo": "PAS",
+  "gancho": "Quem copia o concorrente vira mais um",
+  "ganchos_reserva": [],
+  "assinatura": "capa:frase | comparação | grade-igual | princípio | cta",
+  "notas": {
+   "potencia": null,
+   "copy": 6.3,
+   "qualidade": 7.1
+  },
+  "metricool": {
+   "id": 436964664,
+   "uuid": "1929816209844553164",
+   "horario": "2026-11-27T18:00:00"
+  },
+  "status": "reprovado",
+  "instagram_media_id": null,
+  "permalink": null,
+  "motivo": "Revisão independente 21/11: tema batido, sem prova própria, gancho sem tensão, sem CTA de seguir, vazios sem imagem, grid cruzando texto.",
+  "titulo": "Quem copia o concorrente vira mais um",
+  "slides": 6
  },
  {
   "id": "2026-11-27-reel-fevereiro",
   "data": "2026-11-27",
+  "horario": "12:00",
   "formato": "reel",
-  "tema": "Desconto em novembro esvazia fevereiro",
-  "fonte": "https://mercadoeconsumo.com.br/16/10/2026/ecommerce/black-friday-45-dos-produtos-nao-tiveram-desconto-real-em-2025-aponta-estudo/amp/",
-  "angulo": "consequência",
-  "metodo": "PAS",
+  "tema": "Seguidor · Black Friday",
+  "titulo": "CLÍNICA QUE LOTA COM DESCONTO EM NOVEMBRO: FEVEREIRO VAI SER PIOR",
+  "angulo": null,
+  "metodo": null,
   "gancho": "Se a sua clínica precisa de desconto em novembro pra lotar a agenda, fevereiro vai ser pior.",
-  "ganchos_reserva": [
-   "Desconto em clínica não lota agenda. Treina paciente."
-  ],
-  "assinatura": "reel:falando-para-camera",
+  "roteiro": {
+   "tela": "CLÍNICA QUE LOTA COM DESCONTO EM NOVEMBRO: FEVEREIRO VAI SER PIOR",
+   "fala": [
+    "Se a sua clínica precisa de desconto em novembro pra lotar a agenda, fevereiro vai ser pior.",
+    "Porque desconto raramente cria paciente novo. Na maioria das vezes, ele antecipa quem já vinha e ensina o resto a esperar a próxima promoção.",
+    "O problema nunca foi o preço. É que ninguém entende por que você vale o preço cheio.",
+    "E o paciente já desconfia: na última Black Friday, metade das críticas nas redes foi sobre preço maquiado e desconto falso, segundo a FutureBrand.",
+    "Antes de mexer no preço, explica três coisas: quem faz, o que está incluso e o que acontece se der errado.",
+    "Segue pra mais sobre preço em clínica, e manda pro dono de clínica que já tá montando a Black Friday."
+   ],
+   "tipo": "Seguidor · Black Friday"
+  },
+  "assinatura": "reel",
   "notas": {
-   "potencia": 7.8,
+   "potencia": null,
    "copy": 8.4,
    "qualidade": null
   },
-  "metricool": null,
   "status": "roteiro",
+  "metricool": null,
   "instagram_media_id": null,
-  "permalink": null
+  "permalink": null,
+  "fonte": "https://mercadoeconsumo.com.br/16/10/2026/ecommerce/black-friday-45-dos-produtos-nao-tiveram-desconto-real-em-2025-aponta-estudo/amp/"
  }
 ]

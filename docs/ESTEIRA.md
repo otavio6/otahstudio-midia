@@ -179,8 +179,10 @@ Depois da resposta:
 Para cada peça, acrescente ao `data/registro.json`:
 
 ```json
-{"id":"2026-11-23-post-de-clinica","data":"2026-11-23","formato":"carrossel","tema":"...","fonte":"https://...","angulo":"crença errada","metodo":"PAS","gancho":"...","ganchos_reserva":["...","..."],"assinatura":"capa:frase-grande-escura | numero | lista | foto-direita | cta-claro","notas":{"potencia":8.2,"copy":8.9,"qualidade":9.0},"metricool":{"id":0,"uuid":"","horario":"2026-11-23T18:00:00"},"status":"rascunho|agendado|publicado|recusado","instagram_media_id":null,"permalink":null}
+{"id":"2026-11-23-post-de-clinica","data":"2026-11-23","formato":"carrossel","tema":"...","fonte":"https://...","angulo":"crença errada","metodo":"PAS","gancho":"...","ganchos_reserva":["...","..."],"assinatura":"capa:frase-grande-escura | numero | lista | foto-direita | cta-claro","notas":{"potencia":8.2,"copy":8.9,"qualidade":9.0},"metricool":{"id":0,"uuid":"","horario":"2026-11-23T18:00:00"},"status":"rascunho|agendado|publicado|recusado|reprovado|roteiro|gravado","instagram_media_id":null,"permalink":null,"horario":"HH:MM","titulo":"nome curto para o calendário","slides":6}
 ```
+
+Para reels, inclua também `"roteiro": {"tela": "texto do gancho na tela", "fala": ["frase 1", "frase 2"], "tipo": "seguidor/cliente"}`. O **painel do Otávio** (ig.otahstudio/painel) lê este arquivo para montar o calendário. Sem `data`, `horario`, `titulo` e `status` certos, a peça não aparece no calendário.
 
 Faça commit e push.
 
