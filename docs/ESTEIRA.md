@@ -94,7 +94,16 @@ Para passar, a **média precisa ser ≥ 8,5 e nenhum critério pode ficar abaixo
 
 ### A6 · Construção
 **Carrossel e estático (designer):**
-- Siga a skill `carrossel-otaviohenriqve`. O motor (template.html, render.js, brand.json) está no artifact https://claude.ai/artifact/677Q3YrBAmPzCAKSZ5dQsz. A saída é 1080×1350.
+- Siga a skill `carrossel-otaviohenriqve`. **O motor atualizado fica em `engine/` deste repositório** (template.html, render.js, brand.json, avatar.jpg): renderize com `node engine/render.js posts/<pasta>`, onde a pasta tem o `spec.json`. Os specs de exemplo dos templates T01–T20 estão no artifact https://claude.ai/artifact/677Q3YrBAmPzCAKSZ5dQsz, mas o motor de lá é antigo. A saída é 1080×1350.
+- Recursos novos do motor (21/11):
+  - `"grid": false` em U, D2, T, V e F;
+  - `dots` no U: grade de 100 pontos com `on`, `hot` e `cap`;
+  - `step` no D2;
+  - no D: `title`, `pills: true` (Sim e Não, sem checkbox) e `label`;
+  - no M2: `ctaLight: true` e `icon: "plus"`;
+  - `visual: "notifs"` em M2 e A;
+  - no TW: `bold` (quantos parágrafos em negrito), `boldSize`, `gap`, `foot` (rodapé da série) e quebra de linha com `\n` dentro do parágrafo.
+- Exemplos aprovados (média ≥ 8,5): `posts/2026-11-24-black-friday-clinica/spec.json` (carrossel, 8,56) e `posts/2026-11-26-preco-explicacao/spec.json` (estático, 8,63).
 - Fundamentos obrigatórios:
   - hierarquia clara;
   - margens e zona segura respeitadas;

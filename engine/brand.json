@@ -1,0 +1,29 @@
+{
+  "name": "Otávio Henrique",
+  "handle": "@otaviohenriqve",
+  "year": "2026",
+  "colors": {
+    "dark": "#0B0B0C",
+    "dark2": "#141416",
+    "light": "#F2F2EE",
+    "light2": "#E7E7E1",
+    "inkOnDark": "#F4F4F1",
+    "inkOnLight": "#111214",
+    "mutedOnDark": "#8C8F94",
+    "mutedOnLight": "#7C7F85",
+    "accent": "#D4FF3A",
+    "accentDeep": "#9CC400",
+    "line": "rgba(255,255,255,0.09)",
+    "lineLight": "rgba(17,18,20,0.08)",
+    "blue": "#1F4FFF",
+    "seal": "#3897F0",
+    "sealCheck": "#FFFFFF",
+    "neg": "#E5484D"
+  },
+  "fonts": {
+    "display": "\"Inter Display\", Inter, sans-serif",
+    "text": "Inter, sans-serif",
+    "mono": "\"DejaVu Sans Mono\", monospace"
+  },
+  "footer": "BRANDING & POSICIONAMENTO"
+}
