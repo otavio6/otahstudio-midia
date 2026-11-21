@@ -123,6 +123,9 @@ Para passar, a **média precisa ser ≥ 8,5 e nenhum critério pode ficar abaixo
   - blocos de número, lista, comparação, citação ou foto.
 - Paleta: preto, branco e off-white, com acento lime #D4FF3A ou azul #1F4FFF. Vermelho #E5484D só para marcar erro.
 
+
+**Estático estilo tweet (TW), padrão definido pelo Otávio em 21/11:** igual a um print real de tweet. Texto em peso normal, num tamanho só (`size` 54), em parágrafos corridos. Sem negrito, sem lista com setas, sem rodapé da série e sem acento colorido: é a simplicidade que gera conexão. Referência: `posts/2026-11-26-preco-explicacao/`. O revisor de qualidade não deve descontar pontos por vazio, falta de acento ou falta de rodapé nesse formato.
+
 **Reel:**
 - Mande o roteiro para o Otávio gravar.
 - Quando o vídeo bruto chegar, a edição segue a skill `edicao-video-otaviohenriqve`:

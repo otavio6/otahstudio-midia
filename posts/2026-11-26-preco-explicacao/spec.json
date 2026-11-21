@@ -6,13 +6,9 @@
   {
    "m": "TW",
    "chrome": false,
-   "size": 40,
-   "text": "Seu preço não é caro.\n\nSua explicação é que é barata.\n\nAntes de baixar o preço, explique:\n→ quem faz\n→ quanto tempo leva\n→ o que está incluso\n→ o que acontece se algo der errado",
-   "time": "10:12 · 26 nov 2026",
-   "bold": 2,
-   "boldSize": 62,
-   "gap": 34,
-   "foot": "2026 · OH/044"
+   "size": 54,
+   "text": "Seu preço não é caro. Sua explicação é que é barata.\n\nAntes de baixar o preço da consulta ou do procedimento, explique: quem faz, quanto tempo leva, o que está incluso e o que acontece se algo der errado.",
+   "time": "10:12 · 26 nov 2026"
   }
  ]
 }
