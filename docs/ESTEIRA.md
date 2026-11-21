@@ -196,7 +196,7 @@ Faça commit e push.
    - reels: IGRE02, IGRE03, IGRE23 views, IGRE11 alcance, IGRE21 compartilhamentos, IGRE12 salvamentos, IGRE24 tempo médio assistido, IGRE30 taxa de pulo;
    - conta: IGEV01 seguidores, IGEV43 ganhos, IGEV44 perdidos, IGEV06 alcance.
 
-   Salve tudo em `data/performance/AAAA-MM-DD.json`, com `"analisado_em": "AAAA-MM-DDTHH:MM-03:00"`. Cada post é acompanhado por 30 dias, dia a dia.
+   Salve tudo em `data/performance/AAAA-MM-DD.json`, com `"analisado_em": "AAAA-MM-DDTHH:MM-03:00"`. O arquivo **sempre** traz `"conta": {"seguidores": N}` no nível de cima, com o número do dia (o painel monta o gráfico de crescimento com esse campo). Ao atualizar o `status` de um item no registro (agendado, publicado), o painel muda de cor sozinho. Cada post é acompanhado por 30 dias, dia a dia.
 3. **Aprendizados.** Reescreva `data/aprendizados.md` (topo: data e hora da análise) com:
    - o placar: seguidores, ganho do dia, da semana e do mês, e quanto falta para 1.000;
    - o top 5 e o bottom 5 por alcance, compartilhamento, salvamento e seguidores, cruzando com ângulo, método, formato, gancho, assinatura e horário do registro;
