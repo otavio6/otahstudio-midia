@@ -115,14 +115,14 @@
   "metodo": "contraste",
   "gancho": "Seu preço não é caro. Sua explicação é que é barata.",
   "ganchos_reserva": [],
-  "assinatura": "estatico:tweet-escuro+lista",
+  "assinatura": "estatico:tweet-escuro (padrão Otávio)",
   "notas": {
    "potencia": 7.6,
    "copy": 8.4,
    "qualidade": 8.63
   },
   "metricool": {
-   "id": 437018770,
+   "id": 437031414,
    "uuid": "7965494769279254594",
    "horario": "2026-11-26T11:00:00"
   },
