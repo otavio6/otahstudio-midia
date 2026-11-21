@@ -84,7 +84,7 @@
    "m": "D2",
    "theme": "light",
    "grid": false,
-   "title": "Desconto não cria paciente. ||Antecipa quem já vinha.",
+   "title": "O desconto só adianta ||quem já ia marcar.",
    "top": 520,
    "step": 175,
    "rows": [
@@ -118,7 +118,7 @@
   {
    "m": "F",
    "theme": "dark",
-   "title": "Desconto vende uma vez. ||Confiança vende todo mês.",
+   "title": "Em vez de cortar o preço, ||faça isso aqui:",
    "pairsTop": 500,
    "compact": true,
    "pairs": [
@@ -166,7 +166,7 @@
    "m": "M2",
    "theme": "dark",
    "top": 230,
-   "title": "Se alguma resposta foi não, ||o problema não é o preço.",
+   "title": "Respondeu não em alguma? ||Comece por ela.",
    "visual": "notifs",
    "vopt": {
     "top": 560,
@@ -186,7 +186,7 @@
      }
     ]
    },
-   "cta": "Siga @otaviohenriqve",
+   "cta": "Me segue aqui",
    "icon": "plus",
    "note": "Salve e confira: incluso, quem faz, e se der errado",
    "ctaTop": 1060,

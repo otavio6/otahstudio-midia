@@ -124,7 +124,9 @@
   "permalink": null,
   "horario": "11:00",
   "titulo": "Black Friday: desconto falso",
-  "slides": 7
+  "slides": 7,
+  "pensamento": "\"Será que eu faço Black Friday na clínica?\"",
+  "nota_ajuste": "Slides 4, 5 e 7 e legenda ajustados em 21/11: sem antítese e sem \"siga @\" (docs/COPY.md)."
  },
  {
   "id": "2026-11-24-reel-concorrente",
@@ -227,9 +229,9 @@
   "formato": "estatico",
   "tema": "Seu preço não é caro, sua explicação é que é barata",
   "fonte": "https://mercadoeconsumo.com.br/16/10/2026/ecommerce/black-friday-45-dos-produtos-nao-tiveram-desconto-real-em-2025-aponta-estudo/amp/",
-  "angulo": "provocação de valor percebido",
+  "angulo": "bolso",
   "metodo": "contraste",
-  "gancho": "Seu preço não é caro. Sua explicação é que é barata.",
+  "gancho": "Antes de baixar o preço da consulta, faz um teste.",
   "ganchos_reserva": [],
   "assinatura": "estatico:tweet-escuro (padrão Otávio)",
   "notas": {
@@ -246,8 +248,10 @@
   "instagram_media_id": null,
   "permalink": null,
   "horario": "11:00",
-  "titulo": "Seu preço não é caro",
-  "slides": 1
+  "titulo": "O teste do \"achei caro\"",
+  "slides": 1,
+  "pensamento": "\"Se eu baixar o preço, a agenda enche?\"",
+  "nota_ajuste": "Texto refeito em 21/11 a pedido do Otávio: sem antítese, voz humana (docs/COPY.md)."
  },
  {
   "id": "2026-11-26-reel-paciente-nao-sabe",

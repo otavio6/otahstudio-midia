@@ -42,3 +42,6 @@ Notas de copy entre 6,1 e 6,3 e de visual entre 6,4 e 7,1. Os problemas se repet
 
 ## Regra do Otávio (21/11/2026): legenda humana
 Legenda na voz dele, em primeira pessoa, falando com uma pessoa só, coloquial como nos reels. Nunca "siga @otaviohenriqve" nem terceira pessoa. Chamada para seguir só como "me segue que…", com um motivo.
+
+## Regra do Otávio (21/11/2026): sem cara de IA
+Nada de antítese ("não é X, é Y"), pares espelhados de efeito ou fórmulas de IA, em nenhum texto. Copy parte do pensamento do público e de um ângulo claro (emocional, racional, bolso…). Guia completo em docs/COPY.md.

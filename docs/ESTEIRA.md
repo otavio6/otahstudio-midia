@@ -93,6 +93,8 @@ Seguem para a próxima etapa as ideias com **nota ≥ 7,5**, até **3 peças de 
 Leia `aprendizados.md`: se um formato está performando muito melhor, puxe para ele.
 
 ### A4 · Copywriter
+Antes de escrever, leia `docs/COPY.md` (público, ângulos, voz e a lista do que é proibido por ter cara de IA) e `data/voz-do-publico.md`. Escreva no `registro` qual pensamento do público o gancho pega (campo `pensamento`).
+
 1. **Ângulo:** escolha o que faz a pessoa pensar "é a minha situação". Opções: dor, medo de perder, comparação com o concorrente, crença errada, fenômeno com nome, número que choca, bastidor, previsão, antes e depois.
 2. **Método, pelo nível de consciência do público:**
    - **PAS** (problema, agitação, solução) para público frio com dor clara;
@@ -128,7 +130,9 @@ Dá nota de 0 a 10 em cada critério:
 - tom: provocativo sem ofender;
 - impacto de mercado: isso se destaca no feed de quem segue perfis de marketing?
 - conformidade: acentos certos, nada proibido, sem promessa;
-- voz da legenda: soa como o Otávio falando com uma pessoa (primeira pessoa, coloquial)? Qualquer "siga @…", terceira pessoa ou tom de agência deixa este critério abaixo de 7 e reprova.
+- voz da legenda: soa como o Otávio falando com uma pessoa (primeira pessoa, coloquial)? Qualquer "siga @…", terceira pessoa ou tom de agência deixa este critério abaixo de 7 e reprova;
+- sem cara de IA: passe a seção 7 do `docs/COPY.md` em todo texto (arte, legenda, roteiro). Um item encontrado já reprova, mesmo com média alta;
+- público e ângulo: o gancho pega um pensamento real do público e o ângulo está claro (checklist da seção 9 do `docs/COPY.md`).
 
 Para passar, a **média precisa ser ≥ 8,5 e nenhum critério pode ficar abaixo de 7**. Se não passar, o copywriter reescreve com os comentários do revisor, no máximo 2 vezes. Se ainda assim não passar, descarte a ideia ou faça a melhor versão e registre a nota.
 
@@ -256,9 +260,10 @@ Faça commit e push.
    - o que funciona e o que não funciona, como regras curtas baseadas em dados ("gancho com número: alcance 2,1× a média em 6 posts");
    - o que testar a seguir: até 3 hipóteses.
 4. Faça as contas rodando código, nunca de cabeça. Nada de número inventado: se faltar dado, diga que falta.
-5. **Leads e comentários.** Chame `painel_leads` e `painel_comentarios`. Atualize as sugestões de `data/respostas.json` (mesmas regras do A0). Conte quantos leads estão com status `novo` e quantos comentários estão sem resposta há mais de 12 h.
-6. Faça commit e push.
-7. **Mensagem para o Otávio:** só se houver algo relevante: post que estourou, falha de publicação, queda forte, **lead novo** (cite o @ e o que a pessoa disse, em 1 linha cada) ou comentário esperando há mais de 12 h. Às **sextas**, mande sempre o placar da semana: seguidores, quanto falta, campeão, pior e até 3 ajustes.
+5. **Voz do público.** Copie para `data/voz-do-publico.md` as frases reais de comentários e directs do dia, sem nome nem @, organizadas por tema (veja `docs/COPY.md`, seção 10).
+6. **Leads e comentários.** Chame `painel_leads` e `painel_comentarios`. Atualize as sugestões de `data/respostas.json` (mesmas regras do A0). Conte quantos leads estão com status `novo` e quantos comentários estão sem resposta há mais de 12 h.
+7. Faça commit e push.
+8. **Mensagem para o Otávio:** só se houver algo relevante: post que estourou, falha de publicação, queda forte, **lead novo** (cite o @ e o que a pessoa disse, em 1 linha cada) ou comentário esperando há mais de 12 h. Às **sextas**, mande sempre o placar da semana: seguidores, quanto falta, campeão, pior e até 3 ajustes.
 
 ---
 
