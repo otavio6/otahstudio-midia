@@ -96,7 +96,11 @@
    "copy": 8.5,
    "qualidade": 8.56
   },
-  "metricool": null,
+  "metricool": {
+   "id": 437018760,
+   "uuid": "-2442868179182599959",
+   "horario": "2026-11-24T11:00:00"
+  },
   "status": "rascunho",
   "instagram_media_id": null,
   "permalink": null
@@ -117,7 +121,11 @@
    "copy": 8.4,
    "qualidade": 8.63
   },
-  "metricool": null,
+  "metricool": {
+   "id": 437018770,
+   "uuid": "7965494769279254594",
+   "horario": "2026-11-26T11:00:00"
+  },
   "status": "rascunho",
   "instagram_media_id": null,
   "permalink": null
