@@ -49,6 +49,11 @@ O painel do Otávio mostra se cada tarefa rodou, quando e como terminou, lendo `
 Chame `painel_decisoes` no conector **Instagram OTAHSTUDIO**. Vale só a decisão cuja `versao` é igual à `versao` da peça no registro (sem campo = 1).
 - **refazer:** é prioridade do dia. Refaça a peça com a `nota` do Otávio, passe de novo por A5 a A7, sobrescreva os arquivos na mesma pasta, some 1 na `versao` da peça no registro, mantenha `status: rascunho` e faça push. Com a versão nova, o pedido antigo deixa de valer e a peça volta a ficar amarela no painel. Mostre a peça refeita na mensagem do dia.
 - **aprovar** com `estado: programado`: ponha `status: agendado` no registro. Com `estado: publicado`: `status: publicado`, `instagram_media_id` e `permalink`. Com `estado: erro`: conte o erro ao Otávio em 1 linha (o botão "Tentar de novo" fica no painel).
+- **legendas_editadas:** se a versão bate com a da peça, grave o texto em `posts/<id>/legenda.txt` (sem mudar a versão). Assim o repositório fica igual ao que vai ao ar. Use o que ele mudou como aprendizado de tom.
+
+Depois, ainda no A0:
+- **Ideias** (`painel_ideias`): as ideias com status `nova` entram no topo do A1, antes da pesquisa. Ideia usada vira `painel_marcar_ideia` com `status: usada` e o id da peça na nota. Ideia fraca ou arriscada (regras da marca) vira `descartada`, com o motivo na nota.
+- **Comentários** (`painel_comentarios`): escreva uma sugestão de resposta para cada comentário pendente em `data/respostas.json`, no formato `{"<id do comentário>": {"texto": "...", "em": "AAAA-MM-DDTHH:MM-03:00"}}`, mantendo as sugestões antigas que ainda estão pendentes. Regras: no tom do Otávio, curta (1 a 2 frases), pessoal (use o nome se fizer sentido), sem prometer preço, prazo ou resultado. Quem demonstrou interesse (palavra-chave, pergunta de preço ou vaga) recebe um convite para o direct. Elogio recebe agradecimento com uma pergunta que puxa conversa. Nunca responda crítica com ironia. Quem envia é o Otávio, pelo painel.
 
 Cada etapa tem um dono. **Os revisores são subagentes separados** (ferramenta Agent), que recebem só a peça e a rubrica, nunca o raciocínio de quem criou. Toda nota é registrada.
 
@@ -60,6 +65,7 @@ Cada etapa tem um dono. **Os revisores são subagentes separados** (ferramenta A
   - mudanças nas plataformas.
 - Abra as fontes. Snippet não conta como fonte.
 - Inclua também 2 ou 3 ideias atemporais que ainda não estão no `registro.json`: erros de marca, posicionamento, preço, gestão de time, bastidores.
+- As ideias novas do banco do Otávio (`painel_ideias`) entram primeiro. Elas valem como bastidor real: não precisam de fonte externa, mas qualquer número citado precisa de fonte.
 - Saída: uma lista de 6 a 12 ideias, cada uma com fonte, fato central e possível ponte com marca, marketing ou gestão.
 
 ### A2 · Revisor de potência (subagente)
@@ -82,6 +88,7 @@ Seguem para a próxima etapa as ideias com **nota ≥ 7,5**, até **3 peças de 
 | **Reel** | Opinião, reação a algo em alta, bastidor, provocação que pede rosto e voz. É o formato que traz alcance novo, então é a prioridade quando a ideia é forte. Sai como roteiro para o Otávio gravar. |
 | **Carrossel** | Explicação, lista, passo a passo, dado ou prova. Conteúdo que dá vontade de salvar. |
 | **Estático** | Uma frase única muito forte, uma provocação ou uma comparação visual. |
+| **Story** | Todo dia, 1 item com 2 a 4 telas (veja A6b). Mantém quem já segue aquecido para comprar. Não traz seguidor novo, então não entra na cota de peças de feed. |
 
 Leia `aprendizados.md`: se um formato está performando muito melhor, puxe para ele.
 
@@ -200,6 +207,13 @@ Depois da resposta no chat:
 - **Sem resposta:** nada vai ao ar. A peça continua amarela no painel até ele decidir.
 - Para desfazer uma aprovação, use `painel_cancelar` (ele também pode cancelar pelo painel).
 
+### A6b · Stories (todo dia)
+Faça 1 item de story por dia com 2 a 4 telas, em PNG 1080×1920 (`01.png`, `02.png`…), com o mesmo visual das artes (fonte, cores, avatar). Deixe 250 px livres em cima e 340 px embaixo, porque a interface do Instagram cobre essas áreas.
+- **Limite da API da Meta:** story publicado pela API não aceita figurinha: nada de enquete, caixinha, link, música ou menção clicável. Nunca escreva "vote na enquete" ou "clique no link". Use chamadas que funcionam sem figurinha: "responde aqui no direct", "manda BLACK no direct", "post novo no feed, corre lá".
+- **Tipos que funcionam:** bastidor do dia (frase curta e real), prova (print de resultado sem dado de cliente nem de paciente), chamada para o post do feed, contagem das vagas da Black (só números verdadeiros que o Otávio confirmou), pergunta aberta respondida por direct.
+- **Registro:** `formato: "story"`, `slides: N`, `titulo` curto, `data` e `horario` (manhã, entre 8h e 10h, ou no fim da tarde). Story não tem legenda, então não precisa de `legenda.txt`.
+- **Revisão:** o revisor de qualidade (A7) olha as telas com a mesma régua das artes, mais um critério: a leitura dura até 3 segundos por tela.
+
 ### A8b · Reels (o Otávio grava, Claude edita)
 Quando o Otávio mandar o vídeo bruto no chat, ponha o reel como `status: gravado` (cinza no painel), edite com a skill `edicao-video-otaviohenriqve` e exporte MP4 H.264 vertical 1080×1920. Depois:
 1. suba `posts/<id>/video.mp4`, `capa.jpg` (opcional) e `legenda.txt`;
@@ -234,8 +248,9 @@ Faça commit e push.
    - o que funciona e o que não funciona, como regras curtas baseadas em dados ("gancho com número: alcance 2,1× a média em 6 posts");
    - o que testar a seguir: até 3 hipóteses.
 4. Faça as contas rodando código, nunca de cabeça. Nada de número inventado: se faltar dado, diga que falta.
-5. Faça commit e push.
-6. **Mensagem para o Otávio:** só se houver algo relevante (post que estourou, falha de publicação, queda forte). Às **sextas**, mande sempre o placar da semana: seguidores, quanto falta, campeão, pior e até 3 ajustes.
+5. **Leads e comentários.** Chame `painel_leads` e `painel_comentarios`. Atualize as sugestões de `data/respostas.json` (mesmas regras do A0). Conte quantos leads estão com status `novo` e quantos comentários estão sem resposta há mais de 12 h.
+6. Faça commit e push.
+7. **Mensagem para o Otávio:** só se houver algo relevante: post que estourou, falha de publicação, queda forte, **lead novo** (cite o @ e o que a pessoa disse, em 1 linha cada) ou comentário esperando há mais de 12 h. Às **sextas**, mande sempre o placar da semana: seguidores, quanto falta, campeão, pior e até 3 ajustes.
 
 ---
 
@@ -251,9 +266,10 @@ O Otávio conectou um servidor MCP próprio, que aparece como as ferramentas `In
   - `list_comments`: comentários de cada post.
 
   A esteira de análise (Parte B) usa essas ferramentas como fonte principal, com o Metricool como reserva. `list_comments` também serve para achar leads: quem comentou palavra-chave ou pediu diagnóstico. Liste essas pessoas para o Otávio responder.
-- **Painel e agendador:** `painel_decisoes` (o que ele aprovou, o que foi postado e o que pediu para refazer), `painel_aprovar` (só depois do "ok" dele no chat) e `painel_cancelar`. O agendamento é sempre por aqui, nunca pelo Metricool.
+- **Painel e agendador:** `painel_decisoes` (o que ele aprovou, o que foi postado, o que pediu para refazer e as legendas que editou), `painel_aprovar` (só depois do "ok" dele no chat) e `painel_cancelar`. O agendamento é sempre por aqui, nunca pelo Metricool.
+- **Social:** `painel_comentarios` (comentários sem resposta), `painel_leads` (leads com status e histórico), `painel_ideias` e `painel_marcar_ideia`. A esteira só escreve sugestões. Quem responde comentário e direct é o Otávio, pelo painel.
 - **Publicação direta** (`publish_carousel`, `publish_image`, `publish_reel`, `publish_story`): a esteira **não usa**. Só em pedido explícito do Otávio no chat para postar algo na hora, como um story.
-- **Responder comentários** (`reply_comment`): só com o texto aprovado pelo Otávio.
+- **Responder comentários** (`reply_comment`): a esteira não usa. As respostas saem pelo painel, com o clique do Otávio.
 - **Segurança:** nunca repita tokens ou links com `access_token` em mensagens, arquivos ou commits.
 
 ---
