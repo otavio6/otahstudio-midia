@@ -1,0 +1,196 @@
+{
+ "id": "BF01",
+ "series": "2026 · OH/043",
+ "template": "Dado + virada (esteira 21/11)",
+ "allowCaps": [
+  "OFF"
+ ],
+ "slides": [
+  {
+   "m": "A",
+   "theme": "dark",
+   "grid": false,
+   "visual": "notifs",
+   "vopt": {
+    "top": 720,
+    "rows": [
+     {
+      "t": "Black Friday: 40% OFF na harmonização"
+     },
+     {
+      "t": "Só hoje: clareamento pela metade"
+     },
+     {
+      "t": "Últimas vagas com desconto"
+     },
+     {
+      "t": "Então o preço normal era inflado?",
+      "hot": true
+     }
+    ]
+   },
+   "label": "Black Friday · Clínicas",
+   "title": "Quase metade das promoções da última Black Friday ||não tinha desconto nenhum.",
+   "tsize": 84,
+   "top": 230
+  },
+  {
+   "m": "U",
+   "theme": "light",
+   "eyebrow": "Black Friday 2025: 2.373 produtos, 809 mil preços checados todo dia.",
+   "num": "45",
+   "unit": "%",
+   "numTop": 360,
+   "titleTop": 800,
+   "title": "não tiveram desconto real. ||E 1 em cada 5 ficou até mais caro.",
+   "source": "Timelens / FutureBrand SP, outubro de 2026",
+   "lower": true,
+   "grid": false,
+   "dots": {
+    "n": 100,
+    "on": 45,
+    "hot": 21,
+    "x": 770,
+    "y": 400,
+    "cap": "1 ponto = 1%. Azul: mais caro."
+   }
+  },
+  {
+   "m": "V",
+   "theme": "dark",
+   "title": "Desconto falso ||cobra mais caro na saúde.",
+   "a": "No varejo",
+   "b": "Na saúde",
+   "listTop": 520,
+   "rows": [
+    [
+     "Custa uma venda",
+     "Custa *confiança*"
+    ],
+    [
+     "O cliente compra e esquece",
+     "A paciente desconfia do preço"
+    ],
+    [
+     "Troca de loja",
+     "Troca de clínica"
+    ]
+   ],
+   "foot": "Na última Black Friday, **51% das críticas nas redes** foram sobre preço maquiado (Timelens/FutureBrand).",
+   "footTop": 1080,
+   "grid": false
+  },
+  {
+   "m": "D2",
+   "theme": "light",
+   "grid": false,
+   "title": "Desconto não cria paciente. ||Antecipa quem já vinha.",
+   "top": 520,
+   "step": 175,
+   "rows": [
+    {
+     "r": "Nov",
+     "tag": "ilustração",
+     "w": 100,
+     "t": "Agenda cheia com desconto.",
+     "hot": true
+    },
+    {
+     "r": "Dez",
+     "tag": "",
+     "w": 70,
+     "t": "Quem já vinha, veio antes."
+    },
+    {
+     "r": "Jan",
+     "tag": "",
+     "w": 35,
+     "t": "A paciente espera a próxima promoção."
+    },
+    {
+     "r": "Fev",
+     "tag": "",
+     "w": 15,
+     "t": "Agenda vazia."
+    }
+   ]
+  },
+  {
+   "m": "F",
+   "theme": "dark",
+   "title": "Desconto vende uma vez. ||Confiança vende todo mês.",
+   "pairsTop": 500,
+   "compact": true,
+   "pairs": [
+    {
+     "from": "40% off na harmonização",
+     "to": "Explique o preço cheio"
+    },
+    {
+     "from": "Últimas vagas com desconto",
+     "to": "Prioridade para quem já é paciente"
+    },
+    {
+     "from": "Oferta no story",
+     "to": "Mostre os bastidores"
+    }
+   ],
+   "grid": false
+  },
+  {
+   "m": "D",
+   "theme": "light",
+   "label": "Checklist · 3 perguntas",
+   "title": "Antes de mexer no preço, responda:",
+   "titleTop": 220,
+   "top": 450,
+   "step": 250,
+   "qSize": 44,
+   "pills": true,
+   "items": [
+    {
+     "n": "01",
+     "q": "O paciente sabe ||o que está incluso?"
+    },
+    {
+     "n": "02",
+     "q": "Sabe quem faz ||e por que essa pessoa?"
+    },
+    {
+     "n": "03",
+     "q": "Sabe o que acontece ||se algo der errado?"
+    }
+   ]
+  },
+  {
+   "m": "M2",
+   "theme": "dark",
+   "top": 230,
+   "title": "Se alguma resposta foi não, ||o problema não é o preço.",
+   "visual": "notifs",
+   "vopt": {
+    "top": 560,
+    "rows": [
+     {
+      "t": "Quanto custa?"
+     },
+     {
+      "t": "Achei caro"
+     },
+     {
+      "t": "Tem desconto?"
+     },
+     {
+      "t": "Entendi o que está incluso. Quero agendar.",
+      "hot": true
+     }
+    ]
+   },
+   "cta": "Siga @otaviohenriqve",
+   "icon": "plus",
+   "note": "Salve e confira: incluso, quem faz, e se der errado",
+   "ctaTop": 1060,
+   "ctaLight": true
+  }
+ ]
+}

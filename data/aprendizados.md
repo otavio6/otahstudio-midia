@@ -27,7 +27,7 @@ Notas de copy entre 6,1 e 6,3 e de visual entre 6,4 e 7,1. Os problemas se repet
    - o acento lime ou azul só significa "certo" (nunca colorir o exemplo errado);
    - um acento por peça;
    - nada de dois contadores no mesmo slide.
-8. **Selo de verificado no cabeçalho:** só use se a conta for verificada. Até o Otávio confirmar, use `verified: false`.
+8. **Selo de verificado:** a conta é verificada (confirmado pelo Otávio em 21/11). Manter o selo.
 
 ## Regras atuais
 1. Priorize reel quando a ideia for forte; o carrossel serve para converter quem chega.

@@ -76,5 +76,96 @@
   "instagram_media_id": null,
   "permalink": null,
   "motivo": "Revisão independente 21/11: tema batido, sem prova própria, gancho sem tensão, sem CTA de seguir, vazios sem imagem, grid cruzando texto."
+ },
+ {
+  "id": "2026-11-24-black-friday-clinica",
+  "data": "2026-11-24",
+  "formato": "carrossel",
+  "tema": "Black Friday: desconto falso custa confiança na saúde",
+  "fonte": "https://mercadoeconsumo.com.br/16/10/2026/ecommerce/black-friday-45-dos-produtos-nao-tiveram-desconto-real-em-2025-aponta-estudo/amp/",
+  "angulo": "crença errada + dado",
+  "metodo": "PAS",
+  "gancho": "Quase metade das promoções da última Black Friday não tinha desconto nenhum.",
+  "ganchos_reserva": [
+   "1 em cada 5 ofertas da Black Friday estava mais cara do que no dia normal.",
+   "Sua Black Friday de harmonização está ensinando a paciente a só voltar em novembro."
+  ],
+  "assinatura": "capa:notifs-escura | numero-gigante+grade-pontos-claro | varejo×saude-escuro | barras-agenda-claro | em-vez-de-escuro | checklist-sim-nao-claro | notifs+cta-escuro",
+  "notas": {
+   "potencia": 8.6,
+   "copy": 8.5,
+   "qualidade": 8.56
+  },
+  "metricool": null,
+  "status": "rascunho",
+  "instagram_media_id": null,
+  "permalink": null
+ },
+ {
+  "id": "2026-11-26-preco-explicacao",
+  "data": "2026-11-26",
+  "formato": "estatico",
+  "tema": "Seu preço não é caro, sua explicação é que é barata",
+  "fonte": "https://mercadoeconsumo.com.br/16/10/2026/ecommerce/black-friday-45-dos-produtos-nao-tiveram-desconto-real-em-2025-aponta-estudo/amp/",
+  "angulo": "provocação de valor percebido",
+  "metodo": "contraste",
+  "gancho": "Seu preço não é caro. Sua explicação é que é barata.",
+  "ganchos_reserva": [],
+  "assinatura": "estatico:tweet-escuro+lista",
+  "notas": {
+   "potencia": 7.6,
+   "copy": 8.4,
+   "qualidade": 8.63
+  },
+  "metricool": null,
+  "status": "rascunho",
+  "instagram_media_id": null,
+  "permalink": null
+ },
+ {
+  "id": "2026-11-23-reel-black-friday",
+  "data": "2026-11-23",
+  "formato": "reel",
+  "tema": "Black Friday: 45% sem desconto real",
+  "fonte": "https://mercadoeconsumo.com.br/16/10/2026/ecommerce/black-friday-45-dos-produtos-nao-tiveram-desconto-real-em-2025-aponta-estudo/amp/",
+  "angulo": "dado + virada",
+  "metodo": "PAS",
+  "gancho": "Se a sua clínica vai fazer Black Friday, olha isso: quase metade das promoções do ano passado não tinha desconto nenhum.",
+  "ganchos_reserva": [
+   "1 em cada 5 produtos da Black Friday estava mais caro do que no dia normal."
+  ],
+  "assinatura": "reel:selfie",
+  "notas": {
+   "potencia": 8.6,
+   "copy": 8.4,
+   "qualidade": null
+  },
+  "metricool": null,
+  "status": "roteiro",
+  "instagram_media_id": null,
+  "permalink": null
+ },
+ {
+  "id": "2026-11-27-reel-fevereiro",
+  "data": "2026-11-27",
+  "formato": "reel",
+  "tema": "Desconto em novembro esvazia fevereiro",
+  "fonte": "https://mercadoeconsumo.com.br/16/10/2026/ecommerce/black-friday-45-dos-produtos-nao-tiveram-desconto-real-em-2025-aponta-estudo/amp/",
+  "angulo": "consequência",
+  "metodo": "PAS",
+  "gancho": "Se a sua clínica precisa de desconto em novembro pra lotar a agenda, fevereiro vai ser pior.",
+  "ganchos_reserva": [
+   "Desconto em clínica não lota agenda. Treina paciente."
+  ],
+  "assinatura": "reel:falando-para-camera",
+  "notas": {
+   "potencia": 7.8,
+   "copy": 8.4,
+   "qualidade": null
+  },
+  "metricool": null,
+  "status": "roteiro",
+  "instagram_media_id": null,
+  "permalink": null
  }
 ]
