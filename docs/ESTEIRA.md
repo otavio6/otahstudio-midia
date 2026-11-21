@@ -6,7 +6,7 @@ Sobre o que a esteira lê e grava:
 - **O que lê antes de começar:** este manual, `data/aprendizados.md`, `data/registro.json` e os últimos arquivos em `data/performance/`.
 - **O que grava:** `data/execucoes.json` no começo e no fim (veja "Diário de execução"), e `data/registro.json` ao terminar, sempre com commit no repositório.
 
-**Regra de ouro:** nada vai ao ar sem o "ok" explícito do Otávio na conversa da execução.
+**Regra de ouro:** nada vai ao ar sem a aprovação explícita do Otávio: o botão **Aprovar** no painel (ig.otahstudio…/painel) ou um "ok" dele no chat. Quem posta é o agendador do servidor dele, no horário aprovado. A esteira nunca chama `publish_*` direto.
 
 ---
 
@@ -45,6 +45,11 @@ O painel do Otávio mostra se cada tarefa rodou, quando e como terminou, lendo `
 
 ## PARTE A · Esteira de criação (todo dia, de manhã)
 
+### A0 · Decisões do painel (antes de tudo)
+Chame `painel_decisoes` no conector **Instagram OTAHSTUDIO**. Vale só a decisão cuja `versao` é igual à `versao` da peça no registro (sem campo = 1).
+- **refazer:** é prioridade do dia. Refaça a peça com a `nota` do Otávio, passe de novo por A5 a A7, sobrescreva os arquivos na mesma pasta, some 1 na `versao` da peça no registro, mantenha `status: rascunho` e faça push. Com a versão nova, o pedido antigo deixa de valer e a peça volta a ficar amarela no painel. Mostre a peça refeita na mensagem do dia.
+- **aprovar** com `estado: programado`: ponha `status: agendado` no registro. Com `estado: publicado`: `status: publicado`, `instagram_media_id` e `permalink`. Com `estado: erro`: conte o erro ao Otávio em 1 linha (o botão "Tentar de novo" fica no painel).
+
 Cada etapa tem um dono. **Os revisores são subagentes separados** (ferramenta Agent), que recebem só a peça e a rubrica, nunca o raciocínio de quem criou. Toda nota é registrada.
 
 ### A1 · Radar (pesquisador)
@@ -69,7 +74,7 @@ Dá nota de 0 a 10 para cada ideia, como média destes critérios:
 | Ângulo novo | Foge do que já foi publicado (veja `registro.json`) e do que todo perfil está falando? |
 | Risco | Política, tragédia ou exposição de alguém valem nota 0 e descartam a ideia. |
 
-Seguem para a próxima etapa as ideias com **nota ≥ 7,5**, até **3 peças de feed** e **2 roteiros de reel** por dia. Acima disso a qualidade cai e o plano grátis do Metricool estoura (20 posts por mês). Se nenhuma passar, faça a melhor e avise que foi um dia fraco.
+Seguem para a próxima etapa as ideias com **nota ≥ 7,5**, até **3 peças de feed** e **2 roteiros de reel** por dia. Acima disso a qualidade cai. Se nenhuma passar, faça a melhor e avise que foi um dia fraco.
 
 ### A3 · Escolha do formato
 | Formato | Quando usar |
@@ -135,7 +140,7 @@ Para passar, a **média precisa ser ≥ 8,5 e nenhum critério pode ficar abaixo
 - **Imagem nos vazios:** quando um slide de miolo tiver espaço vazio grande, coloque uma imagem que reforce a ideia do slide. O motor aceita o campo `photo` (data URI), com bordas arredondadas.
   - A capa não leva imagem, salvo se a ideia pedir.
   - Fontes da imagem, nesta ordem: fotos do Otávio em `assets/fotos/`, se houver; depois uma imagem gerada com a ferramenta de imagem do ElevenLabs (gasta créditos do Otávio: no máximo 2 imagens por peça), em estilo editorial, sem logos, marcas ou pessoas reais identificáveis.
-  - Se usar imagem gerada por IA com aparência realista, marque `isAiGenerated: true` no Metricool.
+  - Se usar imagem gerada por IA com aparência realista, diga isso na legenda.
 - **Sem repetir layout:** compare com as `assinatura` das 10 últimas peças no `registro.json`. A capa e a sequência de módulos não podem repetir. Varie a composição dentro da identidade:
   - fundo claro ou escuro;
   - grid;
@@ -178,8 +183,8 @@ Para passar, a **média precisa ser ≥ 8,5 e nenhum critério pode ficar abaixo
 Para passar, a **média precisa ser ≥ 8,5 e nenhum critério pode ficar abaixo de 7**. Se não passar, volte para a construção com os comentários, no máximo 2 vezes.
 
 ### A8 · Aprovação do Otávio
-1. Suba a mídia em `posts/AAAA-MM-DD-<tema>/` no repositório (01.png…, legenda.txt e notas.json com todas as notas) e faça o push. As URLs públicas são `https://raw.githubusercontent.com/otavio6/otahstudio-midia/main/posts/<pasta>/<arquivo>`.
-2. Crie cada post no Metricool (brandId 8094677, America/Sao_Paulo) como **rascunho** (`draft: true`). Escolha o horário pela `getBestTimeToPostByNetwork` e por `aprendizados.md`, a pelo menos 4 h de outro post do dia.
+1. Suba a mídia em `posts/AAAA-MM-DD-<tema>/` no repositório (01.png…, legenda.txt e notas.json com todas as notas) e faça o push. As URLs públicas são `https://raw.githubusercontent.com/otavio6/otahstudio-midia/main/posts/<pasta>/<arquivo>`. O agendador posta exatamente esses arquivos: carrossel = `01.png` até o número de `slides`; estático = `01.png`; reel = o arquivo do campo `video` (e `capa`, se houver). A legenda é o `legenda.txt`.
+2. Registre a peça (A9) com `status: rascunho`, `versao: 1`, `data` e `horario`. Escolha o horário pela `getBestTimeToPostByNetwork` do Metricool e por `aprendizados.md`, a pelo menos 4 h de outro post do dia. **Não crie post no Metricool**: o Metricool fica só para os dados. A peça já aparece amarela no painel, com os botões Aprovar e Refazer.
 3. Mande **uma mensagem só** com todas as peças do dia, numeradas. Cada peça leva:
    - a prévia (imagem com os slides lado a lado, via SendUserFile);
    - o tema e a fonte;
@@ -187,13 +192,19 @@ Para passar, a **média precisa ser ≥ 8,5 e nenhum critério pode ficar abaixo
    - a legenda;
    - o horário proposto.
 4. Os roteiros de reel vão na mesma mensagem, prontos para gravar.
-5. Termine com: **"Responda 'ok' para agendar tudo, 'ok 1,3' para algumas, ou diga o que mudar."**
+5. Termine com: **"Aprove no painel (botão Aprovar) ou responda 'ok' para tudo, 'ok 1,3' para algumas, ou diga o que mudar."**
 
-Depois da resposta:
-- **ok:** atualize o rascunho com `draft: false` (`updateScheduledPost`, mesmo id e uuid, conteúdo completo). Se o horário já passou, mova para o próximo bom horário.
-- **Ajuste:** refaça, suba de novo, atualize o rascunho e mande uma nova prévia.
-- **Sem resposta:** nada vai ao ar.
-- **Plano grátis:** com 16 ou mais posts no mês, ou se o Metricool recusar por limite, mande as peças para ele postar à mão.
+Depois da resposta no chat:
+- **ok:** para cada peça aprovada, chame `painel_aprovar` com o `id` (e `quando`, se ele pediu outro horário). O servidor posta sozinho no horário. Atualize o registro para `status: agendado`.
+- **Ajuste:** refaça, suba de novo, some 1 na `versao` e mande uma nova prévia.
+- **Sem resposta:** nada vai ao ar. A peça continua amarela no painel até ele decidir.
+- Para desfazer uma aprovação, use `painel_cancelar` (ele também pode cancelar pelo painel).
+
+### A8b · Reels (o Otávio grava, Claude edita)
+Quando o Otávio mandar o vídeo bruto no chat, ponha o reel como `status: gravado` (cinza no painel), edite com a skill `edicao-video-otaviohenriqve` e exporte MP4 H.264 vertical 1080×1920. Depois:
+1. suba `posts/<id>/video.mp4`, `capa.jpg` (opcional) e `legenda.txt`;
+2. no registro, ponha `status: rascunho`, `video: "video.mp4"`, `capa: "capa.jpg"` se houver, `trial: true` se for Trial Reel, `data` e `horario`;
+3. faça push e avise o Otávio: o reel aparece no painel com o player, e ele aprova ou pede para refazer por lá.
 
 ### A9 · Registro
 Para cada peça, acrescente ao `data/registro.json`:
@@ -210,7 +221,7 @@ Faça commit e push.
 
 ## PARTE B · Esteira de análise (todo dia, à noite)
 
-1. **Conferir postagem.** Para cada item do `registro.json` com status "agendado" e horário já passado, confirme que saiu. Compare com o feed nos dados do Metricool (data e legenda) e preencha `status: publicado`, `instagram_media_id` e `permalink` quando aparecerem. Se algo agendado não saiu, avise o Otávio em 1 linha.
+1. **Conferir postagem.** Chame `painel_decisoes` e `list_recent_media` (conector Instagram OTAHSTUDIO). Para cada peça com aprovação publicada, ponha no registro `status: publicado`, `instagram_media_id` e `permalink`. Aprovação programada vira `status: agendado`. Se uma postagem deu erro, ou se passou do horário e não saiu, avise o Otávio em 1 linha.
 2. **Foto do dia.** Puxe no Metricool (`getAnalyticsDataByMetrics`) os dados de todos os posts e reels dos últimos 30 dias:
    - posts: IGPO02 data, IGPO03 legenda, IGPO28 views, IGPO14 alcance, IGPO29 seguidores;
    - reels: IGRE02, IGRE03, IGRE23 views, IGRE11 alcance, IGRE21 compartilhamentos, IGRE12 salvamentos, IGRE24 tempo médio assistido, IGRE30 taxa de pulo;
@@ -240,9 +251,8 @@ O Otávio conectou um servidor MCP próprio, que aparece como as ferramentas `In
   - `list_comments`: comentários de cada post.
 
   A esteira de análise (Parte B) usa essas ferramentas como fonte principal, com o Metricool como reserva. `list_comments` também serve para achar leads: quem comentou palavra-chave ou pediu diagnóstico. Liste essas pessoas para o Otávio responder.
-- **Publicação:** `publish_carousel`, `publish_image`, `publish_reel` (com `trial: true` para Trial Reel) e `publish_story`. **Só com o "ok" do Otávio.** As URLs são as do GitHub (raw.githubusercontent.com).
-  - Enquanto o plano do Metricool tiver folga (menos de 16 posts no mês), **agende pelo Metricool**: rascunho e, depois do ok, `draft: false`.
-  - Se o Metricool estiver cheio e o Otávio aprovar, publique pelo conector **na hora da aprovação**, se for entre 9h e 21h. Fora desse horário, crie uma tarefa única (`create_trigger` com `run_once_at`) para o próximo bom horário, com o post exato a publicar.
+- **Painel e agendador:** `painel_decisoes` (o que ele aprovou, o que foi postado e o que pediu para refazer), `painel_aprovar` (só depois do "ok" dele no chat) e `painel_cancelar`. O agendamento é sempre por aqui, nunca pelo Metricool.
+- **Publicação direta** (`publish_carousel`, `publish_image`, `publish_reel`, `publish_story`): a esteira **não usa**. Só em pedido explícito do Otávio no chat para postar algo na hora, como um story.
 - **Responder comentários** (`reply_comment`): só com o texto aprovado pelo Otávio.
 - **Segurança:** nunca repita tokens ou links com `access_token` em mensagens, arquivos ou commits.
 
@@ -250,7 +260,7 @@ O Otávio conectou um servidor MCP próprio, que aparece como as ferramentas `In
 
 ## Limites técnicos
 
-- **Plano grátis do Metricool:** 20 posts por mês somando reels. Acima disso, publique pelo conector Instagram OTAHSTUDIO, que não tem esse limite.
+- **Metricool:** só para dados (análise e melhor horário). O plano grátis não limita mais a quantidade de posts, porque quem posta é o agendador do servidor. A cota da Meta é de 100 posts por 24 h.
 - **Daqui não dá para enviar arquivo direto para outro servidor.** A mídia sempre passa pelo GitHub, neste repositório público.
 - **Repositório:** clone com `--depth 1` e faça push com `git -c push.negotiate=true push`.
 - **Erros:** se algo der errado no push ou no Metricool, não fique tentando em loop. Entregue os arquivos e diga o erro em 1 linha.
