@@ -2,6 +2,30 @@
 
 Vale para todo vídeo que a esteira edita. O editor sabe fazer tudo, mas cada vídeo usa só o que o eixo pede. Nada é jogado: cada elemento tem um motivo, um lugar na grade e uma cor escolhida pelo fundo.
 
+## 0. A esteira do vídeo (um especialista por etapa)
+
+Cada etapa é um agente separado (subagente), com uma função só. Ele recebe o arquivo da etapa anterior, faz o trabalho dele, confere a própria checklist e entrega um arquivo para a próxima. Tudo fica em `posts/<id>/edicao/`. O **diretor de edição** coordena, e o **revisor** no final não participa da edição.
+
+| # | Agente | O que faz | Entrega |
+|---|---|---|---|
+| 1 | **Analista** | Transcreve com o tempo de cada palavra (Whisper no VPS). Marca frases, palavras-chave, respiros, vícios ("né", "tipo"), gaguejos e repetições. Encontra os takes do gancho. Mapeia quadro a quadro rosto, mãos e corpo (mapa de ocupação). Mede volume e ruído. | `01_analise.json` |
+| 2 | **Diretor de edição** | Lê a análise e define o eixo (a ideia e a sensação), o sistema visual (grade, tipografia, cor, movimento, som) e o plano batida a batida: o que acontece em cada frase e por quê. Escolhe as técnicas, só as que servem. | `02_plano.md` |
+| 3 | **Colorista: diagnóstico** | Mede o bruto: balanço de branco, exposição, contraste, saturação, tom de pele, diferença entre takes. | `03_cor_diagnostico.json` + quadros com histograma |
+| 4 | **Colorista: grading** | Corrige primeiro (branco, exposição, igualar takes) e depois aplica o look da marca (Otávio: preto e branco com pele quente). Confere a pele e a consistência entre takes. | `04_grade.json` + antes e depois |
+| 5 | **Montador (cortes e respiros)** | Corta silêncio, vício, gaguejo e repetição. Escolhe o melhor take do gancho. Deixa o respiro certo: curto na explicação, mais longo antes de uma frase forte. Define zoom de ênfase e troca de enquadramento. | `05_cortes.json` (lista de cortes) |
+| 6 | **Designer de quadros-chave** | Desenha os momentos principais parados, na grade e nas áreas livres do mapa de ocupação, com a cor escolhida pelo contraste do fundo. Avalia com a régua de design. | `06_quadros/*.png` |
+| 7 | **Motion** | Anima os quadros-chave com a curva única do vídeo, no tempo das palavras: texto, elementos, recorte, rastreio, tela dividida, transições. | camadas + prévia |
+| 8 | **Legendista** | Legenda palavra por palavra, sincronizada, com destaque nas palavras-chave, cor pelo fundo e posição abaixo do queixo, dentro da zona segura. | `08_legenda.json` |
+| 9 | **Sound designer** | Limpa a voz (ruído, chiado), nivela em -14 LUFS, coloca efeitos nas entradas que importam e música abaixando sozinha quando a voz entra. | `09_mix.wav` |
+| 10 | **Finalizador** | Junta tudo e exporta (H.264, SDR bt709, 1080×1920, 30 fps). Gera a capa. Confere arquivo, duração, volume e legibilidade no celular. | `final.mp4` + `capa.jpg` |
+| 11 | **Revisor** (independente) | Compara lado a lado com a referência e dá nota por critério (seção 6). Abaixo de 8 em qualquer critério, devolve para a etapa responsável com o motivo. | `11_revisao.json` |
+
+Regras da esteira:
+- Uma etapa não começa sem o arquivo da anterior. Se faltar dado (transcrição, por exemplo), ela para e avisa. Ela não inventa.
+- Cada agente só mexe no que é dele. O montador não muda cor, o colorista não corta.
+- O revisor devolve para a etapa certa, não para o começo.
+- Tudo o que o Otávio corrigir vira regra na etapa responsável.
+
 ## 1. Antes de editar (pré-produção)
 
 1. **Decupagem:** transcreva a fala com o tempo de cada palavra, marque as frases, as palavras-chave e os respiros.
