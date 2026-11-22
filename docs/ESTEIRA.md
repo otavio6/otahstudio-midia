@@ -134,7 +134,7 @@ Dá nota de 0 a 10 em cada critério:
 - sem cara de IA: passe a seção 7 do `docs/COPY.md` em todo texto (arte, legenda, roteiro). Um item encontrado já reprova, mesmo com média alta;
 - público e ângulo: o gancho pega um pensamento real do público e o ângulo está claro (checklist da seção 9 do `docs/COPY.md`).
 
-Para passar, a **média precisa ser ≥ 8,5 e nenhum critério pode ficar abaixo de 7**. Se não passar, o copywriter reescreve com os comentários do revisor, no máximo 2 vezes. Se ainda assim não passar, descarte a ideia ou faça a melhor versão e registre a nota.
+Para passar, a **média precisa ser ≥ 8,5 e nenhum critério pode ficar abaixo de 8**. Nota mínima aceitável é 8 e a meta é 10 (regra do Otávio, 22/11/2026). O revisor é honesto: não arredonda para cima. Se não passar, o copywriter reescreve com os comentários do revisor, no máximo 2 vezes. Se ainda assim não passar, descarte a ideia ou faça a melhor versão e registre a nota.
 
 ### A6 · Construção
 **Carrossel e estático (designer):**
@@ -195,8 +195,11 @@ Para passar, a **média precisa ser ≥ 8,5 e nenhum critério pode ficar abaixo
 - pele e lábios;
 - legenda: sincronia, posição, zona segura, fonte;
 - cortes e ritmo;
-- áudio: nível e ruído;
+- áudio: nível (-14 LUFS), ruído, efeitos sonoros e música na medida;
 - gancho na tela no primeiro segundo;
+- retenção: algo novo na tela a cada 1,5 a 2 s, sempre ligado ao que está sendo dito;
+- camadas e motion: texto, elementos, recorte e profundidade com acabamento profissional;
+- critério: as técnicas escolhidas fazem sentido para a mensagem e para a marca (saber fazer tudo, usar só o que serve);
 - cartela final.
 
 Para passar, a **média precisa ser ≥ 8,5 e nenhum critério pode ficar abaixo de 7**. Se não passar, volte para a construção com os comentários, no máximo 2 vezes.

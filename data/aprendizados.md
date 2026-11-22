@@ -69,3 +69,6 @@ Legenda na voz dele, em primeira pessoa, falando com uma pessoa só, coloquial c
 
 ## Regra do Otávio (21/11/2026): sem cara de IA
 Nada de antítese ("não é X, é Y"), pares espelhados de efeito ou fórmulas de IA, em nenhum texto. Copy parte do pensamento do público e de um ângulo claro (emocional, racional, bolso…). Guia completo em docs/COPY.md.
+
+## Regra do Otávio (22/11/2026): régua de qualidade
+Nota mínima aceitável 8 em todo critério, meta 10. Vale para arte e vídeo. O editor de vídeo precisa dominar todas as técnicas (cor, cortes, respiros, grid, tracking, recorte, VFX 2D, motion, legenda animada, zoom, tela dividida, sound design) e usar em cada vídeo só o que serve à mensagem e à marca.
