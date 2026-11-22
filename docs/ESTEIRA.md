@@ -230,6 +230,7 @@ Faça 1 item de story por dia com 2 a 4 telas, em PNG 1080×1920 (`01.png`, `02.
 - **Revisão:** o revisor de qualidade (A7) olha as telas com a mesma régua das artes, mais um critério: a leitura dura até 3 segundos por tela.
 
 ### A8b · Reels (o Otávio grava, Claude edita)
+Antes de editar, leia `docs/EDICAO.md` (o método do editor sênior: eixo, mapa de ocupação, quadros-chave, contraste pela cor do fundo e revisão lado a lado com a referência).
 Quando o Otávio mandar o vídeo bruto no chat, ponha o reel como `status: gravado` (cinza no painel), edite com a skill `edicao-video-otaviohenriqve` e exporte MP4 H.264 vertical 1080×1920. Depois:
 1. suba `posts/<id>/video.mp4`, `capa.jpg` (opcional) e `legenda.txt`;
 2. no registro, ponha `status: rascunho`, `video: "video.mp4"`, `capa: "capa.jpg"` se houver, `trial: true` se for Trial Reel, `data` e `horario`;
