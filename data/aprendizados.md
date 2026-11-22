@@ -72,3 +72,7 @@ Nada de antítese ("não é X, é Y"), pares espelhados de efeito ou fórmulas d
 
 ## Regra do Otávio (22/11/2026): régua de qualidade
 Nota mínima aceitável 8 em todo critério, meta 10. Vale para arte e vídeo. O editor de vídeo precisa dominar todas as técnicas (cor, cortes, respiros, grid, tracking, recorte, VFX 2D, motion, legenda animada, zoom, tela dividida, sound design) e usar em cada vídeo só o que serve à mensagem e à marca.
+
+## Vídeo (edição × métricas)
+- Ainda sem reels editados pela esteira nova. Primeira variável a testar: **gancho visual** (texto atrás da cabeça × zoom com palavra-chave × corte seco com pergunta na tela), via Trial Reels.
+- Base de comparação: o reel de 14/11 teve 198 de alcance, 13,4 s de tempo médio assistido e 57,5% de taxa de pulo.

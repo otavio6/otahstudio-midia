@@ -107,6 +107,37 @@ Regras da esteira:
 3. **Nos portões das etapas, o mínimo é 8. Na revisão final, o mínimo é 9 e a meta é 10.** Abaixo disso, volte e corrija antes de mostrar.
 4. Confira quadro a quadro os momentos de entrada e saída: nada cobrindo rosto, nada cortado, nada ilegível.
 
-## 7. Referências
+## 7. Aprender com as métricas (a edição evolui)
+
+Cada reel é um experimento. A esteira guarda **como** ele foi editado e, depois, **como** ele performou. Com o tempo, ela descobre o formato que mais segura e espalha, e o mapeamento de edição (etapa 4) passa a partir dele.
+
+**Ficha de edição.** Toda edição grava no `registro.json`, dentro da peça, o campo `edicao`:
+```json
+"edicao": {
+  "gancho": {"tipo": "pergunta | número | afirmação contraintuitiva | cena | provocação", "texto_tela": "...", "primeira_frase": "...", "visual": "zoom | texto atrás | recorte | corte seco | b-roll", "duracao_s": 1.8},
+  "duracao_s": 38, "cortes_por_min": 24, "novidades_por_10s": 5,
+  "tecnicas": ["texto atrás", "recorte", "rastreio", "tela dividida"],
+  "legenda": "palavra a palavra, destaque lime",
+  "cor": "natural cinematográfico", "som": {"efeitos": true, "musica": false},
+  "cta": "comentário palavra-chave | seguir | salvar | enviar", "trial_reel": false,
+  "variavel_testada": "gancho visual"
+}
+```
+
+**Métricas que importam para a edição** (Parte B, todo dia, nos 30 dias de vida do reel):
+- **Gancho:** taxa de pulo (quem passou direto nos primeiros segundos) e views. É a métrica do gancho.
+- **Meio:** tempo médio assistido e porcentagem do vídeo assistida (tempo médio ÷ duração).
+- **Fim:** replays, comentários e cliques no perfil.
+- **Espalhar:** compartilhamentos, salvamentos, alcance de quem não segue e seguidores ganhos.
+
+**Como testar sem se enganar:**
+- **Mude uma coisa por vez.** Cada reel declara a `variavel_testada` (gancho visual, primeira frase, ritmo de corte, música, duração, CTA). O resto segue o melhor formato até ali.
+- **Trial Reels para testar gancho:** o mesmo conteúdo com dois ganchos diferentes, mostrado só para quem não segue. É o teste mais limpo que existe.
+- **Nada de conclusão com 1 vídeo.** Um padrão só vira regra com pelo menos 3 reels a favor e a diferença aparecendo nas métricas certas (por exemplo, gancho → taxa de pulo).
+- **80/20:** 80% dos reels seguem o formato vencedor e 20% testam algo novo, para não estacionar.
+
+**Onde o aprendizado fica:** na seção "Vídeo" de `data/aprendizados.md`, com o que funciona, o que não funciona, o teste em andamento e o placar de cada variável. A etapa 4 (mapeamento) lê essa seção antes de propor as opções, e a nota de potencial de retenção leva em conta o histórico.
+
+## 8. Referências
 
 - **@fillrocha (anúncio "Possibilidades infinitas", nov/2026):** edição totalmente estilizada, com um sistema visual coerente. A decupagem do sistema dele (grade, tipografia, movimento, cor, som) entra aqui quando for feita.

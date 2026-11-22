@@ -264,10 +264,11 @@ Faça commit e push.
    - o que funciona e o que não funciona, como regras curtas baseadas em dados ("gancho com número: alcance 2,1× a média em 6 posts");
    - o que testar a seguir: até 3 hipóteses.
 4. Faça as contas rodando código, nunca de cabeça. Nada de número inventado: se faltar dado, diga que falta.
-5. **Voz do público.** Copie para `data/voz-do-publico.md` as frases reais de comentários e directs do dia, sem nome nem @, organizadas por tema (veja `docs/COPY.md`, seção 10).
-6. **Leads e comentários.** Chame `painel_leads` e `painel_comentarios`. Atualize as sugestões de `data/respostas.json` (mesmas regras do A0). Conte quantos leads estão com status `novo` e quantos comentários estão sem resposta há mais de 12 h.
-7. Faça commit e push.
-8. **Mensagem para o Otávio:** só se houver algo relevante: post que estourou, falha de publicação, queda forte, **lead novo** (cite o @ e o que a pessoa disse, em 1 linha cada) ou comentário esperando há mais de 12 h. Às **sextas**, mande sempre o placar da semana: seguidores, quanto falta, campeão, pior e até 3 ajustes.
+5. **Edição dos reels.** Para cada reel com ficha `edicao` no registro, cruze a ficha com as métricas: taxa de pulo (gancho), tempo médio assistido e porcentagem assistida (meio), replays e comentários (fim), compartilhamentos, salvamentos e seguidores (espalhar). Atualize a seção "Vídeo" de `data/aprendizados.md`: o que funciona, o que não funciona, o teste em andamento e o placar de cada variável. Regra só com 3 ou mais reels a favor (veja `docs/EDICAO.md`, seção 7).
+6. **Voz do público.** Copie para `data/voz-do-publico.md` as frases reais de comentários e directs do dia, sem nome nem @, organizadas por tema (veja `docs/COPY.md`, seção 10).
+7. **Leads e comentários.** Chame `painel_leads` e `painel_comentarios`. Atualize as sugestões de `data/respostas.json` (mesmas regras do A0). Conte quantos leads estão com status `novo` e quantos comentários estão sem resposta há mais de 12 h.
+8. Faça commit e push.
+9. **Mensagem para o Otávio:** só se houver algo relevante: post que estourou, falha de publicação, queda forte, **lead novo** (cite o @ e o que a pessoa disse, em 1 linha cada) ou comentário esperando há mais de 12 h. Às **sextas**, mande sempre o placar da semana: seguidores, quanto falta, campeão, pior e até 3 ajustes.
 
 ---
 
