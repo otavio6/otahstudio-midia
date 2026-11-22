@@ -2,26 +2,63 @@
 
 Vale para todo vídeo que a esteira edita. O editor sabe fazer tudo, mas cada vídeo usa só o que o eixo pede. Nada é jogado: cada elemento tem um motivo, um lugar na grade e uma cor escolhida pelo fundo.
 
-## 0. A esteira do vídeo (um especialista por etapa)
+## 0. A esteira do vídeo (método)
 
-Cada etapa é um agente separado (subagente), com uma função só. Ele recebe o arquivo da etapa anterior, faz o trabalho dele, confere a própria checklist e entrega um arquivo para a próxima. Tudo fica em `posts/<id>/edicao/`. O **diretor de edição** coordena, e o **revisor** no final não participa da edição.
+Nada de "vou ver e editar". O vídeo passa por etapas na ordem abaixo, e **depois de cada etapa tem uma revisão com nota de 0 a 10**. A etapa só passa para a próxima com nota 8 ou mais. Abaixo disso, ela é refeita com o comentário do revisor. Cada etapa é um agente separado. O revisor de cada portão é outro agente, que não fez o trabalho. Tudo fica em `posts/<id>/edicao/`, com as notas em `revisoes.json`.
 
-| # | Agente | O que faz | Entrega |
-|---|---|---|---|
-| 1 | **Analista** | Transcreve com o tempo de cada palavra (Whisper no VPS). Marca frases, palavras-chave, respiros, vícios ("né", "tipo"), gaguejos e repetições. Encontra os takes do gancho. Mapeia quadro a quadro rosto, mãos e corpo (mapa de ocupação). Mede volume e ruído. | `01_analise.json` |
-| 2 | **Diretor de edição** | Lê a análise e define o eixo (a ideia e a sensação), o sistema visual (grade, tipografia, cor, movimento, som) e o plano batida a batida: o que acontece em cada frase e por quê. Escolhe as técnicas, só as que servem. | `02_plano.md` |
-| 3 | **Colorista: diagnóstico** | Mede o bruto: balanço de branco, exposição, contraste, saturação, tom de pele, diferença entre takes. | `03_cor_diagnostico.json` + quadros com histograma |
-| 4 | **Colorista: grading** | Corrige primeiro (branco, exposição, igualar takes) e depois aplica o look da marca (Otávio: preto e branco com pele quente). Confere a pele e a consistência entre takes. | `04_grade.json` + antes e depois |
-| 5 | **Montador (cortes e respiros)** | Corta silêncio, vício, gaguejo e repetição. Escolhe o melhor take do gancho. Deixa o respiro certo: curto na explicação, mais longo antes de uma frase forte. Define zoom de ênfase e troca de enquadramento. | `05_cortes.json` (lista de cortes) |
-| 6 | **Designer de quadros-chave** | Desenha os momentos principais parados, na grade e nas áreas livres do mapa de ocupação, com a cor escolhida pelo contraste do fundo. Avalia com a régua de design. | `06_quadros/*.png` |
-| 7 | **Motion** | Anima os quadros-chave com a curva única do vídeo, no tempo das palavras: texto, elementos, recorte, rastreio, tela dividida, transições. | camadas + prévia |
-| 8 | **Legendista** | Legenda palavra por palavra, sincronizada, com destaque nas palavras-chave, cor pelo fundo e posição abaixo do queixo, dentro da zona segura. | `08_legenda.json` |
-| 9 | **Sound designer** | Limpa a voz (ruído, chiado), nivela em -14 LUFS, coloca efeitos nas entradas que importam e música abaixando sozinha quando a voz entra. | `09_mix.wav` |
-| 10 | **Finalizador** | Junta tudo e exporta (H.264, SDR bt709, 1080×1920, 30 fps). Gera a capa. Confere arquivo, duração, volume e legibilidade no celular. | `final.mp4` + `capa.jpg` |
-| 11 | **Revisor** (independente) | Compara lado a lado com a referência e dá nota por critério (seção 6). Abaixo de 8 em qualquer critério, devolve para a etapa responsável com o motivo. | `11_revisao.json` |
+### Etapa 1 · Assistir e entender (Analista)
+- Assiste o vídeo inteiro, quadro a quadro: movimentação, gestos, enquadramento, luz, cenário.
+- Transcreve com o tempo de cada palavra (Whisper no VPS) e entende o assunto, a ideia central e onde estão as frases fortes.
+- Marca respiros, vícios ("né", "tipo"), gaguejos, repetições e takes repetidos do gancho.
+- Faz o mapa de ocupação (rosto, mãos e corpo em cada quadro) e mede volume e ruído.
+- Entrega `01_analise.json`.
+- **Revisão 1:** a transcrição bate com o áudio? Nenhuma palavra errada? O assunto e as frases fortes foram entendidos? O mapa de ocupação acompanha os gestos?
+
+### Etapa 2 · Cor (Colorista)
+- Diagnóstico: como o bruto está (branco, exposição, contraste, saturação, pele) e como vai ficar.
+- Grading **natural e levemente cinematográfico**: mexer no básico, sem pesar.
+  - Pretos mais pretos (ponto preto firme), contraste leve.
+  - Saturação geral baixa: o resto da imagem fica mais esbranquiçado e neutro.
+  - Pele com cor natural e o rosa da boca preservado.
+  - Igualar os takes entre si.
+- Entrega `02_cor.json` + quadros antes e depois.
+- **Revisão 2:** está gostoso de assistir? Não está forte nem pesado? A pele está natural e a boca rosada? O preto está firme sem esmagar detalhe? Os takes estão iguais?
+
+### Etapa 3 · Corte (Montador)
+- Corta junto vídeo e respiros do áudio: silêncios, vícios, gaguejos, repetições. Escolhe o melhor take do gancho.
+- Respiro certo: curto na explicação, um pouco mais longo antes de frase forte.
+- O começo pega no primeiro segundo.
+- Entrega `03_cortes.json` + prévia cortada.
+- **Revisão 3:** todas as palavras estão certas e inteiras? Nenhuma sílaba cortada, nenhum pulo estranho na imagem? A frase continua fazendo sentido? O começo prende?
+
+### Etapa 4 · Mapeamento de edição (Diretor de edição)
+- Passa trecho por trecho e pergunta o que cabe em cada um:
+  - dá para deixar **didático** (passo a passo, lista, número na tela)?
+  - dá para deixar **explicativo** (esquema, comparação, tela dividida)?
+  - dá para usar **imagem real** (print, foto, vídeo de apoio)?
+  - qual **variação** de linguagem funciona melhor (texto atrás, recorte, zoom, rastreio, motion)?
+- Para cada trecho, propõe de 2 a 3 opções e dá nota de **potencial de retenção** (prender e fazer assistir até o fim) a cada uma.
+- Escolhe o caminho com a maior nota e escreve o plano: eixo, sistema visual (grade, tipografia, cor pelo fundo, um tipo de movimento) e o que acontece em cada frase.
+- Entrega `04_mapa.md`.
+- **Revisão 4:** o caminho escolhido é o de maior potencial? Tudo serve ao eixo? Tem algo novo a cada 1,5 a 2 s? Está coerente, sem efeito jogado?
+
+### Etapa 5 · Edição (Designer + Motion + Legendista)
+- Primeiro os quadros-chave parados, na grade e nas áreas livres, com a cor escolhida pelo fundo. Depois a animação, com uma curva só e no tempo das palavras. Por último a legenda palavra a palavra, embaixo do queixo, com as palavras-chave destacadas.
+- Entrega a prévia editada + `05_edicao.json`.
+- **Revisão 5:** nada cobre o rosto, nada cortado na borda, nada ilegível? O contraste está certo? O ritmo está bom? A legenda está sincronizada e sem erro? Lado a lado com a referência, o nível é comparável?
+
+### Etapa 6 · Som (Sound designer)
+- Assiste o vídeo editado e decide onde cabe efeito sonoro: só nas entradas que importam.
+- Limpa a voz, nivela em -14 LUFS e coloca música (se houver) abaixando sozinha quando a voz entra.
+- Entrega `06_mix.wav`.
+- **Revisão 6:** o som ajuda ou distrai? A voz está sempre na frente? O volume está certo no celular?
+
+### Etapa 7 · Finalização e revisão final (Finalizador + Revisor)
+- Exporta (H.264, SDR bt709, 1080×1920, 30 fps), gera a capa e confere no tamanho do celular.
+- **Revisão final:** assiste do começo ao fim e dá a nota geral. **Só passa com 9 ou 10**, junto com a frase: "este vídeo está pronto para cumprir o propósito dele". Só então ele vai para o Otávio aprovar. Abaixo de 9, volta para a etapa que puxou a nota para baixo.
 
 Regras da esteira:
-- Uma etapa não começa sem o arquivo da anterior. Se faltar dado (transcrição, por exemplo), ela para e avisa. Ela não inventa.
+- Uma etapa não começa sem o arquivo e a nota aprovada da anterior. Se faltar dado (transcrição, por exemplo), ela para e avisa. Ela não inventa.
 - Cada agente só mexe no que é dele. O montador não muda cor, o colorista não corta.
 - O revisor devolve para a etapa certa, não para o começo.
 - Tudo o que o Otávio corrigir vira regra na etapa responsável.
@@ -67,7 +104,7 @@ Regras da esteira:
 
 1. Compare lado a lado com a referência da vez, no mesmo tempo.
 2. Dê nota de 0 a 10 por critério: eixo e coerência, grade e posição, contraste e cor, tipografia, ritmo, legenda, som, acabamento, fidelidade à marca.
-3. **O mínimo é 8 em todo critério, e a meta é 10.** Abaixo de 8, volte e corrija antes de mostrar.
+3. **Nos portões das etapas, o mínimo é 8. Na revisão final, o mínimo é 9 e a meta é 10.** Abaixo disso, volte e corrija antes de mostrar.
 4. Confira quadro a quadro os momentos de entrada e saída: nada cobrindo rosto, nada cortado, nada ilegível.
 
 ## 7. Referências
