@@ -136,6 +136,12 @@ Cada reel é um experimento. A esteira guarda **como** ele foi editado e, depois
 - **Nada de conclusão com 1 vídeo.** Um padrão só vira regra com pelo menos 3 reels a favor e a diferença aparecendo nas métricas certas (por exemplo, gancho → taxa de pulo).
 - **80/20:** 80% dos reels seguem o formato vencedor e 20% testam algo novo, para não estacionar.
 
+**Ordem dos testes (regra do Otávio, 22/11/2026): gancho → miolo → CTA.**
+1. **Fase 1 · Gancho.** Só o gancho varia: tipo, texto na tela, primeira frase, recurso visual, duração. Miolo e CTA seguem um padrão fixo. Métrica que decide: taxa de pulo (e views). O gancho é dado como acertado quando o vencedor se repete em pelo menos 3 reels e a taxa de pulo cai de forma consistente em relação à base (57,5% em 14/11).
+2. **Fase 2 · Miolo.** Com o gancho vencedor travado, testa ritmo de corte, novidades a cada 10 s, técnicas, didático × explicativo, duração. Métricas: tempo médio assistido e porcentagem assistida.
+3. **Fase 3 · CTA.** Com gancho e miolo travados, testa a chamada final (comentário com palavra-chave, seguir, salvar, enviar) e onde ela entra. Métricas: comentários, seguidores ganhos, compartilhamentos e salvamentos.
+A fase atual fica escrita no topo da seção "Vídeo" de `data/aprendizados.md`. Só muda de fase quando a anterior estiver acertada.
+
 **Onde o aprendizado fica:** na seção "Vídeo" de `data/aprendizados.md`, com o que funciona, o que não funciona, o teste em andamento e o placar de cada variável. A etapa 4 (mapeamento) lê essa seção antes de propor as opções, e a nota de potencial de retenção leva em conta o histórico.
 
 ## 8. Referências
