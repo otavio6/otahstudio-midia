@@ -11,3 +11,4 @@ Frases reais de comentários e directs, sem nome nem @. A esteira de análise ac
 ## Instagram e conteúdo
 
 ## Concorrência
+- "Temos que fazer um cliente oculto nesses caras" (direct, 21/11)

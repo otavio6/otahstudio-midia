@@ -119,14 +119,15 @@
    "uuid": "-2442868179182599959",
    "horario": "2026-11-24T11:00:00"
   },
-  "status": "rascunho",
+  "status": "agendado",
   "instagram_media_id": null,
   "permalink": null,
   "horario": "11:00",
   "titulo": "Black Friday: desconto falso",
   "slides": 7,
   "pensamento": "\"Será que eu faço Black Friday na clínica?\"",
-  "nota_ajuste": "Slides 4, 5 e 7 e legenda ajustados em 21/11: sem antítese e sem \"siga @\" (docs/COPY.md)."
+  "nota_ajuste": "Slides 4, 5 e 7 e legenda ajustados em 21/11: sem antítese e sem \"siga @\" (docs/COPY.md).",
+  "agendado_para": "2026-11-24T11:00-03:00"
  },
  {
   "id": "2026-11-24-reel-concorrente",
@@ -244,14 +245,15 @@
    "uuid": "7965494769279254594",
    "horario": "2026-11-26T11:00:00"
   },
-  "status": "rascunho",
+  "status": "agendado",
   "instagram_media_id": null,
   "permalink": null,
   "horario": "11:00",
   "titulo": "O teste do \"achei caro\"",
   "slides": 1,
   "pensamento": "\"Se eu baixar o preço, a agenda enche?\"",
-  "nota_ajuste": "Texto refeito em 21/11 a pedido do Otávio: sem antítese, voz humana (docs/COPY.md)."
+  "nota_ajuste": "Texto refeito em 21/11 a pedido do Otávio: sem antítese, voz humana (docs/COPY.md).",
+  "agendado_para": "2026-11-26T11:00-03:00"
  },
  {
   "id": "2026-11-26-reel-paciente-nao-sabe",

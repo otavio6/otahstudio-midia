@@ -20,10 +20,18 @@
    "id": "analise-2026-11-21T23:18",
    "tarefa": "analise",
    "inicio": "2026-11-21T23:18:20-03:00",
-   "status": "rodando",
-   "fim": null,
-   "resumo": "",
-   "etapas": {}
+   "status": "ok",
+   "fim": "2026-11-21T23:20:03-03:00",
+   "resumo": "15 dias sem post e alcance zerado na semana (135 seguidores, +1 na semana); 2 peças aprovadas viraram agendado (24 e 26/11, 11h); 1 lead novo (drfelipevillaca), 0 comentários pendentes.",
+   "etapas": {
+    "posts_medidos": 4,
+    "seguidores": 135,
+    "publicados_conferidos": 0,
+    "agendados_conferidos": 2,
+    "leads_novos": 1,
+    "comentarios_12h": 0,
+    "sugestoes_resposta": 0
+   }
   }
  ]
 }
