@@ -174,10 +174,8 @@ def cor_pelo_fundo(img, caixa, marca="otavio", destaque=False, grande=True):
     L = luminancia(reg)
     claro, escuro = reg[np.argmin(np.abs(L - np.percentile(L, 90)))], reg[np.argmin(np.abs(L - np.percentile(L, 10)))]
     minimo = 3.0 if grande else 4.5
-    opcoes = []
-    if destaque:
-        opcoes += [m["destaque"], m["destaque_claro"]]
-    opcoes += [m["branco"], m["ink"]]
+    # Regra do Otávio: fundo claro pede preto; o destaque (lime) só entra no escuro, nunca uma terceira cor.
+    opcoes = ([m["destaque"]] if destaque else []) + [m["branco"], m["ink"]]
     melhor = None
     for c in opcoes:
         r = min(razao_contraste(rgb(c), claro), razao_contraste(rgb(c), escuro))
