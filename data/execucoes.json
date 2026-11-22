@@ -15,5 +15,15 @@
    "faz": "Mede o desempenho, confere o que saiu e atualiza os aprendizados"
   }
  ],
- "execucoes": []
+ "execucoes": [
+  {
+   "id": "analise-2026-11-21T23:18",
+   "tarefa": "analise",
+   "inicio": "2026-11-21T23:18:20-03:00",
+   "status": "rodando",
+   "fim": null,
+   "resumo": "",
+   "etapas": {}
+  }
+ ]
 }
