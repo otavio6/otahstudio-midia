@@ -4,7 +4,7 @@ Vale para todo vídeo que a esteira edita. O editor sabe fazer tudo, mas cada v�
 
 ## 0. A esteira do vídeo (método)
 
-Nada de "vou ver e editar". O vídeo passa por etapas na ordem abaixo, e **depois de cada etapa tem uma revisão com nota de 0 a 10**. A etapa só passa para a próxima com nota 8 ou mais. Abaixo disso, ela é refeita com o comentário do revisor. Cada etapa é um agente separado. O revisor de cada portão é outro agente, que não fez o trabalho. Tudo fica em `posts/<id>/edicao/`, com as notas em `revisoes.json`.
+Nada de "vou ver e editar". O vídeo passa por etapas na ordem abaixo, e **depois de cada etapa tem uma revisão com nota de 0 a 10**. A etapa só passa para a próxima com nota 8 ou mais. Abaixo disso, ela é refeita com o comentário do revisor. Cada etapa é um agente separado. **O revisor de cada portão é outro agente, aberto do zero, que não fez o trabalho e não viu ele sendo feito (veja `docs/REVISOR.md`). Nota dada por quem editou não vale.** Tudo fica em `posts/<id>/edicao/`, com as notas em `revisoes.json`.
 
 ### Etapa 1 · Assistir e entender (Analista)
 - Assiste o vídeo inteiro, quadro a quadro: movimentação, gestos, enquadramento, luz, cenário.
@@ -54,8 +54,8 @@ Nada de "vou ver e editar". O vídeo passa por etapas na ordem abaixo, e **depoi
 - **Revisão 6:** o som ajuda ou distrai? A voz está sempre na frente? O volume está certo no celular?
 
 ### Etapa 7 · Finalização e revisão final (Finalizador + Revisor)
-- Exporta (H.264, SDR bt709, 1080×1920, 30 fps), gera a capa e confere no tamanho do celular.
-- **Revisão final:** assiste do começo ao fim e dá a nota geral. **Só passa com 9 ou 10**, junto com a frase: "este vídeo está pronto para cumprir o propósito dele". Só então ele vai para o Otávio aprovar. Abaixo de 9, volta para a etapa que puxou a nota para baixo.
+- Exporta (H.264, SDR bt709, 1080×1920, **na mesma taxa de quadros do bruto**: gravou em 24, sai em 24), gera a capa e confere no tamanho do celular.
+- **Revisão final (agente revisor separado, `docs/REVISOR.md`):** assiste do começo ao fim e dá a nota geral. **Só passa com 9 ou 10**, junto com a frase: "este vídeo está pronto para cumprir o propósito dele". Só então ele vai para o Otávio aprovar. Abaixo de 9, volta para a etapa que puxou a nota para baixo.
 
 Regras da esteira:
 - Uma etapa não começa sem o arquivo e a nota aprovada da anterior. Se faltar dado (transcrição, por exemplo), ela para e avisa. Ela não inventa.
@@ -96,16 +96,28 @@ Regras da esteira:
 
 ## 5. Som
 
+- **Mexer o mínimo na voz.** Filtro leve de grave (abaixo de 70 Hz) e volume. Redutor de ruído só se o ruído atrapalhar de verdade, e leve. Voz com cara de processada reprova (Otávio, 23/11: "parece que mexeu muito no áudio").
+- O áudio fica sem perda (WAV/PCM) do bruto até o render final: é comprimido uma vez só, na exportação.
 - Voz em primeiro lugar, a -14 LUFS.
 - Efeito sonoro só em entrada que importa (troca de cena, palavra-chave, impacto) e baixo.
 - A música, quando houver, abaixa sozinha quando a voz entra.
 
 ## 6. Revisão (antes de chegar no Otávio)
 
+Quem faz a revisão é o agente revisor separado (`docs/REVISOR.md`), nunca quem editou.
+
 1. Compare lado a lado com a referência da vez, no mesmo tempo.
 2. Dê nota de 0 a 10 por critério: eixo e coerência, grade e posição, contraste e cor, tipografia, ritmo, legenda, som, acabamento, fidelidade à marca.
 3. **Nos portões das etapas, o mínimo é 8. Na revisão final, o mínimo é 9 e a meta é 10.** Abaixo disso, volte e corrija antes de mostrar.
 4. Confira quadro a quadro os momentos de entrada e saída: nada cobrindo rosto, nada cortado, nada ilegível.
+
+## 6b. Lições do reel da Black Friday (23/11/2026, reprovado pelo Otávio)
+
+- **Qualidade de imagem:** um único encode com perda, no final. Intermediários sem perda ou quase. Nunca converter 24 → 30 quadros (quadro repetido trepida). Conferir a taxa de bits do bruto ao chegar: se veio comprimido pelo envio, avisar antes de editar.
+- **Contorno neon em volta da pessoa:** não é padrão. Só se uma cena específica pedir, e no máximo uma vez.
+- **Textos centralizados** no eixo do vídeo por padrão. Alinhamento à esquerda só com motivo de composição.
+- **Repertório, não fórmula:** fundo preto + texto + volta ao normal, em loop, é repetição. Cada ideia da fala pede a forma mais clara de mostrar: tela cheia em motion (você some e entra gráfico, contador, comparação, ícones), tela dividida, você pequeno no canto, print da fonte, tipografia animada. Cada bloco do vídeo tem linguagem diferente, e nenhum recurso repete duas vezes seguidas.
+- **Storyboard antes do render:** o diretor manda uma folha com um quadro por cena e o porquê, para o Otávio corrigir antes da edição.
 
 ## 7. Aprender com as métricas (a edição evolui)
 
