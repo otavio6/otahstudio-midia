@@ -32,6 +32,15 @@
     "comentarios_12h": 0,
     "sugestoes_resposta": 0
    }
+  },
+  {
+   "id": "analise-2026-11-22T23:18",
+   "tarefa": "analise",
+   "inicio": "2026-11-22T23:18:35-03:00",
+   "status": "rodando",
+   "fim": null,
+   "resumo": "",
+   "etapas": {}
   }
  ]
 }
