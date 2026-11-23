@@ -101,7 +101,7 @@
   "instagram_media_id": null,
   "permalink": null,
   "fonte": "https://mercadoeconsumo.com.br/16/10/2026/ecommerce/black-friday-45-dos-produtos-nao-tiveram-desconto-real-em-2025-aponta-estudo/amp/",
-  "versao": 1,
+  "versao": 2,
   "video": "reel.mp4",
   "capa": "capa.jpg",
   "edicao": {
@@ -113,32 +113,41 @@
     "visual": "fundo da marca, contorno lima",
     "duracao_s": 3.2
    },
-   "duracao_s": 52.9,
+   "duracao_s": 55.1,
    "cortes": "respiros 0,20/0,38 s; vícios fora (na verdade ×3, e assim ×3, então assim)",
    "tecnicas": [
-    "fundo da marca nos números",
-    "contorno lima",
-    "números grandes",
-    "lista empilhada",
-    "zoom de ênfase ×5",
-    "legenda em faixa lima"
+    "gancho com selo sobre o rosto",
+    "estudo com contador e ele em moldura (encolhe)",
+    "gráfico de 100 quadrados em tela cheia",
+    "post simulado em tela dividida",
+    "balão do que o paciente pensa",
+    "loja × clínica com moldura centralizada",
+    "cartão final parte 2"
    ],
-   "legenda": "1-2 palavras, faixa lima com texto preto, base da zona segura",
-   "som": "efeitos gerados (whoosh, pop, impacto), sem música, -14,8 LUFS",
+   "legenda": "2 a 4 palavras por unidade de sentido, faixa lima com texto preto, some quando o grafismo mostra a mesma palavra",
+   "som": "voz quase sem tratamento, efeitos bem baixinhos (0,02), -14,2 LUFS",
    "cta": "me segue (próximos posts)",
    "takes_cortados": [
     "take 3 inteiro (\"o consumidor percebeu\")",
     "\"mais de metade das promoções\" (dado incorreto)"
    ],
    "notas": {
-    "assistir": 8.5,
-    "cor": 8.5,
-    "corte": 8.5,
-    "mapeamento": 8.5,
-    "edicao": 9.0,
-    "som": 8.0,
-    "final": 9.0
-   }
+    "revisor_independente_v4": {
+     "audio": 9,
+     "imagem": 8,
+     "corte": 8,
+     "explica": 8,
+     "variedade": 7,
+     "composicao": 7,
+     "identidade": 8,
+     "referencia": 6,
+     "proposito": 8,
+     "final": 6
+    },
+    "otavio": "aprovou a edição (\"de resto perfeito\"), pediu moldura centralizada e efeitos mais baixos: feito na v5"
+   },
+   "versao_edicao": 5,
+   "motor": "montagem por cenas (montar.py + motion HTML/SVG)"
   }
  },
  {
