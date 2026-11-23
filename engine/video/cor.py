@@ -70,7 +70,8 @@ def parametros(d):
     p = dict(PADRAO)
     p["wb_a"], p["wb_b"] = -d["dominante_a"], -d["dominante_b"]  # neutraliza a dominante
     p["preto"] = float(np.clip(d["preto_p1"] + 0.02, 0.02, 0.09))  # o p1 vira preto firme
-    p["branco"] = float(np.clip(d["branco_p99"] - 0.01, 0.82, 0.99))
+    # Não esticar demais o branco: com o branco em 0,82 a pele estourou no vermelho (reprovado pelo revisor em 23/11).
+    p["branco"] = float(np.clip(d["branco_p99"] + 0.06, 0.92, 0.99))
     return p
 
 
@@ -86,7 +87,25 @@ def aplicar(f, p, pele=None):
     sat = p["sat_resto"] * (1 - m[..., None]) + p["sat_pele"] * m[..., None]
     out = cinza + (x - cinza) * sat
     out[..., 0] += p["calor_pele"] * m; out[..., 2] -= p["calor_pele"] * m
-    return np.clip(out, 0, 1)
+    return joelho(out)
+
+
+def joelho(x, inicio=0.86):
+    """Altas luzes descem suave por canal em vez de bater no 1,0: a pele mantém textura (nada de vermelho chapado em 255)."""
+    acima = x > inicio
+    folga = 1.0 - inicio
+    y = x.copy()
+    y[acima] = inicio + folga * np.tanh((x[acima] - inicio) / folga)
+    return np.clip(y, 0, 1)
+
+
+def estouro_pele(f, m=None):
+    """Fração da pele com algum canal acima de 0,985 (o revisor reprova acima de ~1%)."""
+    m = mascara_pele(f) if m is None else m
+    sel = m > 0.5
+    if not sel.any():
+        return 0.0
+    return float((f[sel].max(-1) > 0.985).mean())
 
 
 def main():

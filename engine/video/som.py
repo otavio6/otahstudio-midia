@@ -42,7 +42,7 @@ SONS = {"whoosh": (whoosh, 0.9), "pop": (pop, 0.9), "click": (click, 0.8), "impa
 def main():
     ap = argparse.ArgumentParser()
     # efeitos mais baixos por padrão: a voz manda
-    ap.add_argument("pasta"); ap.add_argument("--musica"); ap.add_argument("--nivel_sfx", type=float, default=0.12)
+    ap.add_argument("pasta"); ap.add_argument("--musica"); ap.add_argument("--nivel_sfx", type=float, default=0.06)
     a = ap.parse_args()
     P = a.pasta
     ev = json.load(open(os.path.join(P, "eventos_som.json")))
@@ -56,6 +56,8 @@ def main():
         fn, g = SONS[e["som"]]
         sig = fn() * g * a.nivel_sfx
         s = max(0, int((e["t"] - (0.12 if e["som"] == "whoosh" else 0)) * SR)); f = min(L, s + len(sig))
+        if s >= L:  # depois do fim da fala (cartão final): fica para a montagem
+            continue
         sfx[s:f] += sig[:f - s]
         ultimo = e["t"]
     sp = os.path.join(P, "_sfx.wav")
@@ -70,10 +72,10 @@ def main():
     ganho = (-14.5 - float(li[-1])) if li else 0.0
     voz = f"[0:a]aresample=48000,highpass=f=70,volume={ganho:.2f}dB[v]"
     if a.musica:
-        fc = voz + ";[v]asplit[v1][v2];[2:a]aresample=48000,volume=0.16[m0];[m0][v1]sidechaincompress=threshold=0.03:ratio=4:attack=40:release=400[m];[1:a]aresample=48000[s];[v2][s][m]amix=inputs=3:duration=first:normalize=0,alimiter=limit=0.89:attack=5:release=50:level=false,aresample=48000[a]"
+        fc = voz + ";[v]asplit[v1][v2];[2:a]aresample=48000,volume=0.16[m0];[m0][v1]sidechaincompress=threshold=0.03:ratio=4:attack=40:release=400[m];[1:a]aresample=48000[s];[v2][s][m]amix=inputs=3:duration=first:normalize=0,alimiter=limit=0.84:attack=5:release=50:level=false,aresample=48000[a]"
         ins = ["-i", fonte_voz, "-i", sp, "-stream_loop", "-1", "-i", a.musica]
     else:
-        fc = voz + ";[1:a]aresample=48000[s];[v][s]amix=inputs=2:duration=first:normalize=0,alimiter=limit=0.89:attack=5:release=50:level=false,aresample=48000[a]"
+        fc = voz + ";[1:a]aresample=48000[s];[v][s]amix=inputs=2:duration=first:normalize=0,alimiter=limit=0.84:attack=5:release=50:level=false,aresample=48000[a]"
         ins = ["-i", fonte_voz, "-i", sp]
     out = os.path.join(P, "mix.wav")
     subprocess.run(["ffmpeg", "-v", "error", "-y", *ins, "-filter_complex", fc, "-map", "[a]", "-ac", "2", "-c:a", "pcm_s24le", "-t", f"{dur:.3f}", out], check=True)

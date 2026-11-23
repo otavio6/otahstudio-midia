@@ -6,7 +6,7 @@
 const MARCA = { ink: "#0B0B0C", lima: "#D4FF3A", papel: "#F2F2EF", cinza: "#8C8F94", cinzaEscuro: "#2A2B2E" };
 const W = 1080, H = 1920;
 const SEGURA = { topo: 250, base: 340, esq: 60, dir: 140 }; // zona segura do Reels
-const EIXO_X = (SEGURA.esq + (W - SEGURA.dir)) / 2;          // eixo de centralização dentro da zona segura
+const EIXO_X = W / 2; // eixo de centralização = meio do quadro (a zona segura só limita a largura)
 
 // ---------- tempo e movimento (uma curva para o vídeo inteiro) ----------
 const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));

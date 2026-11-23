@@ -5,8 +5,8 @@ Lê 01_analise.json. Gera 03_cortes.json (segmentos, palavras com o tempo novo e
 import argparse, json, os, subprocess
 from common import FPS, CRF_INTERMEDIARIO
 
-RESPIRO = 0.20        # pausa máxima mantida entre palavras da mesma ideia
-RESPIRO_FORTE = 0.38  # pausa mantida antes de frase nova (respiro de efeito)
+RESPIRO = 0.22        # pausa máxima mantida entre palavras da mesma ideia
+RESPIRO_FORTE = 0.48  # pausa mantida antes de frase nova (respiro de efeito)
 PAD_INI, PAD_FIM = 0.05, 0.09
 
 
@@ -92,7 +92,7 @@ def renderizar(src, segs, dst):
             entradas += ["-ss", f"{s['ini']:.4f}", "-i", wav]
             mapa = ["-map", "0:v", "-map", "1:a"]
         subprocess.run(["ffmpeg", "-v", "error", "-y", *entradas, *mapa, "-t", f"{d:.4f}",
-                        "-af", f"afade=t=in:d=0.008,afade=t=out:st={max(0, d - 0.008):.4f}:d=0.008",
+                        "-af", f"afade=t=in:d=0.015,afade=t=out:st={max(0, d - 0.015):.4f}:d=0.015",
                         "-frames:v", str(max(1, round(d * FPS))), "-c:v", "libx264", "-preset", "medium", "-crf", str(CRF_INTERMEDIARIO), "-pix_fmt", "yuv420p", "-r", str(FPS),
                         "-color_primaries", "bt709", "-color_trc", "bt709", "-colorspace", "bt709",
                         "-c:a", "pcm_s24le", "-ar", "48000", out], check=True)

@@ -77,7 +77,8 @@ def proxy_sdr(src, dst, ini=None, dur=None):
 
 def frames(path, w=W, h=H, step=1):
     """Lê quadros RGB float32 (0–1). step=3 lê um a cada 3."""
-    p = subprocess.Popen(["ffmpeg", "-v", "error", "-i", path, "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{w}x{h}", "-"], stdout=subprocess.PIPE)
+    p = subprocess.Popen(["ffmpeg", "-v", "error", "-i", path, "-vf", f"scale={w}:{h}:in_color_matrix=bt709:in_range=tv:flags=lanczos",
+                          "-f", "rawvideo", "-pix_fmt", "rgb24", "-"], stdout=subprocess.PIPE)
     i = 0
     try:
         while True:
@@ -91,9 +92,16 @@ def frames(path, w=W, h=H, step=1):
         p.stdout.close(); p.terminate()
 
 
+# Matriz de cor SEMPRE explícita (bt709) ao converter RGB <-> YUV. Sem isso o ffmpeg codifica em bt601 e marca bt709:
+# a cada ida e volta a pele ficava mais vermelha, até estourar (revisor, 23/11/2026).
+DEC_RGB = "scale=in_color_matrix=bt709:in_range=tv"
+ENC_YUV = "scale=out_color_matrix=bt709:out_range=tv"
+
+
 class Encoder:
     def __init__(self, path, w=W, h=H, fps=FPS, crf=CRF_INTERMEDIARIO):
         self.p = subprocess.Popen(["ffmpeg", "-v", "error", "-y", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{w}x{h}", "-r", str(fps), "-i", "-",
+                                   "-vf", "scale=out_color_matrix=bt709:out_range=tv",
                                    "-c:v", "libx264", "-preset", "medium", "-crf", str(crf), "-pix_fmt", "yuv420p",
                                    "-color_primaries", "bt709", "-color_trc", "bt709", "-colorspace", "bt709", path], stdin=subprocess.PIPE)
 

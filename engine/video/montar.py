@@ -13,7 +13,7 @@ import numpy as np
 import cv2
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from common import W, H, FPS, SAFE, MARCAS, modelo, texto
+from common import W, H, FPS, SAFE, MARCAS, modelo, texto, DEC_RGB, ENC_YUV
 import motion
 
 INK = np.array(MARCAS["otavio"]["ink"], np.float32) / 255
@@ -94,14 +94,14 @@ def mascara_txt(s, tam):
 
 def pinta_legenda(img, g, t, y, tam=84):
     m = mascara_txt(g["texto"], tam)
-    larg_max = (W - SAFE["left"] - SAFE["right"]) * 0.9
+    larg_max = 2 * min(W / 2 - SAFE["left"], W - SAFE["right"] - W / 2) * 0.95  # cabe na zona segura, centrada no quadro
     if m.shape[1] > larg_max:
         tam = int(tam * larg_max / m.shape[1]); m = mascara_txt(g["texto"], tam)
     pop = 0.88 + 0.12 * ease_out((t - g["ini"]) / 0.08)
     if pop != 1:
         m = cv2.resize(m, None, fx=pop, fy=pop, interpolation=cv2.INTER_LINEAR)
     h, w = m.shape
-    cx = (SAFE["left"] + W - SAFE["right"]) / 2
+    cx = W / 2  # eixo do quadro (não o meio da zona segura: isso jogava a legenda 40 px para a esquerda)
     px, py = int(0.34 * tam * pop), int(0.2 * tam * pop)
     x0, y0, x1, y1 = int(cx - w / 2 - px), int(y - h / 2 - py), int(cx + w / 2 + px), int(y + h / 2 + py)
     faixa = np.zeros((H, W), np.uint8)
@@ -184,35 +184,24 @@ def main():
                 motion.quadros(os.path.join(P, c["html"]), d, c["ate"] - c["de"], FPS, c.get("transparente", False))
                 open(marca, "w").write(assinatura)
 
-    def cena_em(t):
-        for c in plano["cenas"]:
-            if c["de"] <= t < c["ate"]:
-                return c
-        return {"modo": "pessoa"}
+    cenas = plano["cenas"]
 
-    dec = subprocess.Popen(["ffmpeg", "-v", "error", "-i", base, "-f", "rawvideo", "-pix_fmt", "rgb24", "-"], stdout=subprocess.PIPE)
-    enc = None
-    if not so:
-        enc = subprocess.Popen(["ffmpeg", "-v", "error", "-y", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{W}x{H}", "-r", str(FPS), "-i", "-",
-                                "-i", os.path.join(P, plano.get("audio", "mix.wav")), "-map", "0:v", "-map", "1:a",
-                                "-c:v", "libx264", "-preset", "slow", "-crf", "15", "-pix_fmt", "yuv420p", "-profile:v", "high",
-                                "-color_primaries", "bt709", "-color_trc", "bt709", "-colorspace", "bt709",
-                                "-c:a", "aac", "-b:a", "320k", "-shortest", "-movflags", "+faststart", os.path.join(P, a.saida)], stdin=subprocess.PIPE)
-    n = int(round(dur * FPS))
-    for i in range(n):
-        b = dec.stdout.read(W * H * 3)
-        if len(b) < W * H * 3:
-            break
-        if so and i not in so:
-            continue
-        t = i / FPS
-        f = np.frombuffer(b, np.uint8).reshape(H, W, 3).astype(np.float32) / 255
-        c = cena_em(t)
+    def cena_em(t):
+        for k, c in enumerate(cenas):
+            if c["de"] <= t < c["ate"]:
+                return k, c
+        return -1, {"modo": "pessoa"}
+
+    def png_da_cena(c, i):
+        if not c.get("_dir"):
+            return None
+        n = max(1, round((c["ate"] - c["de"]) * FPS))
+        return ler_png(os.path.join(c["_dir"], f"{min(max(0, i - round(c['de'] * FPS)), n - 1):04d}.png"))
+
+    def desenha(c, i, t, f, rosto, encolhe=1.0):
+        """Uma cena num instante. encolhe<1 = transição 'encolhe' (a pessoa sai da tela cheia até a moldura)."""
         modo = c.get("modo", "pessoa")
-        q = None
-        if c.get("_dir"):
-            q = ler_png(os.path.join(c["_dir"], f"{min(i - round(c['de'] * FPS), round((c['ate'] - c['de']) * FPS) - 1):04d}.png"))
-        rosto = rosto_em(track, t)
+        q = png_da_cena(c, i)
         if modo == "pessoa":
             img = f
             for z in plano.get("zoom", []):
@@ -221,26 +210,86 @@ def main():
                     M = np.float32([[k, 0, (1 - k) * rosto[0]], [0, k, (1 - k) * rosto[1]]])
                     img = cv2.warpAffine(img, M, (W, H), flags=cv2.INTER_LANCZOS4, borderMode=cv2.BORDER_REFLECT)
             if q is not None:
-                img = sobre(img, q) if q.shape[2] == 4 else q
-        elif modo == "cheia":
-            img = q[..., :3].copy() if q is not None else np.zeros((H, W, 3), np.float32) + INK
-        elif modo == "canto":
-            img = q[..., :3].copy() if q is not None else np.zeros((H, W, 3), np.float32) + INK
-            pc = c["pessoa"]; w, h = int(pc["w"]), int(pc["h"])
-            ent = ease_out((t - c["de"]) / 0.3)
-            pes = recorte_pessoa(f, rosto, w, h)
-            mk = moldura_redonda(w, h, int(pc.get("raio", 36))) * ent
-            x0, y0 = int(pc["x"] - w / 2), int(pc["y"] - h / 2 + (1 - ent) * 60)
-            reg = img[y0:y0 + h, x0:x0 + w]
+                img = sobre(img, q) if q.shape[2] == 4 else q[..., :3]
+            return img
+        fundo = q[..., :3].copy() if q is not None else np.zeros((H, W, 3), np.float32) + INK
+        if modo == "cheia":
+            return fundo
+        if modo == "canto":
+            pc = c["pessoa"]
+            e = ease_io(encolhe)
+            w = int(lerp(W, pc["w"], e)); h = int(lerp(H, pc["h"], e))
+            cx, cy = lerp(W / 2, pc["x"], e), lerp(H / 2, pc["y"], e)
+            if e >= 0.999:
+                pes = recorte_pessoa(f, rosto, w, h)
+            else:  # interpola o recorte do quadro inteiro até o recorte do rosto
+                fx, fy, fw, fh = rosto
+                cw1 = min(W, fw / 0.42); ch1 = cw1 * pc["h"] / pc["w"]
+                x1 = float(np.clip(fx - cw1 / 2, 0, W - cw1)); y1 = float(np.clip(fy - ch1 * 0.40, 0, H - ch1))
+                x0r, y0r = lerp(0, x1, e), lerp(0, y1, e); cw, ch = lerp(W, cw1, e), lerp(H, ch1, e)
+                pes = cv2.resize(f[int(y0r):int(y0r + ch), int(x0r):int(x0r + cw)], (w, h), interpolation=cv2.INTER_AREA)
+            mk = moldura_redonda(w, h, max(1, int(pc.get("raio", 36) * e)))
+            x0, y0 = int(cx - w / 2), int(cy - h / 2)
+            img = fundo if e >= 0.999 else fundo * e + f * (1 - e)
+            reg = img[max(0, y0):y0 + h, max(0, x0):x0 + w]
+            pes = pes[max(0, -y0):max(0, -y0) + reg.shape[0], max(0, -x0):max(0, -x0) + reg.shape[1]]
+            mk = mk[max(0, -y0):max(0, -y0) + reg.shape[0], max(0, -x0):max(0, -x0) + reg.shape[1]]
             reg[:] = reg * (1 - mk) + pes * mk
-        elif modo == "dividida":
-            img = q[..., :3].copy() if q is not None else np.zeros((H, W, 3), np.float32) + INK
+            return img
+        if modo == "dividida":
             meio = int(c.get("meio", H // 2))
-            fy = rosto[1]
-            y0 = int(np.clip(fy - (H - meio) * 0.40, 0, H - (H - meio)))
-            img[meio:] = f[y0:y0 + (H - meio)]
+            y0 = int(np.clip(rosto[1] - (H - meio) * 0.40, 0, meio))
+            fundo[meio:] = f[y0:y0 + (H - meio)]
+            return fundo
+        return f
+
+    def lerp(a_, b_, k_):
+        return a_ + (b_ - a_) * k_
+
+    TRANS = 0.32  # duração das transições com movimento
+    dec = subprocess.Popen(["ffmpeg", "-v", "error", "-i", base, "-vf", DEC_RGB, "-f", "rawvideo", "-pix_fmt", "rgb24", "-"], stdout=subprocess.PIPE)
+    enc = None
+    if not so:
+        enc = subprocess.Popen(["ffmpeg", "-v", "error", "-y", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{W}x{H}", "-r", str(FPS), "-i", "-",
+                                "-i", os.path.join(P, plano.get("audio", "mix.wav")), "-map", "0:v", "-map", "1:a",
+                                "-vf", ENC_YUV, "-af", "apad", "-t", f"{dur:.3f}",
+                                "-c:v", "libx264", "-preset", "slow", "-crf", "15", "-pix_fmt", "yuv420p", "-profile:v", "high",
+                                "-color_primaries", "bt709", "-color_trc", "bt709", "-colorspace", "bt709",
+                                "-c:a", "aac", "-b:a", "320k", "-movflags", "+faststart", os.path.join(P, a.saida)], stdin=subprocess.PIPE)
+    n = int(round(dur * FPS))
+    f_ult = None
+    for i in range(n):
+        b = dec.stdout.read(W * H * 3)
+        if len(b) >= W * H * 3:
+            f_ult = np.frombuffer(b, np.uint8).reshape(H, W, 3)
+        elif f_ult is None:
+            break
+        if so and i not in so:
+            continue
+        t = i / FPS
+        f = f_ult.astype(np.float32) / 255  # depois do fim da fala, o último quadro segura (cartão final por cima)
+        k, c = cena_em(t)
+        rosto = rosto_em(track, t)
+        prev = cenas[k - 1] if k > 0 else None
+        tipo = c.get("transicao", "desliza" if prev and prev.get("modo") != c.get("modo") else "corte")
+        dt = t - c.get("de", 0)
+        if prev is not None and tipo == "encolhe" and dt < TRANS * 1.4 and c.get("modo") == "canto":
+            img = desenha(c, i, t, f, rosto, encolhe=dt / (TRANS * 1.4))
+        elif prev is not None and tipo in ("desliza", "funde") and dt < TRANS:
+            antes = desenha(prev, i, t, f, rosto)
+            depois = desenha(c, i, t, f, rosto)
+            e = ease_io(dt / TRANS)
+            if tipo == "funde":
+                img = antes * (1 - e) + depois * e
+            else:  # a cena nova sobe e empurra a anterior para cima
+                o = int(round((1 - e) * H))
+                img = np.empty_like(depois)
+                if o:
+                    img[:o] = antes[H - o:]
+                img[o:] = depois[:H - o]
         else:
-            img = f
+            img = desenha(c, i, t, f, rosto)
+        img = img.copy()
         if c.get("legenda", True):
             g = next((g for g in leg if g["ini"] <= t < g["fim"]), None)
             if g:

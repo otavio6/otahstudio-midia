@@ -4,7 +4,7 @@ Uso: python render_local.py PASTA [--saida previa.mp4]"""
 import argparse, json, os, subprocess
 import numpy as np
 import cv2
-from common import W, H, FPS, texto, Encoder
+from common import W, H, FPS, texto, Encoder, DEC_RGB
 
 INK = np.array([0x0B, 0x0B, 0x0C], np.float32) / 255
 
@@ -114,7 +114,7 @@ def main():
     els = tl["elementos"]
     grid = np.zeros((H, W), np.float32)
     grid[:, ::108] = 1; grid[::108, :] = 1
-    base = subprocess.Popen(["ffmpeg", "-v", "error", "-i", os.path.join(P, "base.mp4"), "-f", "rawvideo", "-pix_fmt", "rgb24", "-"], stdout=subprocess.PIPE)
+    base = subprocess.Popen(["ffmpeg", "-v", "error", "-i", os.path.join(P, "base.mp4"), "-vf", DEC_RGB, "-f", "rawvideo", "-pix_fmt", "rgb24", "-"], stdout=subprocess.PIPE)
     pessoa = leitor_rgba(os.path.join(P, "pessoa.webm"))
     tem_contorno = any(e["tipo"] == "contorno" for e in els) and os.path.exists(os.path.join(P, "contorno.webm"))
     contorno = leitor_rgba(os.path.join(P, "contorno.webm")) if tem_contorno else None
