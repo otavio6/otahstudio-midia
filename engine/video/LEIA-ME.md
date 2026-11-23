@@ -1,5 +1,11 @@
 # Kit do editor de vídeo
 
+> **Montagem por cenas (desde 23/11/2026).** A edição final é feita pelo `montar.py`: cada trecho do vídeo é uma cena
+> (`pessoa`, `cheia`, `canto` ou `dividida`) e as cenas em motion são HTML/SVG animados (`motion/base.js` + `motion/base.css`),
+> renderizados quadro a quadro pelo `motion.py` no Chromium local. Assim cabe qualquer motion 2D (gráfico, contador,
+> comparação, post genérico, balão, botão), o vídeo sai com um encode só e na taxa de quadros do bruto (`VIDEO_FPS`).
+> O `timeline.py` + Remotion continuam como alternativa para edições simples.
+
 Uma ferramenta por etapa da esteira (veja `docs/EDICAO.md`). Rode na ordem, dentro de `engine/video/`. Cada etapa grava na pasta do trabalho e a revisão de cada portão usa o que ela gerou.
 
 | Etapa | Comando | Gera |

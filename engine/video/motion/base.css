@@ -1,0 +1,23 @@
+/* Base visual das cenas: identidade do Otávio (texto só preto ou lima, Inter, premium e minimalista) */
+@font-face { font-family: "Inter"; src: url("../../remotion/public/fonts/Inter-SemiBold.otf"); font-weight: 600; }
+@font-face { font-family: "Inter"; src: url("../../remotion/public/fonts/Inter-Medium.otf"); font-weight: 500; }
+@font-face { font-family: "Inter Display"; src: url("../../remotion/public/fonts/InterDisplay-SemiBold.otf"); font-weight: 600; }
+@font-face { font-family: "Inter Display"; src: url("../../remotion/public/fonts/InterDisplay-Bold.otf"); font-weight: 700; }
+@font-face { font-family: "Inter Display"; src: url("../../remotion/public/fonts/InterDisplay-Black.otf"); font-weight: 900; }
+
+:root { --ink: #0B0B0C; --lima: #D4FF3A; --papel: #F2F2EF; --cinza: #8C8F94; --cinza-escuro: #2A2B2E; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1080px; height: 1920px; overflow: hidden; background: transparent; }
+body { font-family: "Inter", sans-serif; -webkit-font-smoothing: antialiased; color: var(--ink); }
+.palco { position: absolute; inset: 0; width: 1080px; height: 1920px; overflow: hidden; }
+.escuro { background: var(--ink); color: var(--lima); }
+.claro { background: var(--papel); color: var(--ink); }
+/* grade sutil da marca no fundo escuro */
+.grade { background-image: linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px); background-size: 108px 108px; }
+/* tudo posicionado pelo centro (translate -50% -50%), alinhado ao eixo do vídeo */
+.c { position: absolute; transform: translate(-50%, -50%); text-align: center; white-space: nowrap; }
+.display { font-family: "Inter Display", sans-serif; font-weight: 900; letter-spacing: -0.02em; line-height: 0.95; }
+.titulo { font-family: "Inter Display", sans-serif; font-weight: 700; letter-spacing: -0.01em; }
+.rotulo { font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; }
+.lima { color: var(--lima); }
+.ink { color: var(--ink); }
