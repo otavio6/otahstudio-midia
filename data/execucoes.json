@@ -37,10 +37,19 @@
    "id": "analise-2026-11-22T23:18",
    "tarefa": "analise",
    "inicio": "2026-11-22T23:18:35-03:00",
-   "status": "rodando",
-   "fim": null,
-   "resumo": "",
-   "etapas": {}
+   "status": "ok",
+   "fim": "2026-11-22T23:20:06-03:00",
+   "resumo": "16 dias sem post e alcance da semana em 9 (−92%); 136 seguidores (+1 no dia, +2 na semana); 2 peças seguem programadas (24 e 26/11, 11h); 0 leads novos e 0 comentários pendentes.",
+   "etapas": {
+    "posts_medidos": 3,
+    "seguidores": 136,
+    "publicados_conferidos": 0,
+    "agendados_conferidos": 2,
+    "leads_novos": 0,
+    "leads_status_novo": 1,
+    "comentarios_12h": 0,
+    "sugestoes_resposta": 0
+   }
   }
  ]
 }
