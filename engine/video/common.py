@@ -4,7 +4,10 @@ import numpy as np
 import cv2
 from PIL import Image, ImageDraw, ImageFont
 
-W, H, FPS = 1080, 1920, 30
+W, H = 1080, 1920
+# Taxa de quadros do trabalho = a do bruto (gravou em 24, edita e exporta em 24). Defina VIDEO_FPS antes de rodar o kit.
+FPS = int(os.environ.get("VIDEO_FPS", "30"))
+CRF_INTERMEDIARIO = 8  # quase sem perda: o único encode com perda de verdade é o final
 # Zona segura do Reels (1080×1920): a interface cobre o topo, a base e a coluna de botões à direita.
 SAFE = {"top": 250, "bottom": 340, "left": 60, "right": 140}
 FONT_DIR = "/usr/share/fonts/opentype/inter/"
@@ -61,10 +64,14 @@ def proxy_sdr(src, dst, ini=None, dur=None):
         cmd += ["-ss", str(ini)]
     if dur is not None:
         cmd += ["-t", str(dur)]
-    cmd += ["-i", src, "-vf", ",".join(vf), "-c:v", "libx264", "-preset", "veryfast", "-crf", "14",
+    cmd += ["-i", src, "-vf", ",".join(vf), "-c:v", "libx264", "-preset", "medium", "-crf", str(CRF_INTERMEDIARIO),
             "-color_primaries", "bt709", "-color_trc", "bt709", "-colorspace", "bt709",
-            "-c:a", "aac", "-b:a", "192k", "-ar", "48000", dst]
+            "-c:a", "aac", "-b:a", "320k", "-ar", "48000", dst]
     subprocess.run(cmd, check=True)
+    # Áudio sem perda ao lado do vídeo: é dele que o corte e o som partem (nada de comprimir a voz várias vezes).
+    wav = os.path.splitext(dst)[0] + "_audio.wav"
+    cmd_a = ["ffmpeg", "-v", "error", "-y"] + (["-ss", str(ini)] if ini is not None else []) + (["-t", str(dur)] if dur is not None else [])
+    subprocess.run(cmd_a + ["-i", src, "-vn", "-ac", "2", "-ar", "48000", "-c:a", "pcm_s24le", wav], check=True)
     return dst
 
 
@@ -85,9 +92,9 @@ def frames(path, w=W, h=H, step=1):
 
 
 class Encoder:
-    def __init__(self, path, w=W, h=H, fps=FPS, crf=16):
+    def __init__(self, path, w=W, h=H, fps=FPS, crf=CRF_INTERMEDIARIO):
         self.p = subprocess.Popen(["ffmpeg", "-v", "error", "-y", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{w}x{h}", "-r", str(fps), "-i", "-",
-                                   "-c:v", "libx264", "-preset", "veryfast", "-crf", str(crf), "-pix_fmt", "yuv420p",
+                                   "-c:v", "libx264", "-preset", "medium", "-crf", str(crf), "-pix_fmt", "yuv420p",
                                    "-color_primaries", "bt709", "-color_trc", "bt709", "-colorspace", "bt709", path], stdin=subprocess.PIPE)
 
     def write(self, f):

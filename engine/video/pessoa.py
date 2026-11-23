@@ -10,7 +10,7 @@ from ocupacao import Rastreador
 
 def enc_alpha(path):
     return subprocess.Popen(["ffmpeg", "-v", "error", "-y", "-f", "rawvideo", "-pix_fmt", "rgba", "-s", f"{W}x{H}", "-r", str(FPS), "-i", "-",
-                             "-c:v", "libvpx-vp9", "-pix_fmt", "yuva420p", "-auto-alt-ref", "0", "-b:v", "0", "-crf", "30", "-row-mt", "1",
+                             "-c:v", "libvpx-vp9", "-pix_fmt", "yuva420p", "-auto-alt-ref", "0", "-b:v", "0", "-crf", "18", "-row-mt", "1",
                              "-deadline", "realtime", "-cpu-used", "8", path], stdin=subprocess.PIPE)
 
 

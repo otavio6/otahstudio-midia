@@ -41,7 +41,8 @@ SONS = {"whoosh": (whoosh, 0.9), "pop": (pop, 0.9), "click": (click, 0.8), "impa
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("pasta"); ap.add_argument("--musica"); ap.add_argument("--nivel_sfx", type=float, default=0.22)
+    # efeitos mais baixos por padrão: a voz manda
+    ap.add_argument("pasta"); ap.add_argument("--musica"); ap.add_argument("--nivel_sfx", type=float, default=0.12)
     a = ap.parse_args()
     P = a.pasta
     ev = json.load(open(os.path.join(P, "eventos_som.json")))
@@ -61,15 +62,21 @@ def main():
     with wave.open(sp, "wb") as w:
         w.setnchannels(1); w.setsampwidth(2); w.setframerate(SR)
         w.writeframes((np.clip(sfx, -1, 1) * 32767).astype(np.int16).tobytes())
-    voz = "[0:a]aresample=48000,highpass=f=70,afftdn=nf=-28,loudnorm=I=-16:TP=-2:LRA=9,aresample=48000[v]"
+    # Voz com o mínimo de tratamento (Otávio, 23/11: "parece que mexeu muito no áudio"):
+    # só corta o grave inútil e acerta o volume com ganho fixo medido. Sem redutor de ruído, sem compressão que bombeia.
+    fonte_voz = os.path.join(P, "base_audio.wav") if os.path.exists(os.path.join(P, "base_audio.wav")) else os.path.join(P, "base.mp4")
+    medida = subprocess.run(["ffmpeg", "-hide_banner", "-i", fonte_voz, "-af", "highpass=f=70,ebur128", "-f", "null", "-"], capture_output=True, text=True).stderr
+    li = re.findall(r"I:\s+(-?[\d.]+) LUFS", medida)
+    ganho = (-14.5 - float(li[-1])) if li else 0.0
+    voz = f"[0:a]aresample=48000,highpass=f=70,volume={ganho:.2f}dB[v]"
     if a.musica:
-        fc = voz + ";[v]asplit[v1][v2];[2:a]aresample=48000,volume=0.16[m0];[m0][v1]sidechaincompress=threshold=0.03:ratio=8:attack=20:release=300[m];[1:a]aresample=48000[s];[v2][s][m]amix=inputs=3:duration=first:normalize=0,loudnorm=I=-14:TP=-1.5:LRA=11,aresample=48000[a]"
-        ins = ["-i", os.path.join(P, "base.mp4"), "-i", sp, "-stream_loop", "-1", "-i", a.musica]
+        fc = voz + ";[v]asplit[v1][v2];[2:a]aresample=48000,volume=0.16[m0];[m0][v1]sidechaincompress=threshold=0.03:ratio=4:attack=40:release=400[m];[1:a]aresample=48000[s];[v2][s][m]amix=inputs=3:duration=first:normalize=0,alimiter=limit=0.89:attack=5:release=50:level=false,aresample=48000[a]"
+        ins = ["-i", fonte_voz, "-i", sp, "-stream_loop", "-1", "-i", a.musica]
     else:
-        fc = voz + ";[1:a]aresample=48000[s];[v][s]amix=inputs=2:duration=first:normalize=0,loudnorm=I=-14:TP=-1.5:LRA=11,aresample=48000[a]"
-        ins = ["-i", os.path.join(P, "base.mp4"), "-i", sp]
+        fc = voz + ";[1:a]aresample=48000[s];[v][s]amix=inputs=2:duration=first:normalize=0,alimiter=limit=0.89:attack=5:release=50:level=false,aresample=48000[a]"
+        ins = ["-i", fonte_voz, "-i", sp]
     out = os.path.join(P, "mix.wav")
-    subprocess.run(["ffmpeg", "-v", "error", "-y", *ins, "-filter_complex", fc, "-map", "[a]", "-ac", "2", "-t", f"{dur:.3f}", out], check=True)
+    subprocess.run(["ffmpeg", "-v", "error", "-y", *ins, "-filter_complex", fc, "-map", "[a]", "-ac", "2", "-c:a", "pcm_s24le", "-t", f"{dur:.3f}", out], check=True)
     os.remove(sp)
     r = subprocess.run(["ffmpeg", "-hide_banner", "-i", out, "-af", "ebur128=peak=true", "-f", "null", "-"], capture_output=True, text=True).stderr
     I = re.findall(r"I:\s+(-?[\d.]+) LUFS", r); TP = re.findall(r"Peak:\s+(-?[\d.]+) dBFS", r)

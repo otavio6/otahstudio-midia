@@ -51,6 +51,7 @@ export type Zoom = { ini: number; fim: number; de: number; ate: number; cx: numb
 
 export type ReelProps = {
   duracao: number;
+  fps?: number;
   base: string;
   pessoa?: string | null;
   audio?: string | null;

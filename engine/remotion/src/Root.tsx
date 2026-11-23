@@ -14,6 +14,11 @@ export const Root: React.FC = () => (
     fps={30}
     durationInFrames={150}
     defaultProps={padrao as unknown as Record<string, unknown>}
-    calculateMetadata={({ props }: { props: Record<string, unknown> }) => ({ durationInFrames: Math.max(1, Math.ceil(Number((props as unknown as ReelProps).duracao) * 30)) })}
+    calculateMetadata={({ props }: { props: Record<string, unknown> }) => {
+      // taxa de quadros do bruto (24 se gravou em 24): nada de converter e repetir quadro
+      const pr = props as unknown as ReelProps;
+      const fps = Number(pr.fps) || 30;
+      return { fps, durationInFrames: Math.max(1, Math.ceil(Number(pr.duracao) * fps)) };
+    }}
   />
 );

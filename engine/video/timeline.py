@@ -283,7 +283,7 @@ def main(pasta):
         cobre_boca = not (caixa[1] > boca[3] or caixa[3] < boca[1])
         leg_rel.append({"texto": limpo, "contraste": round(r, 2), "cobre_boca": cobre_boca, "zona_segura": not fora_da_zona_segura(caixa)})
 
-    tl = {"duracao": dur, "base": "job/base.mp4", "pessoa": "job/pessoa.webm", "audio": "job/mix.wav",
+    tl = {"duracao": dur, "fps": FPS, "base": "job/base.mp4", "pessoa": "job/pessoa.webm", "audio": "job/mix.wav",
           "elementos": [e for e in els if e], "legenda": legenda, "zoom": plano.get("_zoom", []), "fonte_legenda": MARCAS["otavio"]["fonte"]}
     json.dump(tl, open(os.path.join(pasta, "timeline.json"), "w"), ensure_ascii=False, indent=1)
     json.dump(eventos, open(os.path.join(pasta, "eventos_som.json"), "w"), ensure_ascii=False, indent=1)

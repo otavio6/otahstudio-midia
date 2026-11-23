@@ -144,7 +144,7 @@ def main():
                 m = mtexto(el["texto"], el["fonte"], el["tamanho"], el.get("tracking", 0))
                 x, y, _, _ = pos(el, t)
                 img = colar_texto(img, m, x + dx, y + dy, hx(el["cor"]), op, s, el.get("contorno_escuro", False), el.get("sombra", False))
-        if pr is not None:
+        if pr is not None and any(e["camada"] == "atras" and e["ini"] <= t < e["fim"] for e in els):  # recorte só com algo atrás
             al = pr[..., 3:4]
             img = img * (1 - al) + pr[..., :3] * al
         for z in tl.get("zoom", []):
@@ -192,7 +192,7 @@ def main():
     out = os.path.join(P, a.saida)
     mix = os.path.join(P, "mix.wav")
     if os.path.exists(mix):
-        subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", os.path.join(P, "_previa.mp4"), "-i", mix, "-map", "0:v", "-map", "1:a", "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", "-shortest", out], check=True)
+        subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", os.path.join(P, "_previa.mp4"), "-i", mix, "-map", "0:v", "-map", "1:a", "-c:v", "copy", "-c:a", "aac", "-b:a", "320k", "-shortest", out], check=True)
         os.remove(os.path.join(P, "_previa.mp4"))
     else:
         os.replace(os.path.join(P, "_previa.mp4"), out)

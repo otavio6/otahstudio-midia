@@ -3,6 +3,7 @@ deixando o respiro certo. Nenhuma palavra é cortada pela metade (margem antes e
 Uso: python cortar.py PASTA [--entrada base_cor.mp4] [--saida base.mp4] [--remover i,j,k] [--manter i,j]
 Lê 01_analise.json. Gera 03_cortes.json (segmentos, palavras com o tempo novo e checagens) e o vídeo cortado."""
 import argparse, json, os, subprocess
+from common import FPS, CRF_INTERMEDIARIO
 
 RESPIRO = 0.20        # pausa máxima mantida entre palavras da mesma ideia
 RESPIRO_FORTE = 0.38  # pausa mantida antes de frase nova (respiro de efeito)
@@ -42,7 +43,7 @@ def plano_de_corte(palavras, remover=(), manter=()):
     return segs
 
 
-def encaixar(segs, fps=30):
+def encaixar(segs, fps=FPS):
     """Põe os cortes no quadro exato: vídeo e áudio de cada trecho ficam com a mesma duração (sem atraso acumulado)."""
     q = lambda t: round(t * fps) / fps
     for s in segs:
@@ -84,16 +85,25 @@ def renderizar(src, segs, dst):
     for k, s in enumerate(segs):
         d = s["fim"] - s["ini"]
         out = os.path.join(tmp, f"{k:03d}.mkv")
-        subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", f"{s['ini']:.4f}", "-i", src, "-t", f"{d:.4f}",
+        wav = os.path.join(os.path.dirname(os.path.abspath(src)), "proxy_audio.wav")
+        entradas = ["-ss", f"{s['ini']:.4f}", "-i", src]
+        mapa = []
+        if os.path.exists(wav):  # voz sem perda, cortada no mesmo ponto do vídeo
+            entradas += ["-ss", f"{s['ini']:.4f}", "-i", wav]
+            mapa = ["-map", "0:v", "-map", "1:a"]
+        subprocess.run(["ffmpeg", "-v", "error", "-y", *entradas, *mapa, "-t", f"{d:.4f}",
                         "-af", f"afade=t=in:d=0.008,afade=t=out:st={max(0, d - 0.008):.4f}:d=0.008",
-                        "-frames:v", str(max(1, round(d * 30))), "-c:v", "libx264", "-preset", "veryfast", "-crf", "14", "-pix_fmt", "yuv420p", "-r", "30",
+                        "-frames:v", str(max(1, round(d * FPS))), "-c:v", "libx264", "-preset", "medium", "-crf", str(CRF_INTERMEDIARIO), "-pix_fmt", "yuv420p", "-r", str(FPS),
                         "-color_primaries", "bt709", "-color_trc", "bt709", "-colorspace", "bt709",
-                        "-c:a", "pcm_s16le", "-ar", "48000", out], check=True)
+                        "-c:a", "pcm_s24le", "-ar", "48000", out], check=True)
         lista.append(f"file '{out}'")
     lp = os.path.join(tmp, "lista.txt")
     open(lp, "w").write("\n".join(lista) + "\n")
-    subprocess.run(["ffmpeg", "-v", "error", "-y", "-f", "concat", "-safe", "0", "-i", lp, "-c:v", "copy", "-c:a", "aac", "-b:a", "192k",
+    subprocess.run(["ffmpeg", "-v", "error", "-y", "-f", "concat", "-safe", "0", "-i", lp, "-c:v", "copy", "-c:a", "aac", "-b:a", "320k",
                     "-movflags", "+faststart", dst], check=True)
+    # Voz cortada sem perda, para o som (o AAC do mp4 é só para conferência)
+    subprocess.run(["ffmpeg", "-v", "error", "-y", "-f", "concat", "-safe", "0", "-i", lp, "-vn", "-c:a", "pcm_s24le",
+                    os.path.join(os.path.dirname(os.path.abspath(dst)), "base_audio.wav")], check=True)
     import shutil
     shutil.rmtree(tmp, ignore_errors=True)
 

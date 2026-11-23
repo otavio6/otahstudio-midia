@@ -183,7 +183,8 @@ export const Reel: React.FC<ReelProps> = (p) => {
       <AbsoluteFill style={{ transform: `scale(${z.k})`, transformOrigin: `${z.cx}px ${z.cy}px` }}>
         <OffthreadVideo src={staticFile(p.base)} muted />
         {atras.map((el) => <Camada key={el.id} el={el} t={t} />)}
-        {p.pessoa ? <OffthreadVideo src={staticFile(p.pessoa)} transparent muted style={{ position: "absolute", inset: 0 }} /> : null}
+        {/* A camada recortada só entra quando há algo atrás da pessoa: no resto do tempo vale a imagem original, com toda a nitidez */}
+        {p.pessoa && atras.some((e) => t >= e.ini && t < e.fim) ? <OffthreadVideo src={staticFile(p.pessoa)} transparent muted style={{ position: "absolute", inset: 0 }} /> : null}
       </AbsoluteFill>
       {frente.map((el) => <Camada key={el.id} el={el} t={t} />)}
       <Legenda palavras={p.legenda ?? []} t={t} fonte={p.fonte_legenda} />
