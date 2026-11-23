@@ -25,6 +25,57 @@ def ler_transcricao(p):
     return out
 
 
+def envelope(path, sr=16000, passo=0.01):
+    """Volume (dBFS) a cada 10 ms."""
+    raw = subprocess.run(["ffmpeg", "-v", "error", "-i", path, "-vn", "-ac", "1", "-ar", str(sr), "-f", "s16le", "-"], capture_output=True).stdout
+    x = np.frombuffer(raw, np.int16).astype(np.float32) / 32768
+    n = int(sr * passo)
+    x = x[: len(x) // n * n].reshape(-1, n)
+    return 20 * np.log10(np.sqrt((x ** 2).mean(1)) + 1e-6), passo
+
+
+def runs(mask):
+    """Trechos [i0, i1) onde mask é verdadeiro."""
+    d = np.diff(np.r_[0, mask.astype(np.int8), 0])
+    return list(zip(np.where(d == 1)[0], np.where(d == -1)[0]))
+
+
+def silencios_reais(path, minimo=0.18):
+    """Silêncios medidos no áudio, ignorando estalos e respiros curtos (< 0,12 s)."""
+    db, passo = envelope(path)
+    if not len(db):
+        return [], passo
+    limiar = max(np.percentile(db, 10) + 7, db.max() - 38)
+    voz = db > limiar
+    for a, b in runs(voz):
+        if (b - a) * passo < 0.12:
+            voz[a:b] = False
+    for a, b in runs(~voz):
+        if (b - a) * passo < 0.06:
+            voz[a:b] = True
+    return [(a * passo, b * passo) for a, b in runs(~voz) if (b - a) * passo >= minimo], passo
+
+
+def ajustar_ao_audio(palavras, path):
+    """O Whisper estica as palavras por cima dos silêncios (a pausa some e o respiro não é achado).
+    Tira de cada palavra o silêncio medido no áudio: a parte maior da palavra fica, a pausa volta a existir."""
+    sil, _ = silencios_reais(path)
+    folga = 0.03
+    for s0, s1 in sil:
+        a, b = s0 + folga, s1 - folga
+        for w in palavras:
+            if w["fim"] <= a or w["inicio"] >= b:
+                continue
+            antes, depois = max(0.0, a - w["inicio"]), max(0.0, w["fim"] - b)
+            if antes == 0 and depois == 0:
+                continue  # palavra inteira dentro do silêncio: deixa para a revisão
+            if antes >= depois:
+                w["fim"] = round(a, 3)
+            else:
+                w["inicio"] = round(b, 3)
+    return palavras
+
+
 def marcar(palavras):
     """Marca vícios, repetições, pausas e frases. Quem decide o que cortar é o montador (etapa 3)."""
     norm = [re.sub(r"[^\wáéíóúâêôãõç]", "", w["texto"].lower()) for w in palavras]
@@ -114,12 +165,12 @@ def main():
                   "tamanho_medio": [round(float(np.nanmean(fa[:, 2])), 1), round(float(np.nanmean(fa[:, 3])), 1)] if ok.any() else None},
     }
     if a.transcricao:
-        pal, fr = marcar(ler_transcricao(a.transcricao))
+        pal = ler_transcricao(a.transcricao)
         if a.ini:
             for w in pal:
                 w["inicio"] -= a.ini; w["fim"] -= a.ini
             pal = [w for w in pal if w["fim"] > 0 and (a.dur is None or w["inicio"] < a.dur)]
-            pal, fr = marcar(pal)
+        pal, fr = marcar(ajustar_ao_audio(pal, proxy))
         res["palavras"], res["frases"] = pal, fr
         res["resumo_fala"] = {"palavras": len(pal), "vicios": sum(w["vicio"] for w in pal), "repeticoes": sum(w["repeticao"] for w in pal),
                               "pausas_longas": sum(w["pausa_depois"] > 0.45 for w in pal)}
