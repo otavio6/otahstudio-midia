@@ -42,7 +42,7 @@ SONS = {"whoosh": (whoosh, 0.9), "pop": (pop, 0.9), "click": (click, 0.8), "impa
 def main():
     ap = argparse.ArgumentParser()
     # efeitos mais baixos por padrão: a voz manda
-    ap.add_argument("pasta"); ap.add_argument("--musica"); ap.add_argument("--nivel_sfx", type=float, default=0.06)
+    ap.add_argument("pasta"); ap.add_argument("--musica"); ap.add_argument("--nivel_sfx", type=float, default=0.02)
     a = ap.parse_args()
     P = a.pasta
     ev = json.load(open(os.path.join(P, "eventos_som.json")))

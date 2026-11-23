@@ -82,3 +82,5 @@ Nota mínima aceitável 8 em todo critério, meta 10. Vale para arte e vídeo. O
 
 - 2026-11-23 · **Fala de gente, não de relatório** (Otávio): "o consumidor percebeu" soa como IA e ninguém se identifica. Escrever como conversa, com cena e emoção ("não adianta tentar enganar o cliente, ele percebe: está namorando aquele produto faz tempo, dá um Google e acha o preço de antes"). Nunca "consumidor". Para empresário: "até você é cliente de alguma coisa". Regra em docs/COPY.md §6.
 
+- 2026-11-23 · **Reel da Black Friday v5 aprovado pelo Otávio** ("de resto perfeito"). O que ele gostou: cenas variadas amarradas à fala (contador do estudo, gráfico de 100 quadrados, post simulado em tela dividida, balão do que o paciente pensa, loja × clínica, cartão final). Ajustes que viraram regra: moldura dele sempre centralizada; efeitos sonoros bem baixinhos, só de fundo. Processo que funcionou: storyboard antes, montagem por cenas em HTML/SVG, revisor separado que não editou (notas 3 → 6 → 6, com áudio 9 e imagem 8 na v4).
+

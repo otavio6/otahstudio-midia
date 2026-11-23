@@ -99,7 +99,7 @@ Regras da esteira:
 - **Mexer o mínimo na voz.** Filtro leve de grave (abaixo de 70 Hz) e volume. Redutor de ruído só se o ruído atrapalhar de verdade, e leve. Voz com cara de processada reprova (Otávio, 23/11: "parece que mexeu muito no áudio").
 - O áudio fica sem perda (WAV/PCM) do bruto até o render final: é comprimido uma vez só, na exportação.
 - Voz em primeiro lugar, a -14 LUFS.
-- Efeito sonoro só em entrada que importa (troca de cena, palavra-chave, impacto) e baixo.
+- Efeito sonoro só em entrada que importa (troca de cena, palavra-chave, impacto) e **bem baixinho, só de fundo** (Otávio, 23/11: "quero mais baixinho, apenas de fundinho"). Padrão do `som.py`: `--nivel_sfx 0.02`.
 - A música, quando houver, abaixa sozinha quando a voz entra.
 
 ## 6. Revisão (antes de chegar no Otávio)
@@ -116,6 +116,7 @@ Quem faz a revisão é o agente revisor separado (`docs/REVISOR.md`), nunca quem
 - **Qualidade de imagem:** um único encode com perda, no final. Intermediários sem perda ou quase. Nunca converter 24 → 30 quadros (quadro repetido trepida). Conferir a taxa de bits do bruto ao chegar: se veio comprimido pelo envio, avisar antes de editar.
 - **Contorno neon em volta da pessoa:** não é padrão. Só se uma cena específica pedir, e no máximo uma vez.
 - **Textos centralizados** no eixo do vídeo por padrão. Alinhamento à esquerda só com motivo de composição.
+- **A moldura com ele (modo canto) também fica centralizada** no eixo x=540 (Otávio, 23/11: "meu vídeo poderia estar centralizado ao invés de direita").
 - **Repertório, não fórmula:** fundo preto + texto + volta ao normal, em loop, é repetição. Cada ideia da fala pede a forma mais clara de mostrar: tela cheia em motion (você some e entra gráfico, contador, comparação, ícones), tela dividida, você pequeno no canto, print da fonte, tipografia animada. Cada bloco do vídeo tem linguagem diferente, e nenhum recurso repete duas vezes seguidas.
 - **Storyboard antes do render:** o diretor manda uma folha com um quadro por cena e o porquê, para o Otávio corrigir antes da edição.
 
