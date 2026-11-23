@@ -161,7 +161,8 @@ const Legenda: React.FC<{ palavras: Palavra[]; t: number; fonte?: string }> = ({
       style={{
         position: "absolute", left: w.x, top: w.y, transform: `translate(-50%, -50%) scale(${pop})`,
         fontFamily: familia(fonte ?? "Inter-SemiBold.otf"), fontSize: w.tamanho, color: w.cor, whiteSpace: "nowrap",
-        letterSpacing: "0.01em", textShadow: w.contorno_escuro ? CONTORNO : w.sombra === false ? undefined : "0 3px 14px rgba(0,0,0,.5)",
+        letterSpacing: "0.01em", textShadow: w.tarja || w.sombra === false ? undefined : w.contorno_escuro ? CONTORNO : "0 3px 14px rgba(0,0,0,.5)",
+        ...(w.tarja ? { backgroundColor: w.tarja, padding: "0.1em 0.34em 0.12em", borderRadius: 14, lineHeight: 1.1 } : {}),
       }}
     >
       {w.texto}

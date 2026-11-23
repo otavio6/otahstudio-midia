@@ -35,7 +35,21 @@ def plano_de_corte(palavras, remover=(), manter=()):
             resp = min(limite, gap) if contiguo else 0.06
             segs[-1]["fim"] = min(palavras[j]["fim"] + max(PAD_FIM, resp / 2), w["inicio"] - 0.02)
             ini = max(w["inicio"] - max(PAD_INI, resp / 2), palavras[j]["fim"] + 0.02)
+            if ini < segs[-1]["fim"]:  # palavras coladas: corta no meio do vão, sem sobrepor
+                meio = (palavras[j]["fim"] + w["inicio"]) / 2
+                segs[-1]["fim"] = ini = meio
         segs.append({"ini": max(0.0, ini), "fim": fim, "palavras": [i]})
+    return segs
+
+
+def encaixar(segs, fps=30):
+    """Põe os cortes no quadro exato: vídeo e áudio de cada trecho ficam com a mesma duração (sem atraso acumulado)."""
+    q = lambda t: round(t * fps) / fps
+    for s in segs:
+        s["ini"], s["fim"] = q(s["ini"]), max(q(s["fim"]), q(s["ini"]) + 1 / fps)
+    for a, b in zip(segs, segs[1:]):
+        if b["ini"] < a["fim"]:
+            b["ini"] = a["fim"]
     return segs
 
 
@@ -63,6 +77,28 @@ def checar(palavras, segs):
 
 
 def renderizar(src, segs, dst):
+    """Cada trecho vira um arquivo (pouca memória, serve para vídeo longo) e depois tudo é emendado sem recodificar."""
+    import tempfile
+    tmp = tempfile.mkdtemp(prefix="cortes_", dir=os.path.dirname(os.path.abspath(dst)))
+    lista = []
+    for k, s in enumerate(segs):
+        d = s["fim"] - s["ini"]
+        out = os.path.join(tmp, f"{k:03d}.mkv")
+        subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", f"{s['ini']:.4f}", "-i", src, "-t", f"{d:.4f}",
+                        "-af", f"afade=t=in:d=0.008,afade=t=out:st={max(0, d - 0.008):.4f}:d=0.008",
+                        "-frames:v", str(max(1, round(d * 30))), "-c:v", "libx264", "-preset", "veryfast", "-crf", "14", "-pix_fmt", "yuv420p", "-r", "30",
+                        "-color_primaries", "bt709", "-color_trc", "bt709", "-colorspace", "bt709",
+                        "-c:a", "pcm_s16le", "-ar", "48000", out], check=True)
+        lista.append(f"file '{out}'")
+    lp = os.path.join(tmp, "lista.txt")
+    open(lp, "w").write("\n".join(lista) + "\n")
+    subprocess.run(["ffmpeg", "-v", "error", "-y", "-f", "concat", "-safe", "0", "-i", lp, "-c:v", "copy", "-c:a", "aac", "-b:a", "192k",
+                    "-movflags", "+faststart", dst], check=True)
+    import shutil
+    shutil.rmtree(tmp, ignore_errors=True)
+
+
+def renderizar_filtro(src, segs, dst):
     fc, n = [], len(segs)
     for k, s in enumerate(segs):
         d = s["fim"] - s["ini"]
@@ -85,7 +121,7 @@ def main():
         raise SystemExit("Sem transcrição na análise: o montador não corta no escuro.")
     rem = {int(x) for x in a.remover.split(",") if x.strip()}
     man = {int(x) for x in a.manter.split(",") if x.strip()}
-    segs = plano_de_corte(pal, rem, man)
+    segs = encaixar(plano_de_corte(pal, rem, man))
     novas, dur = remapear(pal, segs)
     probs = checar(pal, segs)
     removidas = [pal[i]["texto"] for i in range(len(pal)) if not any(i in s["palavras"] for s in segs)]

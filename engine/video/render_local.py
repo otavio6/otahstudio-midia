@@ -108,6 +108,7 @@ def leitor_rgba(path):
 
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument("pasta"); ap.add_argument("--saida", default="previa.mp4")
+    ap.add_argument("--quadros", default="", help="só estes tempos (s), separados por vírgula: gera PNGs para revisão rápida")
     a = ap.parse_args(); P = a.pasta
     tl = json.load(open(os.path.join(P, "timeline.json")))
     els = tl["elementos"]
@@ -117,8 +118,9 @@ def main():
     pessoa = leitor_rgba(os.path.join(P, "pessoa.webm"))
     tem_contorno = any(e["tipo"] == "contorno" for e in els) and os.path.exists(os.path.join(P, "contorno.webm"))
     contorno = leitor_rgba(os.path.join(P, "contorno.webm")) if tem_contorno else None
-    enc = Encoder(os.path.join(P, "_previa.mp4"))
-    n = int(tl["duracao"] * FPS)
+    so = sorted({int(round(float(x) * FPS)) for x in a.quadros.split(",") if x.strip()})
+    enc = None if so else Encoder(os.path.join(P, "_previa.mp4"))
+    n = int(tl["duracao"] * FPS) if not so else so[-1] + 1
     amostras = {}
     for i in range(n):
         b = base.stdout.read(W * H * 3)
@@ -128,6 +130,8 @@ def main():
         f = np.frombuffer(b, np.uint8).reshape(H, W, 3).astype(np.float32) / 255
         pr = next(pessoa, None)
         cr = next(contorno, None) if contorno else None
+        if so and i not in so:
+            continue
         img = f.copy()
         for el in els:
             if el["camada"] != "atras" or not (el["ini"] <= t < el["fim"]):
@@ -165,10 +169,26 @@ def main():
             if w["ini"] <= t < w["fim"]:
                 pop = 0.86 + 0.14 * e_out((t - w["ini"]) / 0.09)
                 m = mtexto(w["texto"], tl.get("fonte_legenda", "Inter-SemiBold.otf"), w["tamanho"], 0.01)
+                if w.get("tarja"):  # faixa atrás da palavra, mesma medida da composição Remotion
+                    tm = w["tamanho"] * pop
+                    bw, bh = m.shape[1] * pop + 0.68 * tm, 1.1 * tm + 0.22 * tm
+                    x0, y0 = int(w["x"] - bw / 2), int(w["y"] - bh / 2)
+                    lay = np.zeros((H, W), np.float32)
+                    cv2.rectangle(lay, (x0 + 14, y0), (x0 + int(bw) - 14, y0 + int(bh)), 1.0, -1)
+                    cv2.rectangle(lay, (x0, y0 + 14), (x0 + int(bw), y0 + int(bh) - 14), 1.0, -1)
+                    for cx_, cy_ in ((x0 + 14, y0 + 14), (x0 + int(bw) - 14, y0 + 14), (x0 + 14, y0 + int(bh) - 14), (x0 + int(bw) - 14, y0 + int(bh) - 14)):
+                        cv2.circle(lay, (cx_, cy_), 14, 1.0, -1)
+                    img = img * (1 - lay[..., None]) + hx(w["tarja"]) * lay[..., None]
                 img = colar_texto(img, m, w["x"], w["y"], hx(w["cor"]), 1.0, pop, w.get("contorno_escuro", False), w.get("sombra", True))
+        if so:
+            cv2.imwrite(os.path.join(P, f"q_{t:06.2f}.jpg"), cv2.cvtColor((np.clip(img, 0, 1) * 255).astype(np.uint8), cv2.COLOR_RGB2BGR), [cv2.IMWRITE_JPEG_QUALITY, 88])
+            continue
         enc.write(img)
         amostras[round(t, 2)] = None
-    enc.close(); base.terminate()
+    base.terminate()
+    if so:
+        print("ok quadros", len(so)); return
+    enc.close()
     out = os.path.join(P, a.saida)
     mix = os.path.join(P, "mix.wav")
     if os.path.exists(mix):

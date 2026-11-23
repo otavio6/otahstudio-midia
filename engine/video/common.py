@@ -179,4 +179,10 @@ def cor_pelo_fundo(img, caixa, marca="otavio", destaque=False, grande=True):
     # Regra do Otávio: só preto ou lima. Fica a que tiver mais contraste no pior ponto do fundo.
     opcoes = [(rgb(c), min(razao_contraste(rgb(c), claro), razao_contraste(rgb(c), escuro))) for c in m.get("cores_texto", [m["ink"], m["destaque"]])]
     cor, r = max(opcoes, key=lambda x: x[1])
-    return cor, r, r < minimo  # nenhuma passa: trocar de lugar (nunca contorno, sombra ou terceira cor)
+    if r < minimo:
+        # Nenhuma passa no pior ponto (mão ou pele entrando na caixa): vale o fundo que domina a caixa (mediana).
+        # Sobre camiseta preta com uma mão passando, a letra tem que ser lima, não preta.
+        meio = reg[np.argmin(np.abs(L - np.median(L)))]
+        cor = max((rgb(c) for c in m.get("cores_texto", [m["ink"], m["destaque"]])), key=lambda c: razao_contraste(c, meio))
+        r = min(razao_contraste(cor, claro), razao_contraste(cor, escuro))
+    return cor, r, r < minimo  # ainda falta: trocar de lugar (nunca contorno, sombra ou terceira cor)

@@ -30,12 +30,13 @@ class Rastreador:
         return alpha, (None if self.face is None else self.face.copy())
 
 
-def ocupado(alpha, face, margem_rosto=0.35, dilata=40):
-    """Máscara do que não pode ser coberto: corpo (com mãos) dilatado + rosto com margem."""
+def ocupado(alpha, face, margem_rosto=0.35, dilata=40, margem_topo=0.3):
+    """Máscara do que não pode ser coberto: corpo (com mãos) dilatado + rosto com margem.
+    Em cima do rosto a margem é menor (testa/boné/cabelo): sobra a faixa da parede para texto."""
     occ = cv2.dilate((alpha > 0.35).astype(np.uint8), cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (dilata * 2 + 1, dilata * 2 + 1)))
     if face is not None:
         fx, fy, fw, fh = face
-        x0, y0 = int(fx - fw * (0.5 + margem_rosto)), int(fy - fh * (0.75 + margem_rosto))
+        x0, y0 = int(fx - fw * (0.5 + margem_rosto)), int(fy - fh * (0.5 + margem_topo))
         x1, y1 = int(fx + fw * (0.5 + margem_rosto)), int(fy + fh * (0.62 + margem_rosto))
         occ[max(0, y0):max(0, y1), max(0, x0):max(0, x1)] = 1
     return occ.astype(np.float32)

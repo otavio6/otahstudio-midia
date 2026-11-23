@@ -44,6 +44,7 @@ export type Palavra = {
   tamanho: number;
   sombra?: boolean;
   contorno_escuro?: boolean;
+  tarja?: string; // cor da faixa atrás da palavra (identidade: lima com texto preto)
 };
 
 export type Zoom = { ini: number; fim: number; de: number; ate: number; cx: number; cy: number };

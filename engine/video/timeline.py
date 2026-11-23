@@ -33,6 +33,11 @@ class Ocupacao:
     def __init__(self, path):
         z = np.load(path)
         self.t, self.face, self.matte = z["t"], z["face"], z["matte"]
+        self.colocados = []  # (ini, fim, caixa) dos textos já colocados: um texto não cai em cima do outro
+
+    def colocar(self, ini, fim, caixa, margem=28):
+        x0, y0, x1, y1 = caixa
+        self.colocados.append((ini, fim, (x0 - margem, y0 - margem, x1 + margem, y1 + margem)))
 
     def idx(self, t):
         return int(np.clip(np.searchsorted(self.t, t), 0, len(self.t) - 1))
@@ -44,13 +49,18 @@ class Ocupacao:
             f = np.nanmedian(self.face[ok], 0) if ok.any() else np.array([W / 2, H * 0.45, 360, 480], np.float32)
         return f
 
-    def mascara(self, t):
+    def mascara(self, t, so_corpo=False):
         a = cv2.resize(self.matte[self.idx(t)], (W, H), interpolation=cv2.INTER_LINEAR).astype(np.float32) / 255
-        return ocupado(a, self.rosto(t))
+        return ocupado(a, None if so_corpo else self.rosto(t), dilata=12 if so_corpo else 40)
 
-    def amostras(self, ini, fim, passo=0.2):
+    def amostras(self, ini, fim, passo=0.2, so_corpo=False):
         ts = np.arange(ini, max(ini + 0.01, fim), passo)
-        return [self.mascara(float(t)) for t in ts]
+        ms = [self.mascara(float(t), so_corpo) for t in ts]
+        for a, b, (x0, y0, x1, y1) in self.colocados:
+            if a < fim and b > ini:
+                for m in ms:
+                    m[max(0, int(y0)):max(0, int(y1)), max(0, int(x0)):max(0, int(x1))] = 1.0
+        return ms
 
 
 def quadros(path, tempos):
@@ -123,12 +133,12 @@ def main(pasta):
               "entrada": b.get("entrada", "sobe"), "saida": b.get("saida", "fade")}
         nota = {"id": el["id"], "tipo": b["tipo"]}
         if b["tipo"] == "fundo":
-            el.update(tipo="fundo", camada="atras", cor=hexcor(INK), grade=b.get("grade", True), entrada="fade", saida="fade", dur_entrada=0.18, dur_saida=0.18)
+            el.update(tipo="fundo", camada="atras", cor=hexcor(INK), grade=b.get("grade", True), entrada=b.get("entrada", "fade"), saida="fade", dur_entrada=0.18, dur_saida=0.18)
             eventos.append({"t": ini, "som": "whoosh"})
         elif b["tipo"] == "contorno":
             fim_fundo = min((b_ for a_, b_ in tempos_fundo if a_ <= ini + 0.05 < b_), default=fim)
             el["fim"] = round(min(fim, fim_fundo - 0.12), 3)
-            el.update(tipo="contorno", camada="frente", src="job/contorno.webm", entrada="fade", saida="fade", dur_entrada=0.18, dur_saida=0.12)
+            el.update(tipo="contorno", camada="frente", src="job/contorno.webm", entrada=b.get("entrada", "fade"), saida="fade", dur_entrada=0.18, dur_saida=0.12)
         elif b["tipo"] == "zoom":
             f0 = occ.rosto(ini)
             els.append(None)  # zoom não é camada
@@ -150,31 +160,35 @@ def main(pasta):
             if b["tipo"] == "texto":
                 fonte, tam, track = ESTILOS[b.get("estilo", "rotulo")]
                 tam = int(b.get("tamanho", tam))
-                for tentativa in range(3):
+                for tentativa in range(5):
                     m = texto(b["texto"], fonte, tam, track)
                     w, h = m.shape[1] + 24, m.shape[0] + 16
-                    lugar = achar_lugar(occ.amostras(ini, fim), w, h, tuple(b.get("lugar", ["topo", "esquerda", "direita"])),
-                                        max_sobrepor=0.08 if el["camada"] == "atras" else 0.0)
-                    if lugar:
+                    lugar = achar_lugar(occ.amostras(ini, fim, so_corpo=el["camada"] == "atras"), w, h, tuple(b.get("lugar", ["topo", "esquerda", "direita"])),
+                                        max_sobrepor=0.15 if el["camada"] == "atras" else 0.0)
+                    if lugar or ("esq" in b and "y" in b):
                         break
                     tam = int(tam * 0.85)
             else:
                 w, h = int(b.get("w", 600)), int(b.get("h", 420))
                 lugar = achar_lugar(occ.amostras(ini, fim), w, h, tuple(b.get("lugar", ["topo"])), 0.0)
+            if not lugar and "esq" in b and "y" in b:
+                lugar = (0.0, 0.0)
             if not lugar:
                 relatorio.append({**nota, "erro": "sem lugar livre durante a vida do elemento: mude o tempo, o tamanho ou corte o elemento"})
                 continue
             cx, cy = lugar
+            if "esq" in b and "y" in b:  # posição fixa do diretor (grade): borda esquerda e centro vertical
+                cx, cy = float(b["esq"]) + w / 2, float(b["y"])
             caixa = (cx - w / 2, cy - h / 2, cx + w / 2, cy + h / 2)
             if b["tipo"] == "texto":
                 # Sem contorno nem sombra: se preto e lima não têm contraste aqui, tenta os outros lugares livres.
                 def pior_contraste(cx_, cy_):
                     cx_box = (cx_ - w / 2, cy_ - h / 2, cx_ + w / 2, cy_ + h / 2)
                     return min(cor_pelo_fundo(quadro(t), cx_box, grande=tam >= 40)[1] for t in (ini + 0.05, (ini + fim) / 2, fim - 0.05))
-                if pior_contraste(cx, cy) < 3:
+                if not ("esq" in b and "y" in b) and pior_contraste(cx, cy) < 3:
                     melhor = (pior_contraste(cx, cy), cx, cy)
                     for pref in ("topo", "esquerda", "direita", "base", "centro"):
-                        alt = achar_lugar(occ.amostras(ini, fim), w, h, (pref,), max_sobrepor=0.08 if el["camada"] == "atras" else 0.0)
+                        alt = achar_lugar(occ.amostras(ini, fim, so_corpo=el["camada"] == "atras"), w, h, (pref,), max_sobrepor=0.15 if el["camada"] == "atras" else 0.0)
                         if alt:
                             r_ = pior_contraste(*alt)
                             if r_ > melhor[0]:
@@ -205,6 +219,7 @@ def main(pasta):
                 el.update(tipo="imagem", src="job/" + b["src"], x=round(cx, 1), y=round(cy, 1), w=w, h=h, raio=b.get("raio", 24), entrada=b.get("entrada", "escala"))
                 eventos.append({"t": ini, "som": "pop"})
             ocup = max(sobreposicao(caixa, m_) for m_ in occ.amostras(ini, fim))
+            occ.colocar(ini, fim, caixa)
             nota.update(caixa=[round(v) for v in caixa], sobreposicao_corpo=round(ocup, 3), zona_segura=not fora_da_zona_segura(caixa))
             if b.get("saida") in ("afasta-esq", "afasta-dir"):
                 eventos.append({"t": fim - 0.2, "som": "whoosh"})
@@ -230,7 +245,10 @@ def main(pasta):
         destaque = any(norm(p) in dest for p in limpo.split())
         tam = LEG_TAM_DESTAQUE if destaque else LEG_TAM
         fx, fy, fw, fh = occ.rosto(g["ini"])
-        y = float(np.clip(fy + fh * 0.62 + 150, H * 0.70, H - SAFE["bottom"] - 90))
+        if plano.get("legenda_posicao") == "base":  # selfie fechada: legenda no pé da zona segura, o mais longe possível da boca
+            y = float(H - SAFE["bottom"] - 70)
+        else:
+            y = float(np.clip(fy + fh * 0.62 + 150, H * 0.70, H - SAFE["bottom"] - 90))
         cx = (SAFE["left"] + W - SAFE["right"]) / 2
         larg_max = (W - SAFE["left"] - SAFE["right"]) * 0.92
         m = texto(limpo, MARCAS["otavio"]["fonte"], tam, 0.01)
@@ -241,7 +259,7 @@ def main(pasta):
         boca = (fx - fw * 0.4, fy + fh * 0.15, fx + fw * 0.4, fy + fh * 0.62)
         q = quadro(g["ini"] + 0.03)
         cor, r, _ = cor_pelo_fundo(q, caixa_em(y), grande=True)
-        if r < 3:
+        if r < 3 and plano.get("legenda_posicao") != "base":
             # Sem contorno: sobe ou desce a legenda (fora da boca, dentro da zona segura) até preto ou lima terem contraste.
             for dy in (60, 120, 180, -60, -120, 240, 300):
                 y2 = y + dy
@@ -254,8 +272,13 @@ def main(pasta):
                 if r >= 3:
                     break
         caixa = caixa_em(y)
-        legenda.append({"texto": limpo, "ini": round(g["ini"], 3), "fim": round(fim, 3), "destaque": destaque, "cor": hexcor(cor),
-                        "x": round(cx, 1), "y": round(y, 1), "tamanho": tam, "sombra": False, "contorno_escuro": False})
+        item = {"texto": limpo, "ini": round(g["ini"], 3), "fim": round(fim, 3), "destaque": destaque, "cor": hexcor(cor),
+                "x": round(cx, 1), "y": round(y, 1), "tamanho": tam, "sombra": False, "contorno_escuro": False}
+        if plano.get("legenda_tarja"):
+            # Faixa lima com texto preto: as duas cores da identidade, legível sobre qualquer fundo (pele, camiseta, mão).
+            item.update(cor=hexcor(INK), tarja=hexcor(rgb(marca["destaque"])))
+            r = razao_contraste(INK, rgb(marca["destaque"]))
+        legenda.append(item)
         cobre_boca = not (caixa[1] > boca[3] or caixa[3] < boca[1])
         leg_rel.append({"texto": limpo, "contraste": round(r, 2), "cobre_boca": cobre_boca, "zona_segura": not fora_da_zona_segura(caixa)})
 

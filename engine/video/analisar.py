@@ -176,7 +176,7 @@ def main():
                               "pausas_longas": sum(w["pausa_depois"] > 0.45 for w in pal)}
     else:
         res["aviso"] = "Sem transcrição: as etapas de corte e legenda precisam dela (Whisper no VPS)."
-    json.dump(res, open(os.path.join(a.pasta, "01_analise.json"), "w"), ensure_ascii=False, indent=1)
+    json.dump(res, open(os.path.join(a.pasta, "01_analise.json"), "w"), ensure_ascii=False, indent=1, default=lambda o: o.item() if hasattr(o, "item") else str(o))
     print(json.dumps({k: res[k] for k in ("audio", "rosto")}, ensure_ascii=False)[:600])
 
 
