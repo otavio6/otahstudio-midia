@@ -69,7 +69,7 @@ def main():
     fonte_voz = os.path.join(P, "base_audio.wav") if os.path.exists(os.path.join(P, "base_audio.wav")) else os.path.join(P, "base.mp4")
     medida = subprocess.run(["ffmpeg", "-hide_banner", "-i", fonte_voz, "-af", "highpass=f=70,ebur128", "-f", "null", "-"], capture_output=True, text=True).stderr
     li = re.findall(r"I:\s+(-?[\d.]+) LUFS", medida)
-    ganho = (-14.5 - float(li[-1])) if li else 0.0
+    ganho = (-13.6 - float(li[-1])) if li else 0.0
     voz = f"[0:a]aresample=48000,highpass=f=70,volume={ganho:.2f}dB[v]"
     if a.musica:
         fc = voz + ";[v]asplit[v1][v2];[2:a]aresample=48000,volume=0.16[m0];[m0][v1]sidechaincompress=threshold=0.03:ratio=4:attack=40:release=400[m];[1:a]aresample=48000[s];[v2][s][m]amix=inputs=3:duration=first:normalize=0,alimiter=limit=0.84:attack=5:release=50:level=false,aresample=48000[a]"
@@ -80,6 +80,24 @@ def main():
     out = os.path.join(P, "mix.wav")
     subprocess.run(["ffmpeg", "-v", "error", "-y", *ins, "-filter_complex", fc, "-map", "[a]", "-ac", "2", "-c:a", "pcm_s24le", "-t", f"{dur:.3f}", out], check=True)
     os.remove(sp)
+    # Cauda: se a montagem passa do fim da fala (cartão final), completa com o som ambiente da própria gravação
+    # (o trecho mais silencioso da voz, em laço com cruzamento), em vez de silêncio digital.
+    mp = os.path.join(P, "montagem.json")
+    dur_total = json.load(open(mp)).get("duracao", dur) if os.path.exists(mp) else dur
+    if dur_total > dur + 0.05:
+        raw = subprocess.run(["ffmpeg", "-v", "error", "-i", out, "-f", "f32le", "-ac", "2", "-ar", str(SR), "-"], capture_output=True).stdout
+        x = np.frombuffer(raw, np.float32).reshape(-1, 2).copy()
+        jan = int(0.5 * SR)
+        rms = [np.sqrt((x[i:i + jan] ** 2).mean()) for i in range(0, len(x) - jan, jan // 2)]
+        i0 = int(np.argmin(rms)) * (jan // 2)
+        amb = x[i0:i0 + jan]
+        falta = int((dur_total - len(x) / SR) * SR) + SR // 10
+        rampa = np.linspace(0, 1, SR // 20)[:, None]
+        cauda = np.tile(amb, (falta // jan + 2, 1))[:falta]
+        cauda[:len(rampa)] *= rampa
+        cauda[-len(rampa) * 4:] *= np.linspace(1, 0, len(rampa) * 4)[:, None]
+        x = np.vstack([x, cauda])
+        subprocess.run(["ffmpeg", "-v", "error", "-y", "-f", "f32le", "-ac", "2", "-ar", str(SR), "-i", "-", "-c:a", "pcm_s24le", out], input=x.astype(np.float32).tobytes(), check=True)
     r = subprocess.run(["ffmpeg", "-hide_banner", "-i", out, "-af", "ebur128=peak=true", "-f", "null", "-"], capture_output=True, text=True).stderr
     I = re.findall(r"I:\s+(-?[\d.]+) LUFS", r); TP = re.findall(r"Peak:\s+(-?[\d.]+) dBFS", r)
     rel = {"lufs": float(I[-1]) if I else None, "pico_dbfs": float(TP[-1]) if TP else None, "efeitos": len(ev), "musica": bool(a.musica)}

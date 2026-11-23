@@ -6,7 +6,7 @@ Uso: python cor.py diagnostico PASTA            → 02_cor.json + 02_cor_antes_d
 import argparse, json, os
 import numpy as np
 import cv2
-from common import W, H, frames, Encoder, probe
+from common import modelo, W, H, frames, Encoder, probe
 
 PADRAO = {"preto": 0.035, "branco": 0.965, "contraste": 0.35, "sat_resto": 0.18, "sat_pele": 0.92, "calor_pele": 0.015,
           "brilho": 0.0, "wb_a": 0.0, "wb_b": 0.0}
@@ -69,9 +69,13 @@ def diagnostico(path, n=12):
 def parametros(d):
     p = dict(PADRAO)
     p["wb_a"], p["wb_b"] = -d["dominante_a"], -d["dominante_b"]  # neutraliza a dominante
-    p["preto"] = float(np.clip(d["preto_p1"] + 0.02, 0.02, 0.09))  # o p1 vira preto firme
+    # Preto firme sem esmagar: o ponto preto fica logo abaixo do p1 (o revisor reprovou cabelo e barba fundidos com a cadeira).
+    p["preto"] = float(np.clip(d["preto_p1"] - 0.005, 0.0, 0.04))
+    p["contraste"] = 0.22
+    # Saturação do resto perto da pele: com 0,18 as áreas da parede que a máscara pegava como pele viravam manchas laranja.
+    p["sat_resto"] = 0.65
     # Não esticar demais o branco: com o branco em 0,82 a pele estourou no vermelho (reprovado pelo revisor em 23/11).
-    p["branco"] = float(np.clip(d["branco_p99"] + 0.06, 0.92, 0.99))
+    p["branco"] = float(np.clip(d["branco_p99"] + 0.12, 0.94, 0.99))
     return p
 
 
@@ -87,7 +91,27 @@ def aplicar(f, p, pele=None):
     sat = p["sat_resto"] * (1 - m[..., None]) + p["sat_pele"] * m[..., None]
     out = cinza + (x - cinza) * sat
     out[..., 0] += p["calor_pele"] * m; out[..., 2] -= p["calor_pele"] * m
-    return joelho(out)
+    return joelho(suaviza_croma(out))
+
+
+def peso_rosto(forma, rosto):
+    """A pele só vale perto do rosto e do pescoço: parede bege tem a mesma cor de pele e virava mancha."""
+    h, w = forma[:2]
+    if rosto is None:
+        return np.ones((h, w), np.float32)
+    x, y, fw, fh = [float(v) for v in rosto]
+    cx, cy = x + fw / 2, y + fh / 2 + fh * 0.25
+    m = np.zeros((h, w), np.uint8)
+    cv2.ellipse(m, (int(cx), int(cy)), (int(fw * 0.95), int(fh * 1.25)), 0, 0, 360, 255, -1)
+    return cv2.GaussianBlur(m, (0, 0), fw * 0.15).astype(np.float32) / 255
+
+
+def suaviza_croma(x, sigma=2.0):
+    """Tira o ruído de cor (manchas na parede) sem tocar no detalhe: suaviza só a cor, a luz fica intacta."""
+    ycc = cv2.cvtColor(np.clip(x, 0, 1).astype(np.float32), cv2.COLOR_RGB2YCrCb)
+    ycc[..., 1] = cv2.GaussianBlur(ycc[..., 1], (0, 0), sigma)
+    ycc[..., 2] = cv2.GaussianBlur(ycc[..., 2], (0, 0), sigma)
+    return cv2.cvtColor(ycc, cv2.COLOR_YCrCb2RGB)
 
 
 def joelho(x, inicio=0.86):
@@ -130,8 +154,15 @@ def main():
         p = json.load(open(jp))["parametros"]
         info = probe(ent)
         enc = Encoder(os.path.join(a.pasta, "_cor_video.mp4"))
-        for _, f in frames(ent):
-            enc.write(aplicar(f, p))
+        det = cv2.FaceDetectorYN.create(modelo("yunet.onnx"), "", (f_w := 540, 960), 0.6)
+        rosto = None
+        for i, f in frames(ent):
+            if i % 4 == 0:  # rosto a cada 4 quadros, suavizado
+                _, r = det.detect(cv2.cvtColor((cv2.resize(f, (540, 960)) * 255).astype(np.uint8), cv2.COLOR_RGB2BGR))
+                if r is not None and len(r):
+                    novo = np.array(r[np.argmax(r[:, 2] * r[:, 3])][:4] * 2, np.float32)
+                    rosto = novo if rosto is None else rosto * 0.6 + novo * 0.4
+            enc.write(aplicar(f, p, pele=mascara_pele(f) * peso_rosto(f.shape, rosto)))
         enc.close()
         out = os.path.join(a.pasta, a.saida)
         os.system(f'ffmpeg -v error -y -i "{os.path.join(a.pasta, "_cor_video.mp4")}" -i "{ent}" -map 0:v -map 1:a? -c copy "{out}" && rm "{os.path.join(a.pasta, "_cor_video.mp4")}"')

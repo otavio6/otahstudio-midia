@@ -66,19 +66,43 @@ def rosto_em(track, t):
 
 
 # ---------- legenda (1 ou 2 palavras, faixa lima com texto preto) ----------
-def grupos_legenda(palavras):
-    out, i = [], 0
-    while i < len(palavras):
-        w = palavras[i]
-        txt, ini, fim = w["texto"], w["inicio"], w["fim"]
-        limpo = re.sub(r"[,.;:!?…]", "", txt)
-        if len(limpo) <= 3 and i + 1 < len(palavras) and palavras[i + 1]["inicio"] - fim < 0.25:
-            j = palavras[i + 1]; txt += " " + j["texto"]; fim = j["fim"]; i += 1
-        out.append({"texto": re.sub(r"[,.;:!?…]", "", txt).upper(), "ini": ini, "fim": fim})
-        i += 1
+LIGA = {"a", "o", "as", "os", "de", "do", "da", "dos", "das", "que", "e", "com", "se", "um", "uma", "no", "na", "nos", "nas",
+        "em", "pro", "pra", "por", "eu", "ele", "ela", "eles", "numa", "num", "sem", "seu", "sua", "é", "aí", "tá", "me", "mais", "muito"}
+
+
+def grupos_legenda(palavras, max_chars=16, max_pal=4):
+    """Legenda em unidades de sentido (2 a 4 palavras), sem terminar em artigo ou preposição, sem atravessar pausa ou pontuação."""
+    out, atual = [], []
+    def fecha():
+        if atual:
+            txt = " ".join(re.sub(r"[,.;:!?…]", "", w["texto"]) for w in atual).upper()
+            out.append({"texto": txt, "ini": atual[0]["inicio"], "fim": atual[-1]["fim"], "palavras": [w["texto"] for w in atual]})
+            atual.clear()
+    lig = lambda w: re.sub(r"[,.;:!?…]", "", w["texto"]).lower() in LIGA
+    for k, w in enumerate(palavras):
+        atual.append(w)
+        prox = palavras[k + 1] if k + 1 < len(palavras) else None
+        pontua = w["texto"][-1:] in ",.;:!?…"
+        pausa = prox is None or prox["inicio"] - w["fim"] > 0.28
+        tamanho = len(" ".join(x["texto"] for x in atual))
+        if prox is None or pontua or pausa:
+            fecha(); continue
+        if tamanho >= max_chars or len(atual) >= max_pal:
+            if lig(w) and len(atual) > 1:  # não termina em artigo/preposição: a palavra de ligação abre a próxima
+                atual.pop(); fecha(); atual.append(w)
+            else:
+                fecha()
+    # palavra solta (pausa logo depois) gruda na anterior quando cabe
+    juntos = []
+    for g in out:
+        if juntos and len(g["palavras"]) == 1 and g["ini"] - juntos[-1]["fim"] < 0.5 and len(juntos[-1]["texto"]) + 1 + len(g["texto"]) <= 24:
+            j = juntos[-1]; j["texto"] += " " + g["texto"]; j["fim"] = g["fim"]; j["palavras"] += g["palavras"]
+        else:
+            juntos.append(g)
+    out = juntos
     for k, g in enumerate(out):
         prox = out[k + 1]["ini"] if k + 1 < len(out) else g["fim"] + 0.5
-        g["fim"] = min(prox, g["fim"] + 0.8)
+        g["fim"] = min(prox, g["fim"] + 0.6)
     return out
 
 
@@ -94,9 +118,12 @@ def mascara_txt(s, tam):
 
 def pinta_legenda(img, g, t, y, tam=84):
     m = mascara_txt(g["texto"], tam)
-    larg_max = 2 * min(W / 2 - SAFE["left"], W - SAFE["right"] - W / 2) * 0.95  # cabe na zona segura, centrada no quadro
+    larg_max = 2 * min(W / 2 - SAFE["left"], W - SAFE["right"] - W / 2) - 0.75 * tam - 12  # a faixa inteira cabe na zona segura
     if m.shape[1] > larg_max:
         tam = int(tam * larg_max / m.shape[1]); m = mascara_txt(g["texto"], tam)
+        larg_max = 2 * min(W / 2 - SAFE["left"], W - SAFE["right"] - W / 2) - 0.75 * tam - 12
+        if m.shape[1] > larg_max:
+            tam = int(tam * larg_max / m.shape[1]); m = mascara_txt(g["texto"], tam)
     pop = 0.88 + 0.12 * ease_out((t - g["ini"]) / 0.08)
     if pop != 1:
         m = cv2.resize(m, None, fx=pop, fy=pop, interpolation=cv2.INTER_LINEAR)
@@ -162,6 +189,14 @@ def main():
     dur = float(plano.get("duracao") or json.load(open(os.path.join(P, "03_cortes.json")))["duracao_final"])
     base = os.path.join(P, plano.get("base", "base.mp4"))
     leg = grupos_legenda(pal)
+    # Pontos de corte (fim de cada trecho) para disfarçar o salto com troca de escala, como um editor faz
+    segs = json.load(open(os.path.join(P, "03_cortes.json")))["segmentos"]
+    bordas, acc = [], 0.0
+    for sg in segs:
+        acc += sg["fim"] - sg["ini"]; bordas.append(acc)
+    def escala_salto(t):
+        k = sum(1 for b_ in bordas if b_ <= t + 1e-3)
+        return plano.get("escala_salto", 1.10) if k % 2 == 1 else 1.0
     track = rastrear_rosto(base)
     so = sorted({int(round(float(x) * FPS)) for x in a.quadros.split(",") if x.strip()})
 
@@ -204,6 +239,10 @@ def main():
         q = png_da_cena(c, i)
         if modo == "pessoa":
             img = f
+            ks = escala_salto(t) if c.get("disfarca_saltos", True) else 1.0
+            if ks != 1.0:
+                M = np.float32([[ks, 0, (1 - ks) * rosto[0]], [0, ks, (1 - ks) * rosto[1]]])
+                img = cv2.warpAffine(img, M, (W, H), flags=cv2.INTER_LANCZOS4, borderMode=cv2.BORDER_REFLECT)
             for z in plano.get("zoom", []):
                 if z["de"] <= t < z["ate"]:
                     k = 1 + (z.get("escala", 1.06) - 1) * ease_io((t - z["de"]) / max(0.01, z["ate"] - z["de"]))
@@ -271,7 +310,7 @@ def main():
         k, c = cena_em(t)
         rosto = rosto_em(track, t)
         prev = cenas[k - 1] if k > 0 else None
-        tipo = c.get("transicao", "desliza" if prev and prev.get("modo") != c.get("modo") else "corte")
+        tipo = c.get("transicao", "corte")
         dt = t - c.get("de", 0)
         if prev is not None and tipo == "encolhe" and dt < TRANS * 1.4 and c.get("modo") == "canto":
             img = desenha(c, i, t, f, rosto, encolhe=dt / (TRANS * 1.4))
@@ -290,8 +329,14 @@ def main():
         else:
             img = desenha(c, i, t, f, rosto)
         img = img.copy()
-        if c.get("legenda", True):
+        em_transicao = prev is not None and tipo != "corte" and dt < TRANS * 1.4
+        prox = cenas[k + 1] if 0 <= k < len(cenas) - 1 else None
+        antes_troca = prox is not None and prox.get("modo") != c.get("modo") and prox["de"] - t < 0.12
+        if c.get("legenda", True) and not em_transicao and not antes_troca:
             g = next((g for g in leg if g["ini"] <= t < g["fim"]), None)
+            ocultar = {re.sub(r"[,.;:!?…]", "", x).lower() for x in c.get("legenda_ocultar", [])}
+            if g and any(re.sub(r"[,.;:!?…]", "", w).lower() in ocultar for w in g["palavras"]):
+                g = None
             if g:
                 pinta_legenda(img, g, t, c.get("legenda_y", H - SAFE["bottom"] - 70))
         out = (np.clip(img, 0, 1) * 255).astype(np.uint8)

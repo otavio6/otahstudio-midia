@@ -32,7 +32,9 @@ def main(pasta, roteiro):
             raise SystemExit(f"Palavra de início não encontrada: {alvo!r} depois de {cursor:.2f}s")
         de = max(0.0, w["inicio"] - 0.04)
         inicios.append(de); cursor = w["inicio"] + 0.01
-    fim_video = fim_fala + 0.45
+    import subprocess
+    dur_base = float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", os.path.join(pasta, "base.mp4")], capture_output=True, text=True).stdout or 0)
+    fim_video = min(fim_fala + 0.35, dur_base - 0.05) if dur_base else fim_fala + 0.35  # nunca congela o último quadro
     os.makedirs(os.path.join(pasta, "cenas"), exist_ok=True)
     cenas = []
     for k, c in enumerate(r["cenas"]):
