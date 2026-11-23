@@ -143,8 +143,8 @@ def main(pasta):
             caixa = (fx - fw * 0.8, fy - fh * 0.85, fx + fw * 0.8, fy + fh * 0.85)
             # a mira fica no fundo em volta do rosto: mede o anel externo
             cor, r, _ = cor_pelo_fundo(quadro((ini + fim) / 2), caixa, destaque=True, grande=True)
-            el.update(tipo="mira", chaves=ks, cor=hexcor(cor), espessura=6, rotulo=b.get("rotulo"), entrada="escala", saida="fade", contorno_escuro=r < 3)
-            nota.update(contraste=round(r, 2), contorno_escuro=r < 3)
+            el.update(tipo="mira", chaves=ks, cor=hexcor(cor), espessura=6, rotulo=b.get("rotulo"), entrada="escala", saida="fade", contorno_escuro=False)
+            nota.update(contraste=round(r, 2))
             eventos.append({"t": ini, "som": "click"})
         elif b["tipo"] in ("texto", "imagem"):
             if b["tipo"] == "texto":
@@ -167,6 +167,20 @@ def main(pasta):
             cx, cy = lugar
             caixa = (cx - w / 2, cy - h / 2, cx + w / 2, cy + h / 2)
             if b["tipo"] == "texto":
+                # Sem contorno nem sombra: se preto e lima não têm contraste aqui, tenta os outros lugares livres.
+                def pior_contraste(cx_, cy_):
+                    cx_box = (cx_ - w / 2, cy_ - h / 2, cx_ + w / 2, cy_ + h / 2)
+                    return min(cor_pelo_fundo(quadro(t), cx_box, grande=tam >= 40)[1] for t in (ini + 0.05, (ini + fim) / 2, fim - 0.05))
+                if pior_contraste(cx, cy) < 3:
+                    melhor = (pior_contraste(cx, cy), cx, cy)
+                    for pref in ("topo", "esquerda", "direita", "base", "centro"):
+                        alt = achar_lugar(occ.amostras(ini, fim), w, h, (pref,), max_sobrepor=0.08 if el["camada"] == "atras" else 0.0)
+                        if alt:
+                            r_ = pior_contraste(*alt)
+                            if r_ > melhor[0]:
+                                melhor = (r_, *alt)
+                    _, cx, cy = melhor
+                    caixa = (cx - w / 2, cy - h / 2, cx + w / 2, cy + h / 2)
                 partes = pedacos(ini, fim)
                 # pedaço curto (< 0,4 s) não vira troca de cor: o elemento termina na borda (sem pisca-pisca)
                 if len(partes) > 1 and partes[-1][1] - partes[-1][0] < 0.4:
@@ -176,11 +190,10 @@ def main(pasta):
                 cont = []
                 for n_, (a_, b_) in enumerate(partes):
                     piores = [cor_pelo_fundo(quadro(t), caixa, destaque=b.get("destaque", False), grande=tam >= 40) for t in (a_ + 0.05, (a_ + b_) / 2, b_ - 0.05)]
-                    cor, r, sombra = min(piores, key=lambda x: x[1])
-                    escuro = bool(sombra or r < 3)
+                    cor, r, _ = min(piores, key=lambda x: x[1])
                     pe = dict(el, id=f"{el['id']}" + (f"-{n_ + 1}" if len(partes) > 1 else ""), ini=round(a_, 3), fim=round(b_, 3),
-                              tipo="texto", texto=b["texto"], fonte=fonte, tamanho=tam, tracking=track, cor=hexcor(cor), sombra=not escuro,
-                              contorno_escuro=escuro, x=round(cx, 1), y=round(cy, 1))
+                              tipo="texto", texto=b["texto"], fonte=fonte, tamanho=tam, tracking=track, cor=hexcor(cor), sombra=False,
+                              contorno_escuro=False, x=round(cx, 1), y=round(cy, 1))
                     if n_ > 0:
                         pe.update(entrada="nenhuma")
                     if n_ < len(partes) - 1:
@@ -223,23 +236,35 @@ def main(pasta):
         m = texto(limpo, MARCAS["otavio"]["fonte"], tam, 0.01)
         if m.shape[1] > larg_max:
             tam = int(tam * larg_max / m.shape[1]); m = texto(limpo, MARCAS["otavio"]["fonte"], tam, 0.01)
-        caixa = (cx - m.shape[1] / 2 - 10, y - m.shape[0] / 2 - 8, cx + m.shape[1] / 2 + 10, y + m.shape[0] / 2 + 8)
-        cor, r, sombra = cor_pelo_fundo(quadro(g["ini"] + 0.03), caixa, destaque=destaque, grande=True)
-        escuro = bool(sombra or r < 3)
-        if escuro and luminancia(cor) < 0.3:  # com contorno escuro a letra precisa ser clara
-            cor = rgb(marca["destaque"]) if destaque else rgb(marca["branco"])
-        legenda.append({"texto": limpo, "ini": round(g["ini"], 3), "fim": round(fim, 3), "destaque": destaque, "cor": hexcor(cor),
-                        "x": round(cx, 1), "y": round(y, 1), "tamanho": tam, "sombra": not escuro, "contorno_escuro": escuro})
+        def caixa_em(y_):
+            return (cx - m.shape[1] / 2 - 10, y_ - m.shape[0] / 2 - 8, cx + m.shape[1] / 2 + 10, y_ + m.shape[0] / 2 + 8)
         boca = (fx - fw * 0.4, fy + fh * 0.15, fx + fw * 0.4, fy + fh * 0.62)
+        q = quadro(g["ini"] + 0.03)
+        cor, r, _ = cor_pelo_fundo(q, caixa_em(y), grande=True)
+        if r < 3:
+            # Sem contorno: sobe ou desce a legenda (fora da boca, dentro da zona segura) até preto ou lima terem contraste.
+            for dy in (60, 120, 180, -60, -120, 240, 300):
+                y2 = y + dy
+                c2 = caixa_em(y2)
+                if fora_da_zona_segura(c2) or not (c2[1] > boca[3] or c2[3] < boca[1]):
+                    continue
+                cor2, r2, _ = cor_pelo_fundo(q, c2, grande=True)
+                if r2 > r:
+                    cor, r, y = cor2, r2, y2
+                if r >= 3:
+                    break
+        caixa = caixa_em(y)
+        legenda.append({"texto": limpo, "ini": round(g["ini"], 3), "fim": round(fim, 3), "destaque": destaque, "cor": hexcor(cor),
+                        "x": round(cx, 1), "y": round(y, 1), "tamanho": tam, "sombra": False, "contorno_escuro": False})
         cobre_boca = not (caixa[1] > boca[3] or caixa[3] < boca[1])
-        leg_rel.append({"texto": limpo, "contraste": round(r, 2), "contorno_escuro": escuro, "cobre_boca": cobre_boca, "zona_segura": not fora_da_zona_segura(caixa)})
+        leg_rel.append({"texto": limpo, "contraste": round(r, 2), "cobre_boca": cobre_boca, "zona_segura": not fora_da_zona_segura(caixa)})
 
     tl = {"duracao": dur, "base": "job/base.mp4", "pessoa": "job/pessoa.webm", "audio": "job/mix.wav",
           "elementos": [e for e in els if e], "legenda": legenda, "zoom": plano.get("_zoom", []), "fonte_legenda": MARCAS["otavio"]["fonte"]}
     json.dump(tl, open(os.path.join(pasta, "timeline.json"), "w"), ensure_ascii=False, indent=1)
     json.dump(eventos, open(os.path.join(pasta, "eventos_som.json"), "w"), ensure_ascii=False, indent=1)
-    problemas = [r for r in relatorio if r.get("erro") or r.get("sobreposicao_corpo", 0) > (0.08) or ((r.get("contraste") or 9) < 3 and not r.get("contorno_escuro")) or r.get("zona_segura") is False]
-    problemas += [{"legenda": x["texto"], **x} for x in leg_rel if x["cobre_boca"] or (x["contraste"] < 3 and not x["contorno_escuro"]) or not x["zona_segura"]]
+    problemas = [r for r in relatorio if r.get("erro") or r.get("sobreposicao_corpo", 0) > (0.08) or (r.get("contraste") or 9) < 3 or r.get("zona_segura") is False]
+    problemas += [{"legenda": x["texto"], **x} for x in leg_rel if x["cobre_boca"] or x["contraste"] < 3 or not x["zona_segura"]]
     rel = {"elementos": relatorio, "legenda": leg_rel, "problemas": problemas}
     json.dump(rel, open(os.path.join(pasta, "05_relatorio.json"), "w"), ensure_ascii=False, indent=1)
     print(json.dumps({"elementos": len(tl["elementos"]), "legendas": len(legenda), "problemas": problemas}, ensure_ascii=False)[:1500])

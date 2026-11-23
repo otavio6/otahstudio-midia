@@ -12,7 +12,8 @@ FONT_DIR = "/usr/share/fonts/opentype/inter/"
 # Paletas por marca. A cor de destaque só entra onde o contraste permite.
 MARCAS = {
     "otavio": {"ink": (0x0B, 0x0B, 0x0C), "branco": (0xF7, 0xF7, 0xF5), "destaque": (0xD4, 0xFF, 0x3A),
-               "destaque_claro": (0x1F, 0x4F, 0xFF), "fonte": "Inter-SemiBold.otf", "fonte_display": "InterDisplay-Black.otf"},
+               "destaque_claro": (0x1F, 0x4F, 0xFF), "cores_texto": [(0x0B, 0x0B, 0x0C), (0xD4, 0xFF, 0x3A)], "contorno": False,
+               "fonte": "Inter-SemiBold.otf", "fonte_display": "InterDisplay-Black.otf"},
 }
 
 MODELOS = {
@@ -164,23 +165,18 @@ def razao_contraste(c1, c2):
 
 def cor_pelo_fundo(img, caixa, marca="otavio", destaque=False, grande=True):
     """Escolhe a cor do texto pela região de fundo (pior caso: percentis claro e escuro da região).
-    Fundo claro → preto. Fundo escuro → branco, ou o destaque se ele tiver contraste. Devolve (cor, razão, precisa_sombra)."""
+    Identidade do Otávio: texto só em preto ou verde-lima, sem contorno e sem sombra.
+    Fundo claro → preto. Fundo escuro → lima. Devolve (cor, razão, falta_contraste); se faltar, o texto muda de lugar."""
     m = MARCAS[marca]
     x0, y0, x1, y1 = [int(v) for v in caixa]
     x0, y0, x1, y1 = max(0, x0), max(0, y0), min(img.shape[1], x1), min(img.shape[0], y1)
     reg = img[y0:y1, x0:x1].reshape(-1, 3)
     if not len(reg):
-        return rgb(m["branco"]), 21.0, False
+        return rgb(m["ink"]), 21.0, False
     L = luminancia(reg)
     claro, escuro = reg[np.argmin(np.abs(L - np.percentile(L, 90)))], reg[np.argmin(np.abs(L - np.percentile(L, 10)))]
     minimo = 3.0 if grande else 4.5
-    # Regra do Otávio: fundo claro pede preto; o destaque (lime) só entra no escuro, nunca uma terceira cor.
-    opcoes = ([m["destaque"]] if destaque else []) + [m["branco"], m["ink"]]
-    melhor = None
-    for c in opcoes:
-        r = min(razao_contraste(rgb(c), claro), razao_contraste(rgb(c), escuro))
-        if r >= minimo:
-            return rgb(c), r, False
-        if melhor is None or r > melhor[1]:
-            melhor = (rgb(c), r)
-    return melhor[0], melhor[1], True  # nenhuma passa sozinha: usar sombra/faixa ou trocar de lugar
+    # Regra do Otávio: só preto ou lima. Fica a que tiver mais contraste no pior ponto do fundo.
+    opcoes = [(rgb(c), min(razao_contraste(rgb(c), claro), razao_contraste(rgb(c), escuro))) for c in m.get("cores_texto", [m["ink"], m["destaque"]])]
+    cor, r = max(opcoes, key=lambda x: x[1])
+    return cor, r, r < minimo  # nenhuma passa: trocar de lugar (nunca contorno, sombra ou terceira cor)

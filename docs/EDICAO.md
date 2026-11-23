@@ -79,13 +79,13 @@ Regras da esteira:
 - Respeite a zona segura do Reels: 250 px livres em cima e 340 px embaixo (1080×1920), e a lateral direita onde ficam os botões.
 - A legenda fica abaixo do queixo e acima da zona de baixo. Nunca em cima da boca ou dos olhos.
 
-## 3. Regras de cor (contraste antes de marca)
+## 3. Regras de cor (identidade do Otávio)
 
+- **Texto só em duas cores: preto (#0B0B0C) ou verde-lima (#D4FF3A).** Nada de branco, de terceira cor, de contorno ou de sombra. É a identidade dele: não tem outra forma.
 - **A cor sai do fundo, não do gosto.** Antes de colocar um texto ou elemento, meça a luminância do que está atrás dele.
-- **Fundo claro:** texto preto (#0B0B0C). **Fundo escuro:** branco ou lime.
-- **O lime (#D4FF3A) só entra em fundo escuro.** Em fundo claro, ele some.
-- O contraste mínimo é 4,5:1 para texto pequeno e 3:1 para texto grande. Se o fundo varia (parede, rosto, mão), use sombra suave ou uma faixa por trás, ou escolha outro lugar.
-- No máximo uma cor de destaque por tela.
+- **Fundo claro:** preto. **Fundo escuro:** lima. O lima nunca entra em fundo claro, porque some.
+- O contraste mínimo é 4,5:1 para texto pequeno e 3:1 para texto grande. Se o fundo varia (parede, rosto, mão) e nenhuma das duas passa, **o texto muda de lugar** (ou de tempo, ou o fundo da marca entra atrás). Nunca se resolve com contorno ou sombra.
+- Vale para legenda, títulos, rótulos, mira e cartela final.
 
 ## 4. Movimento e ritmo
 
