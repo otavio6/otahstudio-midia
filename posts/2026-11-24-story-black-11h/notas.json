@@ -1,0 +1,20 @@
+{
+ "copy": {
+  "rodadas": [
+   8.17,
+   8.17,
+   8.5
+  ],
+  "final": 8.5,
+  "obs": "clareza 7,5 na última rodada; ajustes aplicados"
+ },
+ "qualidade": {
+  "rodadas": [
+   7.67,
+   8.17,
+   7.94
+  ],
+  "final": 7.94,
+  "aprovada": false
+ }
+}

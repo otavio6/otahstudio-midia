@@ -1,0 +1,112 @@
+{
+ "id": "WA01",
+ "series": "2026 · OH/045",
+ "template": "Novidade + mensagens prontas (esteira 23/11, v2)",
+ "allowCaps": [
+  "SIM",
+  "NÃO"
+ ],
+ "slides": [
+  {
+   "m": "A",
+   "theme": "dark",
+   "grid": false,
+   "swipe": true,
+   "top": 230,
+   "label": "WhatsApp · Recepção da clínica",
+   "title": "O WhatsApp começou\na liberar a mensagem\nprogramada.",
+   "tsize": 86,
+   "body": "Paciente sumiu depois do orçamento? Tem 3 mensagens prontas aqui.",
+   "imgSrc": "gfx/capa.png",
+   "imgX": 80,
+   "imgY": 700,
+   "imgW": 920,
+   "imgH": 420,
+   "maxw": 880
+  },
+  {
+   "m": "T",
+   "theme": "light",
+   "grid": false,
+   "title": "Você escreve agora ||e ele envia no dia certo.",
+   "lineY": 620,
+   "points": [
+    {
+     "y": "Agora",
+     "t": "Texto ou imagem."
+    },
+    {
+     "y": "10 min",
+     "t": "Mínimo de antecedência."
+    },
+    {
+     "y": "2 semanas",
+     "t": "Máximo nos testes.",
+     "hot": true
+    }
+   ],
+   "foot": "Áudio e documento ficam de fora.\n||No Business, a Meta ainda não confirmou.",
+   "footTop": 900,
+   "lineToLast": true
+  },
+  {
+   "m": "MS",
+   "theme": "dark",
+   "top": 230,
+   "title": "Mensagem 1\n||3 dias depois do orçamento",
+   "imgSrc": "gfx/m1.png",
+   "imgY": 420,
+   "imgH": 330,
+   "quoteTop": 820,
+   "quote": "“Oi, Ana! Ficou alguma dúvida sobre o orçamento que eu te mandei? Se quiser, te explico em 2 minutos por áudio.”",
+   "body": "Programa assim que mandar o orçamento. Se ela responder antes, é só cancelar."
+  },
+  {
+   "m": "MS",
+   "theme": "light",
+   "top": 230,
+   "title": "Mensagem 2\n||Na véspera da consulta",
+   "imgSrc": "gfx/m2.png",
+   "imgY": 460,
+   "imgH": 240,
+   "quoteTop": 800,
+   "quote": "“Oi, Bruno! Amanhã às 15h te espero aqui. Se precisar remarcar, me avisa hoje que eu consigo encaixar outra pessoa.”",
+   "body": "Programa na hora em que marcar, se a consulta for nas próximas 2 semanas."
+  },
+  {
+   "m": "MS",
+   "theme": "dark",
+   "top": 230,
+   "title": "Mensagem 3\n||7 dias depois do procedimento",
+   "imgSrc": "gfx/m3.png",
+   "imgY": 460,
+   "imgH": 240,
+   "quoteTop": 800,
+   "quote": "“Oi, Carla! Já faz uma semana do seu procedimento. Como você está se sentindo? Qualquer coisa diferente, me chama aqui.”",
+   "body": "Programa no mesmo dia do procedimento. Se ela mandar mensagem antes, é só cancelar."
+  },
+  {
+   "m": "B",
+   "theme": "light",
+   "titleTop": 240,
+   "title": "Pra não parecer ||mensagem de robô:",
+   "tsize": 72,
+   "imgSrc": "gfx/robo.png",
+   "imgY": 470,
+   "imgH": 600
+  },
+  {
+   "m": "M2",
+   "theme": "dark",
+   "top": 230,
+   "title": "Salva e manda pra quem cuida ||do WhatsApp da clínica.",
+   "imgSrc": "gfx/cta.png",
+   "imgY": 540,
+   "imgH": 360,
+   "cta": "Salvar pra programar hoje",
+   "icon": "save",
+   "ctaTop": 1000,
+   "note": ""
+  }
+ ]
+}

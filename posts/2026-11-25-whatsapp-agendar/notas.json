@@ -1,0 +1,27 @@
+{
+ "potencia": {
+  "nota": 8.17,
+  "revisor": "subagente A2"
+ },
+ "copy": {
+  "rodadas": [
+   8.5,
+   8.58
+  ],
+  "final": 8.58,
+  "aprovada": true
+ },
+ "qualidade": {
+  "rodadas": [
+   7.69,
+   8.06,
+   7.88
+  ],
+  "final": 7.88,
+  "aprovada": false,
+  "pendencias": [
+   "novidade do layout (slides 06/07 lembram o fim da peça de 24/11)",
+   "vazios nos slides 02 e 06"
+  ]
+ }
+}

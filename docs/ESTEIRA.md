@@ -147,6 +147,11 @@ Para passar, a **média precisa ser ≥ 8,5 e nenhum critério pode ficar abaixo
   - no M2: `ctaLight: true` e `icon: "plus"`;
   - `visual: "notifs"` em M2 e A;
   - no TW: `bold` (quantos parágrafos em negrito), `boldSize`, `gap`, `foot` (rodapé da série) e quebra de linha com `\n` dentro do parágrafo.
+- Recursos novos do motor (23/11):
+  - `imgSrc` em qualquer slide (com `imgX`, `imgY`, `imgW`, `imgH`, `imgR`): uma imagem da pasta do post por cima do módulo, para ocupar vazio com elemento do tema;
+  - módulo `MS` (mensagem pronta): `title`, `quote`, `body`, `quoteTop`, com `imgSrc` no meio; serve para séries "Mensagem 1, 2, 3";
+  - `lineToLast: true` no T (a linha termina no último ponto);
+  - stories 1080×1920: `node engine/story/render_story.js posts/<pasta>` lendo `story.json` (exemplo em `posts/2026-11-24-story-black-11h/`); o contato marca em vermelho as faixas cobertas pela interface.
 - Exemplos aprovados (média ≥ 8,5): `posts/2026-11-24-black-friday-clinica/spec.json` (carrossel, 8,56) e `posts/2026-11-26-preco-explicacao/spec.json` (estático, 8,63).
 - Fundamentos obrigatórios:
   - hierarquia clara;

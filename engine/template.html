@@ -182,6 +182,9 @@ Object.assign(V,{
  check:(o={})=>`<div style="position:absolute;left:${o.x??80}px;top:${o.top??700}px;width:${o.s??300}px;height:${o.s??300}px;border-radius:${(o.s??300)*.22}px;border:6px solid rgba(255,255,255,.18)"><svg viewBox="0 0 100 100" style="position:absolute;inset:-12%;width:124%;height:124%"><path d="M22 52 L42 72 L82 28" fill="none" stroke="var(--accent)" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" style=""/></svg></div>`,
 });
 Object.assign(M,{
+ // MS · mensagem pronta: título + imagem (imgSrc) + citação grande + dica
+ MS:(s)=>`<div class="blk" style="top:${s.top??230}px"><div class="h2" style="font-size:${s.tsize??62}px;max-width:900px">${rich(s.title)}</div></div>
+  <div class="blk" style="top:${s.quoteTop??800}px"><div class="h3" style="font-size:${s.qSize??48}px;line-height:1.12;max-width:900px">${rich(s.quote||'')}</div>${s.body?`<div class="bd" style="margin-top:26px;font-size:28px">${richB(s.body)}</div>`:''}</div>`,
  // X · capa com foto cheia
  X:(s)=>`${PH(s.photo,s.phLabel,'inset:0',{ly:'30%'})}${shade('top',.94)}
   <div class="blk" style="top:${s.top??820}px"><div class="label" style="margin-bottom:28px;color:var(--inkD);opacity:.75">${esc(s.label||'')}</div><div class="hc" style="max-width:${s.maxw??900}px;color:var(--inkD)">${rich(s.title)}</div>${s.body?`<div class="bd" style="margin-top:28px">${richB(s.body)}</div>`:''}</div>${s.swipe!==false?'<div class="swipe" style="color:var(--inkD)">→</div>':''}`,
@@ -193,7 +196,7 @@ Object.assign(M,{
  // T · linha do tempo
  T:(s)=>{const pts=s.points||[],n=pts.length,y=s.lineY??780,cw=920/n;return `${s.grid!==false?gridlines():''}
   <div class="blk" style="top:240px">${s.eyebrow?`<div class="eb" style="margin-bottom:24px">${richB(s.eyebrow)}</div>`:''}<div class="h2" style="max-width:880px">${rich(s.title)}</div></div>
-  <div style="position:absolute;left:80px;right:80px;top:${y}px;height:2px;background:${THEME==='light'?'rgba(17,18,20,.18)':'rgba(255,255,255,.18)'}"></div>
+  <div style="position:absolute;left:80px;right:${s.lineToLast?1080-(80+(n-1)*cw)-16:80}px;top:${y}px;height:2px;background:${THEME==='light'?'rgba(17,18,20,.18)':'rgba(255,255,255,.18)'}"></div>
   ${pts.map((p,k)=>{const x=80+k*cw;const d=p.hot?32:20;return `<div style="position:absolute;left:${x}px;top:${y-d/2+1}px;width:${d}px;height:${d}px;border-radius:50%;background:${p.hot?'var(--accent)':THEME==='light'?'#111214':'#F4F4F1'}"></div>
    <div style="position:absolute;left:${x}px;width:${cw-16}px;top:${y-100}px;font:400 50px/1 var(--display);letter-spacing:-.03em;white-space:nowrap">${p.hot&&THEME==='light'?`<span class="acc">${esc(p.y)}</span>`:esc(p.y)}</div>
    <div class="bd" style="position:absolute;left:${x}px;width:${cw-24}px;top:${y+46}px;font-size:27px;line-height:1.35">${richB(p.t)}</div>`;}).join('')}
@@ -410,7 +413,7 @@ Object.assign(V,{
 });
 
 function renderSlide(i){const s=SPEC.slides[i],n=SPEC.slides.length;const theme=s.theme||'dark';THEME=theme;
- document.getElementById('stage').innerHTML=`<div class="slide ${theme}" id="slide" style="${vars()}">${M[s.m](s)}${s.chrome===false?'':header(i,n,s)+footer()}${GRAIN}</div>`;
+ document.getElementById('stage').innerHTML=`<div class="slide ${theme}" id="slide" style="${vars()}">${M[s.m](s)}${s.imgSrc?`<div class="phb" style="left:${s.imgX??80}px;top:${s.imgY??600}px;width:${s.imgW??920}px;height:${s.imgH??300}px;border-radius:${s.imgR??0}px;background-color:transparent;background-image:url('${s.imgSrc}')"></div>`:''}${s.chrome===false?'':header(i,n,s)+footer()}${GRAIN}</div>`;
  if(s.tsize){const h=document.querySelector('#slide .hc,#slide .hp,#slide .h1,#slide .h2');if(h)h.style.fontSize=s.tsize+'px';}}
 window.boot=(brand,spec)=>{B=brand;SPEC=spec;return spec.slides.length;};
 window.renderSlide=renderSlide;

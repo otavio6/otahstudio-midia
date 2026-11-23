@@ -350,5 +350,143 @@
   "instagram_media_id": null,
   "permalink": null,
   "fonte": "https://mercadoeconsumo.com.br/16/10/2026/ecommerce/black-friday-45-dos-produtos-nao-tiveram-desconto-real-em-2025-aponta-estudo/amp/"
+ },
+ {
+  "id": "2026-11-24-story-black-11h",
+  "data": "2026-11-24",
+  "horario": "09:00",
+  "formato": "story",
+  "versao": 1,
+  "slides": 3,
+  "titulo": "Story: chamada do post da Black (11h)",
+  "tema": "Chamada para o carrossel de Black Friday das 11h + pergunta por direct",
+  "fonte": "Timelens/FutureBrand SP (Black Friday 2025, 2.373 produtos), mesma fonte do carrossel de 24/11",
+  "angulo": "crença errada + dado",
+  "metodo": "chamada",
+  "pensamento": "Será que se eu baixar o preço a agenda enche?",
+  "gancho": "45% dos produtos em promoção não tinham desconto de verdade.",
+  "assinatura": "story: numero-gigante-escuro | hora-gigante-clara | pergunta+interrogacao-vazada-escura",
+  "notas": {
+   "potencia": null,
+   "copy": 8.5,
+   "qualidade": 7.94
+  },
+  "obs": "Copy 8,50 com clareza 7,5 na 3ª revisão (ajustes aplicados depois). Qualidade 7,67 → 8,17 → 7,94. Precisa de aprovação antes das 9h de 24/11; se aprovado depois das 11h, a tela 2 perde o sentido.",
+  "metricool": null,
+  "status": "rascunho",
+  "instagram_media_id": null,
+  "permalink": null
+ },
+ {
+  "id": "2026-11-25-whatsapp-agendar",
+  "data": "2026-11-25",
+  "horario": "18:00",
+  "formato": "carrossel",
+  "versao": 1,
+  "titulo": "WhatsApp programado: 3 mensagens da recepção",
+  "tema": "WhatsApp começou a liberar mensagem programada: 3 mensagens prontas para a recepção (orçamento parado, véspera, pós)",
+  "fonte": "https://folhadealphaville.com.br/cidades/2026/11/19/whatsapp-comeca-a-liberar-agendamento-de-mensagens-veja-como-programar-envios.html ; https://economicnewsbrasil.com.br/2026/11/20/agendamento-mensagens-whatsapp-limites-empresas/",
+  "angulo": "bolso",
+  "metodo": "AIDA",
+  "pensamento": "Paciente só pergunta o preço e some.",
+  "gancho": "O WhatsApp começou a liberar a mensagem programada. Paciente sumiu depois do orçamento? Tem 3 mensagens prontas aqui.",
+  "ganchos_reserva": [
+   "Paciente pediu orçamento e sumiu? Programa a próxima mensagem no WhatsApp.",
+   "3 mensagens que a sua recepção devia deixar programadas hoje."
+  ],
+  "assinatura": "capa:balao-programado-escura | linha-do-tempo-claro | mensagem×3 alternando (balões+citação) | baloes-errado-certo-claro | fila-programadas+cta-escuro",
+  "notas": {
+   "potencia": 8.17,
+   "copy": 8.58,
+   "qualidade": 7.88
+  },
+  "obs": "Qualidade abaixo da régua (7,69 → 8,06 → 7,88 em 3 revisões independentes; pontos: novidade do layout e vazios). Enviado como melhor versão para o Otávio decidir.",
+  "metricool": null,
+  "status": "rascunho",
+  "instagram_media_id": null,
+  "permalink": null,
+  "slides": 7
+ },
+ {
+  "id": "2026-11-28-reel-orcamento-parado",
+  "data": "2026-11-28",
+  "horario": "10:00",
+  "formato": "reel",
+  "versao": 1,
+  "titulo": "Reel: antes do anúncio, o WhatsApp da recepção",
+  "tema": "Seguidor/cliente · orçamentos sem resposta (bastidor)",
+  "fonte": "bastidor do Otávio (sem número)",
+  "angulo": "bastidor + bolso",
+  "metodo": "Hook-Story-Lesson",
+  "pensamento": "Preciso de mais paciente, vou pôr mais dinheiro em anúncio.",
+  "gancho": "A primeira coisa que eu peço quando assumo o marketing de uma clínica é o celular da recepção.",
+  "ganchos_reserva": [
+   "Antes de gastar um real com anúncio, eu conto quantos orçamentos ficaram sem resposta.",
+   "Tem dinheiro parado no WhatsApp da sua recepção, e ninguém tá cobrando."
+  ],
+  "roteiro": {
+   "tela": "ANTES DO ANÚNCIO, EU ABRO O WHATSAPP DA RECEPÇÃO",
+   "fala": [
+    "A primeira coisa que eu peço quando assumo o marketing de uma clínica é o celular da recepção.",
+    "Antes de falar de anúncio ou de post, eu abro o WhatsApp e conto uma coisa que quase nenhum dono de clínica conta.",
+    "Quantos orçamentos saíram no último mês e nunca mais tiveram resposta.",
+    "Cara, ali tem gente que pediu o preço, recebeu, e ninguém voltou a chamar. Gente que já tem interesse e já sabe quanto custa.",
+    "Aí a clínica quer pôr mais dinheiro em anúncio, enquanto essas pessoas tão paradas ali.",
+    "Faz isso hoje: abre o WhatsApp da recepção, volta 30 dias e conta. Pra cada um que você achar, manda a mensagem 1 do meu post do WhatsApp programado, só trocando o nome.",
+    "Me segue que essa semana eu tô abrindo o WhatsApp da recepção aqui com você."
+   ],
+   "tipo": "seguidor/cliente"
+  },
+  "assinatura": "reel",
+  "notas": {
+   "potencia": 8.5,
+   "copy": 8.58,
+   "qualidade": null
+  },
+  "metricool": null,
+  "status": "roteiro",
+  "instagram_media_id": null,
+  "permalink": null
+ },
+ {
+  "id": "2026-11-30-reel-agenda-maio",
+  "data": "2026-11-30",
+  "horario": "10:00",
+  "formato": "reel",
+  "versao": 1,
+  "titulo": "Reel: abre sua agenda de maio",
+  "tema": "Seguidor · paciente que não voltou (vive de indicação)",
+  "fonte": "atemporal (sem número)",
+  "angulo": "controle",
+  "metodo": "PAS",
+  "pensamento": "Vivo de indicação e um mês é cheio, o outro é vazio.",
+  "gancho": "Abre a agenda da sua clínica em maio e conta quantas daquelas pessoas voltaram.",
+  "ganchos_reserva": [
+   "Seu próximo paciente já foi seu paciente.",
+   "Mês vazio na clínica? Antes de promoção, abre a lista de quem já foi paciente."
+  ],
+  "roteiro": {
+   "tela": "ABRE SUA AGENDA DE MAIO. QUANTAS VOLTARAM?",
+   "fala": [
+    "Abre a agenda da sua clínica em maio e conta quantas daquelas pessoas voltaram.",
+    "Se muita gente sumiu, cara, é por isso que um mês lota e o outro fica vazio. E quando esvazia, a primeira ideia é promoção.",
+    "Só que essas pessoas já confiam em você e já sabem o caminho. Muitas só não voltaram porque ninguém lembrou que tava na hora.",
+    "Marca quem tem motivo pra voltar, manutenção ou revisão, e manda uma mensagem pra cada um.",
+    "Tipo: \"Oi, Carla! Faz seis meses da sua limpeza. Quer que eu veja um horário pra você essa semana?\"",
+    "Me segue que eu tô passando, uma por uma, as mensagens que a recepção devia mandar pra paciente."
+   ],
+   "tipo": "seguidor"
+  },
+  "assinatura": "reel",
+  "notas": {
+   "potencia": 7.67,
+   "copy": 8.38,
+   "qualidade": null
+  },
+  "obs": "Copy 8,38 na 3ª revisão (retenção 7,5); ajustes sugeridos aplicados depois, sem nova nota.",
+  "metricool": null,
+  "status": "roteiro",
+  "instagram_media_id": null,
+  "permalink": null
  }
 ]

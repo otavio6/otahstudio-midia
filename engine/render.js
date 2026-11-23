@@ -3,7 +3,7 @@ const { chromium } = require('/opt/npm-tools/node_modules/playwright');
 const fs = require('fs'), path = require('path');
 
 // ---------- revisão do texto do spec (maiúsculas, espaços, pontuação) ----------
-const TXT = ['title','body','eyebrow','sub','foot','note','cta','a','b','from','to','q','t','s','big','word','def','ex','answer','text','myth','truth','sinal','passo'];
+const TXT = ['title','body','eyebrow','sub','foot','note','cta','a','b','from','to','q','t','s','big','word','def','ex','answer','text','myth','truth','sinal','passo','quote'];
 function clean(s){ return String(s).replace(/\*\*|\*|\|\|/g,'').replace(/\s*\n\s*/g,' '); }
 function lintText(s, where, allowLower){
   const out=[]; const c=clean(s);
@@ -24,7 +24,7 @@ function lintSpec(spec){
       if (Array.isArray(obj)) obj.forEach((v,k)=>visit(v,key,`${where}[${k+1}]`));
       else if (obj && typeof obj==='object') for (const k in obj) visit(obj[k],k,`${where}.${k}`);
     };
-    for (const k of ['eyebrow','label','title','a','b','body','sub','foot','items','pairs','rows','points','cta','note','from','to','word','def','ex','text','myth','truth','sinal','passo']) if (s[k]!==undefined && k!=='label') visit(s[k],k,`slide ${String(i+1).padStart(2,'0')} ${k}`);
+    for (const k of ['eyebrow','label','title','a','b','body','sub','foot','items','pairs','rows','points','cta','note','from','to','word','def','ex','text','myth','truth','sinal','passo','quote']) if (s[k]!==undefined && k!=='label') visit(s[k],k,`slide ${String(i+1).padStart(2,'0')} ${k}`);
   });
   return out;
 }
@@ -38,7 +38,7 @@ function lintSpec(spec){
   for (const ext of ['jpg','jpeg','png','webp']) { const af = path.join(__dirname, 'avatar.' + ext); if (fs.existsSync(af)) { brand.avatar = 'data:image/' + (ext==='jpg'?'jpeg':ext) + ';base64,' + fs.readFileSync(af).toString('base64'); break; } }
   // fotos: campos "photo" apontam para arquivos na pasta do post (ex.: "fotos/capa.jpg"); sem arquivo, o slide mostra o espaço reservado
   const missing = [];
-  for (const [i, s] of spec.slides.entries()) for (const k of ['photo']) { if (typeof s[k] === 'string' && !s[k].startsWith('data:')) { const f = path.join(dir, s[k]); if (fs.existsSync(f)) { const e = path.extname(f).slice(1).toLowerCase(); s[k] = 'data:image/' + (e==='jpg'?'jpeg':e) + ';base64,' + fs.readFileSync(f).toString('base64'); } else missing.push(`slide ${String(i+1).padStart(2,'0')}: ${s[k]} (${s.phLabel||'foto'})`); } }
+  for (const [i, s] of spec.slides.entries()) for (const k of ['photo','imgSrc']) { if (typeof s[k] === 'string' && !s[k].startsWith('data:')) { const f = path.join(dir, s[k]); if (fs.existsSync(f)) { const e = path.extname(f).slice(1).toLowerCase(); s[k] = 'data:image/' + (e==='jpg'?'jpeg':e) + ';base64,' + fs.readFileSync(f).toString('base64'); } else missing.push(`slide ${String(i+1).padStart(2,'0')}: ${s[k]} (${s.phLabel||'foto'})`); } }
   const b = await chromium.launch({ executablePath: '/opt/pw-browsers/chromium-1243/chrome-linux64/chrome' });
   const p = await b.newPage({ viewport: { width: 1080, height: 1350 }, deviceScaleFactor: 1 });
   const errs = []; p.on('pageerror', e => errs.push(String(e)));

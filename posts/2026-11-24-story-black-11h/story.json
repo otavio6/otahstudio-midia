@@ -1,0 +1,45 @@
+{
+ "id": "2026-11-24-story-black-11h",
+ "telas": [
+  {
+   "theme": "dark",
+   "top": 540,
+   "label": "Black Friday",
+   "title": "",
+   "big": "45%",
+   "bigTop": 620,
+   "bigSize": 380,
+   "after": {
+    "top": 1000,
+    "title": "dos produtos em promoção não tinham desconto de verdade.",
+    "size": 68
+   },
+   "source": "Timelens/FutureBrand SP · BF 2025 · 2.373 produtos",
+   "srcTop": 1260
+  },
+  {
+   "theme": "light",
+   "top": 560,
+   "title": "O que o seu paciente pensa quando vê “Black” no perfil da sua clínica.",
+   "size": 80,
+   "big": "11h",
+   "bigTop": 1060,
+   "bigSize": 440,
+   "label": "Hoje no feed"
+  },
+  {
+   "theme": "dark",
+   "top": 620,
+   "title": "E você, vai fazer *Black* esse ano?",
+   "size": 100,
+   "outline": "?",
+   "outlineTop": 880,
+   "outlineSize": 600,
+   "outlineRight": true,
+   "outlineR": 90,
+   "outlineA": 0.3,
+   "outlineW": 4,
+   "reply": "Me responde aqui no direct: SIM ou NÃO"
+  }
+ ]
+}
