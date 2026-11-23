@@ -74,6 +74,21 @@ O público já viu muito conteúdo de marketing. Promessa genérica não para ni
 - Pode começar frase com "E" ou "Mas".
 - Chamada para seguir só em primeira pessoa e com motivo: "me segue que essa semana eu só falo de preço em clínica". Nunca "siga @otaviohenriqve".
 
+### Fala de gente, não de relatório
+
+Roteiro é para ser **falado**. O texto tem que soar como o Otávio conversando com uma pessoa que começa a se indignar junto com ele, não como alguém lendo a conclusão de uma pesquisa.
+
+- **Nada de frase de relatório.** "O consumidor percebeu", "os dados mostram", "observou-se", "o mercado entendeu" são resumo de pesquisa, e ninguém se vê neles. Troque pela cena que explica o porquê.
+- **Sujeito que a pessoa reconhece.** Nunca "consumidor" (ninguém se chama assim). Use "cliente", "paciente", "a pessoa", "você". Para quem tem negócio (B2B), puxe para ele mesmo: "até você, que é empresário, é cliente de alguma coisa. Você sabe quando estão te passando a perna."
+- **Mostre a pessoa, não a categoria.** Ela trabalha, junta dinheiro, namora aquele produto faz tempo, sabe quanto custava. É disso que vem a emoção.
+- **Uma ideia por frase, na ordem em que se fala.** Pode repetir para dar ênfase ("ele percebe"). Pode "cara", "olha", pergunta direta.
+- **O dado vem com a cena.** O número (fonte citada) abre a porta, e a frase seguinte explica com uma situação do dia a dia.
+
+| Relatório (reprova) | Conversa (passa) |
+|---|---|
+| "E na Black Friday, o consumidor percebeu: o maior número de críticas foi sobre preço maquiado." | "E cara, não adianta tentar enganar o cliente. Ele percebe. A pessoa está namorando aquele produto faz tempo, ela sabe quanto custava. Quando tem mentira, ela dá um Google e acha o preço de antes." |
+| (para empresário) "O consumidor percebeu a maquiagem de preço." | "E o cliente percebe. Até você, que tem o seu negócio, também é cliente de alguma coisa. Você sabe quando estão te passando a perna." |
+
 ## 7. Proibido: cara de IA
 
 Qualquer item abaixo reprova a peça no A5.
@@ -85,6 +100,7 @@ Qualquer item abaixo reprova a peça no A5.
 - **Palavras de agência:** jornada, potencializar, alavancar, estratégico, transformar, incrível, desbloquear, elevar.
 - **Pontuação e forma:** travessão longo (—), emoji em lista, pergunta retórica atrás de pergunta retórica, toda frase terminando em frase de efeito.
 - **Terceira pessoa:** "siga @otaviohenriqve", "o Otávio explica".
+- **Frase de relatório:** "o consumidor percebeu", "os dados mostram", "observa-se", "o mercado entendeu", "o público", "o consumidor". Veja "Fala de gente" na seção 6.
 
 Comparar dois lados num **visual** (tabela "no varejo / na saúde", "em vez de / tente") é permitido. Proibido é o vício de frase.
 
@@ -103,7 +119,7 @@ Comparar dois lados num **visual** (tabela "no varejo / na saúde", "em vez de /
 2. O ângulo está claro e é diferente das últimas peças do registro?
 3. Tem pelo menos um detalhe concreto (número com fonte, cena, frase real)?
 4. Zero itens da seção 7?
-5. Lendo em voz alta, o Otávio falaria assim num story?
+5. Lendo em voz alta, o Otávio falaria assim num story? A pessoa se reconhece na frase (cena, sujeito "você"/"cliente"), ou parece conclusão de pesquisa?
 6. Alguém pararia no primeiro segundo?
 7. Termina com uma ação ou uma pergunta que a pessoa quer responder?
 

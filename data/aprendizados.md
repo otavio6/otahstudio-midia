@@ -79,3 +79,6 @@ Nota mínima aceitável 8 em todo critério, meta 10. Vale para arte e vídeo. O
 - **Fase atual: 1 · Gancho.** Miolo e CTA ficam no padrão até o gancho estar acertado (vencedor em 3+ reels e taxa de pulo caindo de forma consistente). Depois miolo, depois CTA.
 - Ainda sem reels editados pela esteira nova. Primeira variável a testar: **gancho visual** (texto atrás da cabeça × zoom com palavra-chave × corte seco com pergunta na tela), via Trial Reels.
 - Base de comparação: o reel de 06/11 teve 198 de alcance, 13,3 s de tempo médio assistido e 57,2% de taxa de pulo.
+
+- 2026-11-23 · **Fala de gente, não de relatório** (Otávio): "o consumidor percebeu" soa como IA e ninguém se identifica. Escrever como conversa, com cena e emoção ("não adianta tentar enganar o cliente, ele percebe: está namorando aquele produto faz tempo, dá um Google e acha o preço de antes"). Nunca "consumidor". Para empresário: "até você é cliente de alguma coisa". Regra em docs/COPY.md §6.
+
