@@ -160,14 +160,15 @@ def main(pasta):
             if b["tipo"] == "texto":
                 fonte, tam, track = ESTILOS[b.get("estilo", "rotulo")]
                 tam = int(b.get("tamanho", tam))
-                for tentativa in range(5):
+                for tentativa in range(8):
                     m = texto(b["texto"], fonte, tam, track)
                     w, h = m.shape[1] + 24, m.shape[0] + 16
                     lugar = achar_lugar(occ.amostras(ini, fim, so_corpo=el["camada"] == "atras"), w, h, tuple(b.get("lugar", ["topo", "esquerda", "direita"])),
                                         max_sobrepor=0.15 if el["camada"] == "atras" else 0.0)
-                    if lugar or ("esq" in b and "y" in b):
+                    cabe = "esq" not in b or float(b["esq"]) + w <= W - SAFE["right"]  # posição fixa também tem que caber na zona segura
+                    if (lugar or ("esq" in b and "y" in b)) and cabe:
                         break
-                    tam = int(tam * 0.85)
+                    tam = int(tam * (0.85 if not cabe and "esq" in b and float(b["esq"]) + w * 0.85 <= W - SAFE["right"] else 0.85))
             else:
                 w, h = int(b.get("w", 600)), int(b.get("h", 420))
                 lugar = achar_lugar(occ.amostras(ini, fim), w, h, tuple(b.get("lugar", ["topo"])), 0.0)
