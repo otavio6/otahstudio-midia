@@ -32,3 +32,12 @@ Os modelos (recorte RVM e detector de rosto YuNet) são baixados do GitHub na pr
  ]}
 ```
 Entradas: sobe, escala, desliza-esq, desliza-dir, fade, nenhuma. Saídas: fade, afasta-esq, afasta-dir, desce, nenhuma.
+
+## De onde vem o bruto
+
+O Otávio manda o vídeo pelo painel (aba **Enviar vídeo**, direto da galeria do celular). O servidor guarda no repositório
+privado `otavio6/otahstudio-brutos`, na pasta `brutos/AAAA-MM-DD-titulo/`, em partes de 20 MB, com um `manifesto.json`
+(título, recado para o editor, sha256 e o comando para juntar). A ferramenta `painel_brutos` lista a fila: os que estão
+`pronto` e sem `editado` são os próximos. Para juntar: `cat video.mov.parte01 video.mov.parte02 ... > video.mov` e confira
+o sha256. Depois de entregar a edição, marque com `painel_bruto_editado`.
+
