@@ -55,10 +55,20 @@
    "id": "criacao-2026-11-23T06:48",
    "tarefa": "criacao",
    "inicio": "2026-11-23T06:48:07-03:00",
-   "status": "rodando",
-   "fim": null,
-   "resumo": "",
-   "etapas": {}
+   "status": "parcial",
+   "fim": "2026-11-23T07:18:23-03:00",
+   "resumo": "1 carrossel (WhatsApp programado, 25/11 18h) e 1 story (24/11 9h) enviados como melhor versão, abaixo da régua de qualidade (7,88 e 7,94 após 3 revisões), e 2 roteiros de reel; esperando o ok do Otávio. 0 comentários, 0 leads novos.",
+   "etapas": {
+    "ideias": 10,
+    "aprovadas_potencia": 4,
+    "pecas": 1,
+    "stories": 1,
+    "reels": 2,
+    "rascunhos": 2,
+    "reprovadas_qualidade": 2,
+    "comentarios_pendentes": 0,
+    "leads_novos": 0
+   }
   }
  ]
 }
