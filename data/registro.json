@@ -101,7 +101,7 @@
   "instagram_media_id": null,
   "permalink": null,
   "fonte": "https://mercadoeconsumo.com.br/16/10/2026/ecommerce/black-friday-45-dos-produtos-nao-tiveram-desconto-real-em-2025-aponta-estudo/amp/",
-  "versao": 2,
+  "versao": 3,
   "video": "reel.mp4",
   "capa": "capa.jpg",
   "edicao": {
@@ -148,6 +148,11 @@
    },
    "versao_edicao": 5,
    "motor": "montagem por cenas (montar.py + motion HTML/SVG)"
+  },
+  "ficha": {
+   "edicao": {
+    "audio": "v6: cortes só em silêncio medido; áudio cortado retranscrito e comparado (07_audio.json), zero palavra cortada; vícios colados mantidos no áudio e fora da legenda"
+   }
   }
  },
  {
