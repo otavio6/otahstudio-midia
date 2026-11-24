@@ -110,6 +110,16 @@ Antes de escrever, leia `docs/COPY.md` (público, ângulos, voz e a lista do que
    - feche com um princípio curto e salvável, que deixe a sensação de "aprendi algo de verdade";
    - termine com uma chamada simples (salvar, enviar, seguir ou comentar).
 5. **Forma:** frases curtas, voz ativa, acentos corretos, nada de clichê de coach. Reel no jeito de falar do Otávio ("cara", "pô", "olha só"), com 30 a 45 s e o texto do gancho na tela.
+5b. **Roteiro de reel = conversa, não aula** (regra do Otávio, 24/11/2026: "a pessoa tem que sentir que está numa conversa comigo, não que eu sou um charlatão explicando alguma coisa"). Escreva como ele fala, não como texto:
+   - Fala de quem está do lado da pessoa: "eu vou te ajudar a achar esse vazamento", "quer fazer um teste simples?", "viu?", "entende?".
+   - Marcas da fala dele podem ficar: "ó", "cara", "todo santo dia", "rapidinho", "pronto", "tipo", "pode até ser".
+   - Ele se apresenta quando faz sentido ("Eu me chamo Otávio, cuido do marketing de um grupo de saúde"), uma vez por roteiro, não colado em todos.
+   - Explica o porquê com imagem do dia a dia ("como uma vitrine", "uma espécie de funil", "o outro que responde mais rápido"), nunca com jargão.
+   - Proibido: lista "Um: / Dois: / Três:", frase simétrica de slogan ("Quem faz é a IA. Quem olha sou eu."), dois-pontos de texto escrito no meio da fala, frase que não cabe num fôlego, número sem fonte, afirmação absoluta ("ninguém compra").
+   - Uma chamada só no fim, com motivo ("me segue aqui que eu falo muito de posicionamento e vou te mostrando como arrumar cada uma dessas coisas").
+   - Exemplo ruim: "Pega um papel e conta quatro coisas. Em algum desses degraus o número despenca."
+   - Exemplo bom (palavras dele): "Pega um papel e uma caneta e conta assim, ó: quantas pessoas você respondeu no mesmo dia, quantas receberam o valor, quantas fecharam e quantas pagaram. Uma espécie de funil. Em algum desses pontos o número cai feio. E provavelmente é ali que tá o seu gargalo."
+   - Referência: os roteiros 2026-11-24-reel-concorrente, 2026-11-26-reel-paciente-nao-sabe, 2026-11-30-reel-agenda-maio e 2026-12-04-reel-conta-da-black no `registro.json` foram reescritos a partir do áudio dele. Leia antes de escrever um roteiro novo.
 6. **Legenda:** 4 a 8 linhas e 3 a 5 hashtags, **na voz do Otávio**, como se ele estivesse falando com uma pessoa só:
    - primeira pessoa e "você": "eu vejo isso toda semana", "você corta o preço e…";
    - coloquial, do jeito que ele fala nos reels: "cara", "olha", "pô", "tá", "pra", "pera", frases curtas;
@@ -132,6 +142,7 @@ Dá nota de 0 a 10 em cada critério:
 - conformidade: acentos certos, nada proibido, sem promessa;
 - voz da legenda: soa como o Otávio falando com uma pessoa (primeira pessoa, coloquial)? Qualquer "siga @…", terceira pessoa ou tom de agência deixa este critério abaixo de 7 e reprova;
 - sem cara de IA: passe a seção 7 do `docs/COPY.md` em todo texto (arte, legenda, roteiro). Um item encontrado já reprova, mesmo com média alta;
+- roteiro como conversa (só reels): lido em voz alta, soa como o Otávio conversando com uma pessoa, do lado dela, e não como alguém dando aula ou vendendo? Confira a regra 5b do copywriter. Abaixo de 8 reprova;
 - público e ângulo: o gancho pega um pensamento real do público e o ângulo está claro (checklist da seção 9 do `docs/COPY.md`).
 
 Para passar, a **média precisa ser ≥ 8,5 e nenhum critério pode ficar abaixo de 8**. Nota mínima aceitável é 8 e a meta é 10 (regra do Otávio, 22/11/2026). O revisor é honesto: não arredonda para cima. Se não passar, o copywriter reescreve com os comentários do revisor, no máximo 2 vezes. Se ainda assim não passar, descarte a ideia ou faça a melhor versão e registre a nota.
