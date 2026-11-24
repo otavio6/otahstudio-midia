@@ -200,16 +200,18 @@
   "titulo": "Por que ele cobra mais que você",
   "angulo": null,
   "metodo": null,
-  "gancho": "Tem concorrente pior que você cobrando mais caro. E vendendo mais.",
+  "gancho": "Tem concorrente pior que você cobrando mais caro. E pior ainda: vendendo muito mais que você.",
   "roteiro": {
    "tela": "POR QUE ELE COBRA MAIS QUE VOCÊ?",
    "fala": [
-    "Tem concorrente pior que você cobrando mais caro. E vendendo mais.",
-    "Eu cuido do marketing de um grupo de saúde e vejo isso todo dia. O cliente não tem como testar o seu serviço antes. Então ele abre o Instagram e compara.",
-    "Muitas vezes ele nem te chamou. Olhou os dois perfis e decidiu ali.",
-    "Faz o teste agora: abre o seu perfil e o daquele concorrente que cobra mais, um do lado do outro. Qual parece mais caro?",
-    "Se for o dele, pronto: é por isso que pra você pedem desconto e pra ele não.",
-    "Manda isso pro amigo que vive dando desconto."
+    "Tem concorrente pior que você cobrando mais caro. E pior ainda: vendendo muito mais que você.",
+    "Eu me chamo Otávio, cuido do marketing de um grupo de saúde, e vejo isso todo santo dia.",
+    "O cliente não tem como testar o seu serviço antes. Então ele abre o Instagram e compara ali, rapidinho, como uma vitrine.",
+    "E muitas vezes ele nem te chama. Olha o perfil e já decide ali com quem vai seguir.",
+    "Quer fazer um teste simples? Abre o seu perfil e o do seu maior concorrente, um do lado do outro, e se pergunta: qual parece mais caro?",
+    "E eu não tô falando de cobrar mais caro, não. Tô falando de parecer. Da sensação de que ali tem mais valor.",
+    "Se for o dele, pronto, você já tem a resposta. É por isso que pedem desconto pra você. O que você precisa é de posicionamento.",
+    "Manda isso pro seu amigo que vive dando desconto e acha que Instagram não vende."
    ],
    "tipo": "Seguidor"
   },
@@ -225,7 +227,7 @@
   "permalink": null,
   "fonte": null,
   "versao": 2,
-  "obs": "Reescrito em 24/11 após revisão independente (nota v2 do revisor: 8); ajustes sugeridos pelo revisor aplicados depois, sem nova nota. Data realocada: Otávio grava todos em 24/11. Versão mais abrangente (negócio em geral, não só clínica), pedido do Otávio em 24/11."
+  "obs": "Reescrito em 24/11 após revisão independente (nota v2 do revisor: 8); ajustes sugeridos pelo revisor aplicados depois, sem nova nota. Data realocada: Otávio grava todos em 24/11. Versão mais abrangente (negócio em geral, não só clínica), pedido do Otávio em 24/11. Fala final reescrita a partir do áudio ditado pelo Otávio em 24/11 (palavras dele)."
  },
  {
   "id": "2026-11-25-efeito-halo",
@@ -330,16 +332,16 @@
   "titulo": "Seu cliente não sabe se você é bom",
   "angulo": null,
   "metodo": null,
-  "gancho": "Seu cliente não sabe se você é bom.",
+  "gancho": "Seu cliente não sabe se você é bom. A não ser que você mostre isso pra ele.",
   "roteiro": {
    "tela": "SEU CLIENTE NÃO SABE SE VOCÊ É BOM",
    "fala": [
-    "Seu cliente não sabe se você é bom.",
-    "Ele não entende o seu trabalho por dentro. Não tem como saber.",
-    "Então ele julga o que dá pra ver: sua foto, seu perfil, o jeito que você responde no direct.",
-    "Se a foto tá escura, se cada post tem uma letra diferente, se você demora um dia pra responder… pra ele, esse é o seu trabalho.",
-    "É injusto? É. Mas é assim que ele escolhe.",
-    "Me segue que eu vou te mostrando como arrumar cada um desses."
+    "Seu cliente não sabe se você é bom. A não ser que você mostre isso pra ele.",
+    "Ele não entende o seu trabalho por dentro. Não tem como saber tudo o que é feito pra entregar o seu produto.",
+    "Então ele julga o que dá pra ver: sua foto, seu perfil, sua bio, o jeito que você responde no direct. O que tá na sua vitrine.",
+    "Se a foto tá escura, se cada post tem uma letra diferente, se não tem um padrão, se você demora pra responder… pra ele, esse é o seu trabalho.",
+    "É injusto? Pode até ser. Mas é assim que ele escolhe. O ponto é você não ficar refém disso.",
+    "Me segue aqui que eu falo muito de posicionamento e de marca, e vou te mostrando como arrumar cada uma dessas coisas na sua vitrine."
    ],
    "tipo": "Seguidor · Trial Reel"
   },
@@ -355,7 +357,7 @@
   "permalink": null,
   "fonte": null,
   "versao": 2,
-  "obs": "Reescrito em 24/11 após revisão independente (nota v2 do revisor: 8); ajustes sugeridos pelo revisor aplicados depois, sem nova nota. Data realocada: Otávio grava todos em 24/11. Versão mais abrangente (negócio em geral, não só clínica), pedido do Otávio em 24/11."
+  "obs": "Reescrito em 24/11 após revisão independente (nota v2 do revisor: 8); ajustes sugeridos pelo revisor aplicados depois, sem nova nota. Data realocada: Otávio grava todos em 24/11. Versão mais abrangente (negócio em geral, não só clínica), pedido do Otávio em 24/11. Fala final reescrita a partir do áudio ditado pelo Otávio em 24/11 (palavras dele)."
  },
  {
   "id": "2026-11-27-copiar-concorrente",
@@ -532,7 +534,7 @@
   "angulo": "controle",
   "metodo": "PAS",
   "pensamento": "Vivo de indicação e um mês é cheio, o outro é vazio.",
-  "gancho": "Abre a lista de quem comprou de você seis meses atrás. Maio. Quantas daquelas pessoas voltaram?",
+  "gancho": "Pega a lista de quem comprou de você seis meses atrás, lá em maio. Quantas dessas pessoas voltaram a falar com você?",
   "ganchos_reserva": [
    "Seu próximo paciente já foi seu paciente.",
    "Mês vazio na clínica? Antes de promoção, abre a lista de quem já foi paciente."
@@ -540,12 +542,13 @@
   "roteiro": {
    "tela": "SEUS CLIENTES DE 6 MESES ATRÁS: QUANTOS VOLTARAM?",
    "fala": [
-    "Abre a lista de quem comprou de você seis meses atrás. Maio. Quantas daquelas pessoas voltaram?",
-    "Se muita gente sumiu, taí boa parte dos seus meses fracos. E quando o mês fica fraco, a primeira ideia é promoção.",
-    "Só que essas pessoas já confiam em você. Muitas só não voltaram porque ninguém lembrou delas.",
-    "Separa quem tem motivo pra voltar. Recompra, manutenção, renovação. E manda mensagem pra cada um.",
-    "Tipo: \"Oi, Carla! Faz seis meses que você comprou com a gente. Quer que eu te conte o que tem de novo?\"",
-    "Me segue que eu vou passando as mensagens que todo negócio devia mandar."
+    "Pega a lista de quem comprou de você seis meses atrás, lá em maio. Quantas dessas pessoas voltaram a falar com você?",
+    "Cara, se muita gente sumiu, taí boa parte dos seus meses fracos. E quando o mês fica fraco, a primeira ideia é promoção. Baixar preço, fazer aquilo que parece bonito aos olhos.",
+    "Só que essas pessoas já confiam em você. E muitas só não voltaram porque ninguém lembrou delas.",
+    "Separa quem tem um motivo pra voltar, seja recompra, manutenção ou renovação, e manda uma mensagem específica pra cada uma.",
+    "Tipo: \"Oi, Carla! Faz seis meses que você comprou com a gente. Lembro que você tinha olhado tal coisa. Quer que eu te conte o que chegou de novo?\"",
+    "Viu? Você cria uma conexão com essa pessoa e aumenta muito a chance dela comprar de novo.",
+    "Me segue aqui que eu vou passando as mensagens que todo negócio devia mandar pra vender mais."
    ],
    "tipo": "seguidor"
   },
@@ -555,7 +558,7 @@
    "copy": 8.38,
    "qualidade": null
   },
-  "obs": "Reescrito em 24/11 após revisão independente (nota v2 do revisor: 7); ajustes sugeridos pelo revisor aplicados depois, sem nova nota. Data realocada: Otávio grava todos em 24/11. Versão mais abrangente (negócio em geral, não só clínica), pedido do Otávio em 24/11. Ajustes finais do revisor da versão abrangente aplicados (sem nova nota).",
+  "obs": "Reescrito em 24/11 após revisão independente (nota v2 do revisor: 7); ajustes sugeridos pelo revisor aplicados depois, sem nova nota. Data realocada: Otávio grava todos em 24/11. Versão mais abrangente (negócio em geral, não só clínica), pedido do Otávio em 24/11. Ajustes finais do revisor da versão abrangente aplicados (sem nova nota). Fala final reescrita a partir do áudio ditado pelo Otávio em 24/11 (palavras dele).",
   "metricool": null,
   "status": "roteiro",
   "instagram_media_id": null,
@@ -657,7 +660,7 @@
   "angulo": "controle + bolso",
   "metodo": "PAS",
   "pensamento": "Paguei anúncio na Black e a agenda não encheu.",
-  "gancho": "De cada cem pessoas que chamaram a sua empresa na Black, quantas compraram?",
+  "gancho": "De cada cem pessoas que te chamaram na Black Friday, quantas compraram de você?",
   "ganchos_reserva": [
    "Você pagou anúncio na Black. Quantos daqueles directs viraram consulta?",
    "Tem um degrau na sua clínica onde o paciente cai."
@@ -665,12 +668,12 @@
   "roteiro": {
    "tela": "100 CHAMARAM NA BLACK. QUANTOS COMPRARAM?",
    "fala": [
-    "De cada cem pessoas que chamaram a sua empresa na Black, quantas compraram?",
-    "Você pagou anúncio, chegou mensagem, e o caixa não subiu. Então vamos achar onde vazou.",
-    "Pega um papel e conta: quantas você respondeu no mesmo dia, quantas receberam o valor, quantas fecharam e quantas pagaram.",
-    "Em algum desses pontos o número cai feio.",
-    "Eu olharia primeiro a resposta no mesmo dia. Mensagem que fica pra amanhã esfria, e a pessoa já chamou o concorrente.",
-    "Faz essa conta e me manda no direct qual número mais caiu."
+    "De cada cem pessoas que te chamaram na Black Friday, quantas compraram de você?",
+    "Você paga anúncio, chega mensagem, só que o seu caixa, muitas vezes, não sobe. Eu vou te ajudar a achar esse vazamento.",
+    "Pega um papel e uma caneta e conta assim, ó: quantas pessoas você respondeu no mesmo dia, quantas receberam o valor, quantas fecharam e quantas pagaram. Uma espécie de funil.",
+    "Em algum desses pontos o número cai feio. E provavelmente é ali que tá o seu gargalo.",
+    "Eu olharia primeiro a resposta no mesmo dia. Mensagem que fica pra amanhã esfria, e a pessoa já chama o outro que responde mais rápido.",
+    "Faz essa conta que você descobre onde tá o seu gargalo e onde você tem que atacar."
    ],
    "tipo": "cliente"
   },
@@ -684,6 +687,6 @@
   "status": "roteiro",
   "instagram_media_id": null,
   "permalink": null,
-  "obs": "Reescrito em 24/11 após revisão independente (nota v2 do revisor: 6); ajustes sugeridos pelo revisor aplicados depois, sem nova nota. Data realocada: Otávio grava todos em 24/11. Versão mais abrangente (negócio em geral, não só clínica), pedido do Otávio em 24/11. Ajustes finais do revisor da versão abrangente aplicados (sem nova nota)."
+  "obs": "Reescrito em 24/11 após revisão independente (nota v2 do revisor: 6); ajustes sugeridos pelo revisor aplicados depois, sem nova nota. Data realocada: Otávio grava todos em 24/11. Versão mais abrangente (negócio em geral, não só clínica), pedido do Otávio em 24/11. Ajustes finais do revisor da versão abrangente aplicados (sem nova nota). Fala final reescrita a partir do áudio ditado pelo Otávio em 24/11 (palavras dele)."
  }
 ]
