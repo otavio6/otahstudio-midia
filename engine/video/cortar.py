@@ -1,7 +1,10 @@
 """Etapa 3 · Corte (montador). Corta pela transcrição, palavra por palavra: vícios, repetições e pausas longas,
-deixando o respiro certo. Nenhuma palavra é cortada pela metade (margem antes e depois de cada palavra).
-Uso: python cortar.py PASTA [--entrada base_cor.mp4] [--saida base.mp4] [--remover i,j,k] [--manter i,j]
-Lê 01_analise.json. Gera 03_cortes.json (segmentos, palavras com o tempo novo e checagens) e o vídeo cortado."""
+deixando o respiro certo. Com proxy_audio.wav na pasta (o normal), TODO corte cai dentro de um silêncio medido no
+áudio (plano_no_silencio): vício colado numa palavra que fica não sai (vai para `mantidas` e some só da legenda).
+Sem o wav, cai no plano antigo pelo tempo do Whisper (plano_de_corte), que pode deixar sobra de palavra.
+Uso: python cortar.py PASTA [--entrada base_cor.mp4] [--saida base.mp4] [--remover i,j,k] [--manter i,j] [--folga-db 9]
+Lê 01_analise.json. Gera 03_cortes.json (segmentos, palavras com o tempo novo, mantidas e checagens) e o vídeo cortado.
+Depois dele vem SEMPRE a revisão do áudio: conferir_audio.py preparar → transcrever → conferir_audio.py comparar."""
 import argparse, json, os, subprocess
 from common import FPS, CRF_INTERMEDIARIO
 
@@ -43,11 +46,134 @@ def plano_de_corte(palavras, remover=(), manter=()):
     return segs
 
 
+def silencios(wav, minimo=0.04, folga_db=9):
+    """Trechos de silêncio de verdade (ruído de sala), a cada 5 ms: energia suavizada abaixo do piso + 9 dB por pelo menos 40 ms."""
+    import numpy as np
+    raw = subprocess.run(["ffmpeg", "-v", "error", "-i", wav, "-vn", "-ac", "1", "-ar", "16000", "-f", "f32le", "-"], capture_output=True).stdout
+    x = np.frombuffer(raw, np.float32)
+    n = 80
+    q = x[: len(x) // n * n].reshape(-1, n)
+    e = np.convolve(10 * np.log10((q ** 2).mean(1) + 1e-10), np.ones(3) / 3, "same")
+    sil = e < np.percentile(e, 10) + folga_db
+    out, k = [], 0
+    while k < len(sil):
+        if sil[k]:
+            j = k
+            while j < len(sil) and sil[j]:
+                j += 1
+            out.append([k * 0.005, j * 0.005]); k = j
+        else:
+            k += 1
+    junt = []
+    for a, b in out:  # junta silêncios separados por um estalo de até 15 ms
+        if junt and a - junt[-1][1] <= 0.015:
+            junt[-1][1] = b
+        else:
+            junt.append([a, b])
+    return [(a, b) for a, b in junt if b - a >= minimo], len(sil) * 0.005
+
+
+def plano_no_silencio(palavras, remover=(), manter=(), wav=None, minimo=0.04, folga_db=9):
+    """Plano de corte em que TODO corte cai dentro de um silêncio medido no áudio, nunca no tempo do Whisper
+    (que erra dezenas de ms e deixava pedaços: "é de", "re", "recosto", ou comia começo de palavra).
+    O áudio vira "ilhas" de fala separadas por silêncio. Cada palavra pertence às ilhas que ela cobre.
+    - Uma ilha só sai inteira, e só se for feita de palavras a tirar (vício, repetição, --remover).
+      Se o vício estiver colado numa palavra que fica (mesma ilha), ele FICA (melhor "na verdade" inteiro
+      do que meia palavra) e vai para `mantidas` com o motivo.
+    - Ilha sem nenhuma palavra (respiro, estalo) no meio de uma pausa sai junto com a pausa.
+    - Pausa longa entre palavras vira respiro (RESPIRO / RESPIRO_FORTE), cortando no meio do silêncio.
+    Devolve (segmentos, mantidas)."""
+    sils, dur_audio = silencios(wav, minimo, folga_db)
+    tirar = [bool(((w.get("vicio") or w.get("repeticao")) and i not in manter) or i in remover) for i, w in enumerate(palavras)]
+    ilhas, t = [], 0.0
+    for a, b in sils:
+        if a > t:
+            ilhas.append([t, a])
+        t = b
+    if t < dur_audio:
+        ilhas.append([t, dur_audio])
+    sobre = lambda w, il: max(0.0, min(w["fim"], il[1]) - max(w["inicio"], il[0]))
+    info = []
+    for il in ilhas:
+        ws = [(k, sobre(w, il)) for k, w in enumerate(palavras) if sobre(w, il) > 0]
+        fica = sum(o for k, o in ws if not tirar[k]); sai = sum(o for k, o in ws if tirar[k])
+        L = il[1] - il[0]
+        if not ws:
+            estado = "ruido" if L < 0.35 else "fica"   # fala sem palavra longa demais: na dúvida, fica
+        elif sai > fica and fica < max(0.03, 0.3 * L):
+            estado = "sai"
+        else:
+            estado = "fica"
+        info.append({"il": il, "ws": [k for k, o in ws if o >= 0.25 * min(L, palavras[k]["fim"] - palavras[k]["inicio"] + 1e-6)], "estado": estado})
+    # palavras a tirar que não saíram (coladas numa palavra que fica)
+    saiu = set()
+    for x in info:
+        if x["estado"] == "sai":
+            saiu.update(x["ws"])
+    vivos = sorted({k for x in info if x["estado"] == "fica" for k in x["ws"]})
+    mantidas, visto = [], set()
+    for x in info:
+        if x["estado"] == "fica":
+            ks = [k for k in x["ws"] if tirar[k] and k not in visto]
+            if ks:
+                visto.update(ks)
+                mantidas.append({"palavras": " ".join(palavras[k]["texto"] for k in ks), "indices": ks,
+                                 "motivo": "colada em palavra que fica (sem silêncio entre elas): sair deixaria pedaço de palavra"})
+    def respiro_apos(k):
+        return RESPIRO_FORTE if palavras[k]["texto"].rstrip().endswith((".", "!", "?", ":")) else RESPIRO
+    # trechos que ficam = ilhas "fica"; entre duas ilhas que ficam, o silêncio (com o que saiu no meio) vira um respiro
+    fic = [x for x in info if x["estado"] == "fica"]
+    segs = []
+    for n, x in enumerate(fic):
+        a, b = x["il"]
+        if n == 0:
+            ini = max(0.0, a - 0.06)
+        else:
+            ant = fic[n - 1]
+            vao = a - ant["il"][1]  # silêncio total entre as duas ilhas (inclui o que saiu)
+            ult = max(ant["ws"]) if ant["ws"] else None
+            lim = respiro_apos(ult) if ult is not None else RESPIRO
+            contiguo = not any(y["estado"] == "sai" for y in info if ant["il"][1] <= y["il"][0] < a)
+            if contiguo and vao <= lim + 0.06:
+                segs[-1]["fim"] = b; segs[-1]["palavras"] += x["ws"]; continue
+            meia = min(lim, vao) / 2
+            s_ant = next(s for s in sils if abs(s[0] - ant["il"][1]) < 1e-6)
+            s_dep = next(s for s in sils if abs(s[1] - a) < 1e-6)
+            segs[-1]["fim"] = s_ant[0] + min(meia, (s_ant[1] - s_ant[0]) * 0.7)
+            segs[-1]["sil"][1] = s_ant
+            ini = s_dep[1] - min(meia, (s_dep[1] - s_dep[0]) * 0.7)
+        s_dep = next((s for s in sils if abs(s[1] - a) < 1e-6), None)
+        segs.append({"ini": ini, "fim": b, "palavras": list(x["ws"]), "sil": [s_dep, None]})
+    if segs:
+        s_fim = next((s for s in sils if abs(s[0] - segs[-1]["fim"]) < 1e-6), None)
+        segs[-1]["fim"] = min(dur_audio, segs[-1]["fim"] + 0.12); segs[-1]["sil"][1] = s_fim
+    centro = lambda w: (w["inicio"] + w["fim"]) / 2
+    for sg in segs:
+        sg["palavras"] = []; sg["sil"] = tuple(sg["sil"])
+    for k, w in enumerate(palavras):
+        if k in saiu or (tirar[k] and not any(k in m["indices"] for m in mantidas)):
+            continue
+        c = centro(w)
+        alvo = min(segs, key=lambda sg: 0 if sg["ini"] <= c < sg["fim"] else min(abs(c - sg["ini"]), abs(c - sg["fim"])))
+        alvo["palavras"].append(k)
+    ruido = [x["il"] for x in info if x["estado"] == "ruido"]
+    return segs, mantidas
+
+
 def encaixar(segs, fps=FPS):
     """Põe os cortes no quadro exato: vídeo e áudio de cada trecho ficam com a mesma duração (sem atraso acumulado)."""
+    import math
     q = lambda t: round(t * fps) / fps
+    def no_quadro(t, sil):
+        if sil:  # o quadro mais próximo que ainda cai dentro do silêncio da borda
+            cands = [k / fps for k in range(math.ceil(sil[0] * fps), math.floor(sil[1] * fps) + 1)]
+            if cands:
+                return min(cands, key=lambda c: abs(c - t))
+        return q(t)
     for s in segs:
-        s["ini"], s["fim"] = q(s["ini"]), max(q(s["fim"]), q(s["ini"]) + 1 / fps)
+        sa, sb = s.get("sil") or (None, None)
+        s["ini"] = no_quadro(s["ini"], sa)
+        s["fim"] = max(no_quadro(s["fim"], sb), s["ini"] + 1 / fps)
     for a, b in zip(segs, segs[1:]):
         if b["ini"] < a["fim"]:
             b["ini"] = a["fim"]
@@ -65,12 +191,14 @@ def remapear(palavras, segs):
 
 
 def checar(palavras, segs):
+    """Cada borda de trecho tem de cair num silêncio medido (senão corta fala) e nenhum trecho pode sobrepor o seguinte."""
     problemas = []
-    for s in segs:
-        for i in s["palavras"]:
-            w = palavras[i]
-            if w["inicio"] < s["ini"] - 1e-3 or w["fim"] > s["fim"] + 1e-3:
-                problemas.append(f"palavra cortada: '{w['texto']}' ({w['inicio']:.2f}–{w['fim']:.2f})")
+    for k, s in enumerate(segs):
+        sa, sb = s.get("sil") or (None, None)
+        if k > 0 and not (sa and sa[0] - 0.002 <= s["ini"] <= sa[1] + 0.002):
+            problemas.append(f"começo do trecho {k} fora do silêncio ({s['ini']:.3f})")
+        if k < len(segs) - 1 and not (sb and sb[0] - 0.002 <= s["fim"] <= sb[1] + 0.002):
+            problemas.append(f"fim do trecho {k} fora do silêncio ({s['fim']:.3f})")
     for a, b in zip(segs, segs[1:]):
         if b["ini"] < a["fim"]:
             problemas.append(f"segmentos sobrepostos em {a['fim']:.2f}")
@@ -124,6 +252,8 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("pasta"); ap.add_argument("--entrada", default="base_cor.mp4"); ap.add_argument("--saida", default="base.mp4")
     ap.add_argument("--remover", default=""); ap.add_argument("--manter", default="")
+    ap.add_argument("--folga-db", type=float, default=9, help="silêncio = piso da sala + isto (9 = só silêncio franco; 13 = aceita vales curtos)")
+    ap.add_argument("--min-silencio", type=float, default=0.04)
     a = ap.parse_args()
     an = json.load(open(os.path.join(a.pasta, "01_analise.json")))
     pal = an.get("palavras")
@@ -131,15 +261,25 @@ def main():
         raise SystemExit("Sem transcrição na análise: o montador não corta no escuro.")
     rem = {int(x) for x in a.remover.split(",") if x.strip()}
     man = {int(x) for x in a.manter.split(",") if x.strip()}
-    segs = encaixar(plano_de_corte(pal, rem, man))
+    wav = os.path.join(a.pasta, "proxy_audio.wav")
+    mantidas = []
+    if os.path.exists(wav):
+        segs, mantidas = plano_no_silencio(pal, rem, man, wav, a.min_silencio, a.folga_db)
+    else:
+        segs = plano_de_corte(pal, rem, man)
+    segs = encaixar(segs)
     novas, dur = remapear(pal, segs)
+    colados = {k for m in mantidas for k in m["indices"]}
+    for w in novas:  # vício que ficou no áudio (colado) não entra na legenda
+        if w["orig"] in colados:
+            w["vicio"] = True
     probs = checar(pal, segs)
     removidas = [pal[i]["texto"] for i in range(len(pal)) if not any(i in s["palavras"] for s in segs)]
     res = {"segmentos": [{"ini": round(s["ini"], 3), "fim": round(s["fim"], 3)} for s in segs], "duracao_final": round(dur, 3),
-           "duracao_original": round(pal[-1]["fim"] - pal[0]["inicio"], 3), "removidas": removidas, "palavras": novas, "problemas": probs}
+           "duracao_original": round(pal[-1]["fim"] - pal[0]["inicio"], 3), "removidas": removidas, "mantidas": mantidas, "palavras": novas, "problemas": probs}
     json.dump(res, open(os.path.join(a.pasta, "03_cortes.json"), "w"), ensure_ascii=False, indent=1)
     renderizar(os.path.join(a.pasta, a.entrada), segs, os.path.join(a.pasta, a.saida))
-    print(json.dumps({k: res[k] for k in ("duracao_original", "duracao_final", "removidas", "problemas")}, ensure_ascii=False))
+    print(json.dumps({k: res[k] for k in ("duracao_original", "duracao_final", "removidas", "mantidas", "problemas")}, ensure_ascii=False))
 
 
 if __name__ == "__main__":

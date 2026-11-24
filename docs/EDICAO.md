@@ -28,7 +28,15 @@ Nada de "vou ver e editar". O vídeo passa por etapas na ordem abaixo, e **depoi
 - Corta junto vídeo e respiros do áudio: silêncios, vícios, gaguejos, repetições. Escolhe o melhor take do gancho.
 - Respiro certo: curto na explicação, um pouco mais longo antes de frase forte.
 - O começo pega no primeiro segundo.
+- **Todo corte cai dentro de um silêncio medido no áudio, nunca no tempo do Whisper** (`cortar.py` faz isso sozinho). O Whisper erra o começo e o fim das palavras em dezenas de milissegundos; cortar pelo tempo dele deixou pedaço de palavra ("é de", "re", "recosto", "s" repetido) e comeu começo de palavra no reel da Black Friday.
+- Vício ou repetição **colado** numa palavra que fica (sem silêncio entre os dois, como "verdade a" ou "assim no") **não sai**: fica inteiro no áudio e só some da legenda. Melhor um "na verdade" inteiro do que meia palavra. Eles aparecem em `03_cortes.json → mantidas`. Se o Otávio quiser tirar um desses, a saída é regravar a frase ou cobrir com corte de imagem, nunca cortar no meio da fala.
 - Entrega `03_cortes.json` + prévia cortada.
+- **Revisão do áudio (obrigatória, antes da Revisão 3):**
+  1. `python conferir_audio.py preparar PASTA` gera `conferir.mp3` (o áudio cortado) e `esperado.json` (as palavras que deveriam ficar).
+  2. Sobe `conferir.mp3` para o repositório privado de brutos (`jobs/<id>/`) e roda a ferramenta `transcrever` nele. Salva o resultado em `PASTA/transcricao_corte.json`.
+  3. `python conferir_audio.py comparar PASTA` compara palavra por palavra (inclusive **plural x singular**) e mede cada emenda (voz no ponto do corte, "s" dos dois lados). Gera `07_audio.json`.
+  4. Cada item de `problemas` é explicado ou corrigido: palavra **faltando** ou **trocada perto de uma emenda** é defeito de corte e volta para o corte; **sobrando** só é aceito se for vício colado (está em `mantidas`); grafia diferente do Whisper ("postos"/"posts", "de"/"do") vira aviso, não problema. Diferença longe de qualquer emenda costuma ser o Whisper ouvindo diferente nas duas passadas: confirme pelo contexto da frase.
+  5. Só passa com zero problema sem explicação. O resultado entra na revisão final (critério Áudio do `REVISOR.md`).
 - **Revisão 3:** todas as palavras estão certas e inteiras? Nenhuma sílaba cortada, nenhum pulo estranho na imagem? A frase continua fazendo sentido? O começo prende?
 
 ### Etapa 4 · Mapeamento de edição (Diretor de edição)
@@ -119,6 +127,7 @@ Quem faz a revisão é o agente revisor separado (`docs/REVISOR.md`), nunca quem
 - **A moldura com ele (modo canto) também fica centralizada** no eixo x=540 (Otávio, 23/11: "meu vídeo poderia estar centralizado ao invés de direita").
 - **Repertório, não fórmula:** fundo preto + texto + volta ao normal, em loop, é repetição. Cada ideia da fala pede a forma mais clara de mostrar: tela cheia em motion (você some e entra gráfico, contador, comparação, ícones), tela dividida, você pequeno no canto, print da fonte, tipografia animada. Cada bloco do vídeo tem linguagem diferente, e nenhum recurso repete duas vezes seguidas.
 - **Storyboard antes do render:** o diretor manda uma folha com um quadro por cena e o porquê, para o Otávio corrigir antes da edição.
+- **Áudio dos cortes (Otávio, 23/11: "às vezes no final ficou repetindo a letra S, ou cortando a palavra no final, no começo"):** o corte pelo tempo do Whisper deixava sobra de palavra cortada e comia sílaba. Agora todo corte cai em silêncio medido, vício colado fica inteiro (sai só da legenda), e o áudio cortado é transcrito de novo e comparado palavra por palavra antes de seguir (Revisão do áudio, etapa 3).
 
 ## 7. Aprender com as métricas (a edição evolui)
 

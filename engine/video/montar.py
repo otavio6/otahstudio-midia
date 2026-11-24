@@ -72,6 +72,7 @@ LIGA = {"a", "o", "as", "os", "de", "do", "da", "dos", "das", "que", "e", "com",
 
 def grupos_legenda(palavras, max_chars=16, max_pal=4):
     """Legenda em unidades de sentido (2 a 4 palavras), sem terminar em artigo ou preposição, sem atravessar pausa ou pontuação."""
+    palavras = [w for w in palavras if not w.get("vicio")]  # vício que ficou no áudio não vira legenda
     out, atual = [], []
     def fecha():
         if atual:

@@ -13,7 +13,7 @@ O revisor assiste por quadros: um a cada 0,5 s, mais os quadros de troca de cena
 
 ## O que ele avalia (0 a 10 cada, com o motivo)
 
-1. **Áudio.** A voz soa natural, sem cara de processada (abafada, "debaixo d'água", chiado de redutor, volume bombando)? Sem estalo nos cortes? Volume perto de -14 LUFS, pico até -1 dB?
+1. **Áudio.** A voz soa natural, sem cara de processada (abafada, "debaixo d'água", chiado de redutor, volume bombando)? Sem estalo nos cortes? Volume perto de -14 LUFS, pico até -1 dB? **Toda palavra inteira e entendível**: nenhum pedaço de palavra cortada sobrando, nenhum começo ou fim de palavra comido, nenhum "s" repetido na emenda. O revisor lê `07_audio.json` (transcrição do áudio cortado comparada com a fala esperada, inclusive plural x singular) e confere de ouvido cada emenda que aparece lá. Problema sem explicação no `07_audio.json` = Áudio no máximo 5.
 2. **Imagem.** Está tão nítida quanto o bruto? Sem trepidação, sem quadro repetido, sem serrilhado, sem cor estourada? Pele natural?
 3. **Corte.** Palavras inteiras, respiros naturais, nenhum pulo estranho, começa prendendo no primeiro segundo?
 4. **A edição explica o que está sendo dito.** Cada recurso na tela ajuda a entender aquela frase? Onde dava para ser didático (gráfico, esquema, comparação, print, tela cheia, tela dividida) e ficou só texto?
