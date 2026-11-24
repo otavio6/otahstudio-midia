@@ -9,7 +9,7 @@ import argparse, json, os, subprocess
 from common import FPS, CRF_INTERMEDIARIO
 
 RESPIRO = 0.22        # pausa máxima mantida entre palavras da mesma ideia
-RESPIRO_FORTE = 0.48  # pausa mantida antes de frase nova (respiro de efeito)
+RESPIRO_FORTE = 0.40  # pausa mantida antes de frase nova (respiro de efeito)
 PAD_INI, PAD_FIM = 0.05, 0.09
 
 
@@ -46,8 +46,26 @@ def plano_de_corte(palavras, remover=(), manter=()):
     return segs
 
 
+def bandas(wav):
+    """Energia em 3 faixas (grave 150–900 Hz, médio 900–3000 Hz, agudo 3–8 kHz) a cada 5 ms, janela de 20 ms.
+    O agudo é o que pega consoante sem voz (f, s, x, ch): no volume total elas parecem silêncio, e o corte comia
+    o "fi" de "ficaram" e o "ss" de "isso"."""
+    import numpy as np
+    raw = subprocess.run(["ffmpeg", "-v", "error", "-i", wav, "-vn", "-ac", "1", "-ar", "16000", "-f", "f32le", "-"], capture_output=True).stdout
+    x = np.frombuffer(raw, np.float32)
+    x = np.concatenate([np.zeros(120, np.float32), x, np.zeros(200, np.float32)])  # centra a janela de 20 ms no quadro
+    fr = np.lib.stride_tricks.sliding_window_view(x, 320)[::80]
+    F = np.abs(np.fft.rfft(fr * np.hanning(320), axis=1)) ** 2
+    b = lambda a, c: 10 * np.log10(F[:, a // 50:c // 50].sum(1) + 1e-12)
+    return b(150, 900), b(900, 3000), b(3000, 8000)
+
+
 def silencios(wav, minimo=0.04, folga_db=9):
-    """Trechos de silêncio de verdade (ruído de sala), a cada 5 ms: energia suavizada abaixo do piso + 9 dB por pelo menos 40 ms."""
+    """Trechos de silêncio de verdade, a cada 5 ms.
+    1) Volume total suavizado abaixo do piso da sala + folga_db, por pelo menos 40 ms (acha as pausas).
+    2) Cada pausa encolhe nas pontas enquanto qualquer faixa (grave, médio, agudo) ainda tem som colado na fala,
+       até 300 ms: consoante surda (f, s, x, ch) e o rabo do "s" final (plural!) pertencem à palavra, não à pausa.
+       Sem isso o corte comia o "fi" de "ficaram"."""
     import numpy as np
     raw = subprocess.run(["ffmpeg", "-v", "error", "-i", wav, "-vn", "-ac", "1", "-ar", "16000", "-f", "f32le", "-"], capture_output=True).stdout
     x = np.frombuffer(raw, np.float32)
@@ -55,22 +73,35 @@ def silencios(wav, minimo=0.04, folga_db=9):
     q = x[: len(x) // n * n].reshape(-1, n)
     e = np.convolve(10 * np.log10((q ** 2).mean(1) + 1e-10), np.ones(3) / 3, "same")
     sil = e < np.percentile(e, 10) + folga_db
+    lo, mi, hi = bandas(wav)
+    m = min(len(sil), len(lo))
+    som = np.zeros(len(sil), bool)
+    som[:m] = (lo[:m] >= np.percentile(lo, 10) + 6) | (mi[:m] >= np.percentile(mi, 10) + 6) | (hi[:m] >= np.percentile(hi, 10) + 6)
     out, k = [], 0
     while k < len(sil):
         if sil[k]:
             j = k
             while j < len(sil) and sil[j]:
                 j += 1
-            out.append([k * 0.005, j * 0.005]); k = j
+            out.append([k, j]); k = j
         else:
             k += 1
     junt = []
     for a, b in out:  # junta silêncios separados por um estalo de até 15 ms
-        if junt and a - junt[-1][1] <= 0.015:
+        if junt and a - junt[-1][1] <= 3:
             junt[-1][1] = b
         else:
             junt.append([a, b])
-    return [(a, b) for a, b in junt if b - a >= minimo], len(sil) * 0.005
+    res = []
+    for a, b in junt:
+        a0, b0 = a, b
+        while a < b and a - a0 < 60 and som[a]:  # som colado no fim da palavra anterior
+            a += 1
+        while b > a and b0 - b < 60 and som[b - 1]:  # som colado no começo da próxima palavra
+            b -= 1
+        if (b - a) * 0.005 >= minimo:
+            res.append((a * 0.005, b * 0.005))
+    return res, len(sil) * 0.005
 
 
 def plano_no_silencio(palavras, remover=(), manter=(), wav=None, minimo=0.04, folga_db=9):
@@ -105,6 +136,11 @@ def plano_no_silencio(palavras, remover=(), manter=(), wav=None, minimo=0.04, fo
         else:
             estado = "fica"
         info.append({"il": il, "ws": [k for k, o in ws if o >= 0.25 * min(L, palavras[k]["fim"] - palavras[k]["inicio"] + 1e-6)], "estado": estado})
+    for n, x in enumerate(info):
+        if x["estado"] == "ruido":
+            viz = [info[m] for m in (n - 1, n + 1) if 0 <= m < len(info) and info[m]["estado"] == "fica"]
+            if any(min(abs(v["il"][0] - x["il"][1]), abs(x["il"][0] - v["il"][1])) <= 0.06 for v in viz):
+                x["estado"] = "fica"  # som colado numa palavra (ex.: o "fi" de "ficaram"): nunca sai
     # palavras a tirar que não saíram (coladas numa palavra que fica)
     saiu = set()
     for x in info:
@@ -252,7 +288,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("pasta"); ap.add_argument("--entrada", default="base_cor.mp4"); ap.add_argument("--saida", default="base.mp4")
     ap.add_argument("--remover", default=""); ap.add_argument("--manter", default="")
-    ap.add_argument("--folga-db", type=float, default=9, help="silêncio = piso da sala + isto (9 = só silêncio franco; 13 = aceita vales curtos)")
+    ap.add_argument("--folga-db", type=float, default=9, help="pausa = piso da sala + isto (depois encolhe onde ainda há consoante colada)")
     ap.add_argument("--min-silencio", type=float, default=0.04)
     a = ap.parse_args()
     an = json.load(open(os.path.join(a.pasta, "01_analise.json")))

@@ -34,7 +34,7 @@ Nada de "vou ver e editar". O vídeo passa por etapas na ordem abaixo, e **depoi
 - **Revisão do áudio (obrigatória, antes da Revisão 3):**
   1. `python conferir_audio.py preparar PASTA` gera `conferir.mp3` (o áudio cortado) e `esperado.json` (as palavras que deveriam ficar).
   2. Sobe `conferir.mp3` para o repositório privado de brutos (`jobs/<id>/`) e roda a ferramenta `transcrever` nele. Salva o resultado em `PASTA/transcricao_corte.json`.
-  3. `python conferir_audio.py comparar PASTA` compara palavra por palavra (inclusive **plural x singular**) e mede cada emenda (voz no ponto do corte, "s" dos dois lados). Gera `07_audio.json`.
+  3. `python conferir_audio.py comparar PASTA` compara palavra por palavra (inclusive **plural x singular**), mede cada emenda (voz no ponto do corte, "s" dos dois lados) e confere no áudio original que o que ficou de fora logo antes e depois de cada corte é silêncio nas três faixas (pega começo ou fim de palavra comido que o Whisper "completa" no texto, como "caram" lido como "ficaram"). Gera `07_audio.json`.
   4. Cada item de `problemas` é explicado ou corrigido: palavra **faltando** ou **trocada perto de uma emenda** é defeito de corte e volta para o corte; **sobrando** só é aceito se for vício colado (está em `mantidas`); grafia diferente do Whisper ("postos"/"posts", "de"/"do") vira aviso, não problema. Diferença longe de qualquer emenda costuma ser o Whisper ouvindo diferente nas duas passadas: confirme pelo contexto da frase.
   5. Só passa com zero problema sem explicação. O resultado entra na revisão final (critério Áudio do `REVISOR.md`).
 - **Revisão 3:** todas as palavras estão certas e inteiras? Nenhuma sílaba cortada, nenhum pulo estranho na imagem? A frase continua fazendo sentido? O começo prende?
@@ -128,6 +128,10 @@ Quem faz a revisão é o agente revisor separado (`docs/REVISOR.md`), nunca quem
 - **Repertório, não fórmula:** fundo preto + texto + volta ao normal, em loop, é repetição. Cada ideia da fala pede a forma mais clara de mostrar: tela cheia em motion (você some e entra gráfico, contador, comparação, ícones), tela dividida, você pequeno no canto, print da fonte, tipografia animada. Cada bloco do vídeo tem linguagem diferente, e nenhum recurso repete duas vezes seguidas.
 - **Storyboard antes do render:** o diretor manda uma folha com um quadro por cena e o porquê, para o Otávio corrigir antes da edição.
 - **Áudio dos cortes (Otávio, 23/11: "às vezes no final ficou repetindo a letra S, ou cortando a palavra no final, no começo"):** o corte pelo tempo do Whisper deixava sobra de palavra cortada e comia sílaba. Agora todo corte cai em silêncio medido, vício colado fica inteiro (sai só da legenda), e o áudio cortado é transcrito de novo e comparado palavra por palavra antes de seguir (Revisão do áudio, etapa 3).
+- **Segunda rodada (Otávio, 23/11: "o 'isso' corta", "21% caram até mais caros"):** dois furos que a transcrição não pegou, porque o Whisper "completa" a palavra comida no texto.
+  - **Emenda de takes:** o take 2 entrava no meio do "isso". Ao juntar takes, transcreve cada take inteiro e corta só em silêncio, nunca no meio de palavra; se não houver silêncio, entra antes da palavra e com fade de 10 a 15 ms (sem estalo).
+  - **Consoante surda (f, s, x, ch):** no volume total ela parece silêncio. O "fi" de "ficaram" caía fora do corte. Agora a pausa só conta como silêncio onde grave, médio e agudo estão no piso, e som colado na palavra (até 60 ms) nunca sai.
+  - A revisão do áudio ganhou a checagem acústica: o que ficou de fora logo antes e depois de cada corte, no áudio original, tem de ser silêncio nas três faixas.
 
 ## 7. Aprender com as métricas (a edição evolui)
 

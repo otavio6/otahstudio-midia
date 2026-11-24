@@ -8,14 +8,15 @@ Uso:
      (suba conferir.mp3 para o repositório privado e rode a ferramenta `transcrever` nele; salve o JSON em PASTA/transcricao_corte.json)
   python conferir_audio.py comparar PASTA                              → PASTA/07_audio.json e a lista de problemas
 """
-import argparse, difflib, json, os, re, subprocess, unicodedata
+import argparse, difflib, json, os, re, subprocess, sys, unicodedata
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import numpy as np
 
 SR = 16000
 
 
 # Grafias que o Whisper troca sem a fala ter mudado (não é defeito de corte): viram aviso, não problema.
-VARIANTES = [("futurebrand", "future brand"), ("high-ticket", "high -tech"), ("high-ticket", "high-tech"), ("posts", "postos"),
+VARIANTES = [("futurebrand", "future brand"), ("high-ticket", "high -tech"), ("high-ticket", "high-tech"), ("high-ticket", "high ticket"), ("posts", "postos"),
              ("do", "de"), ("dois", "2"), ("superfaturado", "super faturado"), ("abaixar", "rebaixar")]
 NUM = {"dois": "2", "três": "3", "quatro": "4", "cinco": "5", "mil": "mil"}
 
@@ -100,6 +101,26 @@ def comparar(pasta, audio="base_audio.wav"):
             problemas.append({"tempo": round(float(e), 2), "tipo": "emenda com voz (palavra pode ter sido comida)", "nivel_db": round(float(no_corte - piso), 1)})
         if chiado:
             problemas.append({"tempo": round(float(e), 2), "tipo": "chiado dos dois lados da emenda ('s' repetido)"})
+    # o que ficou de fora logo antes/depois de cada corte, no áudio ORIGINAL, tem de ser silêncio nas três faixas.
+    # Pega o que a transcrição não pega: o Whisper "completa" palavra comida ("caram" vira "ficaram" no texto).
+    orig = os.path.join(pasta, "proxy_audio.wav")
+    cortes = json.load(open(os.path.join(pasta, "03_cortes.json")))
+    if os.path.exists(orig):
+        from cortar import bandas
+        lo, mi, hi = bandas(orig)
+        som = (lo >= np.percentile(lo, 10) + 6) | (mi >= np.percentile(mi, 10) + 6) | (hi >= np.percentile(hi, 10) + 6)
+        segs = cortes["segmentos"]; t_novo = 0.0
+        for k, sg in enumerate(segs):
+            for lado, x0, x1 in (("antes do começo", sg["ini"] - 0.03, sg["ini"]), ("depois do fim", sg["fim"], sg["fim"] + 0.03)):
+                if (lado == "antes do começo" and k == 0) or (lado == "depois do fim" and k == len(segs) - 1):
+                    continue
+                ia, ib = int(max(0, x0) / 0.005), int(x1 / 0.005)
+                if ib > ia and som[ia:ib].mean() > 0.5:
+                    agudo = (hi[ia:ib] >= np.percentile(hi, 10) + 6).mean() > 0.5
+                    problemas.append({"tempo": round(t_novo + (0 if lado == "antes do começo" else sg["fim"] - sg["ini"]), 2),
+                                      "tipo": f"som cortado {lado} do trecho (pedaço de palavra ficou de fora{': consoante f/s/x/ch' if agudo else ''})",
+                                      "no_bruto": round(sg["ini"] if lado == "antes do começo" else sg["fim"], 3)})
+            t_novo += sg["fim"] - sg["ini"]
     problemas.sort(key=lambda p: p["tempo"])
     rel = {"palavras_esperadas": len(a), "palavras_ouvidas": len(b), "acerto": round(sm.ratio(), 4), "problemas": problemas, "avisos": avisos,
            "como_ler": "Cada problema é ouvido no trecho indicado antes de decidir. Palavra 'sobrando' que é vício colado (ver 03_cortes.json → mantidas) é esperada. "
