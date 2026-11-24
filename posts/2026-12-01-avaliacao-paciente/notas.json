@@ -1,0 +1,24 @@
+{
+ "potencia": {
+  "nota": 7.67,
+  "revisor": "subagente A2",
+  "obs": "passou com o dado atribuído à Doctoralia (correlação, não causa)"
+ },
+ "copy": {
+  "rodadas": [
+   7.75,
+   8.63
+  ],
+  "final": 8.63,
+  "aprovada": true
+ },
+ "qualidade": {
+  "rodadas": [
+   6.94,
+   8.38,
+   8.63
+  ],
+  "final": 8.63,
+  "aprovada": true
+ }
+}

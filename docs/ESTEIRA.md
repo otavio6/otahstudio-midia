@@ -152,6 +152,10 @@ Para passar, a **média precisa ser ≥ 8,5 e nenhum critério pode ficar abaixo
   - módulo `MS` (mensagem pronta): `title`, `quote`, `body`, `quoteTop`, com `imgSrc` no meio; serve para séries "Mensagem 1, 2, 3";
   - `lineToLast: true` no T (a linha termina no último ponto);
   - stories 1080×1920: `node engine/story/render_story.js posts/<pasta>` lendo `story.json` (exemplo em `posts/2026-11-24-story-black-11h/`); o contato marca em vermelho as faixas cobertas pela interface.
+- Recursos novos do motor (24/11):
+  - `idxPlain: true` no I: índice gigante e paginação em off-white no escuro (para o balão ou outro elemento ser o único acento);
+  - no story: `pics` (lista de `{src, x, y, w, h, r, shadow, border, cap, capY}`, imagens da pasta sem rotação), `cta` (texto grande de chamada, com `ctaTop` e `ctaSize`) e `foot` (`["esquerda", "direita"]`, rodapé de série em y 1530). Exemplo: `posts/2026-11-24-story-carrossel-black/`;
+  - gráficos de conversa (balões de WhatsApp) feitos em HTML e salvos em `gfx/` com fundo transparente: deixe 30 a 40 px de folga no PNG para a sombra não sair cortada.
 - Exemplos aprovados (média ≥ 8,5): `posts/2026-11-24-black-friday-clinica/spec.json` (carrossel, 8,56) e `posts/2026-11-26-preco-explicacao/spec.json` (estático, 8,63).
 - Fundamentos obrigatórios:
   - hierarquia clara;

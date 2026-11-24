@@ -1,0 +1,24 @@
+{
+ "potencia": null,
+ "copy": {
+  "rodadas": [
+   7.64,
+   8.32,
+   8.5
+  ],
+  "final": 8.5,
+  "aprovada": true
+ },
+ "qualidade": {
+  "rodadas": [
+   6.5,
+   7.89,
+   8.44
+  ],
+  "final": 8.44,
+  "aprovada": false,
+  "pendencias": [
+   "sombra do card da tela 2 cortada: corrigida depois da 3ª rodada, sem nova nota (o revisor projetou 8,50 com essa correção)"
+  ]
+ }
+}

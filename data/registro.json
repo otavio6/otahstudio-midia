@@ -96,7 +96,7 @@
    "copy": 8.4,
    "qualidade": null
   },
-  "status": "rascunho",
+  "status": "agendado",
   "metricool": null,
   "instagram_media_id": null,
   "permalink": null,
@@ -546,6 +546,132 @@
    "qualidade": null
   },
   "obs": "Copy 8,38 na 3ª revisão (retenção 7,5); ajustes sugeridos aplicados depois, sem nova nota.",
+  "metricool": null,
+  "status": "roteiro",
+  "instagram_media_id": null,
+  "permalink": null
+ },
+ {
+  "id": "2026-11-24-story-carrossel-black",
+  "data": "2026-11-24",
+  "horario": "17:30",
+  "formato": "story",
+  "versao": 1,
+  "slides": 3,
+  "titulo": "Story: chamada do carrossel da Black (pergunta 1)",
+  "tema": "Chamada para o carrossel da Black já no ar: a 1ª pergunta do checklist + PREÇO no direct",
+  "fonte": "carrossel de 24/11 (sem dado novo)",
+  "angulo": "bolso",
+  "metodo": "chamada + teste",
+  "pensamento": "Será que se eu baixar o preço a agenda enche?",
+  "gancho": "Vai dar desconto na Black? Responde isso aqui antes de mexer no preço.",
+  "assinatura": "story: titulo+etiqueta-riscada-escura | lista-incluso-card-claro | miniatura-capa+cta-escuro (rodapé de série)",
+  "notas": {
+   "potencia": null,
+   "copy": 8.5,
+   "qualidade": 8.44
+  },
+  "obs": "Qualidade 6,50 → 7,89 → 8,44; sombra da tela 2 corrigida depois (projeção 8,50). Sem 'hoje' no texto porque só sai depois da aprovação.",
+  "metricool": null,
+  "status": "rascunho",
+  "instagram_media_id": null,
+  "permalink": null
+ },
+ {
+  "id": "2026-11-27-qual-o-valor",
+  "data": "2026-11-27",
+  "horario": "10:00",
+  "formato": "carrossel",
+  "versao": 1,
+  "slides": 7,
+  "titulo": "Carrossel: 'qual o valor?' no WhatsApp",
+  "tema": "O que a recepção responde quando a paciente pergunta o valor: 3 mensagens + falar o preço quando ela insiste",
+  "fonte": "bastidor do Otávio (sem número); preços do exemplo são ilustração",
+  "angulo": "bastidor",
+  "metodo": "PAS",
+  "pensamento": "Paciente só pergunta o preço e some.",
+  "gancho": "Ela perguntou o valor e sumiu.",
+  "ganchos_reserva": [
+   "“Qual o valor?” A resposta da sua recepção decide se essa pessoa vira paciente.",
+   "Mandar só o número do preço no WhatsApp é o jeito mais rápido de perder paciente."
+  ],
+  "assinatura": "capa:frase-partida-por-print-chat-escura | 3-anuncios-preco-claro | conversa-continua 01-02-03 alternando (indice gigante neutro) | balao-insiste-claro | conversa-agendada+cta-claro-escuro",
+  "notas": {
+   "potencia": 8.33,
+   "copy": 8.75,
+   "qualidade": 8.69
+  },
+  "metricool": null,
+  "status": "rascunho",
+  "instagram_media_id": null,
+  "permalink": null
+ },
+ {
+  "id": "2026-12-01-avaliacao-paciente",
+  "data": "2026-12-01",
+  "horario": "10:00",
+  "formato": "estatico",
+  "versao": 1,
+  "slides": 1,
+  "titulo": "Estático: a paciente feliz que nunca avaliou",
+  "tema": "Avaliação online como rotina da recepção (pedir no retorno, com o link)",
+  "fonte": "https://medicinasa.com.br/perfil-paciente-digital/",
+  "angulo": "emocional",
+  "metodo": "cena + dado + ação",
+  "pensamento": "Vivo de indicação.",
+  "gancho": "Sua paciente mais feliz contou pra prima e nunca escreveu uma linha sobre você na internet.",
+  "ganchos_reserva": [
+   "Você tem paciente que te ama e, na internet, parece que a clínica abriu ontem.",
+   "Paciente satisfeita não avalia sozinha. Alguém precisa pedir."
+  ],
+  "assinatura": "estatico:tweet-escuro (padrão Otávio)",
+  "notas": {
+   "potencia": 7.67,
+   "copy": 8.63,
+   "qualidade": 8.63
+  },
+  "metricool": null,
+  "status": "rascunho",
+  "instagram_media_id": null,
+  "permalink": null
+ },
+ {
+  "id": "2026-12-04-reel-conta-da-black",
+  "data": "2026-12-04",
+  "horario": "18:00",
+  "formato": "reel",
+  "versao": 1,
+  "titulo": "Reel: 100 chamaram na Black, quantos sentaram?",
+  "tema": "Cliente · a conta pós-Black: 4 degraus do direct até a cadeira",
+  "fonte": "https://medicinasa.com.br/doctoralia-panorana-2026/",
+  "angulo": "controle + bolso",
+  "metodo": "PAS",
+  "pensamento": "Paguei anúncio na Black e a agenda não encheu.",
+  "gancho": "De cada 100 pessoas que chamaram a sua clínica na Black, quantas sentaram na cadeira?",
+  "ganchos_reserva": [
+   "Você pagou anúncio na Black. Quantos daqueles directs viraram consulta?",
+   "Tem um degrau na sua clínica onde o paciente cai."
+  ],
+  "roteiro": {
+   "tela": "100 chamaram na Black. Quantos sentaram na cadeira?",
+   "fala": [
+    "De cada 100 pessoas que chamaram a sua clínica na Black, quantas sentaram na cadeira?",
+    "Você pagou anúncio, chegou mensagem, e a agenda não encheu. No fim eu te falo onde eu olharia primeiro.",
+    "Pega um papel e conta quatro coisas. (na tela: respondeu no mesmo dia · recebeu orçamento · marcou avaliação · apareceu)",
+    "Em algum desses degraus o número despenca.",
+    "Numa pesquisa da Doctoralia com mais de 600 gestores de clínica e hospital, dois em cada três nunca mapearam esse caminho. E três em cada quatro clínicas pagam anúncio.",
+    "Cara, é pagar pra pessoa chegar e deixar a mensagem dela pra amanhã.",
+    "E onde eu olharia primeiro: na resposta no mesmo dia. Mensagem que fica pra amanhã esfria, e ela já chamou outra clínica.",
+    "Faz essa conta no fim de semana e me manda DIAGNÓSTICO com o degrau que mais caiu. Eu te digo por onde eu começaria."
+   ],
+   "tipo": "cliente"
+  },
+  "assinatura": "reel",
+  "notas": {
+   "potencia": 7.83,
+   "copy": 8.58,
+   "qualidade": null
+  },
   "metricool": null,
   "status": "roteiro",
   "instagram_media_id": null,

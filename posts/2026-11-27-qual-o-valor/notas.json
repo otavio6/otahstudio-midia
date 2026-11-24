@@ -1,0 +1,26 @@
+{
+ "potencia": {
+  "nota": 8.33,
+  "revisor": "subagente A2"
+ },
+ "copy": {
+  "rodadas": [
+   8.42,
+   8.75
+  ],
+  "final": 8.75,
+  "aprovada": true
+ },
+ "qualidade": {
+  "rodadas": [
+   7.63,
+   8.38,
+   8.69
+  ],
+  "final": 8.69,
+  "aprovada": true,
+  "pendencias": [
+   "vazio de ~215 px abaixo do botão no slide 07 (opcional)"
+  ]
+ }
+}
