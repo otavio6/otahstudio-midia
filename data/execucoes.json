@@ -1,74 +1,83 @@
 {
- "tarefas": [
-  {
-   "id": "criacao",
-   "nome": "Criação",
-   "horario": "06:47",
-   "desde": "2026-11-22",
-   "faz": "Pesquisa, cria, passa pelos revisores e manda para a sua aprovação"
-  },
-  {
-   "id": "analise",
-   "nome": "Análise",
-   "horario": "23:17",
-   "desde": "2026-11-21",
-   "faz": "Mede o desempenho, confere o que saiu e atualiza os aprendizados"
-  }
- ],
- "execucoes": [
-  {
-   "id": "analise-2026-11-21T23:18",
-   "tarefa": "analise",
-   "inicio": "2026-11-21T23:18:20-03:00",
-   "status": "ok",
-   "fim": "2026-11-21T23:20:03-03:00",
-   "resumo": "15 dias sem post e alcance zerado na semana (135 seguidores, +1 na semana); 2 peças aprovadas viraram agendado (24 e 26/11, 11h); 1 lead novo (drfelipevillaca), 0 comentários pendentes.",
-   "etapas": {
-    "posts_medidos": 4,
-    "seguidores": 135,
-    "publicados_conferidos": 0,
-    "agendados_conferidos": 2,
-    "leads_novos": 1,
-    "comentarios_12h": 0,
-    "sugestoes_resposta": 0
-   }
-  },
-  {
-   "id": "analise-2026-11-22T23:18",
-   "tarefa": "analise",
-   "inicio": "2026-11-22T23:18:35-03:00",
-   "status": "ok",
-   "fim": "2026-11-22T23:20:06-03:00",
-   "resumo": "16 dias sem post e alcance da semana em 9 (−92%); 136 seguidores (+1 no dia, +2 na semana); 2 peças seguem programadas (24 e 26/11, 11h); 0 leads novos e 0 comentários pendentes.",
-   "etapas": {
-    "posts_medidos": 3,
-    "seguidores": 136,
-    "publicados_conferidos": 0,
-    "agendados_conferidos": 2,
-    "leads_novos": 0,
-    "leads_status_novo": 1,
-    "comentarios_12h": 0,
-    "sugestoes_resposta": 0
-   }
-  },
-  {
-   "id": "criacao-2026-11-23T06:48",
-   "tarefa": "criacao",
-   "inicio": "2026-11-23T06:48:07-03:00",
-   "status": "parcial",
-   "fim": "2026-11-23T07:18:23-03:00",
-   "resumo": "1 carrossel (WhatsApp programado, 25/11 18h) e 1 story (24/11 9h) enviados como melhor versão, abaixo da régua de qualidade (7,88 e 7,94 após 3 revisões), e 2 roteiros de reel; esperando o ok do Otávio. 0 comentários, 0 leads novos.",
-   "etapas": {
-    "ideias": 10,
-    "aprovadas_potencia": 4,
-    "pecas": 1,
-    "stories": 1,
-    "reels": 2,
-    "rascunhos": 2,
-    "reprovadas_qualidade": 2,
-    "comentarios_pendentes": 0,
-    "leads_novos": 0
-   }
-  }
- ]
+  "tarefas": [
+    {
+      "id": "criacao",
+      "nome": "Criação",
+      "horario": "06:47",
+      "desde": "2026-11-22",
+      "faz": "Pesquisa, cria, passa pelos revisores e manda para a sua aprovação"
+    },
+    {
+      "id": "analise",
+      "nome": "Análise",
+      "horario": "23:17",
+      "desde": "2026-11-21",
+      "faz": "Mede o desempenho, confere o que saiu e atualiza os aprendizados"
+    }
+  ],
+  "execucoes": [
+    {
+      "id": "analise-2026-11-21T23:18",
+      "tarefa": "analise",
+      "inicio": "2026-11-21T23:18:20-03:00",
+      "status": "ok",
+      "fim": "2026-11-21T23:20:03-03:00",
+      "resumo": "15 dias sem post e alcance zerado na semana (135 seguidores, +1 na semana); 2 peças aprovadas viraram agendado (24 e 26/11, 11h); 1 lead novo (drfelipevillaca), 0 comentários pendentes.",
+      "etapas": {
+        "posts_medidos": 4,
+        "seguidores": 135,
+        "publicados_conferidos": 0,
+        "agendados_conferidos": 2,
+        "leads_novos": 1,
+        "comentarios_12h": 0,
+        "sugestoes_resposta": 0
+      }
+    },
+    {
+      "id": "analise-2026-11-22T23:18",
+      "tarefa": "analise",
+      "inicio": "2026-11-22T23:18:35-03:00",
+      "status": "ok",
+      "fim": "2026-11-22T23:20:06-03:00",
+      "resumo": "16 dias sem post e alcance da semana em 9 (−92%); 136 seguidores (+1 no dia, +2 na semana); 2 peças seguem programadas (24 e 26/11, 11h); 0 leads novos e 0 comentários pendentes.",
+      "etapas": {
+        "posts_medidos": 3,
+        "seguidores": 136,
+        "publicados_conferidos": 0,
+        "agendados_conferidos": 2,
+        "leads_novos": 0,
+        "leads_status_novo": 1,
+        "comentarios_12h": 0,
+        "sugestoes_resposta": 0
+      }
+    },
+    {
+      "id": "criacao-2026-11-23T06:48",
+      "tarefa": "criacao",
+      "inicio": "2026-11-23T06:48:07-03:00",
+      "status": "parcial",
+      "fim": "2026-11-23T07:18:23-03:00",
+      "resumo": "1 carrossel (WhatsApp programado, 25/11 18h) e 1 story (24/11 9h) enviados como melhor versão, abaixo da régua de qualidade (7,88 e 7,94 após 3 revisões), e 2 roteiros de reel; esperando o ok do Otávio. 0 comentários, 0 leads novos.",
+      "etapas": {
+        "ideias": 10,
+        "aprovadas_potencia": 4,
+        "pecas": 1,
+        "stories": 1,
+        "reels": 2,
+        "rascunhos": 2,
+        "reprovadas_qualidade": 2,
+        "comentarios_pendentes": 0,
+        "leads_novos": 0
+      }
+    },
+    {
+      "id": "analise-2026-11-23T23:18",
+      "tarefa": "analise",
+      "inicio": "2026-11-23T23:18:22-03:00",
+      "status": "rodando",
+      "fim": null,
+      "resumo": "",
+      "etapas": {}
+    }
+  ]
 }
