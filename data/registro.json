@@ -8,16 +8,16 @@
   "titulo": "Arte em 1 dia útil (teaser da Black)",
   "angulo": null,
   "metodo": null,
-  "gancho": "Sua empresa espera uma semana por uma arte?",
+  "gancho": "Sua empresa espera uma semana por uma arte? Cara, isso não dá mais.",
   "roteiro": {
    "tela": "ARTE PRO SEU NEGÓCIO EM 1 DIA ÚTIL · Rodapé na tela: Black OTAHSTUDIO · 2 vagas · um pedido de cada vez",
    "fala": [
-    "Sua empresa espera uma semana por uma arte?",
-    "Sexta eu abro duas vagas pra acabar com isso. Só duas, porque é o que eu consigo entregar nesse prazo.",
-    "Funciona assim: você pede uma arte e recebe em até um dia útil. Post, carrossel, story, arte pra anúncio.",
-    "Recebeu? Já manda a próxima. Não tem teto de quantidade. A única regra é um pedido de cada vez.",
-    "Eu uso IA pra fazer rápido, mas nenhuma peça sai sem eu olhar antes.",
-    "Manda BLACK no meu direct que eu te explico tudo antes das vagas abrirem."
+    "Sua empresa espera uma semana por uma arte? Cara, isso não dá mais.",
+    "Sexta eu abro duas vagas pra resolver isso. Só duas, porque é o que eu consigo entregar bem.",
+    "Funciona assim, ó: você me pede uma arte, post, carrossel, story, anúncio, e recebe em até um dia útil.",
+    "Recebeu? Já pode pedir a próxima. Não tem limite de quantidade. A única regra é um pedido de cada vez.",
+    "Eu uso IA pra ganhar velocidade, mas nenhuma peça sai daqui sem eu olhar antes.",
+    "Quer uma dessas vagas? Manda BLACK no meu direct que eu te explico tudo antes de abrir."
    ],
    "tipo": "Cliente · teaser Black"
   },
@@ -33,7 +33,7 @@
   "permalink": null,
   "fonte": null,
   "versao": 2,
-  "obs": "Reescrito em 24/11 após revisão independente (nota v2 do revisor: 7); ajustes sugeridos pelo revisor aplicados depois, sem nova nota. Data realocada: Otávio grava todos em 24/11. Versão mais abrangente (negócio em geral, não só clínica), pedido do Otávio em 24/11."
+  "obs": "Reescrito em 24/11 após revisão independente (nota v2 do revisor: 7); ajustes sugeridos pelo revisor aplicados depois, sem nova nota. Data realocada: Otávio grava todos em 24/11. Versão mais abrangente (negócio em geral, não só clínica), pedido do Otávio em 24/11. Reescrito no tom de conversa (regra 5b da esteira, 24/11)."
  },
  {
   "id": "2026-11-23-post-de-clinica",
@@ -266,14 +266,15 @@
   "titulo": "Seu perfil reprova em 10 segundos",
   "angulo": null,
   "metodo": null,
-  "gancho": "Eu levo dez segundos pra saber se o perfil de uma empresa tá perdendo cliente.",
+  "gancho": "Eu levo dez segundos pra saber se o perfil de uma empresa tá perdendo cliente. Quer ver?",
   "roteiro": {
    "tela": "SEU PERFIL REPROVA EM 10 SEGUNDOS?",
    "fala": [
-    "Eu levo dez segundos pra saber se o perfil de uma empresa tá perdendo cliente.",
-    "Primeiro eu leio a bio. Dá pra entender o que você faz e pra quem? Na maioria, não dá.",
-    "Depois eu desço pros últimos posts. Parece tudo da mesma marca, ou cada post parece de uma empresa diferente?",
-    "E por último eu tento comprar. Acho onde clicar, ou desisto?",
+    "Eu levo dez segundos pra saber se o perfil de uma empresa tá perdendo cliente. Quer ver?",
+    "Primeiro eu leio a bio. Dá pra entender o que você faz e pra quem? Na maioria das vezes, não dá.",
+    "Depois eu desço e olho os últimos posts. Parece tudo da mesma marca, ou cada post parece de uma empresa diferente?",
+    "E por último eu tento comprar. Acho fácil onde clicar, ou desisto no meio do caminho?",
+    "Se travou em algum desses, é ali que você tá perdendo cliente sem nem saber.",
     "Quer que eu olhe o seu? Manda DIAGNÓSTICO no direct que eu te falo qual desses tá te atrapalhando."
    ],
    "tipo": "Cliente · gera lead"
@@ -290,7 +291,7 @@
   "permalink": null,
   "fonte": null,
   "versao": 2,
-  "obs": "Reescrito em 24/11 após revisão independente (nota v2 do revisor: 8); ajustes sugeridos pelo revisor aplicados depois, sem nova nota. Data realocada: Otávio grava todos em 24/11. Versão mais abrangente (negócio em geral, não só clínica), pedido do Otávio em 24/11."
+  "obs": "Reescrito em 24/11 após revisão independente (nota v2 do revisor: 8); ajustes sugeridos pelo revisor aplicados depois, sem nova nota. Data realocada: Otávio grava todos em 24/11. Versão mais abrangente (negócio em geral, não só clínica), pedido do Otávio em 24/11. Reescrito no tom de conversa (regra 5b da esteira, 24/11)."
  },
  {
   "id": "2026-11-26-preco-explicacao",
@@ -401,10 +402,11 @@
    "tela": "DESCONTO NA BLACK, CAIXA VAZIO EM FEVEREIRO",
    "fala": [
     "Deu desconto na Black pra vender mais? Então se prepara, porque fevereiro vai ser pior.",
-    "Porque desconto muitas vezes só adianta quem já ia comprar. E o resto aprende a esperar a próxima promoção.",
-    "Aí chega fevereiro, que já é mês fraco, e o pessoal só compra se tiver promoção.",
-    "Em vez de baixar o preço, deixa claro no seu perfil por que você cobra o que cobra: quem faz, o que tá incluso e o que você garante.",
-    "Manda isso pra quem tá na correria da Black."
+    "Eu te explico. O desconto, muitas vezes, só adianta quem já ia comprar de você de qualquer jeito.",
+    "E o resto aprende uma coisa: esperar a próxima promoção.",
+    "Aí chega fevereiro, que já é um mês fraco, e o pessoal só compra se tiver desconto. Vira uma bola de neve.",
+    "Em vez de baixar o preço, mostra no seu perfil por que você cobra o que cobra. Quem faz, o que tá incluso, o que você garante.",
+    "Manda isso pra quem tá na correria da Black agora."
    ],
    "tipo": "Seguidor · Black Friday"
   },
@@ -420,7 +422,7 @@
   "permalink": null,
   "fonte": "https://mercadoeconsumo.com.br/16/10/2026/ecommerce/black-friday-45-dos-produtos-nao-tiveram-desconto-real-em-2025-aponta-estudo/amp/",
   "versao": 2,
-  "obs": "Reescrito em 24/11 após revisão independente (nota v2 do revisor: 6); ajustes sugeridos pelo revisor aplicados depois, sem nova nota. Data realocada: Otávio grava todos em 24/11. Versão mais abrangente (negócio em geral, não só clínica), pedido do Otávio em 24/11. Ajustes finais do revisor da versão abrangente aplicados (sem nova nota)."
+  "obs": "Reescrito em 24/11 após revisão independente (nota v2 do revisor: 6); ajustes sugeridos pelo revisor aplicados depois, sem nova nota. Data realocada: Otávio grava todos em 24/11. Versão mais abrangente (negócio em geral, não só clínica), pedido do Otávio em 24/11. Ajustes finais do revisor da versão abrangente aplicados (sem nova nota). Reescrito no tom de conversa (regra 5b da esteira, 24/11)."
  },
  {
   "id": "2026-11-24-story-black-11h",
@@ -492,7 +494,7 @@
   "angulo": "bastidor + bolso",
   "metodo": "Hook-Story-Lesson",
   "pensamento": "Preciso de mais paciente, vou pôr mais dinheiro em anúncio.",
-  "gancho": "A primeira coisa que eu peço quando assumo o marketing de uma empresa é o celular do atendimento.",
+  "gancho": "Sabe qual é a primeira coisa que eu peço quando assumo o marketing de uma empresa? O celular do atendimento.",
   "ganchos_reserva": [
    "Antes de gastar um real com anúncio, eu conto quantos orçamentos ficaram sem resposta.",
    "Tem dinheiro parado no WhatsApp da sua recepção, e ninguém tá cobrando."
@@ -500,12 +502,12 @@
   "roteiro": {
    "tela": "ANTES DO ANÚNCIO, EU ABRO O WHATSAPP DO ATENDIMENTO",
    "fala": [
-    "A primeira coisa que eu peço quando assumo o marketing de uma empresa é o celular do atendimento.",
-    "Antes de falar de anúncio, eu abro o WhatsApp e faço uma conta que quase nenhum dono faz.",
+    "Sabe qual é a primeira coisa que eu peço quando assumo o marketing de uma empresa? O celular do atendimento.",
+    "Antes de falar de anúncio, de post, de qualquer coisa, eu abro o WhatsApp e faço uma conta que quase nenhum dono faz.",
     "Quantas pessoas pediram o valor no último mês, receberam, e ninguém da empresa voltou a chamar.",
-    "Gente que já tem interesse e já sabe o preço.",
-    "E a empresa querendo pôr mais dinheiro em anúncio, com essas pessoas paradas ali.",
-    "Faz isso hoje. Volta trinta dias no WhatsApp. E manda pra cada uma: \"Oi, Fulana, vi que você pediu o valor. Ficou alguma dúvida? Posso te ajudar?\""
+    "Cara, é gente que já tem interesse e já sabe o preço. Tá ali, parada.",
+    "E a empresa querendo colocar mais dinheiro em anúncio pra trazer gente nova.",
+    "Faz isso hoje, ó: volta trinta dias no WhatsApp e manda pra cada uma: \"Oi, Fulana, vi que você pediu o valor. Ficou alguma dúvida? Posso te ajudar?\""
    ],
    "gravacao": "Não mostrar tela de WhatsApp com nome ou conversa de cliente.",
    "tipo": "seguidor/cliente"
@@ -520,7 +522,7 @@
   "status": "roteiro",
   "instagram_media_id": null,
   "permalink": null,
-  "obs": "Reescrito em 24/11 após revisão independente (nota v2 do revisor: 6); ajustes sugeridos pelo revisor aplicados depois, sem nova nota. Data realocada: Otávio grava todos em 24/11. Versão mais abrangente (negócio em geral, não só clínica), pedido do Otávio em 24/11. Ajustes finais do revisor da versão abrangente aplicados (sem nova nota)."
+  "obs": "Reescrito em 24/11 após revisão independente (nota v2 do revisor: 6); ajustes sugeridos pelo revisor aplicados depois, sem nova nota. Data realocada: Otávio grava todos em 24/11. Versão mais abrangente (negócio em geral, não só clínica), pedido do Otávio em 24/11. Ajustes finais do revisor da versão abrangente aplicados (sem nova nota). Reescrito no tom de conversa (regra 5b da esteira, 24/11)."
  },
  {
   "id": "2026-11-30-reel-agenda-maio",
