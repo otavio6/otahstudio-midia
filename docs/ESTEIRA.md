@@ -17,7 +17,7 @@ Sobre o que a esteira lê e grava:
 | Quem fala | Otávio Henrique, diretor de operações e marketing num grupo de saúde, dono da OTAHSTUDIO. |
 | Posicionamento | "Construo marcas de saúde que faturam milhões." Método próprio: Método EDEN. |
 | Pilares | Marketing, marca/branding e gestão, sempre vistos de dentro da operação. |
-| Público | Donos de clínica, profissionais de saúde e donos de negócio que querem uma marca que vende. |
+| Público | Donos de negócio em geral que querem uma marca que vende. Saúde é a experiência do Otávio (exemplos, bastidor), não o único tema: no máximo 1 em cada 3 peças fala só de clínica (pedido dele em 24/11/2026). Prefira "cliente", "empresa", "negócio" a "paciente" e "clínica" quando a ideia servir para todos. |
 | Tom | Direto, provocativo, de quem está dentro da operação. Confronta crenças sem ofender pessoas ou grupos. |
 | Nunca | Faturamento de cliente, dados ou fotos de paciente, conversas internas, estratégia não lançada, nome de hospital sem autorização (Dr. Felipe e Realizza são permitidos), política partidária, tragédias, promessa de resultado. |
 
