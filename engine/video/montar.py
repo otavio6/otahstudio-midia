@@ -87,6 +87,8 @@ def grupos_legenda(palavras, max_chars=16, max_pal=4):
         pausa = prox is None or prox["inicio"] - w["fim"] > 0.28
         tamanho = len(" ".join(x["texto"] for x in atual))
         if prox is None or pontua or pausa:
+            if pausa and not pontua and prox is not None and lig(w) and len(atual) > 1:
+                atual.pop(); fecha(); atual.append(w); continue  # "e", "de", "que" antes da pausa abre a próxima legenda
             fecha(); continue
         if tamanho >= max_chars or len(atual) >= max_pal:
             if lig(w) and len(atual) > 1:  # não termina em artigo/preposição: a palavra de ligação abre a próxima
@@ -94,6 +96,25 @@ def grupos_legenda(palavras, max_chars=16, max_pal=4):
             else:
                 fecha()
     # palavra solta (pausa logo depois) gruda na anterior quando cabe
+    # palavra de ligação sozinha ("e", "de") abre a legenda seguinte, nunca fecha a anterior ("MINIMAMENTE DECENTE E")
+    for k in range(len(out) - 2, -1, -1):
+        g, nx = out[k], out[k + 1]
+        if len(g["palavras"]) == 1 and re.sub(r"[,.;:!?…]", "", g["palavras"][0]).lower() in LIGA and nx["ini"] - g["fim"] < 0.8 \
+                and not g["palavras"][0][-1:] in ",.;:!?…" and len(g["texto"]) + 1 + len(nx["texto"]) <= 24:
+            nx["texto"] = g["texto"] + " " + nx["texto"]; nx["ini"] = g["ini"]; nx["palavras"] = g["palavras"] + nx["palavras"]
+            del out[k]
+    # legenda que termina em ligação ("CONDIZENTE COM") passa essa palavra para a seguinte ("COM O SEU NEGÓCIO")
+    for k in range(len(out) - 1):
+        g, nx = out[k], out[k + 1]
+        ult = g["palavras"][-1]
+        if len(g["palavras"]) > 1 and re.sub(r"[,.;:!?…]", "", ult).lower() in LIGA and ult.lower() not in ("é", "é:", "é,") \
+                and ult[-1:] not in ",.;:!?…" and nx["ini"] - g["fim"] < 0.8:
+            g["palavras"] = g["palavras"][:-1]; nx["palavras"] = [ult] + nx["palavras"]
+            g["texto"] = " ".join(re.sub(r"[,.;:!?…]", "", w) for w in g["palavras"]).upper()
+            nx["texto"] = " ".join(re.sub(r"[,.;:!?…]", "", w) for w in nx["palavras"]).upper()
+            ws = [w for w in palavras if w["texto"] == ult and g["ini"] <= w["inicio"] <= nx["ini"] + 0.01]
+            if ws:
+                g["fim"] = min(g["fim"], ws[-1]["inicio"]); nx["ini"] = ws[-1]["inicio"]
     juntos = []
     for g in out:
         if juntos and len(g["palavras"]) == 1 and g["ini"] - juntos[-1]["fim"] < 0.5 and len(juntos[-1]["texto"]) + 1 + len(g["texto"]) <= 24:
