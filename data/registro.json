@@ -399,9 +399,9 @@
    "tela": "DESCONTO NA BLACK, CAIXA VAZIO EM FEVEREIRO",
    "fala": [
     "Deu desconto na Black pra vender mais? Então se prepara, porque fevereiro vai ser pior.",
-    "Porque desconto, na maioria das vezes, só adianta quem já ia comprar. E o resto aprende a esperar a próxima promoção.",
-    "Aí chega fevereiro, que já é mês fraco, e ninguém compra sem promoção.",
-    "Em vez de baixar o preço, deixa claro no seu perfil por que ele vale: quem faz, o que tá incluso e o que você garante.",
+    "Porque desconto muitas vezes só adianta quem já ia comprar. E o resto aprende a esperar a próxima promoção.",
+    "Aí chega fevereiro, que já é mês fraco, e o pessoal só compra se tiver promoção.",
+    "Em vez de baixar o preço, deixa claro no seu perfil por que você cobra o que cobra: quem faz, o que tá incluso e o que você garante.",
     "Manda isso pra quem tá na correria da Black."
    ],
    "tipo": "Seguidor · Black Friday"
@@ -418,7 +418,7 @@
   "permalink": null,
   "fonte": "https://mercadoeconsumo.com.br/16/10/2026/ecommerce/black-friday-45-dos-produtos-nao-tiveram-desconto-real-em-2025-aponta-estudo/amp/",
   "versao": 2,
-  "obs": "Reescrito em 24/11 após revisão independente (nota v2 do revisor: 6); ajustes sugeridos pelo revisor aplicados depois, sem nova nota. Data realocada: Otávio grava todos em 24/11. Versão mais abrangente (negócio em geral, não só clínica), pedido do Otávio em 24/11."
+  "obs": "Reescrito em 24/11 após revisão independente (nota v2 do revisor: 6); ajustes sugeridos pelo revisor aplicados depois, sem nova nota. Data realocada: Otávio grava todos em 24/11. Versão mais abrangente (negócio em geral, não só clínica), pedido do Otávio em 24/11. Ajustes finais do revisor da versão abrangente aplicados (sem nova nota)."
  },
  {
   "id": "2026-11-24-story-black-11h",
@@ -500,10 +500,10 @@
    "fala": [
     "A primeira coisa que eu peço quando assumo o marketing de uma empresa é o celular do atendimento.",
     "Antes de falar de anúncio, eu abro o WhatsApp e faço uma conta que quase nenhum dono faz.",
-    "Quantas pessoas pediram o valor no último mês, receberam, e ninguém nunca mais chamou de volta.",
+    "Quantas pessoas pediram o valor no último mês, receberam, e ninguém da empresa voltou a chamar.",
     "Gente que já tem interesse e já sabe o preço.",
     "E a empresa querendo pôr mais dinheiro em anúncio, com essas pessoas paradas ali.",
-    "Faz isso hoje. Volta trinta dias no WhatsApp. E manda pra cada uma: \"Oi, Fulana, vi que você pediu o valor. Ficou alguma dúvida que eu possa te ajudar?\""
+    "Faz isso hoje. Volta trinta dias no WhatsApp. E manda pra cada uma: \"Oi, Fulana, vi que você pediu o valor. Ficou alguma dúvida? Posso te ajudar?\""
    ],
    "gravacao": "Não mostrar tela de WhatsApp com nome ou conversa de cliente.",
    "tipo": "seguidor/cliente"
@@ -518,7 +518,7 @@
   "status": "roteiro",
   "instagram_media_id": null,
   "permalink": null,
-  "obs": "Reescrito em 24/11 após revisão independente (nota v2 do revisor: 6); ajustes sugeridos pelo revisor aplicados depois, sem nova nota. Data realocada: Otávio grava todos em 24/11. Versão mais abrangente (negócio em geral, não só clínica), pedido do Otávio em 24/11."
+  "obs": "Reescrito em 24/11 após revisão independente (nota v2 do revisor: 6); ajustes sugeridos pelo revisor aplicados depois, sem nova nota. Data realocada: Otávio grava todos em 24/11. Versão mais abrangente (negócio em geral, não só clínica), pedido do Otávio em 24/11. Ajustes finais do revisor da versão abrangente aplicados (sem nova nota)."
  },
  {
   "id": "2026-11-30-reel-agenda-maio",
@@ -544,7 +544,7 @@
     "Se muita gente sumiu, taí boa parte dos seus meses fracos. E quando o mês fica fraco, a primeira ideia é promoção.",
     "Só que essas pessoas já confiam em você. Muitas só não voltaram porque ninguém lembrou delas.",
     "Separa quem tem motivo pra voltar. Recompra, manutenção, renovação. E manda mensagem pra cada um.",
-    "Tipo: \"Oi, Carla! Já faz seis meses desde a última vez. Quer que eu veja um horário pra você essa semana?\"",
+    "Tipo: \"Oi, Carla! Faz seis meses que você comprou com a gente. Quer que eu te conte o que tem de novo?\"",
     "Me segue que eu vou passando as mensagens que todo negócio devia mandar."
    ],
    "tipo": "seguidor"
@@ -555,7 +555,7 @@
    "copy": 8.38,
    "qualidade": null
   },
-  "obs": "Reescrito em 24/11 após revisão independente (nota v2 do revisor: 7); ajustes sugeridos pelo revisor aplicados depois, sem nova nota. Data realocada: Otávio grava todos em 24/11. Versão mais abrangente (negócio em geral, não só clínica), pedido do Otávio em 24/11.",
+  "obs": "Reescrito em 24/11 após revisão independente (nota v2 do revisor: 7); ajustes sugeridos pelo revisor aplicados depois, sem nova nota. Data realocada: Otávio grava todos em 24/11. Versão mais abrangente (negócio em geral, não só clínica), pedido do Otávio em 24/11. Ajustes finais do revisor da versão abrangente aplicados (sem nova nota).",
   "metricool": null,
   "status": "roteiro",
   "instagram_media_id": null,
@@ -653,7 +653,7 @@
   "versao": 2,
   "titulo": "Reel: 100 chamaram na Black, quantos compraram?",
   "tema": "Cliente · a conta pós-Black: 4 degraus do direct até a cadeira",
-  "fonte": "https://medicinasa.com.br/doctoralia-panorana-2026/",
+  "fonte": null,
   "angulo": "controle + bolso",
   "metodo": "PAS",
   "pensamento": "Paguei anúncio na Black e a agenda não encheu.",
@@ -663,12 +663,11 @@
    "Tem um degrau na sua clínica onde o paciente cai."
   ],
   "roteiro": {
-   "tela": "100 CHAMARAM NA BLACK. QUANTOS COMPRARAM? · Rodapé na fala 4: Fonte: Doctoralia, Panorama das Clínicas e Hospitais 2026",
+   "tela": "100 CHAMARAM NA BLACK. QUANTOS COMPRARAM?",
    "fala": [
     "De cada cem pessoas que chamaram a sua empresa na Black, quantas compraram?",
     "Você pagou anúncio, chegou mensagem, e o caixa não subiu. Então vamos achar onde vazou.",
     "Pega um papel e conta: quantas você respondeu no mesmo dia, quantas receberam o valor, quantas fecharam e quantas pagaram.",
-    "Pra você ter ideia: a Doctoralia ouviu mais de seiscentos gestores de saúde, e dois em cada três nunca colocaram esse caminho do cliente no papel.",
     "Em algum desses pontos o número cai feio.",
     "Eu olharia primeiro a resposta no mesmo dia. Mensagem que fica pra amanhã esfria, e a pessoa já chamou o concorrente.",
     "Faz essa conta e me manda no direct qual número mais caiu."
@@ -685,6 +684,6 @@
   "status": "roteiro",
   "instagram_media_id": null,
   "permalink": null,
-  "obs": "Reescrito em 24/11 após revisão independente (nota v2 do revisor: 6); ajustes sugeridos pelo revisor aplicados depois, sem nova nota. Data realocada: Otávio grava todos em 24/11. Versão mais abrangente (negócio em geral, não só clínica), pedido do Otávio em 24/11."
+  "obs": "Reescrito em 24/11 após revisão independente (nota v2 do revisor: 6); ajustes sugeridos pelo revisor aplicados depois, sem nova nota. Data realocada: Otávio grava todos em 24/11. Versão mais abrangente (negócio em geral, não só clínica), pedido do Otávio em 24/11. Ajustes finais do revisor da versão abrangente aplicados (sem nova nota)."
  }
 ]
