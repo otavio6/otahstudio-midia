@@ -92,10 +92,23 @@
       "id": "criacao-2026-11-24T06:48",
       "tarefa": "criacao",
       "inicio": "2026-11-24T06:48:30-03:00",
-      "status": "rodando",
-      "fim": null,
-      "resumo": "",
-      "etapas": {}
+      "status": "ok",
+      "fim": "2026-11-24T07:17:33-03:00",
+      "resumo": "2 peças de feed (carrossel 'qual o valor?' 27/11 10h; estático de avaliação 01/12 10h) e 1 roteiro de reel aprovados pelos revisores; story de hoje 17h30 com qualidade 8,44 (sombra corrigida depois, projeção 8,50); esperando o ok do Otávio. 0 comentários, 0 leads novos, 0 ideias no painel; reel da Black v4 marcado como agendado.",
+      "etapas": {
+        "ideias": 9,
+        "aprovadas_potencia": 3,
+        "pecas": 2,
+        "stories": 1,
+        "reels": 1,
+        "rascunhos": 3,
+        "rodadas_copy": 3,
+        "rodadas_qualidade": 3,
+        "comentarios_pendentes": 0,
+        "leads_novos": 0,
+        "ideias_painel": 0,
+        "agendados_conferidos": 5
+      }
     }
   ]
 }
