@@ -1,42 +1,46 @@
-# Aprendizados · atualizado em 2026-11-22 23:22 (-03:00)
+# Aprendizados · atualizado em 2026-11-23 23:19 (-03:00)
 
-Fonte: conector Instagram OTAHSTUDIO (posts e conta) + Metricool (histórico de seguidores, ganhos/perdas, alcance diário, retenção do reel). Contas feitas em código; dados em `data/performance/2026-11-22.json`.
+Fonte: conector Instagram OTAHSTUDIO (posts, story e conta) + Metricool (histórico de seguidores, ganhos/perdas, alcance diário até 22/11, retenção do reel). Contas feitas em código; dados em `data/performance/2026-11-23.json`.
 
 ## Placar
 - Seguidores: **136**. Faltam **864** para 1.000.
-- Ganho do dia: **+1** (135→136, conector). Semana (15/11→22/11): **+2** (134→136). Mês: série de seguidores do Metricool só começa em 13/11; de 13/11 a hoje, **+2**. Ganhos/perdas do Metricool desde 09/11: +2 / −1, mais o +1 de hoje que o Metricool ainda não registrou.
-- Conta, últimos 30 dias (24/10–22/11, conector): alcance 253, views 1.262, 35 contas engajadas, 70 interações.
-- **Último post: 06/11. São 16 dias sem publicar.** Alcance da semana 15–21/11: **9**, contra 108 na semana 08–14/11 (−92%). Dias com alcance 0: 16, 18, 19 e 20/11. Metricool ainda sem alcance de 22/11.
-- Próximos no ar (aprovados e programados no painel): carrossel da Black Friday (24/11, 11h) e estático do preço (26/11, 11h). Os 6 reels do registro seguem como roteiro (precisam ser gravados); o de 22/11 18h não saiu porque nunca foi gravado nem aprovado.
-- A tarefa de criação não registrou execução em 22/11 no diário.
+- Ganho do dia: **0** (136→136). Semana (16/11→23/11): **+2** (134→136). Mês: a série de seguidores só começa em 13/11; de 13/11 a hoje, **+2**.
+- Conta, últimos 30 dias (25/10–23/11, conector): alcance 248, views 1.194, 31 contas engajadas, 61 interações.
+- **Último post de feed: 06/11 (17 dias).** Hoje saiu o 1º conteúdo desde então: o story da Black (14:36). Alcance de hoje: **32** (ontem: 0). Soma do alcance diário 17–23/11: **34**, contra 97 em 10–16/11 (−65%).
+- Próximos no ar (aprovados e programados no painel): carrossel da Black Friday (24/11, 11h), carrossel do WhatsApp programado (25/11, 18h) e estático do preço (26/11, 11h). O reel da Black Friday (v4/v7) segue como rascunho; os outros 6 reels seguem como roteiro.
+- Leads: o painel voltou **vazio** hoje (ontem havia 1 lead com status novo, drfelipevillaca). Sem erro na varredura; provavelmente foi removido ou mudado no painel.
 
-## Ranking dos 3 posts dos últimos 30 dias (amostra pequena: tratar como sinal, não regra)
-| Post | Formato | Data/hora | Alcance | Views | Salv. | Compart. | Interações | Interações/alcance | Views/alcance |
+## Ranking dos últimos 30 dias (amostra pequena: tratar como sinal, não regra)
+| Peça | Formato | Data/hora | Alcance | Views | Salv. | Compart. | Interações | Interações/alcance | Views/alcance |
 |---|---|---|---|---|---|---|---|---|---|
 | Reel 06/11 | reel | 06/11 12:40 | **198** | 289 | 0 | 1 | 37 (26 curt., 8 coment.) | 18,7% | 1,46 |
 | Microgerenciar (Comente GESTAO) | carrossel | 30/10 11:49 | 27 | 92 | 0 | 0 | 4 | 14,8% | 3,41 |
+| Story da Black (45% sem desconto) | story | 23/11 14:36 | 26 | 30 | n/a | 0 | 1 (0 respostas) | 3,8% | 1,15 |
 | Logo não faz a marca (Comente LOGO) | carrossel | 29/10 12:16 | 19 | 77 | 0 | 0 | 1 | 5,3% | 4,05 |
 
-- O estático da Nike (22/10, alcance 28) saiu da janela de 30 dias.
-- Campeão em tudo: o reel. Pior: carrossel do logo.
-- Nenhum dos 3 tem ângulo, método, gancho ou assinatura no registro (anteriores à esteira). O cruzamento com esses campos começa com os posts de 24/11 e 26/11.
-- Salvamentos: **0 em todos**. Compartilhamentos: 1 no total (o reel). Seguidores por post: o reel não informa; os carrosséis trouxeram 0.
+- Campeão: o reel. Pior: carrossel do logo.
+- Story da Black: ângulo "crença errada + dado", método "chamada", gancho com número (45%). Alcance 26 = 19% dos 136 seguidores; 28 ações de navegação, 0 respostas à pergunta, 0 visitas ao perfil, 0 seguidores. É a 1ª peça da esteira nova medida.
+- **Atenção:** a tela 2 do story diz "Hoje no feed · 11h", mas ele saiu em 23/11 às 14:36, e o carrossel só vai ao ar em 24/11 às 11h. Quem viu ficou com um horário que já tinha passado.
+- Os 3 posts de feed não têm ângulo, método, gancho ou assinatura no registro (anteriores à esteira). O cruzamento completo começa com o carrossel de 24/11.
+- Salvamentos: **0 em todos**. Compartilhamentos: 1 no total (o reel).
 
 ## O que funciona (com dados)
-1. **Reel é o único formato que sai da bolha.** Alcance 198 contra média de 23 dos 2 carrosséis: **8,6×**. Os 3 dias seguintes ao reel (06–08/11) somaram 235 de alcance.
+1. **Reel é o único formato que sai da bolha.** Alcance 198 contra média de 23 dos 2 carrosséis: **8,6×**.
 2. **Reel engaja melhor**: 18,7% de interações sobre alcance e 8 comentários, contra 5,3% a 14,8% e 0 comentários nos carrosséis.
-3. **Carrossel segura quem já chega** (3,4 a 4,1 views por conta alcançada, contra 1,5 no reel), mas não traz conta nova.
+3. **Qualquer peça tira o alcance do zero**: um único story levou o dia de 0 para 32 de alcance.
+4. **Carrossel segura quem já chega** (3,4 a 4,1 views por conta alcançada, contra 1,5 no reel), mas não traz conta nova.
 
 ## O que não funciona (com dados)
-1. **Ficar sem postar zera o alcance**: 16 dias parados → semana com alcance 9 (−92% contra a anterior) e 4 dias com 0.
-2. **"Comente PALAVRA" sem audiência não gera comentário**: GESTAO e LOGO tiveram 0 comentários.
-3. **Nada é salvo.** 0 salvamentos nos 3 posts. Falta conteúdo de referência (checklist, teste, tabela).
-4. **Retenção do reel**: 13,3 s de tempo médio e 57,2% de taxa de pulo (Metricool). Mais da metade sai no começo; o gancho de 3 s precisa ser mais forte.
+1. **Ficar sem postar zera o alcance**: 17 dias sem feed; 5 dias com alcance 0 desde 16/11.
+2. **Pergunta no story sem caixa de resposta não gera resposta**: 0 respostas em 26 contas alcançadas (1 story, sinal fraco).
+3. **"Comente PALAVRA" sem audiência não gera comentário**: GESTAO e LOGO tiveram 0 comentários.
+4. **Nada é salvo.** 0 salvamentos nos 3 posts.
+5. **Retenção do reel**: 13,3 s de tempo médio e 57,2% de taxa de pulo (Metricool). O gancho de 3 s precisa ser mais forte.
 
 ## O que testar a seguir (até 3)
-1. **Ritmo, com reel gravado**: os 2 posts agendados são de feed, e o feed alcança ~23 contas. Gravar pelo menos 2 dos roteiros de reel desta semana. Hipótese: alcance diário volta acima de 50.
-2. **Carrossel com algo salvável no último slide** (o da Black Friday, 24/11, tem checklist sim/não): medir salvamentos > 0 em 48 h.
-3. **Horário 11h vs 18h**: os dois agendados saem às 11h; os reels roteirizados estão às 12h e 18h. Comparar alcance nas primeiras 48 h.
+1. **Ritmo, com reel no ar**: 3 posts de feed programados (24, 25 e 26/11). Publicar o reel da Black assim que o Otávio aprovar. Hipótese: alcance diário volta acima de 50.
+2. **Story com figurinha de enquete/caixa em vez de pergunta solta**: medir respostas > 0 contra as 0 de hoje. E story de chamada no mesmo dia do post, antes do horário que ele cita.
+3. **Carrossel com algo salvável no último slide** (o da Black, 24/11, tem checklist sim/não): medir salvamentos > 0 em 48 h, e comparar 11h (24 e 26/11) com 18h (25/11).
 
 ## Lições da primeira revisão independente (21/11, 3 carrosséis reprovados)
 Notas de copy entre 6,1 e 6,3 e de visual entre 6,4 e 7,1. Os problemas se repetiram nos três:

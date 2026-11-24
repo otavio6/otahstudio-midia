@@ -433,9 +433,10 @@
   },
   "obs": "Copy 8,50 com clareza 7,5 na 3ª revisão (ajustes aplicados depois). Qualidade 7,67 → 8,17 → 7,94. Precisa de aprovação antes das 9h de 24/11; se aprovado depois das 11h, a tela 2 perde o sentido.",
   "metricool": null,
-  "status": "rascunho",
-  "instagram_media_id": null,
-  "permalink": null
+  "status": "publicado",
+  "instagram_media_id": "17920501413537715",
+  "permalink": "https://www.instagram.com/stories/otaviohenriqve/4036894770513376779",
+  "publicado_em": "2026-11-23T14:36-03:00"
  },
  {
   "id": "2026-11-25-whatsapp-agendar",
@@ -462,10 +463,11 @@
   },
   "obs": "Qualidade abaixo da régua (7,69 → 8,06 → 7,88 em 3 revisões independentes; pontos: novidade do layout e vazios). Enviado como melhor versão para o Otávio decidir.",
   "metricool": null,
-  "status": "rascunho",
+  "status": "agendado",
   "instagram_media_id": null,
   "permalink": null,
-  "slides": 7
+  "slides": 7,
+  "agendado_para": "2026-11-25T18:00-03:00"
  },
  {
   "id": "2026-11-28-reel-orcamento-parado",

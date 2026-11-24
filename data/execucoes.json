@@ -74,10 +74,19 @@
       "id": "analise-2026-11-23T23:18",
       "tarefa": "analise",
       "inicio": "2026-11-23T23:18:22-03:00",
-      "status": "rodando",
-      "fim": null,
-      "resumo": "",
-      "etapas": {}
+      "status": "ok",
+      "fim": "2026-11-23T23:20:24-03:00",
+      "resumo": "Story da Black saiu (alcance 26) e tirou o dia do zero (alcance 32), mas foi ao ar em 23/11 dizendo 'hoje no feed 11h'; 136 seguidores (0 no dia, +2 na semana); 3 posts programados (24, 25 e 26/11); painel sem leads e 0 comentários pendentes.",
+      "etapas": {
+        "posts_medidos": 4,
+        "seguidores": 136,
+        "publicados_conferidos": 1,
+        "agendados_conferidos": 3,
+        "leads_novos": 0,
+        "leads_status_novo": 0,
+        "comentarios_12h": 0,
+        "sugestoes_resposta": 0
+      }
     }
   ]
 }
