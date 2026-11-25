@@ -132,10 +132,24 @@
       "id": "criacao-2026-11-25T06:48",
       "tarefa": "criacao",
       "inicio": "2026-11-25T06:48:13-03:00",
-      "status": "rodando",
-      "fim": null,
-      "resumo": "",
-      "etapas": {}
+      "status": "parcial",
+      "fim": "2026-11-25T07:26:09-03:00",
+      "resumo": "Dia fraco: 1 carrossel (atendente/WhatsApp, 03/12 10h; copy 8,25 reprovada, qualidade 8,50) e o story de hoje 18h30 (copy 8,27, qualidade 8,17), os dois abaixo da régua depois do máximo de rodadas; estático e reel descartados; esperando o ok do Otávio. 0 comentários, 0 leads, 0 ideias no painel.",
+      "etapas": {
+        "ideias": 8,
+        "aprovadas_potencia": 4,
+        "pecas": 1,
+        "stories": 1,
+        "reels": 0,
+        "rascunhos": 2,
+        "descartadas": 2,
+        "rodadas_copy": 3,
+        "rodadas_qualidade": 3,
+        "comentarios_pendentes": 0,
+        "leads_novos": 0,
+        "ideias_painel": 0,
+        "agendados_conferidos": 5
+      }
     }
   ]
 }
