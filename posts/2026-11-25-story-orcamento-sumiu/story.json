@@ -16,7 +16,7 @@
    "label": "Faz assim",
    "title": "Programa a mensagem\n||e o WhatsApp manda\npor você.",
    "size": 82,
-   "body": "Tá chegando aos poucos. Vê se já tem no seu."
+   "body": "Tá chegando aos poucos (no Business ainda não). Vê se já tem no seu."
   },
   {
    "theme": "light",
@@ -24,18 +24,17 @@
    "label": "No post de hoje",
    "title": "3 mensagens\n||pra programar:",
    "size": 92,
-   "cta": "1 · Orçamento + 3 dias\n2 · Véspera do atendimento\n3 · 7 dias depois",
+   "cta": "1 · 3 dias depois do orçamento\n2 · Na véspera do atendimento\n3 · 7 dias depois do atendimento",
    "ctaTop": 1040,
    "ctaSize": 52
   },
   {
    "theme": "dark",
-   "top": 620,
-   "title": "Os 3 textos prontos\n||tão no post, com o dia\ne a hora de cada um.",
+   "top": 470,
+   "title": "Os 3 textos prontos\n||tão no post, com o momento\ncerto de cada um.",
    "size": 76,
-   "body": "O exemplo é de clínica, mas serve pra qualquer agenda.",
    "cta": "*Toca no post aqui embaixo ↓*",
-   "ctaTop": 1180,
+   "ctaTop": 800,
    "ctaSize": 52
   }
  ]
