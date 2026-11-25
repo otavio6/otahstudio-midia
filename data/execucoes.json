@@ -114,10 +114,19 @@
       "id": "analise-2026-11-24T23:17",
       "tarefa": "analise",
       "inicio": "2026-11-24T23:17:50-03:00",
-      "status": "rodando",
-      "fim": null,
-      "resumo": "",
-      "etapas": {}
+      "status": "ok",
+      "fim": "2026-11-24T23:20:26-03:00",
+      "resumo": "Carrossel da Black e o story dele saíram no horário (alcance 11 e 20; 0 salvamentos, comentários e seguidores); 136 seguidores (0 no dia, +1 na semana); 5 peças programadas, reel da Black amanhã 12h; painel sem leads e 0 comentários pendentes.",
+      "etapas": {
+        "posts_medidos": 6,
+        "seguidores": 136,
+        "publicados_conferidos": 2,
+        "agendados_conferidos": 5,
+        "leads_novos": 0,
+        "leads_status_novo": 0,
+        "comentarios_12h": 0,
+        "sugestoes_resposta": 0
+      }
     }
   ]
 }

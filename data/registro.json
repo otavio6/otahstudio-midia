@@ -181,15 +181,16 @@
    "uuid": "-2442868179182599959",
    "horario": "2026-11-24T11:00:00"
   },
-  "status": "agendado",
-  "instagram_media_id": null,
-  "permalink": null,
+  "status": "publicado",
+  "instagram_media_id": "18137911051759109",
+  "permalink": "https://www.instagram.com/p/DgIHvG6m7u9/",
   "horario": "11:00",
   "titulo": "Black Friday: desconto falso",
   "slides": 7,
   "pensamento": "\"Será que eu faço Black Friday na clínica?\"",
   "nota_ajuste": "Slides 4, 5 e 7 e legenda ajustados em 21/11: sem antítese e sem \"siga @\" (docs/COPY.md).",
-  "agendado_para": "2026-11-24T11:00-03:00"
+  "agendado_para": "2026-11-24T11:00-03:00",
+  "publicado_em": "2026-11-24T11:00-03:00"
  },
  {
   "id": "2026-11-24-reel-concorrente",
@@ -588,9 +589,10 @@
   },
   "obs": "Qualidade 6,50 → 7,89 → 8,44; sombra da tela 2 corrigida depois (projeção 8,50). Sem 'hoje' no texto porque só sai depois da aprovação.",
   "metricool": null,
-  "status": "rascunho",
-  "instagram_media_id": null,
-  "permalink": null
+  "status": "publicado",
+  "instagram_media_id": "18122933729004523",
+  "permalink": "https://www.instagram.com/stories/otaviohenriqve/4037707311703687911",
+  "publicado_em": "2026-11-24T17:30-03:00"
  },
  {
   "id": "2026-11-27-qual-o-valor",
@@ -617,7 +619,7 @@
    "qualidade": 8.69
   },
   "metricool": null,
-  "status": "rascunho",
+  "status": "agendado",
   "instagram_media_id": null,
   "permalink": null
  },
@@ -646,7 +648,7 @@
    "qualidade": 8.63
   },
   "metricool": null,
-  "status": "rascunho",
+  "status": "agendado",
   "instagram_media_id": null,
   "permalink": null
  },
