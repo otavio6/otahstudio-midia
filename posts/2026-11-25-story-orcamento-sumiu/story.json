@@ -3,36 +3,39 @@
  "telas": [
   {
    "theme": "light",
-   "top": 600,
+   "top": 760,
    "title": "Mandou o orçamento\n||e a pessoa sumiu?",
    "size": 104,
-   "cta": "Entregue. Visto ✓✓\n*Nenhuma resposta.*",
-   "ctaTop": 900,
+   "cta": "Entregue.\n*Nenhuma resposta.*",
+   "ctaTop": 1060,
    "ctaSize": 76
   },
   {
    "theme": "dark",
-   "top": 760,
+   "top": 800,
    "label": "Faz assim",
-   "title": "Programa uma mensagem\n||pra 3 dias depois.",
+   "title": "Programa a mensagem\n||e o WhatsApp manda\npor você.",
    "size": 82,
-   "body": "O WhatsApp tá liberando isso aos poucos. Vê se já chegou no seu."
+   "body": "Tá chegando aos poucos. Vê se já tem no seu."
   },
   {
    "theme": "light",
    "top": 740,
-   "label": "A primeira mensagem",
-   "title": "“Oi! Ficou alguma dúvida\n||sobre o orçamento\nque eu te mandei?”",
-   "size": 76,
-   "body": "A pessoa recebe sozinha, sem você precisar lembrar."
+   "label": "No post de hoje",
+   "title": "3 mensagens\n||pra programar:",
+   "size": 92,
+   "cta": "1 · Orçamento + 3 dias\n2 · Véspera do atendimento\n3 · 7 dias depois",
+   "ctaTop": 1040,
+   "ctaSize": 52
   },
   {
    "theme": "dark",
-   "top": 560,
-   "title": "As 3 mensagens\n||tão no post de hoje,\ncom a hora de cada uma.",
-   "size": 80,
+   "top": 620,
+   "title": "Os 3 textos prontos\n||tão no post, com o dia\ne a hora de cada um.",
+   "size": 76,
+   "body": "O exemplo é de clínica, mas serve pra qualquer agenda.",
    "cta": "*Toca no post aqui embaixo ↓*",
-   "ctaTop": 960,
+   "ctaTop": 1180,
    "ctaSize": 52
   }
  ]
