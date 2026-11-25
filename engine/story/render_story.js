@@ -11,7 +11,7 @@ const esc = s => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;');
 const rich = s => esc(s).replace(/\*([^*]+)\*/g,'<span class="acc">$1</span>').replace(/\|\|(.*)$/s,'<span class="mut">$1</span>').replace(/\n/g,'<br>');
 function page(t){
   const dark = t.theme !== 'light';
-  const C = dark ? {bg:'#0B0B0C',ink:'#F4F4F1',mut:'#8C8F94',acc:'#D4FF3A',line:'rgba(255,255,255,.12)'} : {bg:'#F2F2EE',ink:'#111214',mut:'#7C7F85',acc:'#1F4FFF',line:'rgba(17,18,20,.12)'};
+  const C = dark ? {bg:'#0B0B0C',ink:'#F4F4F1',mut:'#8C8F94',acc:'#D4FF3A',line:'rgba(255,255,255,.12)'} : {bg:'#F2F2EE',ink:'#111214',mut:'#5F6268',acc:'#1F4FFF',line:'rgba(17,18,20,.12)'};
   const img = t.image ? `<div style="position:absolute;left:${t.imgX??240}px;top:${t.imgTop??1000}px;width:${t.imgW??600}px;height:${(t.imgW??600)*1.25}px;border-radius:28px;background:url('${b64(path.join(dir,t.image))}') center/cover;box-shadow:0 40px 80px -30px rgba(0,0,0,.45);transform:rotate(${t.rot??-3}deg)"></div>` : '';
   const big = t.big ? `<div style="position:absolute;left:76px;top:${t.bigTop??1060}px;font:400 ${t.bigSize??420}px/.85 'Inter Display';letter-spacing:-.06em;color:${C.acc}">${esc(t.big)}</div>` : '';
   return `<html><head><meta charset="utf-8"><style>
@@ -20,7 +20,7 @@ function page(t){
   .hd{position:absolute;left:80px;top:300px;display:flex;align-items:center;gap:18px}
   .hd .av{width:72px;height:72px;border-radius:50%;background:url('${avatar}') center/cover;border:3px solid ${dark?'#F4F4F1':'#fff'}}
   .hd b{font:600 30px/1.1 Inter;display:flex;align-items:center;gap:8px}.hd small{font:400 24px/1.3 Inter;color:${C.mut}}
-  .lbl{font:400 24px/1 'DejaVu Sans Mono';letter-spacing:.12em;text-transform:uppercase;color:${C.mut}}
+  .lbl{font:400 30px/1 'DejaVu Sans Mono';letter-spacing:.12em;text-transform:uppercase;color:${C.mut}}
   .t{font:400 ${t.size??84}px/1.04 'Inter Display';letter-spacing:-.035em}
   .bd{font:400 36px/1.4 Inter;color:${C.mut}}
   .src{position:absolute;left:80px;right:80px;bottom:370px;font:400 22px/1.3 'DejaVu Sans Mono';color:${C.mut};letter-spacing:.02em}
