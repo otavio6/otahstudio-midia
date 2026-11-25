@@ -1,0 +1,81 @@
+{
+ "id": "2026-11-25-story-orcamento-sumiu",
+ "telas": [
+  {
+   "theme": "dark",
+   "top": 580,
+   "label": "Post novo no feed",
+   "title": "Mandou o orçamento\n||e a pessoa sumiu?",
+   "size": 104,
+   "pics": [
+    {
+     "src": "visto.png",
+     "x": 276,
+     "y": 1010,
+     "w": 760,
+     "h": 380
+    }
+   ],
+   "foot": [
+    "WhatsApp",
+    "2026 · OH/045 · 1/4"
+   ]
+  },
+  {
+   "theme": "light",
+   "top": 600,
+   "label": "O que fazer",
+   "title": "Programa a mensagem\n||pra 3 dias depois.",
+   "size": 92,
+   "body": "No dia seguinte, pode soar como cobrança.",
+   "pics": [
+    {
+     "src": "cal.png",
+     "x": 50,
+     "y": 1110,
+     "w": 980,
+     "h": 260
+    }
+   ],
+   "foot": [
+    "WhatsApp",
+    "2026 · OH/045 · 2/4"
+   ]
+  },
+  {
+   "theme": "dark",
+   "top": 600,
+   "title": "Ela recebe na quinta,\n||sem você lembrar.",
+   "size": 88,
+   "pics": [
+    {
+     "src": "msg.png",
+     "x": 216,
+     "y": 1030,
+     "w": 820,
+     "h": 320
+    }
+   ],
+   "foot": [
+    "WhatsApp",
+    "2026 · OH/045 · 3/4"
+   ]
+  },
+  {
+   "theme": "light",
+   "top": 560,
+   "title": "No post de hoje\ntem mais duas.",
+   "size": 96,
+   "outline": "+2",
+   "outlineTop": 840,
+   "outlineSize": 460,
+   "cta": "*Corre lá no feed.*",
+   "ctaTop": 1330,
+   "ctaSize": 64,
+   "foot": [
+    "WhatsApp",
+    "2026 · OH/045 · 4/4"
+   ]
+  }
+ ]
+}

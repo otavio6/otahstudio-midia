@@ -1,0 +1,7 @@
+{
+ "potencia": {"nota": 8.17, "revisor": "subagente A2"},
+ "copy": {"rodadas": [8.50, 8.29, 8.25], "final": 8.25, "aprovada": false,
+  "obs": "Reprovou nas 3 rodadas (prova 7,5 e público/ângulo 7,5 na última). Depois da 3ª nota foram aplicadas as trocas de texto que o revisor pediu (título do slide 2, ponte do slide 3, frase do Sebrae na legenda, botão 'Enviar') e a data mudou para 03/12 para espaçar dos posts de WhatsApp; essa versão final não recebeu nota nova."},
+ "qualidade": {"rodadas": [7.88, 7.88, 8.50], "final": 8.50, "aprovada": true,
+  "pendencias": ["slide 5: alinhar o timer ou fechar o anel", "slide 3: contorno das pílulas mais visível", "slide 6: título solto no centro"]}
+}

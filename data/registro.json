@@ -692,5 +692,61 @@
   "instagram_media_id": null,
   "permalink": null,
   "obs": "Reescrito em 24/11 após revisão independente (nota v2 do revisor: 6); ajustes sugeridos pelo revisor aplicados depois, sem nova nota. Data realocada: Otávio grava todos em 24/11. Versão mais abrangente (negócio em geral, não só clínica), pedido do Otávio em 24/11. Ajustes finais do revisor da versão abrangente aplicados (sem nova nota). Fala final reescrita a partir do áudio ditado pelo Otávio em 24/11 (palavras dele)."
+ },
+ {
+  "id": "2026-11-25-story-orcamento-sumiu",
+  "data": "2026-11-25",
+  "horario": "18:30",
+  "formato": "story",
+  "versao": 1,
+  "slides": 4,
+  "titulo": "Story: chamada do carrossel do WhatsApp (orçamento sumiu)",
+  "tema": "Chamada para o carrossel de mensagem programada que sai às 18h: a mensagem de 3 dias depois do orçamento",
+  "fonte": "carrossel de 25/11 (sem dado novo)",
+  "angulo": "bolso",
+  "metodo": "chamada + exemplo",
+  "pensamento": "Paciente só pergunta o preço e some.",
+  "gancho": "Mandou o orçamento e a pessoa sumiu?",
+  "assinatura": "story: card-orcamento-entregue-escuro | calendario-dia0-dia3-claro | balao-programado-escuro | numero-vazado+cta-claro (rodapé de série)",
+  "notas": {
+   "potencia": null,
+   "copy": 8.27,
+   "qualidade": 8.17
+  },
+  "obs": "Copy e qualidade abaixo de 8,5 depois do máximo de rodadas. Diz 'no post de hoje': só vale se sair em 25/11.",
+  "metricool": null,
+  "status": "rascunho",
+  "instagram_media_id": null,
+  "permalink": null
+ },
+ {
+  "id": "2026-12-03-atendente-sair",
+  "data": "2026-12-03",
+  "horario": "10:00",
+  "formato": "carrossel",
+  "versao": 1,
+  "slides": 6,
+  "titulo": "Carrossel: se a atendente sair, os clientes vão junto?",
+  "tema": "WhatsApp da empresa no celular de quem atende: o cliente é da empresa ou do funcionário? 3 ajustes e o teste dos 2 minutos",
+  "fonte": "https://agenciasebrae.com.br/dados/whatsapp-se-consolida-nas-vendas-on-line-enquanto-facebook-e-lojas-proprias-perdem-folego/ ; https://www.rdstation.com/blog/conversacional/panorama-atendimento-cliente/",
+  "angulo": "medo de perder / controle",
+  "metodo": "PAS",
+  "pensamento": "A minha atendente sabe tudo de cabeça. Se ela sair, eu tô ferrado.",
+  "gancho": "Se a sua atendente sair amanhã, os clientes vão junto?",
+  "ganchos_reserva": [
+   "O histórico dos seus clientes tá no celular de quem?",
+   "Quem é o dono do seu cliente: você ou o celular da recepção?"
+  ],
+  "assinatura": "capa:clara-manchete+celular-objeto | faixas-dado-escuro | pilulas-lista-claro | lista-numerada-escura | teste+timer-claro | cta-centro-escuro",
+  "notas": {
+   "potencia": 8.17,
+   "copy": 8.25,
+   "qualidade": 8.5
+  },
+  "obs": "Copy reprovou nas 3 rodadas (8,50 → 8,29 → 8,25); versão final com as trocas pedidas, sem nota nova. Serve a qualquer negócio.",
+  "metricool": null,
+  "status": "rascunho",
+  "instagram_media_id": null,
+  "permalink": null
  }
 ]

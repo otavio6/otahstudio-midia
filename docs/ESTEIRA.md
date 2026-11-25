@@ -167,6 +167,10 @@ Para passar, a **média precisa ser ≥ 8,5 e nenhum critério pode ficar abaixo
   - `idxPlain: true` no I: índice gigante e paginação em off-white no escuro (para o balão ou outro elemento ser o único acento);
   - no story: `pics` (lista de `{src, x, y, w, h, r, shadow, border, cap, capY}`, imagens da pasta sem rotação), `cta` (texto grande de chamada, com `ctaTop` e `ctaSize`) e `foot` (`["esquerda", "direita"]`, rodapé de série em y 1530). Exemplo: `posts/2026-11-24-story-carrossel-black/`;
   - gráficos de conversa (balões de WhatsApp) feitos em HTML e salvos em `gfx/` com fundo transparente: deixe 30 a 40 px de folga no PNG para a sombra não sair cortada.
+- Recursos novos do motor (25/11):
+  - no D2: `inline: true` (número e rótulo na mesma linha, barra embaixo) e `foot`/`footTop` (fonte da pesquisa);
+  - no J: `foot`/`footTop` e `itSize` (tamanho do texto das faixas);
+  - no W: `ic` em cada cartão (`chip`, `tag`, `doc`), `alignTop: true` e `textTop` (textos alinhados pelo topo).
 - Exemplos aprovados (média ≥ 8,5): `posts/2026-11-24-black-friday-clinica/spec.json` (carrossel, 8,56) e `posts/2026-11-26-preco-explicacao/spec.json` (estático, 8,63).
 - Fundamentos obrigatórios:
   - hierarquia clara;

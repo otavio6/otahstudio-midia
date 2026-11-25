@@ -1,0 +1,126 @@
+{
+ "id": "AT01",
+ "series": "2026 · OH/048",
+ "template": "Medo de perder + dado + prática (esteira 25/11, v3 visual)",
+ "allowCaps": [
+  "CRM"
+ ],
+ "slides": [
+  {
+   "m": "A",
+   "theme": "light",
+   "grid": false,
+   "top": 250,
+   "label": "Gestão · WhatsApp",
+   "title": "Se a sua\natendente sair\namanhã, os\nclientes vão\njunto?",
+   "tsize": 72,
+   "maxw": 500,
+   "imgSrc": "gfx/phone.png",
+   "imgX": 570,
+   "imgY": 290,
+   "imgW": 460,
+   "imgH": 930
+  },
+  {
+   "m": "J",
+   "theme": "dark",
+   "title": "Perguntaram pra 1.360 profissionais de marketing e vendas: como fica o que chega ||pelo WhatsApp?",
+   "tsize": 54,
+   "top": 540,
+   "h": 140,
+   "hot": 0,
+   "itSize": 44,
+   "items": [
+    {
+     "t": "40% · Cada vendedor do seu jeito"
+    },
+    {
+     "t": "28% · Num sistema de clientes (CRM)"
+    },
+    {
+     "t": "19% · Em planilha"
+    },
+    {
+     "t": "7% · Chatbot que gera relatório"
+    }
+   ],
+   "foot": "Principais respostas (1.360 no total). Fonte: RD Station, Panorama de Atendimento ao Cliente 2026.",
+   "footTop": 1140
+  },
+  {
+   "m": "N",
+   "theme": "light",
+   "eyebrow": "Na prática, “do seu jeito” costuma ser a cabeça e o celular de quem atende. E aí vai tudo embora junto:",
+   "pills": [
+    {
+     "t": "Quem pediu orçamento e não fechou",
+     "x": 80,
+     "y": 420,
+     "big": true
+    },
+    {
+     "t": "Quem compra todo mês",
+     "x": 80,
+     "y": 530,
+     "big": true
+    },
+    {
+     "t": "O preço que ela combinou por áudio",
+     "x": 80,
+     "y": 640,
+     "big": true
+    },
+    {
+     "t": "A cliente que só fala com ela",
+     "x": 80,
+     "y": 750,
+     "big": true
+    }
+   ],
+   "titleTop": 930,
+   "title": "E você começa do zero ||com cliente que já era seu."
+  },
+  {
+   "m": "G",
+   "theme": "dark",
+   "title": "Pra conversa ficar ||com a empresa:",
+   "listTop": 520,
+   "items": [
+    {
+     "t": "Número e aparelho da empresa",
+     "s": "O chip é da empresa e o celular fica na empresa quando alguém sai."
+    },
+    {
+     "t": "Etiqueta em toda conversa",
+     "s": "Orçamento, fechou, voltar em 30 dias. O WhatsApp Business já tem isso."
+    },
+    {
+     "t": "Combinado por escrito",
+     "s": "Preço e data por texto. Áudio se perde."
+    }
+   ]
+  },
+  {
+   "m": "B",
+   "theme": "light",
+   "top": 250,
+   "eyebrow": "**Faz esse teste hoje:**",
+   "titleTop": 340,
+   "tsize": 72,
+   "title": "Pede pra outra pessoa da equipe achar o preço que foi combinado com o *último cliente*.",
+   "body": "Se a pessoa não achar em 2 minutos, o seu cliente tá guardado no bolso de alguém.",
+   "imgSrc": "gfx/timer.png",
+   "imgX": 340,
+   "imgY": 820,
+   "imgW": 400,
+   "imgH": 400
+  },
+  {
+   "m": "M",
+   "theme": "dark",
+   "top": 520,
+   "title": "Manda pra quem toca a empresa ||com você.",
+   "cta": "Enviar"
+  }
+ ]
+}
