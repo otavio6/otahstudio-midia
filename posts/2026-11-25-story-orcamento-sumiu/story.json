@@ -2,74 +2,38 @@
  "id": "2026-11-25-story-orcamento-sumiu",
  "telas": [
   {
-   "theme": "dark",
+   "theme": "light",
    "top": 580,
-   "label": "Post novo no feed",
    "title": "Mandou o orçamento\n||e a pessoa sumiu?",
    "size": 104,
-   "pics": [
-    {
-     "src": "visto.png",
-     "x": 276,
-     "y": 1010,
-     "w": 760,
-     "h": 380
-    }
-   ],
-   "foot": [
-    "WhatsApp",
-    "2026 · OH/045 · 1/4"
-   ]
-  },
-  {
-   "theme": "light",
-   "top": 600,
-   "label": "O que eu faço",
-   "title": "Programa a mensagem\n||pra 3 dias depois.",
-   "size": 92,
-   "pics": [
-    {
-     "src": "cal.png",
-     "x": 50,
-     "y": 1110,
-     "w": 980,
-     "h": 260
-    }
-   ],
-   "foot": [
-    "WhatsApp",
-    "2026 · OH/045 · 2/4"
-   ]
+   "cta": "Entregue. Visto.\n*Nenhuma resposta.*",
+   "ctaTop": 1060,
+   "ctaSize": 76
   },
   {
    "theme": "dark",
-   "top": 600,
-   "label": "Programada",
-   "title": "E ela recebe na quinta,\n||sem você lembrar.",
-   "size": 88,
-   "big": "10h",
-   "bigTop": 1000,
-   "bigSize": 420,
-   "foot": [
-    "WhatsApp",
-    "2026 · OH/045 · 3/4"
-   ]
+   "top": 620,
+   "label": "Faz assim",
+   "title": "Programa uma mensagem\n||pra 3 dias depois.",
+   "size": 82,
+   "body": "Dá pra fazer no próprio WhatsApp."
   },
   {
    "theme": "light",
+   "top": 600,
+   "label": "A primeira mensagem",
+   "title": "“Oi! Ficou alguma dúvida\n||sobre o orçamento?”",
+   "size": 84,
+   "body": "Ela recebe sozinha, sem você lembrar."
+  },
+  {
+   "theme": "dark",
    "top": 560,
-   "title": "No post de hoje\n||tem mais duas mensagens.",
-   "size": 88,
-   "big": "+2",
-   "bigTop": 900,
-   "bigSize": 400,
-   "cta": "*Corre lá no feed.*",
-   "ctaTop": 1330,
-   "ctaSize": 64,
-   "foot": [
-    "WhatsApp",
-    "2026 · OH/045 · 4/4"
-   ]
+   "title": "As outras duas tão prontas\n||pra copiar no post de hoje.",
+   "size": 84,
+   "cta": "*Toca no post aqui embaixo e copia ↓*",
+   "ctaTop": 880,
+   "ctaSize": 50
   }
  ]
 }
