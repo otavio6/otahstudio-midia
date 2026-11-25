@@ -1,7 +1,41 @@
 {
- "potencia": {"nota": null, "obs": "story de chamada do carrossel de 25/11 (sem ideia nova)"},
- "copy": {"rodadas": [8.55, 8.41, 8.27], "final": 8.27, "aprovada": false,
-  "obs": "Reprovou nas 3 rodadas (prova 7,5 na última). Depois, o texto das telas 2 a 4 foi encurtado a pedido do revisor de qualidade (leitura em 3 s); essa versão não recebeu nova nota de copy."},
- "qualidade": {"rodadas": [7.22, 8.00, 8.17], "final": 8.17, "aprovada": false,
-  "pendencias": ["tela 2: passa de 3 s de leitura", "tela 3: repete o visual da capa do carrossel", "tela 4: '+2' vazado com pouco contraste"]}
+ "potencia": {
+  "nota": null,
+  "obs": "story de chamada do carrossel de 25/11 (sem ideia nova)"
+ },
+ "copy": {
+  "rodadas": [
+   8.55,
+   8.41,
+   8.27
+  ],
+  "final": 8.27,
+  "aprovada": false,
+  "obs": "Reprovou nas 3 rodadas (prova 7,5 na última). Depois, o texto das telas 2 a 4 foi encurtado a pedido do revisor de qualidade (leitura em 3 s); essa versão não recebeu nova nota de copy."
+ },
+ "qualidade": {
+  "rodadas": [
+   7.22,
+   8.0,
+   8.17
+  ],
+  "final": 8.17,
+  "aprovada": false,
+  "pendencias": [
+   "tela 2: passa de 3 s de leitura",
+   "tela 3: repete o visual da capa do carrossel",
+   "tela 4: '+2' vazado com pouco contraste"
+  ]
+ },
+ "qualidade_e_copy_v2": {
+  "rodadas": [
+   7.71,
+   7.86,
+   7.93,
+   7.93,
+   8.14
+  ],
+  "aprovada": false,
+  "obs": "Refeito 5 vezes em 25/11 com revisores independentes; a última versão aplica as correções da 5ª revisão (8,14) e não recebeu nota nova. Decisão do Otávio."
+ }
 }
