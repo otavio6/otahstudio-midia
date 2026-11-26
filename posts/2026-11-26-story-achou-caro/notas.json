@@ -1,0 +1,22 @@
+{
+ "potencia": null,
+ "copy": {
+  "rodadas": [
+   8.0,
+   8.17,
+   8.42
+  ],
+  "final": 8.42,
+  "aprovada": false,
+  "obs": "Prova 7,5 na última rodada (teaser sem dado). Melhor versão."
+ },
+ "qualidade": {
+  "rodadas": [
+   7.11,
+   7.78,
+   8.67
+  ],
+  "final": 8.67,
+  "aprovada": true
+ }
+}

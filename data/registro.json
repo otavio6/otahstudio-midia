@@ -748,5 +748,134 @@
   "status": "agendado",
   "instagram_media_id": null,
   "permalink": null
+ },
+ {
+  "id": "2026-11-26-story-achou-caro",
+  "data": "2026-11-26",
+  "horario": "18:00",
+  "formato": "story",
+  "versao": 1,
+  "slides": 3,
+  "titulo": "Story: achou caro? (chamada pro post do preço)",
+  "tema": "Chamada para o estático do preço das 11h: antes de baixar o preço, pergunte se alguém explicou 4 coisas",
+  "fonte": "estático de 26/11 (sem dado novo)",
+  "angulo": "bolso",
+  "metodo": "chamada + lacuna",
+  "pensamento": "O cliente achou caro. Será que eu baixo o preço?",
+  "gancho": "O cliente achou caro. Você já pensou em baixar o preço?",
+  "assinatura": "story: preco-editando-cursor-escuro | 4-caixas-vazias-claro | lista-1-revelada+cta-escuro (rodapé de série)",
+  "notas": {
+   "potencia": null,
+   "copy": 8.42,
+   "qualidade": 8.67
+  },
+  "obs": "Copy 8,42 após 3 rodadas (prova 7,5: teaser sem dado); melhor versão. Diz 'no post de hoje': só vale se sair em 26/11.",
+  "metricool": null,
+  "status": "rascunho",
+  "instagram_media_id": null,
+  "permalink": null
+ },
+ {
+  "id": "2026-11-28-nivea-cliente-escreveu",
+  "data": "2026-11-28",
+  "horario": "18:00",
+  "formato": "estatico",
+  "versao": 1,
+  "slides": 1,
+  "titulo": "Estático: o seu cliente já escreveu o seu próximo post (Nivea)",
+  "tema": "Nivea abre loja temporária com 1 produto e 100 usos contados pelos clientes: as perguntas do seu cliente são a sua pauta",
+  "fonte": "https://www.meioemensagem.com.br/comunicacao/truques-de-consumidores-viram-loja-pop-up-da-nivea",
+  "angulo": "bastidor de marca + identidade",
+  "metodo": "Hook-Story-Lesson",
+  "pensamento": "Não sei mais o que postar.",
+  "gancho": "O seu cliente já escreveu o seu próximo post.",
+  "ganchos_reserva": [
+   "Você procura ideia de post e ela tá no seu direct.",
+   "A Nivea montou uma loja inteira com ideias que não foram dela."
+  ],
+  "assinatura": "estatico:olho-fato+manchete-clara+perguntas-recebidas(1 acesa)",
+  "notas": {
+   "potencia": 7.5,
+   "copy": 8.63,
+   "qualidade": 8.63
+  },
+  "obs": "Loja fica aberta até 29/11; a legenda diz 'até amanhã, domingo', então só vale se sair em 28/11. Serve a qualquer negócio.",
+  "metricool": null,
+  "status": "rascunho",
+  "instagram_media_id": null,
+  "permalink": null
+ },
+ {
+  "id": "2026-12-02-orcamento-tres-opcoes",
+  "data": "2026-12-02",
+  "horario": "10:00",
+  "formato": "carrossel",
+  "versao": 1,
+  "slides": 7,
+  "titulo": "Carrossel: mandou um preço só? (orçamento em 3 opções)",
+  "tema": "Pós-Black: em vez de desconto, orçamento em três níveis (essencial, completo, premium) + mensagem pronta",
+  "fonte": "https://phys.org/news/2019-02-decoy-effect.pdf ; https://www.cognitionandculture.net/wp-content/uploads/Decoy-effect-Wikipedia.pdf",
+  "angulo": "racional",
+  "metodo": "PAS",
+  "pensamento": "Passou a Black, eu mando o valor e ouço 'vou pensar'. Tô com vontade de dar desconto.",
+  "gancho": "Mandou um preço só? Deu duas opções pro cliente: sim ou não.",
+  "ganchos_reserva": [
+   "O cliente que diz 'vou pensar' recebeu um preço só.",
+   "Antes de dar desconto, manda o orçamento em três opções."
+  ],
+  "assinatura": "capa:card-orcamento+pilulas-sim-nao-escura | texto+linha-conta-claro | barras-3-com-zero-escuro | 3-cards-meio-azul-claro | indices-parenteses-escuro | card-mensagem-copia-e-cola-claro | pilulas-niveis+cta-escuro",
+  "notas": {
+   "potencia": 7.67,
+   "copy": 8.54,
+   "qualidade": 8.44
+  },
+  "obs": "Qualidade 8,44 na 3ª rodada (espaçamento 7); depois foram aplicados os 3 ajustes pedidos pelo revisor (slides 3, 4 e 6), sem nota nova. Motor: W ganhou noIcon/hotCard e O2 ganhou noGrid/hot/tSize.",
+  "metricool": null,
+  "status": "rascunho",
+  "instagram_media_id": null,
+  "permalink": null
+ },
+ {
+  "id": "2026-12-09-reel-ferias-dono",
+  "data": "2026-12-09",
+  "horario": "18:00",
+  "formato": "reel",
+  "versao": 1,
+  "titulo": "Reel: se você sumir uma semana, o que trava?",
+  "tema": "Seguidor · a empresa que depende do dono (férias de fim de ano): o teste das perguntas da semana",
+  "fonte": null,
+  "angulo": "tempo e alívio / controle",
+  "metodo": "PAS",
+  "pensamento": "Não consigo tirar férias. Se eu sumir, a empresa para.",
+  "gancho": "Se você sumir uma semana, o que trava na sua empresa?",
+  "ganchos_reserva": [
+   "Quantas perguntas da sua equipe só você sabe responder?",
+   "Vai passar as férias respondendo funcionário de novo?"
+  ],
+  "roteiro": {
+   "tela": "SE VOCÊ SUMIR UMA SEMANA, O QUE TRAVA?",
+   "fala": [
+    "Se você sumir uma semana, o que trava na sua empresa?",
+    "Tô perguntando porque o fim de ano tá chegando, e eu conheço muito dono que passa as férias respondendo funcionário na beira da piscina.",
+    "Eu me chamo Otávio, cuido da operação e do marketing de um grupo de saúde, e uma das primeiras coisas que eu olho é o que só o dono sabe fazer.",
+    "Quer fazer um teste rapidinho? Pega o celular e anota tudo que te perguntaram essa semana. Preço, desconto, aquele cliente difícil.",
+    "E aí, ó: tudo nessa lista que só você sabe responder tá segurando a empresa. Ela anda na velocidade que você aguenta.",
+    "E não precisa resolver tudo de uma vez, não. Escolhe uma coisa e escreve como você faz, tipo uma receita, pra outra pessoa fazer igual.",
+    "Uma por mês. No outro fim de ano, são doze coisas que já não dependem de você.",
+    "Me segue aqui que eu vou te mostrando como tirar a empresa das suas costas."
+   ],
+   "tipo": "seguidor"
+  },
+  "assinatura": "reel",
+  "notas": {
+   "potencia": 7.67,
+   "copy": 8.5,
+   "qualidade": null
+  },
+  "obs": "Data longe do carrossel de 03/12 (gancho de estrutura parecida).",
+  "metricool": null,
+  "status": "roteiro",
+  "instagram_media_id": null,
+  "permalink": null
  }
 ]

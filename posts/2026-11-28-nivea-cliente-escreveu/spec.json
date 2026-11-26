@@ -1,0 +1,24 @@
+{
+ "id": "NV01",
+ "series": "2026 · OH/049",
+ "template": "Estático: fato de marca + tese + pílulas (esteira 26/11)",
+ "slides": [
+  {
+   "m": "B",
+   "theme": "light",
+   "counter": false,
+   "top": 230,
+   "eyebrow": "A Nivea abriu uma loja pra vender **um só** dos seus 500 produtos.",
+   "titleTop": 380,
+   "tsize": 92,
+   "title": "O seu cliente já escreveu\n||o seu próximo post.",
+   "body": "Tá no comentário, na pergunta que se repete no direct, no áudio do WhatsApp. Anota as próximas cinco perguntas que chegarem.",
+   "imgSrc": "gfx/fontes.png",
+   "imgX": 80,
+   "imgY": 860,
+   "imgW": 920,
+   "imgH": 350,
+   "maxw": 920
+  }
+ ]
+}

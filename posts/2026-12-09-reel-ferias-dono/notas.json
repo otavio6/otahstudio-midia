@@ -1,0 +1,15 @@
+{
+ "potencia": {
+  "nota": 7.67,
+  "revisor": "subagente A2"
+ },
+ "copy": {
+  "rodadas": [
+   8.08,
+   8.5
+  ],
+  "final": 8.5,
+  "aprovada": true
+ },
+ "qualidade": null
+}

@@ -1,0 +1,25 @@
+{
+ "potencia": {
+  "nota": 7.67,
+  "revisor": "subagente A2"
+ },
+ "copy": {
+  "rodadas": [
+   8.0,
+   8.33,
+   8.54
+  ],
+  "final": 8.54,
+  "aprovada": true
+ },
+ "qualidade": {
+  "rodadas": [
+   6.88,
+   7.38,
+   8.44
+  ],
+  "final": 8.44,
+  "aprovada": false,
+  "obs": "Depois da 3ª nota foram aplicados os 3 ajustes pedidos (nota do slide 3, cards do 4, nota do 6), sem nota nova."
+ }
+}

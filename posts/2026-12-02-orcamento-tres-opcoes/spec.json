@@ -1,0 +1,148 @@
+{
+ "id": "TO01",
+ "series": "2026 · OH/050",
+ "template": "Pós-Black: um preço × três opções (esteira 26/11)",
+ "slides": [
+  {
+   "m": "A",
+   "theme": "dark",
+   "grid": false,
+   "top": 228,
+   "label": "Depois da Black · Preço",
+   "title": "Mandou um preço só?\n||Deu duas opções pro cliente: *sim ou não.*",
+   "tsize": 84,
+   "maxw": 900,
+   "imgSrc": "gfx/orcamento.png",
+   "imgX": 80,
+   "imgY": 690,
+   "imgW": 920,
+   "imgH": 540
+  },
+  {
+   "m": "B",
+   "theme": "light",
+   "top": 250,
+   "eyebrow": "Passou a Black e a vontade de dar desconto continua?",
+   "titleTop": 420,
+   "tsize": 72,
+   "title": "Antes, olha o seu orçamento. Com um preço só, a pessoa faz *uma conta só*: ||cabe ou não cabe no bolso?",
+   "body": "Quando não cabe, ela responde “vou pensar” e some. E aí você corre pro desconto. Dá pra mudar essa conta antes.",
+   "imgSrc": "gfx/conta.png",
+   "imgX": 80,
+   "imgY": 960,
+   "imgW": 920,
+   "imgH": 170
+  },
+  {
+   "m": "D2",
+   "theme": "dark",
+   "inline": true,
+   "top": 560,
+   "step": 170,
+   "tsize": 60,
+   "title": "Teste do Dan Ariely com a assinatura da The Economist. ||Quem levou o pacote completo:",
+   "rows": [
+    {
+     "r": "32%",
+     "w": 32,
+     "t": "Com duas opções: só digital ou completo"
+    },
+    {
+     "r": "84%",
+     "w": 84,
+     "hot": true,
+     "t": "Com três: entrou a opção só impressa"
+    },
+    {
+     "r": "0%",
+     "w": 0,
+     "t": "Escolheram a opção só impressa"
+    }
+   ],
+   "foot": "A opção só impressa custava o mesmo que o completo. Fonte: Dan Ariely, Previsivelmente Irracional (2008), em The Conversation (2019).",
+   "footTop": 1110
+  },
+  {
+   "m": "W",
+   "theme": "light",
+   "hot": 1,
+   "hotCard": true,
+   "noIcon": true,
+   "alignTop": true,
+   "textTop": 90,
+   "cardTop": 600,
+   "cardH": 450,
+   "eyebrow": "No seu orçamento, a terceira opção ajuda a pessoa a comparar.",
+   "title": "Três opções. ||A do meio é a que você quer vender.",
+   "items": [
+    {
+     "t": "Essencial",
+     "s": "Resolve o que a pessoa pediu."
+    },
+    {
+     "t": "Completo",
+     "s": "O que você indicaria pra alguém da sua família. É esse que você recomenda."
+    },
+    {
+     "t": "Premium",
+     "s": "Tudo do completo, mais um extra que pesa: prioridade na agenda, um atendimento a mais."
+    }
+   ]
+  },
+  {
+   "m": "O2",
+   "theme": "dark",
+   "top": 260,
+   "step": 300,
+   "items": [
+    {
+     "i": "01",
+     "t": "Fala qual você recomenda",
+     "s": "Com todas as letras: “eu iria no do meio”."
+    },
+    {
+     "i": "02",
+     "t": "Diferença que dá pra ver",
+     "s": "Cada nível ganha uma coisa concreta: retorno incluso, prazo menor, uma sessão a mais."
+    },
+    {
+     "i": "03",
+     "t": "O premium é de verdade",
+     "s": "Monta contando que alguém vai escolher, e entrega com gosto."
+    }
+   ],
+   "noGrid": true,
+   "hot": 0,
+   "tSize": 56
+  },
+  {
+   "m": "MS",
+   "theme": "light",
+   "top": 240,
+   "title": "Pra mandar junto ||com o orçamento:",
+   "quote": "",
+   "quoteTop": 980,
+   "body": "Troca o nome e o que vai em cada nível.",
+   "imgSrc": "gfx/mensagem.png",
+   "imgX": 80,
+   "imgY": 500,
+   "imgW": 920,
+   "imgH": 500
+  },
+  {
+   "m": "M2",
+   "theme": "dark",
+   "top": 500,
+   "title": "Salva pra montar o seu próximo orçamento ||com três opções.",
+   "cta": "Salvar",
+   "icon": "save",
+   "ctaTop": 860,
+   "note": "E me segue, que eu falo muito de preço por aqui.",
+   "imgSrc": "gfx/niveis.png",
+   "imgX": 80,
+   "imgY": 390,
+   "imgW": 920,
+   "imgH": 70
+  }
+ ]
+}
