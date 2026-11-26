@@ -171,6 +171,9 @@ Para passar, a **média precisa ser ≥ 8,5 e nenhum critério pode ficar abaixo
   - no D2: `inline: true` (número e rótulo na mesma linha, barra embaixo) e `foot`/`footTop` (fonte da pesquisa);
   - no J: `foot`/`footTop` e `itSize` (tamanho do texto das faixas);
   - no W: `ic` em cada cartão (`chip`, `tag`, `doc`), `alignTop: true` e `textTop` (textos alinhados pelo topo).
+- Recursos novos do motor (26/11):
+  - no W: `noIcon: true` (sem a forma no topo do cartão) e `hotCard: true` (o cartão `hot` fica todo em acento, com texto branco no claro; tira a sombra de todos);
+  - no O2: `noGrid: true`, `hot` (só esse índice no acento, os outros em cinza) e `tSize` (tamanho do título de cada item).
 - Exemplos aprovados (média ≥ 8,5): `posts/2026-11-24-black-friday-clinica/spec.json` (carrossel, 8,56) e `posts/2026-11-26-preco-explicacao/spec.json` (estático, 8,63).
 - Fundamentos obrigatórios:
   - hierarquia clara;

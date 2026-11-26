@@ -173,10 +173,24 @@
       "id": "criacao-2026-11-26T06:48",
       "tarefa": "criacao",
       "inicio": "2026-11-26T06:48:21-03:00",
-      "status": "rodando",
-      "fim": null,
-      "resumo": "",
-      "etapas": {}
+      "status": "parcial",
+      "fim": "2026-11-26T07:21:56-03:00",
+      "resumo": "Dia de ideias medianas (potência 7,50–7,67): estático da Nivea (28/11 18h) e roteiro de reel aprovados pelos revisores; carrossel das 3 opções (02/12 10h, qualidade 8,44) e story de hoje 18h (copy 8,42) enviados como melhor versão; esperando o ok do Otávio. 0 comentários, 0 leads, 0 ideias no painel; 9 roteiros esperando gravação.",
+      "etapas": {
+        "ideias": 9,
+        "aprovadas_potencia": 3,
+        "pecas": 2,
+        "stories": 1,
+        "reels": 1,
+        "rascunhos": 3,
+        "rodadas_copy": 3,
+        "rodadas_qualidade": 3,
+        "abaixo_da_regua": 2,
+        "comentarios_pendentes": 0,
+        "leads_novos": 0,
+        "ideias_painel": 0,
+        "agendados_conferidos": 4
+      }
     }
   ]
 }
