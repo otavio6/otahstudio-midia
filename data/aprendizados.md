@@ -1,49 +1,52 @@
-# Aprendizados · atualizado em 2026-11-24 23:25 (-03:00)
+# Aprendizados · atualizado em 2026-11-25 23:21 (-03:00)
 
-Fonte: conector Instagram OTAHSTUDIO (posts, stories e conta) + Metricool (seguidores, ganhos/perdas e alcance diário até 23/11; taxa de pulo do reel). Contas feitas em código; dados em `data/performance/2026-11-24.json`.
+Fonte: conector Instagram OTAHSTUDIO (posts, stories e conta) + Metricool (seguidores, ganhos/perdas e alcance diário até 24/11; taxa de pulo só do reel de 06/11). Contas feitas em código; dados em `data/performance/2026-11-25.json`.
 
 ## Placar
 - Seguidores: **136**. Faltam **864** para 1.000.
-- Ganho do dia: **0** (136→136). Semana (17/11→24/11): **+1** (135→136). Mês: a série de seguidores só começa em 13/11; de 13/11 a hoje, **+2** (134→136).
-- Conta, últimos 30 dias (26/10–24/11, conector): alcance 247, views 1.400, 31 contas engajadas, 67 interações.
-- Alcance do dia: **31** (ontem 33). Soma do alcance diário 18–24/11: **65**, contra 90 em 11–17/11 (−28%). Mas são 2 dias seguidos acima de 30 depois de 5 dias com 0 a 1.
-- Hoje saíram 2 peças, as duas no horário aprovado: o carrossel da Black (11:00) e o story de chamada dele (17:30).
-- Próximos no ar (programados no painel): reel da Black v4 (25/11 12h), carrossel do WhatsApp (25/11 18h), estático do preço (26/11 11h), carrossel "qual o valor?" (27/11 10h) e estático da avaliação (01/12 10h).
+- Ganho do dia: **0** (136→136). Semana (18/11→25/11): **+1** (135→136). Mês: a série de seguidores só começa em 13/11; de 13/11 a hoje, **+2** (134→136). Três dias seguidos com peça no ar e nenhum seguidor novo.
+- Conta, últimos 30 dias (27/10–25/11, conector): alcance 255, views 1.589, 31 contas engajadas, 83 interações, 0 toques em links do perfil.
+- Alcance do dia: **45** (ontem 35, anteontem 33): 3º dia seguido subindo. Soma do alcance diário 19–25/11: **114**, contra 65 em 12–18/11 (**+75%**).
+- Hoje saíram 3 peças, todas no horário aprovado: reel da Black (12:02), carrossel do WhatsApp (18:01) e story do orçamento (18:31). Nenhum erro de publicação.
+- Próximos no ar: estático do preço (26/11 11h), carrossel "qual o valor?" (27/11 10h), estático da avaliação (01/12 10h) e carrossel da atendente (03/12 10h).
 - Leads: painel **vazio**, sem erro na varredura. Comentários pendentes: **0**.
 
 ## Ranking dos últimos 30 dias (amostra pequena: tratar como sinal, não regra)
-| Peça | Formato | Data/hora | Tempo no ar | Alcance | Views | Salv. | Compart. | Interações | Interações/alcance | Views/alcance |
-|---|---|---|---|---|---|---|---|---|---|---|
-| Reel 06/11 | reel | 06/11 12:40 | 18 dias | **199** | 290 | 0 | 1 | 37 (26 curt., 8 coment.) | 18,6% | 1,46 |
-| Microgerenciar (Comente GESTAO) | carrossel | 30/10 11:49 | 25 dias | 28 | 94 | 0 | 0 | 4 | 14,3% | 3,36 |
-| Story da Black 23/11 (45% sem desconto) | story | 23/11 14:36 | 24 h (expirou) | 26 | 30 | n/a | 0 | 1 (0 respostas) | 3,8% | 1,15 |
-| Story do carrossel da Black | story | 24/11 17:30 | 6 h | 20 | 27 | n/a | 0 | 1 (0 respostas) | 5,0% | 1,35 |
-| Logo não faz a marca (Comente LOGO) | carrossel | 29/10 12:16 | 26 dias | 20 | 78 | 0 | 0 | 1 | 5,0% | 3,90 |
-| **Black Friday em clínica** | carrossel | 24/11 11:00 | 12 h | 11 | 39 | 0 | 0 | 3 (3 curt.) | 27,3% | 3,55 |
+| Peça | Formato | Data/hora | Tempo no ar | Alcance | Views | Salv. | Compart. | Interações | Views/alcance |
+|---|---|---|---|---|---|---|---|---|---|
+| Reel 06/11 | reel | 06/11 12:40 | 19 dias | **199** | 292 | 0 | 1 | 37 (26 curt., 8 coment.) | 1,47 |
+| **Reel da Black (v5)** | reel | 25/11 12:02 | 11 h | **41** | 74 | 0 | 0 | 7 (6 curt.) | 1,80 |
+| Microgerenciar (Comente GESTAO) | carrossel | 30/10 11:49 | 26 dias | 28 | 96 | 0 | 0 | 4 | 3,43 |
+| Story da Black 23/11 | story | 23/11 14:36 | expirou | 26 | 30 | n/a | 0 | 1 (0 respostas) | 1,15 |
+| Story do carrossel da Black | story | 24/11 17:30 | expirou | 20 | 27 | n/a | 0 | 1 (0 respostas) | 1,35 |
+| Logo não faz a marca (Comente LOGO) | carrossel | 29/10 12:16 | 27 dias | 20 | 79 | 0 | 0 | 1 | 3,95 |
+| Story do orçamento sumiu | story | 25/11 18:31 | 5 h | 18 | 22 | n/a | 0 | 1 (0 respostas, 1 visita ao perfil) | 1,22 |
+| Black Friday em clínica | carrossel | 24/11 11:00 | 36 h | 12 | 41 | 0 | 0 | 3 | 3,42 |
+| **WhatsApp: 3 mensagens programadas** | carrossel | 25/11 18:01 | 5 h | 10 | 27 | 0 | 0 | 4 (3 curt., 1 visita ao perfil) | 2,70 |
 
-- Campeão: o reel de 06/11 (199). Pior até agora: o carrossel da Black (11 em 12 h; ainda cedo para fechar).
-- **Carrossel da Black** (1º post de feed da esteira nova): ângulo "crença errada + dado", método PAS, gancho com número ("quase metade das promoções…"), assinatura de 7 slides com checklist sim/não no slide 6, 11h, legenda com pergunta SIM/NÃO e "me segue que…". Resultado em 12 h: alcance 11 (8% dos 136 seguidores), 0 salvamentos, 0 comentários, 0 compartilhamentos, 0 visitas ao perfil, 0 seguidores. Quem viu passou os slides (3,55 views por conta), mas ninguém agiu.
-- **Os 2 stories da Black** alcançaram mais que o próprio carrossel (26 e 20 contra 11). Nenhum teve resposta, visita ao perfil ou seguidor.
-- Salvamentos: **0 em todos os posts**. Compartilhamentos: 1 no total (o reel).
+- Campeão do período: reel de 06/11 (199). Campeão do dia: reel da Black (41 em 11 h). Pior: carrossel do WhatsApp (10 em 5 h, ainda cedo) e o da Black (12 em 36 h, praticamente parado: 11 → 12 em 24 h).
+- **Reel da Black (1º reel da esteira nova)**: gancho "Se a sua clínica vai fazer Black Friday, olha isso daqui primeiro", gancho visual BLACK FRIDAY em lima (3,2 s), 55,1 s, 12h. Em 11 h: alcance 41 (**3,4×** o carrossel do mesmo tema com 36 h; **2,3×** a média dos 4 carrosséis do período, 17,5), 6 curtidas, 0 comentários, 0 compartilhamentos, 0 salvamentos. Tempo médio assistido **9,6 s (17,5% do vídeo)**, contra 13,1 s do reel de 06/11. Taxa de pulo ainda não chegou no Metricool.
+- **Carrossel do WhatsApp**: ângulo bolso, AIDA, gancho de novidade + dor ("paciente sumiu depois do orçamento?"), 7 slides com mensagens prontas, 18h. Em 5 h: 10 de alcance, 2,7 views por conta (menos que os 3,4 do da Black), 1 visita ao perfil, 0 salvamentos apesar do "copiar e trocar o nome".
+- **Story do orçamento** (série, sem figurinha): 18 em 5 h, 0 respostas, 1 visita ao perfil. Mesmo padrão dos dois anteriores (20 e 26).
+- Salvamentos: **0 em todos os posts**. Compartilhamentos: 1 no total (reel de 06/11). Comentários: só os 8 do reel de 06/11.
 
 ## O que funciona (com dados)
-1. **Reel é o único formato que sai da bolha.** Alcance 199 contra média de 19,7 dos 3 carrosséis do período: **10,1×**.
-2. **Reel engaja e gera comentário**: 8 comentários, contra 0 nos 3 carrosséis.
-3. **Postar tira o alcance do zero**: com peça no ar em 23 e 24/11, o alcance da conta foi 33 e 31; nos 5 dias sem nada (18–22/11), 0 a 1.
-4. **Story alcança mais seguidores que carrossel no mesmo dia** (20 contra 11 em 24/11; 26 em 23/11): é o jeito mais barato de lembrar a base que você existe.
-5. **Carrossel segura quem chega** (3,4 a 3,9 views por conta, contra 1,5 no reel), mas não traz conta nova.
+1. **Reel é o formato que sai da bolha.** Os 2 reels do período: 199 e 41 (este com 11 h). Os 4 carrosséis: 10 a 28, média 17,5. O reel novo já passou todos os carrosséis em menos de meio dia.
+2. **Postar todo dia tira a conta do zero**: alcance diário 33 → 35 → 45 nos 3 dias com peça no ar, contra 0 a 1 nos 5 dias sem nada (18–22/11). Semana +75% contra a anterior.
+3. **Story alcança mais seguidores que carrossel no mesmo dia** (18 a 26 nos 3 stories, contra 10 a 12 nos 2 carrosséis novos): é o lembrete barato para a base.
+4. **Story e carrossel começaram a gerar visita ao perfil** (1 cada hoje; 0 antes).
 
 ## O que não funciona (com dados)
-1. **Carrossel não cresce a conta**: 3 carrosséis, alcance 11 a 28, 0 seguidores, 0 salvamentos, 0 comentários.
-2. **Pedir comentário sem audiência não gera comentário**: GESTAO, LOGO e "SIM ou NÃO" (Black): 0 comentários nos três.
-3. **Checklist no slide não gerou salvamento** (Black: 0 em 12 h). Hipótese do teste 3 de ontem: não confirmada até agora.
-4. **Pergunta em story sem figurinha não gera resposta**: 2 stories, 46 contas alcançadas somadas, 0 respostas.
-5. **Retenção do reel**: 13,3 s de tempo médio e 57,2% de taxa de pulo. O gancho de 3 s precisa ser mais forte.
+1. **Nada está virando seguidor**: 6 peças da esteira nova em 3 dias (2 carrosséis, 1 reel, 3 stories), 0 seguidores atribuídos e 0 de ganho na conta desde 23/11.
+2. **Carrossel não cresce a conta nem com conteúdo "salvável"**: 4 carrosséis, alcance 10 a 28, 0 salvamentos, 0 comentários. Checklist (Black) e mensagens prontas para copiar (WhatsApp) não geraram nenhum salvamento.
+3. **Pedir comentário sem audiência não gera comentário**: GESTAO, LOGO, "SIM ou NÃO" (Black), "você já viu clínica fazendo isso?" (reel) e "qual delas a sua recepção mais esquece?" (WhatsApp): 0 comentários nos cinco.
+4. **Pergunta escrita no story não gera resposta**: 3 stories, 64 contas alcançadas somadas, 0 respostas.
+5. **Retenção caiu no reel novo**: 9,6 s de tempo médio num vídeo de 55,1 s (17,5%), contra 13,1 s no de 06/11. O gancho visual novo não segurou mais.
 
 ## O que testar a seguir (até 3)
-1. **Reel da Black v4 amanhã (25/11 12h)**: é o 1º reel em 19 dias. Hipótese: alcance > 100 em 48 h e pelo menos 1 seguidor, contra 11 do carrossel do mesmo tema. Comparar a taxa de pulo com os 57,2% do reel de 06/11.
-2. **Story com figurinha de enquete ou caixa de pergunta** (não pergunta escrita na arte): meta de respostas > 0, contra 0 em 2 stories.
-3. **11h × 18h no feed**: carrossel da Black (11h, 11 em 12 h) contra o do WhatsApp (25/11 18h). Medir os dois com 12 h e com 48 h no ar.
+1. **Reel mais curto com o gancho falado já com o dado** ("quase metade das promoções da Black era mentira"), 20–30 s. Hipótese: tempo médio > 40% do vídeo e alcance > 100 em 48 h, contra 17,5% e 41 do reel da Black. Conferir na próxima análise se o reel da Black chegou a 100 em 48 h.
+2. **Story com figurinha de enquete ou caixa de pergunta** (não pergunta escrita na arte): meta de respostas > 0, contra 0 em 3 stories.
+3. **11h × 18h no feed**: comparar com a mesma idade. Black (11h): 11 em 12 h. WhatsApp (18h): medir com 12 h e 48 h na próxima análise. O estático do preço (26/11 11h) entra na comparação.
 
 ## Lições da primeira revisão independente (21/11, 3 carrosséis reprovados)
 Notas de copy entre 6,1 e 6,3 e de visual entre 6,4 e 7,1. Os problemas se repetiram nos três:
@@ -84,9 +87,11 @@ Nota mínima aceitável 8 em todo critério, meta 10. Vale para arte e vídeo. O
 
 ## Vídeo (edição × métricas)
 - **Fase atual: 1 · Gancho.** Miolo e CTA ficam no padrão até o gancho estar acertado (vencedor em 3+ reels e taxa de pulo caindo de forma consistente). Depois miolo, depois CTA.
-- Ainda sem reels da esteira nova medidos. O 1º (reel da Black, ficha `edicao` no registro) está programado para 25/11 12h. Variável em teste: **gancho visual** com fundo da marca e BLACK FRIDAY em lima desde o 1º quadro (3,2 s). Medir na próxima análise: taxa de pulo, tempo médio (vídeo de 55,1 s), compartilhamentos, salvamentos e seguidores. Placar das variáveis: 0 reels medidos, nenhuma regra ainda (precisa de 3+).
-- Próximas variáveis de gancho: texto atrás da cabeça × zoom com palavra-chave × corte seco com pergunta na tela, via Trial Reels.
-- Base de comparação: o reel de 06/11 teve 199 de alcance, 13,3 s de tempo médio assistido e 57,2% de taxa de pulo (medido em 24/11).
+- **1º reel medido (Black, v5, 25/11 12:02, 11 h no ar).** Variável em teste: gancho visual com fundo da marca e BLACK FRIDAY em lima desde o 1º quadro (3,2 s), gancho falado "pergunta-condição + promessa". Resultado parcial: alcance 41, tempo médio **9,6 s de 55,1 s (17,5%)**, 1,8 views por conta, 0 compartilhamentos, 0 salvamentos, 0 comentários. Taxa de pulo: ainda não disponível (Metricool sem o reel). Seguidores por reel: a API não informa.
+- Leitura parcial: contra o reel de 06/11 (13,1 s, pulo 56,7%), o tempo médio caiu 27%. O gancho visual sozinho não segurou; o dado forte ("45% sem desconto") só aparece depois do gancho. Fechar a leitura com a taxa de pulo e 48 h no ar.
+- Placar das variáveis: 1 reel medido (gancho visual BLACK FRIDAY: abaixo da base em retenção, acima de todos os carrosséis em alcance). Nenhuma regra ainda (precisa de 3+).
+- Próximas variáveis de gancho: dado chocante falado no 1º segundo × texto atrás da cabeça × zoom com palavra-chave × corte seco com pergunta na tela, via Trial Reels.
+- Base de comparação: o reel de 06/11 teve 199 de alcance, 13,1 s de tempo médio assistido e 56,7% de taxa de pulo (medido em 25/11).
 
 - 2026-11-23 · **Fala de gente, não de relatório** (Otávio): "o consumidor percebeu" soa como IA e ninguém se identifica. Escrever como conversa, com cena e emoção ("não adianta tentar enganar o cliente, ele percebe: está namorando aquele produto faz tempo, dá um Google e acha o preço de antes"). Nunca "consumidor". Para empresário: "até você é cliente de alguma coisa". Regra em docs/COPY.md §6.
 

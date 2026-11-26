@@ -98,10 +98,10 @@
    "copy": 8.4,
    "qualidade": null
   },
-  "status": "agendado",
+  "status": "publicado",
   "metricool": null,
-  "instagram_media_id": null,
-  "permalink": null,
+  "instagram_media_id": "18080077055769238",
+  "permalink": "https://www.instagram.com/reel/DgKzZfLs75M/",
   "fonte": "https://mercadoeconsumo.com.br/16/10/2026/ecommerce/black-friday-45-dos-produtos-nao-tiveram-desconto-real-em-2025-aponta-estudo/amp/",
   "versao": 4,
   "video": "reel.mp4",
@@ -477,9 +477,9 @@
   },
   "obs": "Qualidade abaixo da régua (7,69 → 8,06 → 7,88 em 3 revisões independentes; pontos: novidade do layout e vazios). Enviado como melhor versão para o Otávio decidir.",
   "metricool": null,
-  "status": "agendado",
-  "instagram_media_id": null,
-  "permalink": null,
+  "status": "publicado",
+  "instagram_media_id": "18122142773085790",
+  "permalink": "https://www.instagram.com/p/DgLcpiRoWoH/",
   "slides": 7,
   "agendado_para": "2026-11-25T18:00-03:00"
  },
@@ -715,9 +715,9 @@
   },
   "obs": "Copy e qualidade abaixo de 8,5 depois do máximo de rodadas. Diz 'no post de hoje': só vale se sair em 25/11.",
   "metricool": null,
-  "status": "rascunho",
-  "instagram_media_id": null,
-  "permalink": null
+  "status": "publicado",
+  "instagram_media_id": "18018006728979164",
+  "permalink": "https://www.instagram.com/stories/otaviohenriqve/4038462565881410440"
  },
  {
   "id": "2026-12-03-atendente-sair",
@@ -745,7 +745,7 @@
   },
   "obs": "Copy reprovou nas 3 rodadas (8,50 → 8,29 → 8,25); versão final com as trocas pedidas, sem nota nova. Serve a qualquer negócio.",
   "metricool": null,
-  "status": "rascunho",
+  "status": "agendado",
   "instagram_media_id": null,
   "permalink": null
  }

@@ -155,10 +155,19 @@
       "id": "analise-2026-11-25T23:19",
       "tarefa": "analise",
       "inicio": "2026-11-25T23:19:01-03:00",
-      "status": "rodando",
-      "fim": null,
-      "resumo": "",
-      "etapas": {}
+      "status": "ok",
+      "fim": "2026-11-25T23:22:08-03:00",
+      "resumo": "Reel da Black, carrossel do WhatsApp e story do orçamento saíram no horário; reel com 41 de alcance em 11 h (3,4× o carrossel da Black, mas tempo médio caiu para 9,6 s); 136 seguidores (0 no dia, +1 na semana); alcance diário subiu para 45; sem leads e 0 comentários pendentes.",
+      "etapas": {
+        "posts_medidos": 9,
+        "seguidores": 136,
+        "publicados_conferidos": 3,
+        "agendados_conferidos": 4,
+        "leads_novos": 0,
+        "leads_status_novo": 0,
+        "comentarios_12h": 0,
+        "sugestoes_resposta": 0
+      }
     }
   ]
 }
