@@ -49,3 +49,15 @@ Aceitar, além de `image_urls`, uma lista `items: [{"type": "image" | "video", "
 ## Quem gera os vídeos
 
 `node engine/motion_carrossel.js posts/<id>` gera `posts/<id>/motion/NN.mp4` e uma `previa.mp4` (todos os slides em sequência, só para ver; não vai para o Instagram).
+
+---
+
+# Pedido 2: botão "Atrasei" nos reels
+
+Pedido do Otávio em 26/11/2026. No card de um reel que ainda não foi gravado (status `roteiro`), um botão **Atrasei** remaneja o reel.
+
+- **Novo horário:** o próximo horário livre a partir de amanhã, com pelo menos 4 h de distância de qualquer outro post do dia. Pode haver 2 reels no mesmo dia, desde que respeitem as 4 h; não existe limite de 1 por dia.
+- **Os outros reels:** os reels `roteiro` seguintes andam junto ("empurra a fila"), sem trocar a ordem entre eles. Peças já `agendado` ou `publicado` não mudam.
+- **Data marcada:** reel com `"data_fixa": true` (tema preso a um dia, como Black Friday) não anda sozinho. O painel pergunta: "Mudar para <novo dia> e adaptar o texto" ou "Cancelar".
+- **Registro:** grava a decisão em `painel_decisoes` como `{"acao": "atrasar", "de": "<data hora antiga>", "para": "<data hora nova>"}`. A esteira, no A0, atualiza `data` e `horario` no `registro.json` e adapta o roteiro se ele citar o dia ("sexta", "hoje", "amanhã").
+- **Mesmo dia, temas que brigam:** se o novo dia já tiver uma peça com tema contrário (exemplo: oferta e crítica a desconto), o painel avisa antes de confirmar.

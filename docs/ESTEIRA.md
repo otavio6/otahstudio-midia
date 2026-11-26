@@ -233,7 +233,7 @@ Para passar, a **média precisa ser ≥ 8,5 e nenhum critério pode ficar abaixo
 
 ### A8 · Aprovação do Otávio
 1. Suba a mídia em `posts/AAAA-MM-DD-<tema>/` no repositório (01.png…, legenda.txt e notas.json com todas as notas) e faça o push. As URLs públicas são `https://raw.githubusercontent.com/otavio6/otahstudio-midia/main/posts/<pasta>/<arquivo>`. O agendador posta exatamente esses arquivos: carrossel = `01.png` até o número de `slides`; estático = `01.png`; reel = o arquivo do campo `video` (e `capa`, se houver). A legenda é o `legenda.txt`.
-2. Registre a peça (A9) com `status: rascunho`, `versao: 1`, `data` e `horario`. Escolha o horário pela `getBestTimeToPostByNetwork` do Metricool e por `aprendizados.md`, a pelo menos 4 h de outro post do dia. **Não crie post no Metricool**: o Metricool fica só para os dados. A peça já aparece amarela no painel, com os botões Aprovar e Refazer.
+2. Registre a peça (A9) com `status: rascunho`, `versao: 1`, `data` e `horario`. Escolha o horário pela `getBestTimeToPostByNetwork` do Metricool e por `aprendizados.md`, a pelo menos 4 h de outro post do dia (dois reels no mesmo dia podem, com 4 h de distância; evite só temas que brigam no mesmo dia). **Não crie post no Metricool**: o Metricool fica só para os dados. A peça já aparece amarela no painel, com os botões Aprovar e Refazer.
 3. Mande **uma mensagem só** com todas as peças do dia, numeradas. Cada peça leva:
    - a prévia (imagem com os slides lado a lado, via SendUserFile);
    - o tema e a fonte;
