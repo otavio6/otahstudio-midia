@@ -319,6 +319,7 @@ O Otávio conectou um servidor MCP próprio, que aparece como as ferramentas `In
 ## Limites técnicos
 
 - **Metricool:** só para dados (análise e melhor horário). O plano grátis não limita mais a quantidade de posts, porque quem posta é o agendador do servidor. A cota da Meta é de 100 posts por 24 h.
+- **Carrossel com motion:** `node engine/motion_carrossel.js posts/<id>` gera um vídeo por slide em `posts/<id>/motion/` (pedido do Otávio, 25/11). Só marque `"motion": true` no registro depois que o servidor aceitar slide em vídeo (pedido em `docs/SERVIDOR-carrossel-video.md`). Até lá, o carrossel sai com as imagens.
 - **Daqui não dá para enviar arquivo direto para outro servidor.** A mídia sempre passa pelo GitHub, neste repositório público.
 - **Repositório:** clone com `--depth 1` e faça push com `git -c push.negotiate=true push`.
 - **Erros:** se algo der errado no push ou no Metricool, não fique tentando em loop. Entregue os arquivos e diga o erro em 1 linha.
