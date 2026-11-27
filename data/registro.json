@@ -222,13 +222,18 @@
    "copy": null,
    "qualidade": null
   },
-  "status": "roteiro",
+  "status": "gravado",
   "metricool": null,
   "instagram_media_id": null,
   "permalink": null,
   "fonte": null,
   "versao": 2,
-  "obs": "Reescrito em 24/11 após revisão independente (nota v2 do revisor: 8); ajustes sugeridos pelo revisor aplicados depois, sem nova nota. Data realocada: Otávio grava todos em 24/11. Versão mais abrangente (negócio em geral, não só clínica), pedido do Otávio em 24/11. Fala final reescrita a partir do áudio ditado pelo Otávio em 24/11 (palavras dele)."
+  "obs": "Reescrito em 24/11 após revisão independente (nota v2 do revisor: 8); ajustes sugeridos pelo revisor aplicados depois, sem nova nota. Data realocada: Otávio grava todos em 24/11. Versão mais abrangente (negócio em geral, não só clínica), pedido do Otávio em 24/11. Fala final reescrita a partir do áudio ditado pelo Otávio em 24/11 (palavras dele).",
+  "bruto": {
+   "id": "mwzgxdz47036d5",
+   "titulo": "Porque ele cobra mais q vc",
+   "gravado_em": "2026-11-27"
+  }
  },
  {
   "id": "2026-11-25-efeito-halo",
@@ -418,13 +423,18 @@
    "copy": 8.4,
    "qualidade": null
   },
-  "status": "roteiro",
+  "status": "gravado",
   "metricool": null,
   "instagram_media_id": null,
   "permalink": null,
   "fonte": "https://mercadoeconsumo.com.br/16/10/2026/ecommerce/black-friday-45-dos-produtos-nao-tiveram-desconto-real-em-2025-aponta-estudo/amp/",
   "versao": 2,
-  "obs": "Reescrito em 24/11 após revisão independente (nota v2 do revisor: 6); ajustes sugeridos pelo revisor aplicados depois, sem nova nota. Data realocada: Otávio grava todos em 24/11. Versão mais abrangente (negócio em geral, não só clínica), pedido do Otávio em 24/11. Ajustes finais do revisor da versão abrangente aplicados (sem nova nota). Reescrito no tom de conversa (regra 5b da esteira, 24/11). Remanejado para 28/11 14h (18h já tem estático agendado) (não gravado a tempo); chamada final adaptada para depois da Black."
+  "obs": "Reescrito em 24/11 após revisão independente (nota v2 do revisor: 6); ajustes sugeridos pelo revisor aplicados depois, sem nova nota. Data realocada: Otávio grava todos em 24/11. Versão mais abrangente (negócio em geral, não só clínica), pedido do Otávio em 24/11. Ajustes finais do revisor da versão abrangente aplicados (sem nova nota). Reescrito no tom de conversa (regra 5b da esteira, 24/11). Remanejado para 28/11 14h (18h já tem estático agendado) (não gravado a tempo); chamada final adaptada para depois da Black.",
+  "bruto": {
+   "id": "mwzfos6s24d833",
+   "titulo": "IMG_6864",
+   "gravado_em": "2026-11-27"
+  }
  },
  {
   "id": "2026-11-24-story-black-11h",
@@ -521,10 +531,15 @@
    "qualidade": null
   },
   "metricool": null,
-  "status": "roteiro",
+  "status": "gravado",
   "instagram_media_id": null,
   "permalink": null,
-  "obs": "Reescrito em 24/11 após revisão independente (nota v2 do revisor: 6); ajustes sugeridos pelo revisor aplicados depois, sem nova nota. Data realocada: Otávio grava todos em 24/11. Versão mais abrangente (negócio em geral, não só clínica), pedido do Otávio em 24/11. Ajustes finais do revisor da versão abrangente aplicados (sem nova nota). Reescrito no tom de conversa (regra 5b da esteira, 24/11)."
+  "obs": "Reescrito em 24/11 após revisão independente (nota v2 do revisor: 6); ajustes sugeridos pelo revisor aplicados depois, sem nova nota. Data realocada: Otávio grava todos em 24/11. Versão mais abrangente (negócio em geral, não só clínica), pedido do Otávio em 24/11. Ajustes finais do revisor da versão abrangente aplicados (sem nova nota). Reescrito no tom de conversa (regra 5b da esteira, 24/11).",
+  "bruto": {
+   "id": "mwzgnw3jbf4e9d",
+   "titulo": "Antes de anúncio celular de atendimento",
+   "gravado_em": "2026-11-27"
+  }
  },
  {
   "id": "2026-11-30-reel-agenda-maio",
@@ -564,9 +579,14 @@
   },
   "obs": "Reescrito em 24/11 após revisão independente (nota v2 do revisor: 7); ajustes sugeridos pelo revisor aplicados depois, sem nova nota. Data realocada: Otávio grava todos em 24/11. Versão mais abrangente (negócio em geral, não só clínica), pedido do Otávio em 24/11. Ajustes finais do revisor da versão abrangente aplicados (sem nova nota). Fala final reescrita a partir do áudio ditado pelo Otávio em 24/11 (palavras dele).",
   "metricool": null,
-  "status": "roteiro",
+  "status": "gravado",
   "instagram_media_id": null,
-  "permalink": null
+  "permalink": null,
+  "bruto": {
+   "id": "mwzh6ogt20fa32",
+   "titulo": "Seu cliente de 6 meses atrás",
+   "gravado_em": "2026-11-27"
+  }
  },
  {
   "id": "2026-11-24-story-carrossel-black",

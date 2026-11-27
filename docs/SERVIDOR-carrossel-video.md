@@ -61,3 +61,16 @@ Pedido do Otávio em 26/11/2026. No card de um reel que ainda não foi gravado (
 - **Data marcada:** reel com `"data_fixa": true` (tema preso a um dia, como Black Friday) não anda sozinho. O painel pergunta: "Mudar para <novo dia> e adaptar o texto" ou "Cancelar".
 - **Registro:** grava a decisão em `painel_decisoes` como `{"acao": "atrasar", "de": "<data hora antiga>", "para": "<data hora nova>"}`. A esteira, no A0, atualiza `data` e `horario` no `registro.json` e adapta o roteiro se ele citar o dia ("sexta", "hoje", "amanhã").
 - **Mesmo dia, temas que brigam:** se o novo dia já tiver uma peça com tema contrário (exemplo: oferta e crítica a desconto), o painel avisa antes de confirmar.
+
+---
+
+# Pedido 3: vídeo enviado tira o reel da lista "Gravar"
+
+Pedido do Otávio em 27/11/2026: ele gravou os reels, mandou pela aba Enviar vídeo, e os cards "Gravar: …" continuaram em "Para você agora".
+
+- **Status que já existe:** reel com `status: "gravado"` no `registro.json` sai de "Gravar" e da contagem "N reels na fila para gravar" e aparece cinza ("Gravado · em edição"). Hoje o painel só olha `roteiro`; ele precisa tratar `gravado` também.
+- **Ligação com o bruto:** o reel gravado tem `"bruto": {"id": "<id do painel_brutos>", "titulo": "...", "gravado_em": "AAAA-MM-DD"}`. No card, mostrar "Bruto: <titulo>".
+- **Na hora do envio:** a aba Enviar vídeo ganha um campo "Qual roteiro é este?" com a lista dos reels `roteiro` (título e dia), com "Nenhum / outro" no fim. Ao escolher, o servidor grava o `bruto` no reel e muda o status para `gravado` sozinho.
+- **Pelo teleprompter:** o botão Teleprompter já sabe qual reel é; depois de gravar, o "Enviar vídeo" aberto a partir dali vem com o roteiro já escolhido.
+- **Sem escolha:** se o bruto vier sem roteiro, a esteira associa pela fala (transcrição) e grava o `bruto` e o `gravado` no registro, como foi feito em 27/11.
+- Quando o vídeo editado entra (`video` no registro e status `rascunho`), o card vira "Aprovar reel", como hoje.
