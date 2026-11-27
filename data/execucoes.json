@@ -214,10 +214,24 @@
       "id": "criacao-2026-11-27T06:48",
       "tarefa": "criacao",
       "inicio": "2026-11-27T06:48:54-03:00",
-      "status": "rodando",
-      "fim": null,
-      "resumo": "",
-      "etapas": {}
+      "status": "parcial",
+      "fim": "2026-11-27T07:25:50-03:00",
+      "resumo": "Dia fraco (potência 7,83 nas 2 ideias que passaram): story de hoje 18h, estático da indicação (29/11 10h) e carrossel do novato (30/11 18h) enviados como melhor versão após 3 rodadas, todos abaixo de 8,5 (copy 8,04–8,46; arte 7,67–7,94); sem reel novo (10 roteiros esperando gravação); esperando o ok do Otávio. 0 comentários, 0 leads, 0 ideias no painel.",
+      "etapas": {
+        "ideias": 8,
+        "aprovadas_potencia": 2,
+        "pecas": 2,
+        "stories": 1,
+        "reels": 0,
+        "rascunhos": 3,
+        "rodadas_copy": 3,
+        "rodadas_qualidade": 3,
+        "abaixo_da_regua": 3,
+        "comentarios_pendentes": 0,
+        "leads_novos": 0,
+        "ideias_painel": 0,
+        "agendados_conferidos": 5
+      }
     }
   ]
 }
