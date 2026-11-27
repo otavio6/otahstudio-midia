@@ -1,0 +1,21 @@
+{
+ "id": "AB01",
+ "series": "2026 · OH/052",
+ "template": "Estático: fórmula com lacuna + corpo (esteira 27/11)",
+ "slides": [
+  {
+   "m": "F2",
+   "theme": "light",
+   "counter": false,
+   "label": "Domingo, grupo da família",
+   "formula": [],
+   "bodyTop": 1000,
+   "body": "Se você faz cinco coisas, quem indica não sabe o que dizer de você e manda outro nome.\nPode continuar fazendo as cinco. **Só escolhe uma pra ser lembrado.**",
+   "imgSrc": "gfx/grupo.png",
+   "imgX": 60,
+   "imgY": 290,
+   "imgW": 960,
+   "imgH": 640
+  }
+ ]
+}

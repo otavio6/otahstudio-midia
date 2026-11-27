@@ -1,0 +1,26 @@
+{
+ "potencia": {
+  "nota": 7.83,
+  "revisor": "subagente A2"
+ },
+ "copy": {
+  "rodadas": [
+   7.08,
+   7.92,
+   8.04
+  ],
+  "final": 8.04,
+  "aprovada": false,
+  "obs": "3 rodadas (máximo); melhor versão; ajustes da 3ª rodada aplicados sem nova nota"
+ },
+ "qualidade": {
+  "rodadas": [
+   8.0,
+   8.38,
+   7.94
+  ],
+  "final": 7.94,
+  "aprovada": false,
+  "obs": "3 rodadas (máximo); negrito passou para a conclusão depois da 3ª rodada"
+ }
+}

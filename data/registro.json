@@ -882,5 +882,104 @@
   "status": "roteiro",
   "instagram_media_id": null,
   "permalink": null
+ },
+ {
+  "id": "2026-11-27-story-black-visto",
+  "data": "2026-11-27",
+  "formato": "story",
+  "tema": "Black Friday: o preço mandado sozinho some na comparação; chamada para o carrossel do dia",
+  "fonte": "chamada para 2026-11-27-qual-o-valor (sem dado externo)",
+  "angulo": "bolso",
+  "metodo": "PAS",
+  "gancho": "Às 14:31 ela estava online. Até agora, nada.",
+  "ganchos_reserva": [
+   "Hoje é Black. Vai acontecer no seu WhatsApp.",
+   "Você mandou só o preço. Ela achou por R$ 450."
+  ],
+  "pensamento": "Paciente só pergunta o preço e some.",
+  "assinatura": "story: hora-acesa+balao-preco-visto-escuro | 3-anuncios-topo+titulo-baixo-claro | balao-resposta-lime+cta-texto-escuro",
+  "notas": {
+   "potencia": null,
+   "copy": 8.25,
+   "qualidade": 7.67
+  },
+  "metricool": {
+   "id": 0,
+   "uuid": "",
+   "horario": "2026-11-27T18:00:00"
+  },
+  "status": "rascunho",
+  "versao": 1,
+  "instagram_media_id": null,
+  "permalink": null,
+  "horario": "18:00",
+  "titulo": "Story: visto às 14:31",
+  "slides": 3
+ },
+ {
+  "id": "2026-11-29-alguem-bom-em",
+  "data": "2026-11-29",
+  "formato": "estatico",
+  "tema": "Posicionamento: quem faz de tudo não é lembrado na hora da indicação",
+  "fonte": "opinião (sem fonte externa)",
+  "angulo": "identidade",
+  "metodo": "PAS",
+  "gancho": "Você faz de tudo pra não perder cliente. E pode ser justamente por isso que ninguém lembra de te indicar.",
+  "ganchos_reserva": [
+   "Se te indicassem amanhã, iam dizer que você é bom em quê?",
+   "Alguém pergunta no grupo: conhece alguém bom em ___? O seu nome aparece?"
+  ],
+  "pensamento": "Eu faço de tudo um pouco pra não perder cliente.",
+  "assinatura": "estatico:etiqueta-cena+balao-grupo-lacuna-azul+resposta-contato+corpo-clara",
+  "notas": {
+   "potencia": 7.83,
+   "copy": 8.04,
+   "qualidade": 7.94
+  },
+  "metricool": {
+   "id": 0,
+   "uuid": "",
+   "horario": "2026-11-29T10:00:00"
+  },
+  "status": "rascunho",
+  "versao": 1,
+  "instagram_media_id": null,
+  "permalink": null,
+  "horario": "10:00",
+  "titulo": "Conhece alguém bom em ___?",
+  "slides": 1
+ },
+ {
+  "id": "2026-11-30-novato-copia",
+  "data": "2026-11-30",
+  "formato": "carrossel",
+  "tema": "Gestão de time: o funcionário novo aprende copiando quem senta do lado",
+  "fonte": "opinião (sem fonte externa)",
+  "angulo": "controle / crença errada",
+  "metodo": "PAS",
+  "gancho": "Você explicou tudo no primeiro dia. Ele copiou o colega do lado.",
+  "ganchos_reserva": [
+   "Quem tá ensinando o seu funcionário novo a atender? Provavelmente não é você.",
+   "Você explicou tudo no primeiro dia. No terceiro, ele já responde cliente do jeito do colega."
+  ],
+  "pensamento": "Eu expliquei tudo pra ele no primeiro dia e ele continua atendendo do jeito dele.",
+  "assinatura": "capa:tecla-ctrl-c-escura | pilulas-card-claro | cena-balao-sexta-segunda-escuro | semana-seg-ter-qua-claro | teste+conversa-escuro | cta+tecla-ctrl-v-claro",
+  "notas": {
+   "potencia": 7.83,
+   "copy": 8.46,
+   "qualidade": 7.88
+  },
+  "metricool": {
+   "id": 0,
+   "uuid": "",
+   "horario": "2026-11-30T18:00:00"
+  },
+  "status": "rascunho",
+  "versao": 1,
+  "instagram_media_id": null,
+  "permalink": null,
+  "horario": "18:00",
+  "titulo": "Novato copia o colega",
+  "slides": 6
  }
 ]

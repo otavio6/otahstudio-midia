@@ -1,0 +1,108 @@
+{
+ "id": "NC01",
+ "series": "2026 · OH/051",
+ "template": "Gestão de time: tecla + pílulas + cena + em vez de/tente + teste + CTA (esteira 27/11)",
+ "slides": [
+  {
+   "m": "K1",
+   "theme": "dark",
+   "key": "white",
+   "word": "Ctrl + C",
+   "rot": -4,
+   "keyTop": 260,
+   "titleTop": 800,
+   "title": "Você explicou tudo\nno primeiro dia.\n||Ele copiou o colega\ndo lado."
+  },
+  {
+   "m": "E",
+   "theme": "light",
+   "eyebrow": "Aí ele sentou do lado de quem atende há anos e ouviu:",
+   "cardTop": 400,
+   "cardH": 490,
+   "pills": [
+    {
+     "t": "Manda só o preço que é mais rápido",
+     "x": 50,
+     "y": 56
+    },
+    {
+     "t": "Esse aí deixa pra amanhã",
+     "x": 290,
+     "y": 160
+    },
+    {
+     "t": "Não precisa anotar, eu lembro",
+     "x": 50,
+     "y": 264
+    },
+    {
+     "t": "Aqui a gente faz do nosso jeito",
+     "x": 290,
+     "y": 368,
+     "lime": true
+    }
+   ],
+   "title": "Adivinha qual versão\n||ele vai repetir com\no seu cliente."
+  },
+  {
+   "m": "B",
+   "theme": "dark",
+   "grid": false,
+   "top": 240,
+   "eyebrow": "Sexta, 17h50. Chega um pedido de orçamento.",
+   "titleTop": 400,
+   "title": "Ele responde\nsó na segunda.\n||Viu o colega fazer\nisso a semana toda.",
+   "imgSrc": "gfx/chat.png",
+   "imgX": 50,
+   "imgY": 820,
+   "imgW": 980,
+   "imgH": 400
+  },
+  {
+   "m": "B",
+   "theme": "light",
+   "grid": false,
+   "top": 240,
+   "titleTop": 240,
+   "title": "O que fazer na\n||primeira semana dele",
+   "imgSrc": "gfx/semana.png",
+   "imgX": 80,
+   "imgY": 520,
+   "imgW": 920,
+   "imgH": 700
+  },
+  {
+   "m": "B",
+   "theme": "dark",
+   "grid": false,
+   "top": 240,
+   "eyebrow": "Teste de dois minutos",
+   "titleTop": 330,
+   "tsize": 64,
+   "maxw": 900,
+   "title": "Abre a última conversa do seu funcionário mais novo.",
+   "body": "Ela parece com o jeito que você atenderia? E você sabe com quem ele aprendeu a responder assim?",
+   "imgSrc": "gfx/teste.png",
+   "imgX": 50,
+   "imgY": 860,
+   "imgW": 980,
+   "imgH": 330
+  },
+  {
+   "m": "M2",
+   "theme": "light",
+   "visual": "grid16",
+   "title": "Na próxima\ncontratação, ||decide\nantes com quem\nele vai sentar.",
+   "cta": "Salva pra quando chegar o próximo",
+   "icon": "save",
+   "note": "Me segue que essa semana eu ainda falo de atendimento por aqui.",
+   "ctaTop": 760,
+   "top": 300,
+   "imgSrc": "gfx/ctrlv.png",
+   "imgX": 580,
+   "imgY": 880,
+   "imgW": 440,
+   "imgH": 380
+  }
+ ]
+}

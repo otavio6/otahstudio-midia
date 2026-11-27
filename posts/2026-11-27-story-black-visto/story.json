@@ -1,0 +1,53 @@
+{
+ "id": "2026-11-27-story-black-visto",
+ "telas": [
+  {
+   "theme": "dark",
+   "top": 560,
+   "title": "Às *14:31* ela\nestava online.\n||Até agora, nada.",
+   "size": 104,
+   "pics": [
+    {
+     "src": "chat1.png",
+     "x": 60,
+     "y": 1080,
+     "w": 920,
+     "h": 260
+    }
+   ]
+  },
+  {
+   "theme": "light",
+   "top": 1080,
+   "title": "Você mandou só o preço.\n||Ela achou por *R$ 450*.",
+   "size": 76,
+   "pics": [
+    {
+     "src": "anuncios.png",
+     "x": 80,
+     "y": 560,
+     "w": 920,
+     "h": 380
+    }
+   ]
+  },
+  {
+   "theme": "dark",
+   "top": 560,
+   "title": "Tem resposta que\n||mantém a conversa.",
+   "size": 96,
+   "pics": [
+    {
+     "src": "chat3.png",
+     "x": 60,
+     "y": 900,
+     "w": 920,
+     "h": 300
+    }
+   ],
+   "cta": "Tá no post de hoje, no meu perfil.",
+   "ctaTop": 1300,
+   "ctaSize": 44
+  }
+ ]
+}
