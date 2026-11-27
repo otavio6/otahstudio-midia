@@ -209,6 +209,15 @@
         "comentarios_12h": 0,
         "sugestoes_resposta": 0
       }
+    },
+    {
+      "id": "criacao-2026-11-27T06:48",
+      "tarefa": "criacao",
+      "inicio": "2026-11-27T06:48:54-03:00",
+      "status": "rodando",
+      "fim": null,
+      "resumo": "",
+      "etapas": {}
     }
   ]
 }
