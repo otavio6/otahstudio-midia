@@ -247,17 +247,20 @@ def renderizar(src, segs, dst):
     tmp = tempfile.mkdtemp(prefix="cortes_", dir=os.path.dirname(os.path.abspath(dst)))
     lista = []
     for k, s in enumerate(segs):
-        d = s["fim"] - s["ini"]
+        # Tudo no quadro exato (revisor, 27/11): o tempo arredondado em 3 casas (77,667 > 77,6667) pulava o 1º quadro
+        # e o áudio de cada trecho saía uns ms mais curto que o vídeo, adiantando a voz a cada emenda (46 ms no fim).
+        k0 = round(s["ini"] * FPS); n = max(1, round((s["fim"] - s["ini"]) * FPS))
+        t0, d = k0 / FPS, n / FPS
         out = os.path.join(tmp, f"{k:03d}.mkv")
         wav = os.path.join(os.path.dirname(os.path.abspath(src)), "proxy_audio.wav")
-        entradas = ["-ss", f"{s['ini']:.4f}", "-i", src]
+        entradas = ["-ss", f"{max(0, t0 - 0.25 / FPS):.5f}", "-i", src]   # meio quadro antes: pega o quadro k0 certo
         mapa = []
         if os.path.exists(wav):  # voz sem perda, cortada no mesmo ponto do vídeo
-            entradas += ["-ss", f"{s['ini']:.4f}", "-i", wav]
+            entradas += ["-ss", f"{t0:.5f}", "-i", wav]
             mapa = ["-map", "0:v", "-map", "1:a"]
-        subprocess.run(["ffmpeg", "-v", "error", "-y", *entradas, *mapa, "-t", f"{d:.4f}",
-                        "-af", f"afade=t=in:d=0.015,afade=t=out:st={max(0, d - 0.015):.4f}:d=0.015",
-                        "-frames:v", str(max(1, round(d * FPS))), "-c:v", "libx264", "-preset", "medium", "-crf", str(CRF_INTERMEDIARIO), "-pix_fmt", "yuv420p", "-r", str(FPS),
+        subprocess.run(["ffmpeg", "-v", "error", "-y", *entradas, *mapa, "-t", f"{d:.5f}",
+                        "-af", f"atrim=end={d:.5f},afade=t=in:d=0.015,afade=t=out:st={max(0, d - 0.015):.5f}:d=0.015,apad=whole_dur={d:.5f}",
+                        "-frames:v", str(n), "-c:v", "libx264", "-preset", "medium", "-crf", str(CRF_INTERMEDIARIO), "-pix_fmt", "yuv420p", "-r", str(FPS),
                         "-color_primaries", "bt709", "-color_trc", "bt709", "-colorspace", "bt709",
                         "-c:a", "pcm_s24le", "-ar", "48000", out], check=True)
         lista.append(f"file '{out}'")
