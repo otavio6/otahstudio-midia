@@ -20,6 +20,7 @@ Sobre o que a esteira lê e grava:
 | Público | Donos de negócio em geral que querem uma marca que vende. Saúde é a experiência do Otávio (exemplos, bastidor), não o único tema: no máximo 1 em cada 3 peças fala só de clínica (pedido dele em 24/11/2026). Prefira "cliente", "empresa", "negócio" a "paciente" e "clínica" quando a ideia servir para todos. |
 | Tom | Direto, provocativo, de quem está dentro da operação. Confronta crenças sem ofender pessoas ou grupos. |
 | Nunca | Faturamento de cliente, dados ou fotos de paciente, conversas internas, estratégia não lançada, nome de hospital sem autorização (Dr. Felipe e Realizza são permitidos), política partidária, tragédias, promessa de resultado. |
+| Foco agora (27/11/2026) | **Autoridade e alcance: só topo e meio de funil.** Fundo de funil está pausado até ele lançar um produto. **Topo** (metade das peças): alcance, tema que qualquer dono de negócio entende, gancho forte, dá vontade de mandar pra alguém. **Meio** (a outra metade): autoridade, bastidor de quem está dentro da operação, opinião com argumento, explicação que faz a pessoa pensar "esse cara sabe do que fala". **Proibido por enquanto:** oferta, vaga, preço do Otávio, "manda DIAGNÓSTICO/palavra no direct", "comente X que eu te mando", isca de lead, chamada para comprar ou agendar com ele. **Chamadas que valem:** seguir ("me segue que eu falo muito disso"), salvar, mandar pra alguém, comentar a opinião ou a experiência da pessoa. |
 
 ---
 
@@ -88,7 +89,7 @@ Seguem para a próxima etapa as ideias com **nota ≥ 7,5**, até **3 peças de 
 | **Reel** | Opinião, reação a algo em alta, bastidor, provocação que pede rosto e voz. É o formato que traz alcance novo, então é a prioridade quando a ideia é forte. Sai como roteiro para o Otávio gravar. |
 | **Carrossel** | Explicação, lista, passo a passo, dado ou prova. Conteúdo que dá vontade de salvar. |
 | **Estático** | Uma frase única muito forte, uma provocação ou uma comparação visual. |
-| **Story** | Todo dia, 1 item com 2 a 4 telas (veja A6b). Mantém quem já segue aquecido para comprar. Não traz seguidor novo, então não entra na cota de peças de feed. |
+| **Story** | Todo dia, 1 item com 2 a 4 telas (veja A6b). Mantém quem já segue por perto (bastidor, opinião, enquete). Enquanto o fundo de funil estiver pausado, não vende nada. Não traz seguidor novo, então não entra na cota de peças de feed. |
 
 Leia `aprendizados.md`: se um formato está performando muito melhor, puxe para ele.
 
