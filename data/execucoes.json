@@ -196,10 +196,19 @@
       "id": "analise-2026-11-26T23:18",
       "tarefa": "analise",
       "inicio": "2026-11-26T23:18:19-03:00",
-      "status": "rodando",
-      "fim": null,
-      "resumo": "",
-      "etapas": {}
+      "status": "ok",
+      "fim": "2026-11-26T23:21:22-03:00",
+      "resumo": "Estático do preço (11h) e story \"achou caro?\" (19h) saíram no horário aprovado, os dois com 10 de alcance e 0 respostas/salvamentos; 137 seguidores (+1 no dia, +2 na semana); alcance do dia caiu para 24 no 1º dia sem reel novo; reel da Black parou em 48 com pulo de 72,9%; 2 peças passaram a agendadas; sem leads e 0 comentários pendentes.",
+      "etapas": {
+        "posts_medidos": 11,
+        "seguidores": 137,
+        "publicados_conferidos": 2,
+        "agendados_conferidos": 5,
+        "leads_novos": 0,
+        "leads_status_novo": 0,
+        "comentarios_12h": 0,
+        "sugestoes_resposta": 0
+      }
     }
   ]
 }

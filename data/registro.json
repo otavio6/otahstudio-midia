@@ -315,15 +315,16 @@
    "uuid": "7965494769279254594",
    "horario": "2026-11-26T11:00:00"
   },
-  "status": "agendado",
-  "instagram_media_id": null,
-  "permalink": null,
+  "status": "publicado",
+  "instagram_media_id": "17956839690318152",
+  "permalink": "https://www.instagram.com/p/DgNRPs4jpCI/",
   "horario": "11:00",
   "titulo": "O teste do \"achei caro\"",
   "slides": 1,
   "pensamento": "\"Se eu baixar o preço, a agenda enche?\"",
   "nota_ajuste": "Texto refeito em 21/11 a pedido do Otávio: sem antítese, voz humana (docs/COPY.md).",
-  "agendado_para": "2026-11-26T11:00-03:00"
+  "agendado_para": "2026-11-26T11:00-03:00",
+  "publicado_em": "2026-11-26T11:00-03:00"
  },
  {
   "id": "2026-11-26-reel-paciente-nao-sabe",
@@ -771,9 +772,11 @@
   },
   "obs": "Copy 8,42 após 3 rodadas (prova 7,5: teaser sem dado); melhor versão. Diz 'no post de hoje': só vale se sair em 26/11.",
   "metricool": null,
-  "status": "rascunho",
-  "instagram_media_id": null,
-  "permalink": null
+  "status": "publicado",
+  "instagram_media_id": "17880050499576526",
+  "permalink": "https://www.instagram.com/stories/otaviohenriqve/4039202057521999575",
+  "publicado_em": "2026-11-26T19:00-03:00",
+  "obs_postagem": "Aprovado às 18:42 para 19:00 (registro previa 18:00); saiu 19:00."
  },
  {
   "id": "2026-11-28-nivea-cliente-escreveu",
@@ -801,9 +804,10 @@
   },
   "obs": "Loja fica aberta até 29/11; a legenda diz 'até amanhã, domingo', então só vale se sair em 28/11. Serve a qualquer negócio.",
   "metricool": null,
-  "status": "rascunho",
+  "status": "agendado",
   "instagram_media_id": null,
-  "permalink": null
+  "permalink": null,
+  "agendado_para": "2026-11-28T18:00-03:00"
  },
  {
   "id": "2026-12-02-orcamento-tres-opcoes",
@@ -831,9 +835,10 @@
   },
   "obs": "Qualidade 8,44 na 3ª rodada (espaçamento 7); depois foram aplicados os 3 ajustes pedidos pelo revisor (slides 3, 4 e 6), sem nota nova. Motor: W ganhou noIcon/hotCard e O2 ganhou noGrid/hot/tSize.",
   "metricool": null,
-  "status": "rascunho",
+  "status": "agendado",
   "instagram_media_id": null,
-  "permalink": null
+  "permalink": null,
+  "agendado_para": "2026-12-02T10:00-03:00"
  },
  {
   "id": "2026-12-09-reel-ferias-dono",
