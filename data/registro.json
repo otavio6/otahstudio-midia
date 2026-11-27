@@ -27,13 +27,13 @@
    "copy": null,
    "qualidade": null
   },
-  "status": "roteiro",
+  "status": "descartado",
   "metricool": null,
   "instagram_media_id": null,
   "permalink": null,
   "fonte": null,
   "versao": 2,
-  "obs": "Reescrito em 24/11 após revisão independente (nota v2 do revisor: 7); ajustes sugeridos pelo revisor aplicados depois, sem nova nota. Data realocada: Otávio grava todos em 24/11. Versão mais abrangente (negócio em geral, não só clínica), pedido do Otávio em 24/11. Reescrito no tom de conversa (regra 5b da esteira, 24/11)."
+  "obs": "Reescrito em 24/11 após revisão independente (nota v2 do revisor: 7); ajustes sugeridos pelo revisor aplicados depois, sem nova nota. Data realocada: Otávio grava todos em 24/11. Versão mais abrangente (negócio em geral, não só clínica), pedido do Otávio em 24/11. Reescrito no tom de conversa (regra 5b da esteira, 24/11). Descartado em 27/11: o Otávio desistiu de vender a Black."
  },
  {
   "id": "2026-11-23-post-de-clinica",
@@ -392,7 +392,7 @@
  },
  {
   "id": "2026-11-27-reel-fevereiro",
-  "data": "2026-11-27",
+  "data": "2026-11-28",
   "horario": "18:00",
   "formato": "reel",
   "tema": "Seguidor · Black Friday",
@@ -408,7 +408,7 @@
     "E o resto aprende uma coisa: esperar a próxima promoção.",
     "Aí chega fevereiro, que já é um mês fraco, e o pessoal só compra se tiver desconto. Vira uma bola de neve.",
     "Em vez de baixar o preço, mostra no seu perfil por que você cobra o que cobra. Quem faz, o que tá incluso, o que você garante.",
-    "Manda isso pra quem tá na correria da Black agora."
+    "Manda isso pra quem deu desconto na Black."
    ],
    "tipo": "Seguidor · Black Friday"
   },
@@ -424,7 +424,7 @@
   "permalink": null,
   "fonte": "https://mercadoeconsumo.com.br/16/10/2026/ecommerce/black-friday-45-dos-produtos-nao-tiveram-desconto-real-em-2025-aponta-estudo/amp/",
   "versao": 2,
-  "obs": "Reescrito em 24/11 após revisão independente (nota v2 do revisor: 6); ajustes sugeridos pelo revisor aplicados depois, sem nova nota. Data realocada: Otávio grava todos em 24/11. Versão mais abrangente (negócio em geral, não só clínica), pedido do Otávio em 24/11. Ajustes finais do revisor da versão abrangente aplicados (sem nova nota). Reescrito no tom de conversa (regra 5b da esteira, 24/11)."
+  "obs": "Reescrito em 24/11 após revisão independente (nota v2 do revisor: 6); ajustes sugeridos pelo revisor aplicados depois, sem nova nota. Data realocada: Otávio grava todos em 24/11. Versão mais abrangente (negócio em geral, não só clínica), pedido do Otávio em 24/11. Ajustes finais do revisor da versão abrangente aplicados (sem nova nota). Reescrito no tom de conversa (regra 5b da esteira, 24/11). Remanejado para 28/11 18h (não gravado a tempo); chamada final adaptada para depois da Black."
  },
  {
   "id": "2026-11-24-story-black-11h",
