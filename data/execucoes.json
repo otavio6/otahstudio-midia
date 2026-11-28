@@ -232,6 +232,15 @@
         "ideias_painel": 0,
         "agendados_conferidos": 5
       }
+    },
+    {
+      "id": "analise-2026-11-27T23:18",
+      "tarefa": "analise",
+      "inicio": "2026-11-27T23:18:06-03:00",
+      "status": "rodando",
+      "fim": null,
+      "resumo": "",
+      "etapas": {}
     }
   ]
 }
