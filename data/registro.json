@@ -272,18 +272,16 @@
   "titulo": "Seu perfil reprova em 10 segundos",
   "angulo": null,
   "metodo": null,
-  "gancho": "Eu abro o perfil de uma empresa e em dez segundos eu já sei se ela tá perdendo cliente.",
+  "gancho": "Qualidade, compromisso e excelência. Se a sua bio tem isso, cara, ninguém sabe o que você faz.",
   "roteiro": {
-   "tela": "SUA BIO DIZ O QUE VOCÊ FAZ?",
-   "tipo": "Seguidor · marca",
+   "tela": "“QUALIDADE, COMPROMISSO E EXCELÊNCIA”",
+   "tipo": "Seguidor · marca (ser lembrado e indicado)",
    "fala": [
-    "Eu abro o perfil de uma empresa e em dez segundos eu já sei se ela tá perdendo cliente.",
-    "Olha a bio. \"Qualidade, compromisso e excelência.\" Cara, quase todo perfil tem isso.",
-    "A pessoa lê e não sabe o que você faz, nem pra quem.",
-    "Aí desce, e cada post parece de uma empresa diferente.",
-    "Pronto. Ela não entendeu o que te faz diferente, e na hora de indicar alguém, não lembra de você.",
-    "Faz o teste: mostra a sua bio pra alguém de fora e pede pra explicar numa frase o que você faz. Se enrolar, começa por ali.",
-    "Me segue que eu falo muito de marca por aqui."
+    "Qualidade, compromisso e excelência. Se a sua bio tem isso, cara, ninguém sabe o que você faz.",
+    "Eu cuido do marketing de um grupo de saúde. A primeira coisa que eu olho num perfil é a bio.",
+    "Um amigo pergunta pra pessoa: conhece alguém bom nisso? Ela até viu o seu perfil semana passada. Mas não lembra o seu nome.",
+    "Mostra a sua bio pra alguém de fora. Se ele não conseguir explicar numa frase o que você faz, começa por ali.",
+    "Manda isso pra aquele amigo que tem a bio igual à de todo mundo."
    ]
   },
   "assinatura": "reel",
@@ -344,15 +342,13 @@
   "gancho": "Seu cliente não sabe se você é bom.",
   "roteiro": {
    "tela": "SEU CLIENTE NÃO SABE SE VOCÊ É BOM",
-   "tipo": "Seguidor · Trial Reel · marca",
+   "tipo": "Seguidor · Trial Reel · marca (atendimento como marca)",
    "fala": [
     "Seu cliente não sabe se você é bom.",
-    "Pensa em você escolhendo um restaurante novo. Você não entrou na cozinha.",
-    "Você olhou a foto do prato, os comentários e se te responderam rápido.",
-    "Com a sua empresa é igual. A pessoa vê a foto escura, o post que cada dia tem uma cara, a mensagem que demorou dois dias.",
-    "E pra ela, isso é o seu trabalho.",
-    "É injusto? Pode até ser. Mas é com isso que ela decide.",
-    "Abre o seu perfil hoje como se fosse de um desconhecido. Você contrataria?",
+    "Ele pergunta uma coisa simples no WhatsApp e você responde dois dias depois.",
+    "Pronto. Ele já decidiu que você é ruim, sem nunca ter te testado.",
+    "É injusto? Pode até ser. Mas pra ele, a sua marca começa ali.",
+    "Pega o celular agora, ó. Abre a última mensagem de alguém que ainda não comprou de você. Quanto tempo você levou pra responder?",
     "Me segue que eu falo muito de como o cliente enxerga a sua marca."
    ]
   },
