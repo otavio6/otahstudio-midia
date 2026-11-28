@@ -70,7 +70,7 @@ def main():
     medida = subprocess.run(["ffmpeg", "-hide_banner", "-i", fonte_voz, "-af", "highpass=f=70,ebur128", "-f", "null", "-"], capture_output=True, text=True).stderr
     li = re.findall(r"I:\s+(-?[\d.]+) LUFS", medida)
     ganho = (-13.6 - float(li[-1])) if li else 0.0
-    voz = f"[0:a]aresample=48000,highpass=f=70,volume={ganho:.2f}dB[v]"
+    voz = f"[0:a]aresample=48000,pan=mono|c0=0.5*c0+0.5*c1,highpass=f=70,volume={ganho:.2f}dB[v]"  # voz em mono, centrada (revisor 27/11)
     if a.musica:
         fc = voz + ";[v]asplit[v1][v2];[2:a]aresample=48000,volume=0.16[m0];[m0][v1]sidechaincompress=threshold=0.03:ratio=4:attack=40:release=400[m];[1:a]aresample=48000[s];[v2][s][m]amix=inputs=3:duration=first:normalize=0,alimiter=limit=0.84:attack=5:release=50:level=false,aresample=48000[a]"
         ins = ["-i", fonte_voz, "-i", sp, "-stream_loop", "-1", "-i", a.musica]
@@ -94,7 +94,7 @@ def main():
         bruto = os.path.join(P, "proxy_audio.wav")
         cauda = None
         if os.path.exists(bruto):
-            rb = subprocess.run(["ffmpeg", "-v", "error", "-i", bruto, "-af", f"aresample=48000,highpass=f=70,volume={ganho:.2f}dB",
+            rb = subprocess.run(["ffmpeg", "-v", "error", "-i", bruto, "-af", f"aresample=48000,pan=mono|c0=0.5*c0+0.5*c1,highpass=f=70,volume={ganho:.2f}dB",
                                  "-f", "f32le", "-ac", "2", "-ar", str(SR), "-"], capture_output=True).stdout
             b = np.frombuffer(rb, np.float32).reshape(-1, 2)
             q = int(0.02 * SR); nq = len(b) // q
