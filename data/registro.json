@@ -1054,5 +1054,158 @@
   "horario": "18:00",
   "titulo": "Novato copia o colega",
   "slides": 6
+ },
+ {
+  "id": "2026-11-28-story-pergunta-direct",
+  "data": "2026-11-28",
+  "horario": "19:00",
+  "formato": "story",
+  "slides": 3,
+  "versao": 1,
+  "titulo": "Story: a pergunta do direct já é um post",
+  "tema": "A pergunta que mais se repete no direct vira post; chamada para o estático da Nivea das 18h",
+  "fonte": "chamada para 2026-11-28-nivea-cliente-escreveu (fonte do fato no post: Meio & Mensagem, 25/11/2026)",
+  "angulo": "identificação",
+  "metodo": "AIDA",
+  "pensamento": "Não sei o que postar.",
+  "gancho": "Qual pergunta você mais respondeu no direct essa semana?",
+  "ganchos_reserva": [
+   "Abre o seu direct agora.",
+   "\"Quanto tempo dura?\" já é um post."
+  ],
+  "assinatura": "story: caixa-do-direct-3-linhas-mesma-pergunta-escuro | miniatura-post-1x1+titulo-claro | titulo+pilula-cta-lime-escuro (rodapé de série)",
+  "notas": {
+   "potencia": null,
+   "copy": 8.46,
+   "qualidade": 8.17
+  },
+  "metricool": {
+   "id": 0,
+   "uuid": "",
+   "horario": "2026-11-28T19:00:00"
+  },
+  "status": "rascunho",
+  "instagram_media_id": null,
+  "permalink": null,
+  "chama": "2026-11-28-nivea-cliente-escreveu"
+ },
+ {
+  "id": "2026-12-04-reel-quem-odeia-natal",
+  "data": "2026-12-04",
+  "horario": "10:00",
+  "formato": "reel",
+  "versao": 1,
+  "titulo": "Reel: propaganda de Natal pra quem odeia o Natal",
+  "tema": "Seguidor · falar com quem resiste à sua categoria (gancho: campanha de Natal 2026 da Coca-Cola)",
+  "fonte": "https://marcaspelomundo.com.br/anunciantes/coca-cola-brinca-com-quem-odeia-o-natal-em-campanha-que-celebra-os-encontros-de-fim-de-ano/",
+  "angulo": "crença errada",
+  "metodo": "AIDA",
+  "pensamento": "Eu falo com quem já gosta do que eu faço.",
+  "gancho": "A marca que todo mundo liga ao Natal fez a campanha desse ano brincando com quem odeia o Natal.",
+  "ganchos_reserva": [
+   "Você só fala com quem já gosta de você.",
+   "Tem gente que precisa de você e morre de medo de você."
+  ],
+  "roteiro": {
+   "tela": "A COCA-COLA FEZ PROPAGANDA DE NATAL PRA QUEM ODEIA O NATAL",
+   "fala": [
+    "A marca que todo mundo liga ao Natal fez a campanha desse ano brincando com quem odeia o Natal.",
+    "Pensa comigo. Ela podia ter feito mais uma propaganda pra quem já ama essa época. E foi brincar justo com quem torce o nariz. E você, fala com quem no seu Instagram?",
+    "Aposto que com quem já gosta do que você vende.",
+    "Só que tem um monte de gente que precisa de você e tem um pé atrás. Tipo quem tem pavor de dentista, ou quem acha que contador é só mais um custo.",
+    "E é raro ver alguém fazendo um post pensando nessa pessoa.",
+    "Faz assim, ó. Pega a desculpa que você mais escuta pra pessoa não vir, tipo \"contador é só mais um custo\". E abre o post com ela: se você acha que contador é só mais um custo, esse aqui é pra você. Sem dar bronca e sem rir da pessoa.",
+    "Me segue aqui que eu vou trazendo jeitos de conversar com quem ainda não te escolheu."
+   ],
+   "gravacao": "Não mostrar logo nem peça da campanha da Coca-Cola na tela; só falar.",
+   "tipo": "seguidor"
+  },
+  "assinatura": "reel",
+  "notas": {
+   "potencia": 7.67,
+   "copy": 8.46,
+   "qualidade": null
+  },
+  "metricool": null,
+  "status": "roteiro",
+  "instagram_media_id": null,
+  "permalink": null,
+  "obs": "Notícia de 11/11: o revisor pediu que vá ao ar até 04/12."
+ },
+ {
+  "id": "2026-12-06-reel-pergunta-pra-ia",
+  "data": "2026-12-06",
+  "horario": "10:00",
+  "formato": "reel",
+  "versao": 1,
+  "titulo": "Reel: pergunta pra IA quem é o melhor da sua cidade",
+  "tema": "Seguidor · a IA como nova vitrine: teste ao vivo no ChatGPT",
+  "fonte": "https://olhardigital.com.br/2026/11/27/pro/black-friday-deve-movimentar-r-115-bilhoes-no-brasil",
+  "angulo": "previsão + concorrente",
+  "metodo": "AIDA",
+  "pensamento": "Meu cliente me acha pelo Google ou por indicação.",
+  "gancho": "Faz um teste comigo agora, rapidinho. Abre o ChatGPT e pergunta quem é o melhor no que você faz na sua cidade.",
+  "ganchos_reserva": [
+   "Um terço das pessoas usou IA pra achar oferta nessa Black.",
+   "O ChatGPT já está indicando alguém da sua cidade. É você?"
+  ],
+  "roteiro": {
+   "tela": "PERGUNTA PRA IA QUEM É O MELHOR DA SUA CIDADE",
+   "fala": [
+    "Faz um teste comigo agora, rapidinho. Abre o ChatGPT e pergunta assim, ó, quem é o melhor em tal coisa aqui na minha cidade. Põe o que você faz e onde você tá.",
+    "E por que isso importa? Saiu uma pesquisa da Amazon com a HarrisX nessa Black. 34% das pessoas usam IA pra achar oferta. Um terço!",
+    "Se a pessoa já pergunta pra IA onde comprar a TV, daqui a pouco ela pergunta quem resolve o problema dela.",
+    "Aí, se o seu nome apareceu, ótimo. Lê com calma o que ela falou de você, porque é isso que ela vai dizer pra quem perguntar.",
+    "Se não apareceu, cara, olha quem apareceu no seu lugar. Abre o perfil, o site, as avaliações dele, e compara com o seu.",
+    "Repara em duas coisas. Se ele diz com todas as letras o que faz e pra quem. E se tem cliente falando bem dele num lugar que todo mundo vê, tipo avaliação no Google.",
+    "Pra IA te indicar, alguém precisa ter escrito em algum lugar o que você faz e que você faz bem.",
+    "Me segue que eu vou mostrar o que eu arrumaria no seu perfil pra ter mais chance de aparecer nessa resposta."
+   ],
+   "gravacao": "Fazer o teste de verdade com o que o Otávio faz e mostrar a tela com o resultado, aparecendo ou não. Borrar nome de outras empresas. Cortar a espera da resposta (30 a 45 s no total).",
+   "tipo": "seguidor"
+  },
+  "assinatura": "reel",
+  "notas": {
+   "potencia": 7.92,
+   "copy": 8.5,
+   "qualidade": null
+  },
+  "metricool": null,
+  "status": "roteiro",
+  "instagram_media_id": null,
+  "permalink": null
+ },
+ {
+  "id": "2026-12-07-reuniao-quem-faz",
+  "data": "2026-12-07",
+  "horario": "10:00",
+  "formato": "carrossel",
+  "slides": 7,
+  "versao": 1,
+  "titulo": "Reunião: quem faz o quê até quando",
+  "tema": "Gestão de time: reunião que termina sem nome, tarefa e prazo (custo em horas)",
+  "fonte": "opinião (sem fonte externa; conta: 1 h × 6 pessoas = 6 h)",
+  "angulo": "bolso",
+  "metodo": "PAS",
+  "pensamento": "A gente fez reunião, todo mundo concordou e na quarta nada tinha andado.",
+  "gancho": "Uma hora, seis pessoas na sala: seis horas da sua empresa. Quem vai fazer o quê?",
+  "ganchos_reserva": [
+   "Segunda vocês decidiram tudo. Na quarta, ninguém lembra quem ia fazer.",
+   "Se a reunião termina com 'beleza, vamos ver isso', ela não terminou."
+  ],
+  "assinatura": "capa:formula-3-lacunas-escura | lacuna-quem+3-respostas-claro | F1 lacuna-acesa+em-vez-de/tente x3 alternando | frase-preenchida-sobre-lacunas-claro | cta+mini-formula-cinza-escuro",
+  "notas": {
+   "potencia": 7.92,
+   "copy": 8.38,
+   "qualidade": 8.44
+  },
+  "metricool": {
+   "id": 0,
+   "uuid": "",
+   "horario": "2026-12-07T10:00:00"
+  },
+  "status": "rascunho",
+  "instagram_media_id": null,
+  "permalink": null
  }
 ]

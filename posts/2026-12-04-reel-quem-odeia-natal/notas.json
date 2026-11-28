@@ -1,0 +1,18 @@
+{
+ "potencia": {
+  "nota": 7.67,
+  "aprovada": true
+ },
+ "copy": {
+  "rodadas": [
+   7.62,
+   8.35,
+   8.46
+  ],
+  "final": 8.46,
+  "aprovada": false
+ },
+ "qualidade": null,
+ "obs": "Roteiro para gravar. O revisor de copy disse que o impacto sobe para 8,5 (média 8,50) se for ao ar até 04/12, porque a notícia é de 11/11; por isso a data é 04/12. Exemplo da fala 6 trocado de dentista para contador depois da nota.",
+ "revisores": "subagentes separados (A2, A5, A7), sem o histórico da produção"
+}

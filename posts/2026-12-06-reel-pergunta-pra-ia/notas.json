@@ -1,0 +1,18 @@
+{
+ "potencia": {
+  "nota": 7.92,
+  "aprovada": true
+ },
+ "copy": {
+  "rodadas": [
+   8.04,
+   8.35,
+   8.5
+  ],
+  "final": 8.5,
+  "aprovada": true
+ },
+ "qualidade": null,
+ "obs": "Roteiro para gravar. Retoques opcionais do revisor aplicados depois da nota (verbo na fala 2, um 'eu acho' a menos na legenda).",
+ "revisores": "subagentes separados (A2, A5, A7), sem o histórico da produção"
+}

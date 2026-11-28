@@ -1,0 +1,63 @@
+{
+ "id": "2026-11-28-story-pergunta-direct",
+ "telas": [
+  {
+   "theme": "dark",
+   "top": 520,
+   "size": 96,
+   "title": "Qual pergunta você mais respondeu no direct essa semana?",
+   "pics": [
+    {
+     "src": "inbox.png",
+     "x": 44,
+     "y": 930,
+     "w": 992,
+     "h": 483
+    }
+   ],
+   "foot": [
+    "Branding & posicionamento",
+    "2026 · OH/054"
+   ]
+  },
+  {
+   "theme": "light",
+   "top": 1140,
+   "size": 84,
+   "title": "Essa pergunta\njá é um post.",
+   "body": "A Nivea foi além.",
+   "pics": [
+    {
+     "src": "post.png",
+     "x": 14,
+     "y": 370,
+     "w": 732,
+     "h": 732
+    }
+   ],
+   "foot": [
+    "Branding & posicionamento",
+    "2026 · OH/054"
+   ]
+  },
+  {
+   "theme": "dark",
+   "top": 640,
+   "size": 96,
+   "title": "A Nivea ouviu\nos clientes e\nabriu uma loja.",
+   "pics": [
+    {
+     "src": "pilula.png",
+     "x": 44,
+     "y": 1010,
+     "w": 592,
+     "h": 180
+    }
+   ],
+   "foot": [
+    "Branding & posicionamento",
+    "2026 · OH/054"
+   ]
+  }
+ ]
+}

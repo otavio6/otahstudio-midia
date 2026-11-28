@@ -278,6 +278,7 @@ const WIC={chip:'<svg viewBox="0 0 56 56" width="56" height="56"><rect x="14" y=
 const LN=()=>THEME==='light'?'rgba(17,18,20,.12)':'rgba(255,255,255,.12)';
 const INK=()=>THEME==='light'?'#111214':'#F4F4F1';
 function formula(parts,o={}){const sz=o.size??64,hot=o.hot;let bi=0;return `<div style="font:400 ${sz}px/1.45 var(--display);letter-spacing:-.03em">${parts.map(p=>{if(p.br)return '<br>';if(p.blank===undefined)return esc(p.t)+' ';const k=++bi;const on=hot===undefined||hot===k;const fill=o.fill&&o.fill[k-1];
+ if(fill&&o.lines)return `<span style="display:inline-block;position:relative;white-space:nowrap;color:var(--accent);border-bottom:${Math.max(3,sz/16)}px solid var(--accent);line-height:1.05;margin:0 0 ${sz*.55}px 0">${esc(fill)}<span style="position:absolute;left:0;top:100%;margin-top:10px;font:400 ${Math.max(16,sz*.28)}px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;color:var(--accent)">${esc(p.blank)}</span></span> `;
  if(fill)return `<span style="color:var(--accent)">${esc(nbw(fill))}</span> `;
  return `<span style="display:inline-block;vertical-align:baseline;min-width:${sz*(o.bw??3.2)}px;border-bottom:${Math.max(3,sz/16)}px solid ${on?'var(--accent)':LN()};position:relative;margin-right:${sz*.25}px;height:${sz*.9}px"><span style="position:absolute;left:0;top:100%;margin-top:8px;font:400 ${Math.max(16,sz*.28)}px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;${on?'color:var(--accent)':'opacity:.5'}">${esc(p.blank)}</span></span> `;}).join('').replace(/\s+([.,!?;:])/g,'$1')}</div>`;}
 function mock(kind,good){ // mini peça para errado × certo
@@ -301,12 +302,12 @@ Object.assign(M,{
   <div class="blk" style="top:${s.fTop??760}px">${formula(s.formula,{size:s.fSize??60,bw:s.bw??5.5})}</div><div class="swipe">→</div>`,
  // F1 · uma lacuna explicada
  F1:(s)=>`${s.grid?gridlines():''}<div class="blk" style="top:230px"><div class="label">${esc(s.label||'')}</div></div>
-  <div class="blk" style="top:290px">${formula(s.formula,{size:34,hot:s.hot})}</div>
+  <div class="blk" style="top:290px">${formula(s.formula,{size:s.fSize??34,hot:s.hot,bw:s.bw})}</div>
   <div class="blk" style="top:${s.titleTop??520}px"><div class="h2" style="max-width:880px">${rich(s.title)}</div></div>
   <div class="blk" style="top:${s.pairTop??820}px;padding-top:34px;border-top:1.5px solid ${LN()}"><div class="label" style="margin-bottom:14px;color:var(--neg)">✕ &nbsp;Em vez de</div><div class="h3 mut" style="font-size:44px">${rich(s.from)}</div><div class="label" style="margin:34px 0 14px">✓ &nbsp;Tente</div><div class="h3" style="font-size:50px">${rich(s.to)}</div></div>`,
  // F2 · fórmula preenchida
  F2:(s)=>`${V.glow({x:15,y:85,a:.2})}<div class="blk" style="top:230px"><div class="label">${esc(s.label||'Exemplo')}</div></div>
-  <div class="blk" style="top:${s.fTop??340}px">${formula(s.formula,{size:s.fSize??74,fill:s.fill})}</div>
+  <div class="blk" style="top:${s.fTop??340}px">${formula(s.formula,{size:s.fSize??74,fill:s.fill,lines:s.lines})}</div>
   ${s.body?`<div class="blk" style="top:${s.bodyTop??940}px;padding-top:30px;border-top:1.5px solid ${LN()}"><div class="bd">${richB(s.body)}</div></div>`:''}`,
  // MV0 · capa mito × verdade
  MV0:(s)=>`${V.glow({x:85,y:85,a:.18})}<div class="blk" style="top:230px"><div class="label" style="margin-bottom:34px">${esc(s.label||'')}</div><div class="hc" style="max-width:900px">${rich(s.title)}</div></div>

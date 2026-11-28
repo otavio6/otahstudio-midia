@@ -1,0 +1,26 @@
+{
+ "potencia": {
+  "nota": null,
+  "obs": "story de chamada para o estático da Nivea; não passa pelo A2"
+ },
+ "copy": {
+  "rodadas": [
+   8.08,
+   8.38,
+   8.46
+  ],
+  "final": 8.46,
+  "aprovada": false
+ },
+ "qualidade": {
+  "rodadas": [
+   6.72,
+   7.83,
+   8.17
+  ],
+  "final": 8.17,
+  "aprovada": false
+ },
+ "obs": "Melhor versão após 3 rodadas. Depois da última nota de arte: sombra do card da tela 2 sem corte, card alinhado em x=80, texto do card e corpo encurtados; sem nova nota.",
+ "revisores": "subagentes separados (A2, A5, A7), sem o histórico da produção"
+}

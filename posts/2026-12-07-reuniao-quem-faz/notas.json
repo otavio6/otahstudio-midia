@@ -1,0 +1,26 @@
+{
+ "potencia": {
+  "nota": 7.92,
+  "aprovada": true
+ },
+ "copy": {
+  "rodadas": [
+   7.5,
+   8.25,
+   8.38
+  ],
+  "final": 8.38,
+  "aprovada": false
+ },
+ "qualidade": {
+  "rodadas": [
+   7.63,
+   8.06,
+   8.44
+  ],
+  "final": 8.44,
+  "aprovada": false
+ },
+ "obs": "Melhor versão após 3 rodadas de copy e 3 de arte. Depois da última nota: fecho do slide 7 virou ação (sugestão do revisor de copy) e o corpo do slide 6 subiu; sem nova nota. Revisor de arte: o cinza de apoio do fundo claro (#7C7F85, token da marca) dá 3,58:1 em texto pequeno.",
+ "revisores": "subagentes separados (A2, A5, A7), sem o histórico da produção"
+}

@@ -1,0 +1,192 @@
+{
+ "id": "RQ01",
+ "series": "2026 · OH/053",
+ "template": "T11 Fórmula: F0 → B → F1 ×3 → F2 → M2 (esteira 28/11)",
+ "slides": [
+  {
+   "m": "F0",
+   "theme": "dark",
+   "label": "Reunião",
+   "tsize": 92,
+   "title": "Uma hora, seis pessoas na sala: seis horas da sua empresa.\n||Quem vai fazer o quê?",
+   "fTop": 820,
+   "fSize": 80,
+   "bw": 2.6,
+   "formula": [
+    {
+     "blank": "quem"
+    },
+    {
+     "blank": "faz o quê"
+    },
+    {
+     "t": "até"
+    },
+    {
+     "blank": "quando"
+    },
+    {
+     "t": "."
+    }
+   ]
+  },
+  {
+   "m": "B",
+   "theme": "light",
+   "grid": false,
+   "top": 230,
+   "eyebrow": "Segunda, 9h.",
+   "titleTop": 330,
+   "title": "Todo mundo concordou com tudo.\n||Na quarta, nada tinha andado.",
+   "body": "Faz o teste: pergunta no grupo quem ficou de fazer.",
+   "imgSrc": "gfx/lacuna-quem.png",
+   "imgX": 44,
+   "imgY": 790,
+   "imgW": 992,
+   "imgH": 395
+  },
+  {
+   "m": "F1",
+   "theme": "dark",
+   "label": "1 de 3",
+   "formula": [
+    {
+     "blank": "quem"
+    },
+    {
+     "blank": "faz o quê"
+    },
+    {
+     "t": "até"
+    },
+    {
+     "blank": "quando"
+    },
+    {
+     "t": "."
+    }
+   ],
+   "hot": 1,
+   "title": "Quem:\n*o nome* de uma pessoa.",
+   "from": "O pessoal do atendimento vê isso.",
+   "to": "A Carla responde os 12 orçamentos parados.",
+   "titleTop": 520,
+   "pairTop": 800,
+   "fSize": 54,
+   "bw": 3.0
+  },
+  {
+   "m": "F1",
+   "theme": "light",
+   "label": "2 de 3",
+   "formula": [
+    {
+     "blank": "quem"
+    },
+    {
+     "blank": "faz o quê"
+    },
+    {
+     "t": "até"
+    },
+    {
+     "blank": "quando"
+    },
+    {
+     "t": "."
+    }
+   ],
+   "hot": 2,
+   "title": "Faz o quê: uma coisa\nque *dá pra conferir*.",
+   "from": "Melhorar o Instagram.",
+   "to": "Postar os 3 vídeos que já estão gravados.",
+   "titleTop": 520,
+   "pairTop": 800,
+   "fSize": 54,
+   "bw": 3.0
+  },
+  {
+   "m": "F1",
+   "theme": "dark",
+   "label": "3 de 3",
+   "formula": [
+    {
+     "blank": "quem"
+    },
+    {
+     "blank": "faz o quê"
+    },
+    {
+     "t": "até"
+    },
+    {
+     "blank": "quando"
+    },
+    {
+     "t": "."
+    }
+   ],
+   "hot": 3,
+   "title": "Até quando:\n*dia e hora*.",
+   "from": "Assim que der.",
+   "to": "Até quinta, 18h.",
+   "titleTop": 520,
+   "pairTop": 800,
+   "fSize": 54,
+   "bw": 3.0
+  },
+  {
+   "m": "F2",
+   "theme": "light",
+   "label": "A frase pronta",
+   "formula": [
+    {
+     "blank": "quem"
+    },
+    {
+     "br": true
+    },
+    {
+     "blank": "faz o quê"
+    },
+    {
+     "br": true
+    },
+    {
+     "t": "até"
+    },
+    {
+     "blank": "quando"
+    },
+    {
+     "t": "."
+    }
+   ],
+   "fill": [
+    "Carla",
+    "responde os 12 orçamentos",
+    "quinta, 18h"
+   ],
+   "fSize": 72,
+   "body": "A próxima reunião começa conferindo essa frase.",
+   "bodyTop": 780,
+   "fTop": 330,
+   "lines": true
+  },
+  {
+   "m": "M2",
+   "theme": "dark",
+   "title": "Saiu da sala sem\nnome, tarefa e prazo?\n||Escreve no grupo antes\nde todo mundo ir embora.",
+   "cta": "Manda pra quem marca reunião",
+   "icon": "share",
+   "body": "E salva pra usar na próxima.",
+   "imgSrc": "gfx/frase-mini.png",
+   "imgX": 44,
+   "imgY": 700,
+   "imgW": 992,
+   "imgH": 153,
+   "ctaTop": 910,
+   "tsize": 80
+  }
+ ]
+}
