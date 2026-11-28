@@ -256,10 +256,26 @@
       "id": "criacao-2026-11-28T06:48",
       "tarefa": "criacao",
       "inicio": "2026-11-28T06:48:25-03:00",
-      "status": "rodando",
-      "fim": null,
-      "resumo": "",
-      "etapas": {}
+      "status": "parcial",
+      "fim": "2026-11-28T07:20:41-03:00",
+      "resumo": "Dia mediano (potência 7,67–7,92): roteiro do reel da IA aprovado pelos revisores (copy 8,50); story de hoje 19h (copy 8,46, arte 8,17), carrossel da reunião (07/12 10h; copy 8,38, arte 8,44) e roteiro do reel da Coca-Cola (04/12, copy 8,46) enviados como melhor versão após 3 rodadas; estático da Natura descartado (fato não sustentava a ponte); esperando o ok do Otávio. Reels de hoje 10h e 14h ainda sem aprovação. 0 comentários, 0 leads, 0 ideias no painel.",
+      "etapas": {
+        "ideias": 9,
+        "aprovadas_potencia": 4,
+        "pecas": 1,
+        "stories": 1,
+        "reels": 2,
+        "rascunhos": 2,
+        "roteiros": 2,
+        "descartadas": 1,
+        "rodadas_copy": 3,
+        "rodadas_qualidade": 3,
+        "abaixo_da_regua": 3,
+        "comentarios_pendentes": 0,
+        "leads_novos": 0,
+        "ideias_painel": 0,
+        "agendados_conferidos": 6
+      }
     }
   ]
 }
