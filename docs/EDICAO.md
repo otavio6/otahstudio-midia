@@ -146,6 +146,9 @@ Quem faz a revisão é o agente revisor separado (`docs/REVISOR.md`), nunca quem
 - **Lapso que confunde a ideia sai no corte** ("fevereiro, que é o início do mês") quando há pausa dos dois lados.
 - **Corte no quadro exato** (o `cortar.py` já faz): vídeo e áudio de cada trecho com o mesmo número de quadros; tempo arredondado em 3 casas pulava quadro e adiantava a voz.
 - **Escala do disfarce de salto em 1,05**; 1,08 já amolece o rosto.
+- **Todo item do `07_audio.json` leva `explicacao`** com a medição (piso da sala, emenda ou não, leitura do Whisper). Item sem explicação limita o Áudio a 5 na revisão.
+- **Legenda contínua na troca de cena** (o `montar.py` não esconde mais a legenda antes do corte).
+- **Balão de pensamento:** fundo #F2F2ED com rabinho, no máximo em 2 blocos do vídeo, com as palavras dele; a legenda daquele trecho some (`oculta`).
 
 ## 7. Aprender com as métricas (a edição evolui)
 

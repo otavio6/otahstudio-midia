@@ -356,8 +356,8 @@ def main():
         img = img.copy()
         em_transicao = prev is not None and tipo != "corte" and dt < TRANS * 1.4
         prox = cenas[k + 1] if 0 <= k < len(cenas) - 1 else None
-        antes_troca = prox is not None and prox.get("modo") != c.get("modo") and prox["de"] - t < 0.12
-        if c.get("legenda", True) and not em_transicao and not antes_troca:
+        # legenda contínua na troca de cena (revisor 27/11: sumir 3 quadros antes do corte parecia piscar)
+        if c.get("legenda", True) and not em_transicao:
             g = next((g for g in leg if g["ini"] <= t < g["fim"]), None)
             ocultar = {re.sub(r"[,.;:!?…]", "", x).lower() for x in c.get("legenda_ocultar", [])}
             if g and any(re.sub(r"[,.;:!?…]", "", w).lower() in ocultar for w in g["palavras"]):
