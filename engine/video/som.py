@@ -122,6 +122,7 @@ def main():
             cauda = np.vstack(partes)[:falta]
         cauda[:len(rampa)] *= rampa
         cauda[-len(rampa) * 4:] *= np.linspace(1, 0, len(rampa) * 4)[:, None]
+        x[-SR // 125:] *= np.linspace(1, 0, SR // 125)[:, None]  # 8 ms de fade no fim da voz antes do ambiente
         x = np.vstack([x, cauda])
         subprocess.run(["ffmpeg", "-v", "error", "-y", "-f", "f32le", "-ac", "2", "-ar", str(SR), "-i", "-", "-c:a", "pcm_s24le", out], input=x.astype(np.float32).tobytes(), check=True)
     r = subprocess.run(["ffmpeg", "-hide_banner", "-i", out, "-af", "ebur128=peak=true", "-f", "null", "-"], capture_output=True, text=True).stderr
