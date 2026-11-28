@@ -268,22 +268,23 @@
   "data": "2026-12-02",
   "horario": "18:00",
   "formato": "reel",
-  "tema": "Cliente · gera lead",
+  "tema": "Seguidor · clareza da bio (marca)",
   "titulo": "Seu perfil reprova em 10 segundos",
   "angulo": null,
   "metodo": null,
-  "gancho": "Eu levo dez segundos pra saber se o perfil de uma empresa tá perdendo cliente. Quer ver?",
+  "gancho": "Eu abro o perfil de uma empresa e em dez segundos eu já sei se ela tá perdendo cliente.",
   "roteiro": {
-   "tela": "SEU PERFIL REPROVA EM 10 SEGUNDOS?",
+   "tela": "SUA BIO DIZ O QUE VOCÊ FAZ?",
+   "tipo": "Seguidor · marca",
    "fala": [
-    "Eu levo dez segundos pra saber se o perfil de uma empresa tá perdendo cliente. Quer ver?",
-    "Primeiro eu leio a bio. Dá pra entender o que você faz e pra quem? Na maioria das vezes, não dá.",
-    "Depois eu desço e olho os últimos posts. Parece tudo da mesma marca, ou cada post parece de uma empresa diferente?",
-    "E por último eu tento comprar. Acho fácil onde clicar, ou desisto no meio do caminho?",
-    "Se travou em algum desses, é ali que você tá perdendo cliente sem nem saber.",
-    "Me segue aqui que eu vou te mostrando como arrumar cada um desses no seu perfil."
-   ],
-   "tipo": "Cliente · gera lead"
+    "Eu abro o perfil de uma empresa e em dez segundos eu já sei se ela tá perdendo cliente.",
+    "Olha a bio. \"Qualidade, compromisso e excelência.\" Cara, quase todo perfil tem isso.",
+    "A pessoa lê e não sabe o que você faz, nem pra quem.",
+    "Aí desce, e cada post parece de uma empresa diferente.",
+    "Pronto. Ela não entendeu o que te faz diferente, e na hora de indicar alguém, não lembra de você.",
+    "Faz o teste: mostra a sua bio pra alguém de fora e pede pra explicar numa frase o que você faz. Se enrolar, começa por ali.",
+    "Me segue que eu falo muito de marca por aqui."
+   ]
   },
   "assinatura": "reel",
   "notas": {
@@ -296,8 +297,8 @@
   "instagram_media_id": null,
   "permalink": null,
   "fonte": null,
-  "versao": 2,
-  "obs": "Reescrito em 24/11 após revisão independente (nota v2 do revisor: 8); ajustes sugeridos pelo revisor aplicados depois, sem nova nota. Data realocada: Otávio grava todos em 24/11. Versão mais abrangente (negócio em geral, não só clínica), pedido do Otávio em 24/11. Reescrito no tom de conversa (regra 5b da esteira, 24/11). Chamada de fundo (DIAGNÓSTICO) trocada por seguir em 27/11: foco em topo e meio."
+  "versao": 3,
+  "obs": "Reescrito em 24/11 após revisão independente (nota v2 do revisor: 8); ajustes sugeridos pelo revisor aplicados depois, sem nova nota. Data realocada: Otávio grava todos em 24/11. Versão mais abrangente (negócio em geral, não só clínica), pedido do Otávio em 24/11. Reescrito no tom de conversa (regra 5b da esteira, 24/11). Chamada de fundo (DIAGNÓSTICO) trocada por seguir em 27/11: foco em topo e meio. Reescrito em 27/11 com a sugestão do revisor independente (v1 nota 5); aguarda nova revisão."
  },
  {
   "id": "2026-11-26-preco-explicacao",
@@ -340,18 +341,20 @@
   "titulo": "Seu cliente não sabe se você é bom",
   "angulo": null,
   "metodo": null,
-  "gancho": "Seu cliente não sabe se você é bom. A não ser que você mostre isso pra ele.",
+  "gancho": "Seu cliente não sabe se você é bom.",
   "roteiro": {
    "tela": "SEU CLIENTE NÃO SABE SE VOCÊ É BOM",
+   "tipo": "Seguidor · Trial Reel · marca",
    "fala": [
-    "Seu cliente não sabe se você é bom. A não ser que você mostre isso pra ele.",
-    "Ele não entende o seu trabalho por dentro. Não tem como saber tudo o que é feito pra entregar o seu produto.",
-    "Então ele julga o que dá pra ver: sua foto, seu perfil, sua bio, o jeito que você responde no direct. O que tá na sua vitrine.",
-    "Se a foto tá escura, se cada post tem uma letra diferente, se não tem um padrão, se você demora pra responder… pra ele, esse é o seu trabalho.",
-    "É injusto? Pode até ser. Mas é assim que ele escolhe. O ponto é você não ficar refém disso.",
-    "Me segue aqui que eu falo muito de posicionamento e de marca, e vou te mostrando como arrumar cada uma dessas coisas na sua vitrine."
-   ],
-   "tipo": "Seguidor · Trial Reel"
+    "Seu cliente não sabe se você é bom.",
+    "Pensa em você escolhendo um restaurante novo. Você não entrou na cozinha.",
+    "Você olhou a foto do prato, os comentários e se te responderam rápido.",
+    "Com a sua empresa é igual. A pessoa vê a foto escura, o post que cada dia tem uma cara, a mensagem que demorou dois dias.",
+    "E pra ela, isso é o seu trabalho.",
+    "É injusto? Pode até ser. Mas é com isso que ela decide.",
+    "Abre o seu perfil hoje como se fosse de um desconhecido. Você contrataria?",
+    "Me segue que eu falo muito de como o cliente enxerga a sua marca."
+   ]
   },
   "assinatura": "reel",
   "notas": {
@@ -364,8 +367,8 @@
   "instagram_media_id": null,
   "permalink": null,
   "fonte": null,
-  "versao": 2,
-  "obs": "Reescrito em 24/11 após revisão independente (nota v2 do revisor: 8); ajustes sugeridos pelo revisor aplicados depois, sem nova nota. Data realocada: Otávio grava todos em 24/11. Versão mais abrangente (negócio em geral, não só clínica), pedido do Otávio em 24/11. Fala final reescrita a partir do áudio ditado pelo Otávio em 24/11 (palavras dele)."
+  "versao": 3,
+  "obs": "Reescrito em 24/11 após revisão independente (nota v2 do revisor: 8); ajustes sugeridos pelo revisor aplicados depois, sem nova nota. Data realocada: Otávio grava todos em 24/11. Versão mais abrangente (negócio em geral, não só clínica), pedido do Otávio em 24/11. Fala final reescrita a partir do áudio ditado pelo Otávio em 24/11 (palavras dele). Reescrito em 27/11 com a sugestão do revisor independente (v1 nota 5); aguarda nova revisão."
  },
  {
   "id": "2026-11-27-copiar-concorrente",
@@ -711,10 +714,10 @@
    "qualidade": null
   },
   "metricool": null,
-  "status": "roteiro",
+  "status": "descartado",
   "instagram_media_id": null,
   "permalink": null,
-  "obs": "Reescrito em 24/11 após revisão independente (nota v2 do revisor: 6); ajustes sugeridos pelo revisor aplicados depois, sem nova nota. Data realocada: Otávio grava todos em 24/11. Versão mais abrangente (negócio em geral, não só clínica), pedido do Otávio em 24/11. Ajustes finais do revisor da versão abrangente aplicados (sem nova nota). Fala final reescrita a partir do áudio ditado pelo Otávio em 24/11 (palavras dele)."
+  "obs": "Reescrito em 24/11 após revisão independente (nota v2 do revisor: 6); ajustes sugeridos pelo revisor aplicados depois, sem nova nota. Data realocada: Otávio grava todos em 24/11. Versão mais abrangente (negócio em geral, não só clínica), pedido do Otávio em 24/11. Ajustes finais do revisor da versão abrangente aplicados (sem nova nota). Fala final reescrita a partir do áudio ditado pelo Otávio em 24/11 (palavras dele). Cortado pelo Otávio em 27/11 (revisor: repete o reel do WhatsApp e quase não fala de marca)."
  },
  {
   "id": "2026-11-25-story-orcamento-sumiu",
