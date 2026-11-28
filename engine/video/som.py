@@ -127,6 +127,14 @@ def main():
         subprocess.run(["ffmpeg", "-v", "error", "-y", "-f", "f32le", "-ac", "2", "-ar", str(SR), "-i", "-", "-c:a", "pcm_s24le", out], input=x.astype(np.float32).tobytes(), check=True)
     r = subprocess.run(["ffmpeg", "-hide_banner", "-i", out, "-af", "ebur128=peak=true", "-f", "null", "-"], capture_output=True, text=True).stderr
     I = re.findall(r"I:\s+(-?[\d.]+) LUFS", r); TP = re.findall(r"Peak:\s+(-?[\d.]+) dBFS", r)
+    # Fecha o volume na meta medindo a mistura pronta (revisor 27/11: com a voz em mono a estimativa caiu para -17,5 LUFS)
+    if I and abs(float(I[-1]) + 14.0) > 0.3:
+        tmp = out + ".tmp.wav"
+        subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", out, "-af", f"volume={-14.0 - float(I[-1]):.2f}dB,alimiter=limit=0.84:attack=5:release=50:level=false",
+                        "-c:a", "pcm_s24le", tmp], check=True)
+        os.replace(tmp, out)
+        r = subprocess.run(["ffmpeg", "-hide_banner", "-i", out, "-af", "ebur128=peak=true", "-f", "null", "-"], capture_output=True, text=True).stderr
+        I = re.findall(r"I:\s+(-?[\d.]+) LUFS", r); TP = re.findall(r"Peak:\s+(-?[\d.]+) dBFS", r)
     rel = {"lufs": float(I[-1]) if I else None, "pico_dbfs": float(TP[-1]) if TP else None, "efeitos": len(ev), "musica": bool(a.musica)}
     json.dump(rel, open(os.path.join(P, "06_som.json"), "w"), indent=1)
     print(json.dumps(rel))
