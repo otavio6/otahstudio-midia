@@ -133,6 +133,20 @@ Quem faz a revisão é o agente revisor separado (`docs/REVISOR.md`), nunca quem
   - **Consoante surda (f, s, x, ch):** no volume total ela parece silêncio. O "fi" de "ficaram" caía fora do corte. Agora a pausa só conta como silêncio onde grave, médio e agudo estão no piso, e som colado na palavra (até 60 ms) nunca sai.
   - A revisão do áudio ganhou a checagem acústica: o que ficou de fora logo antes e depois de cada corte, no áudio original, tem de ser silêncio nas três faixas.
 
+## 6c. Lições da revisão final de 27/11/2026 (reels WhatsApp e Fevereiro, nota 5 e 4 do revisor)
+
+- **Nada de cinza, nem em rótulo pequeno.** Rótulo, mês, horário de mensagem, "ILUSTRAÇÃO": preto no fundo claro, lima no fundo escuro. Item apagado é lima (ou preto) com opacidade, nunca cinza.
+- **Legenda nunca sobre a boca, inclusive na tela dividida.** Na dividida, a legenda vai para a metade da cena (`legenda_y` na cena), abaixo do gráfico; suba o gráfico se precisar.
+- **Fala e tela dizem a mesma coisa no mesmo instante.** O gráfico entra já no valor da fala (FEV baixa quando ele diz "fevereiro"). Balão ou mensagem digitada escreve as palavras dele ("Ei, Fulano", não "Oi, Fulano"). Quando o balão mostra a fala, a legenda daquele trecho some (`"oculta": true` na palavra do `03_cortes.json`).
+- **Legenda não junta duas frases.** Use `"quebra": true` na primeira palavra da frase nova ("MAIS BARATO" / "E FALA ASSIM").
+- **Transição sem sujeira.** Texto da cena que sai some antes da fusão; nada translúcido passa sobre o rosto. Na dúvida, corte seco.
+- **Sem 2 s parados.** Se a fala ainda não chegou na ideia da cena, a cena "pensa" (reticências, título grande que depois vira rótulo), mas não fica vazia.
+- **O mesmo truque no máximo 2 vezes** (ex.: título em pílula com subtítulo preto sobre a pessoa).
+- **Sempre cartela final** (~2,5 s, fundo escuro, rótulo + frase principal + pílula "Seguir") depois da última palavra, com o som ambiente da gravação. Nos últimos segundos com a pessoa, só a pílula "Seguir" no topo, como na referência. A chamada principal (mandar, salvar, seguir) é o maior texto da cartela.
+- **Lapso que confunde a ideia sai no corte** ("fevereiro, que é o início do mês") quando há pausa dos dois lados.
+- **Corte no quadro exato** (o `cortar.py` já faz): vídeo e áudio de cada trecho com o mesmo número de quadros; tempo arredondado em 3 casas pulava quadro e adiantava a voz.
+- **Escala do disfarce de salto em 1,05**; 1,08 já amolece o rosto.
+
 ## 7. Aprender com as métricas (a edição evolui)
 
 Cada reel é um experimento. A esteira guarda **como** ele foi editado e, depois, **como** ele performou. Com o tempo, ela descobre o formato que mais segura e espalha, e o mapeamento de edição (etapa 4) passa a partir dele.

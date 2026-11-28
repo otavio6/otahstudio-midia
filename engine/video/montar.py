@@ -72,15 +72,18 @@ LIGA = {"a", "o", "as", "os", "de", "do", "da", "dos", "das", "que", "e", "com",
 
 def grupos_legenda(palavras, max_chars=16, max_pal=4):
     """Legenda em unidades de sentido (2 a 4 palavras), sem terminar em artigo ou preposição, sem atravessar pausa ou pontuação."""
-    palavras = [w for w in palavras if not w.get("vicio")]  # vício que ficou no áudio não vira legenda
+    # vício que ficou no áudio não vira legenda; "oculta" = a cena já mostra essa fala (balão, mensagem digitada)
+    palavras = [w for w in palavras if not w.get("vicio") and not w.get("oculta")]
     out, atual = [], []
     def fecha():
         if atual:
             txt = " ".join(re.sub(r"[,.;:!?…]", "", w["texto"]) for w in atual).upper()
-            out.append({"texto": txt, "ini": atual[0]["inicio"], "fim": atual[-1]["fim"], "palavras": [w["texto"] for w in atual]})
+            out.append({"texto": txt, "ini": atual[0]["inicio"], "fim": atual[-1]["fim"], "palavras": [w["texto"] for w in atual], "quebra": bool(atual[0].get("quebra"))})
             atual.clear()
     lig = lambda w: re.sub(r"[,.;:!?…]", "", w["texto"]).lower() in LIGA
     for k, w in enumerate(palavras):
+        if w.get("quebra") and atual:  # "quebra": esta palavra abre legenda nova (não junta duas frases)
+            fecha()
         atual.append(w)
         prox = palavras[k + 1] if k + 1 < len(palavras) else None
         pontua = w["texto"][-1:] in ",.;:!?…"
@@ -117,7 +120,7 @@ def grupos_legenda(palavras, max_chars=16, max_pal=4):
                 g["fim"] = min(g["fim"], ws[-1]["inicio"]); nx["ini"] = ws[-1]["inicio"]
     juntos = []
     for g in out:
-        if juntos and len(g["palavras"]) == 1 and g["ini"] - juntos[-1]["fim"] < 0.5 and len(juntos[-1]["texto"]) + 1 + len(g["texto"]) <= 24:
+        if juntos and not g.get("quebra") and len(g["palavras"]) == 1 and g["ini"] - juntos[-1]["fim"] < 0.5 and len(juntos[-1]["texto"]) + 1 + len(g["texto"]) <= 24:
             j = juntos[-1]; j["texto"] += " " + g["texto"]; j["fim"] = g["fim"]; j["palavras"] += g["palavras"]
         else:
             juntos.append(g)
