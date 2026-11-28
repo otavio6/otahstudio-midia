@@ -422,7 +422,7 @@
    "copy": 8.4,
    "qualidade": null
   },
-  "status": "gravado",
+  "status": "rascunho",
   "metricool": null,
   "instagram_media_id": null,
   "permalink": null,
@@ -433,6 +433,31 @@
    "id": "mwzfos6s24d833",
    "titulo": "IMG_6864",
    "gravado_em": "2026-11-27"
+  },
+  "video": "reel.mp4",
+  "capa": "capa.jpg",
+  "legenda": "Deu desconto na Black pra vender mais? Guarda esse vídeo pra fevereiro.\n\nCara, muita gente que comprou agora já ia comprar de você de qualquer jeito. O desconto só adiantou a compra. E quem viu a promoção aprende a esperar a próxima.\n\nAí chega fevereiro, o movimento já é mais fraco, e o cliente fica esperando você baixar o preço de novo.\n\nEu usaria o perfil pra mostrar por que você cobra o que cobra. Mostra quem faz e como é feito, passo a passo. Quando a pessoa entende pelo que está pagando, ela fica bem menos tempo esperando o preço cair.\n\nManda pra aquele amigo que deu desconto na Black.\n\n#marketingdigital #blackfriday #precificacao #pequenosnegocios #gestaodeempresas\n",
+  "ficha": {
+   "edicao": {
+    "revisao_final": {
+     "nota": 9,
+     "versao": "v8",
+     "revisor": "agente separado",
+     "data": "2026-11-28"
+    },
+    "duracao_s": 70.8,
+    "gancho": "'Você deu desconto na Black Friday pra vender mais?' + título DEU DESCONTO NA BLACK? no 1º quadro",
+    "tecnicas": [
+     "linha do tempo da compra adiantada",
+     "balões de pensamento",
+     "barras NOV→FEV em tela dividida",
+     "calendário esperando novembro",
+     "checklist do perfil",
+     "cartela final com Seguir"
+    ],
+    "som": "voz mono -14 LUFS, efeitos baixos, ambiente da gravação na cartela",
+    "cta": "Manda pra quem deu desconto na Black"
+   }
   }
  },
  {

@@ -1,0 +1,80 @@
+[
+ {
+  "etapa": "3 · corte",
+  "versao": "v1",
+  "notas": {
+   "audio": 8,
+   "corte": 8
+  },
+  "decisao": "passa (com ajustes recomendados)",
+  "revisor": "agente separado"
+ },
+ {
+  "etapa": "7 · final",
+  "versao": "v1",
+  "nota_final": 4,
+  "decisao": "volta 5",
+  "defeitos": [
+   "legenda sobre a boca na tela dividida",
+   "texto cinza",
+   "legenda 'tracionar' errada (é 'racionar')",
+   "gráfico contra a fala",
+   "10 s parados",
+   "sem cartela"
+  ],
+  "revisor": "agente separado"
+ },
+ {
+  "etapa": "7 · final",
+  "versao": "v3",
+  "nota_final": 5,
+  "decisao": "volta 3 e 5 (sobra de palavra 30,1 s; legenda pisca; balões)",
+  "revisor": "agente separado"
+ },
+ {
+  "etapa": "7 · final",
+  "versao": "v5",
+  "nota_final": 8,
+  "decisao": "volta 5",
+  "revisor": "agente separado"
+ },
+ {
+  "etapa": "7 · final",
+  "versao": "v6",
+  "nota_final": 8,
+  "decisao": "volta 5 (balão atrasado, pílula antes da fala, trechos parados)",
+  "revisor": "agente separado"
+ },
+ {
+  "etapa": "7 · final",
+  "versao": "v7",
+  "nota_final": 7,
+  "decisao": "volta 6 (volume -17,5 LUFS)",
+  "revisor": "agente separado"
+ },
+ {
+  "etapa": "7 · final",
+  "versao": "v8",
+  "notas": {
+   "audio": 9,
+   "imagem": 10,
+   "corte": 9,
+   "explica": 9,
+   "variedade": 9,
+   "composicao": 9,
+   "identidade": 9,
+   "referencia": 9,
+   "proposito": 9
+  },
+  "nota_final": 9,
+  "decisao": "libera",
+  "frase": "este vídeo está pronto para cumprir o propósito dele",
+  "menores_opcionais": [
+   "55,25 s 'É FEITO' 5 quadros atrasada; 50,08 s 'NO SEU PERFIL' 3 quadros",
+   "29,5 s barra FEV cresce até ~40% antes de baixar; 'JÁ COMPROU' sobre DEZ",
+   "14,1–18 s pílula 'MAIS BARATO' a 48 px da borda esquerda",
+   "30,13 s 'fevereiro, que' sem respiro"
+  ],
+  "revisor": "agente separado"
+ }
+]
