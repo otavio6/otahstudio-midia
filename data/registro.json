@@ -531,7 +531,7 @@
    "qualidade": null
   },
   "metricool": null,
-  "status": "gravado",
+  "status": "rascunho",
   "instagram_media_id": null,
   "permalink": null,
   "obs": "Reescrito em 24/11 após revisão independente (nota v2 do revisor: 6); ajustes sugeridos pelo revisor aplicados depois, sem nova nota. Data realocada: Otávio grava todos em 24/11. Versão mais abrangente (negócio em geral, não só clínica), pedido do Otávio em 24/11. Ajustes finais do revisor da versão abrangente aplicados (sem nova nota). Reescrito no tom de conversa (regra 5b da esteira, 24/11).",
@@ -539,6 +539,30 @@
    "id": "mwzgnw3jbf4e9d",
    "titulo": "Antes de anúncio celular de atendimento",
    "gravado_em": "2026-11-27"
+  },
+  "video": "reel.mp4",
+  "capa": "capa.jpg",
+  "ficha": {
+   "edicao": {
+    "revisao_final": {
+     "nota": 9,
+     "versao": "v10",
+     "revisor": "agente separado",
+     "data": "2026-11-28"
+    },
+    "duracao_s": 52.2,
+    "gancho": "'A primeira coisa que você deve fazer' + título ANTES DO ANÚNCIO no 1º quadro",
+    "tecnicas": [
+     "lista de WhatsApp com contador",
+     "conversa parada (VISTO/PARADA.)",
+     "balões de pensamento",
+     "calendário de 30 dias",
+     "mensagem digitada com as palavras dele",
+     "cartela final com Seguir"
+    ],
+    "som": "voz mono -14 LUFS, efeitos baixos, ambiente da gravação na cartela",
+    "cta": "Me segue que eu mostro onde mais tem venda parada"
+   }
   }
  },
  {

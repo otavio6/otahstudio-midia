@@ -1,0 +1,105 @@
+[
+ {
+  "etapa": "3 · corte",
+  "versao": "v1",
+  "notas": {
+   "audio": 8,
+   "corte": 6
+  },
+  "decisao": "refaz",
+  "defeitos": [
+   "pausas longas 20,1 s e 32,7 s",
+   "'Ei, Fulano' repetido",
+   "áudio adiantando a cada emenda (até 46 ms)",
+   "quadro repetido 21,2 s"
+  ],
+  "revisor": "agente separado"
+ },
+ {
+  "etapa": "7 · final",
+  "versao": "v1",
+  "nota_final": 5,
+  "decisao": "volta 3/4/5",
+  "defeitos": [
+   "sem chamada final",
+   "corte no meio de 'Fulano'",
+   "janela cobre a lista",
+   "rótulos cinza"
+  ],
+  "revisor": "agente separado"
+ },
+ {
+  "etapa": "7 · final",
+  "versao": "v3",
+  "nota_final": 8,
+  "decisao": "volta 5",
+  "revisor": "agente separado"
+ },
+ {
+  "etapa": "7 · final",
+  "versao": "v4",
+  "nota_final": 8,
+  "decisao": "volta 5",
+  "revisor": "agente separado"
+ },
+ {
+  "etapa": "7 · final",
+  "versao": "v5",
+  "nota_final": 8,
+  "decisao": "volta 5",
+  "revisor": "agente separado"
+ },
+ {
+  "etapa": "7 · final",
+  "versao": "v6",
+  "nota_final": 8,
+  "decisao": "volta 5 (quadro sobrando nas trocas de cena)",
+  "revisor": "agente separado"
+ },
+ {
+  "etapa": "7 · final",
+  "versao": "v7",
+  "nota_final": 7,
+  "decisao": "volta 6 (laço com estalo na cartela)",
+  "revisor": "agente separado"
+ },
+ {
+  "etapa": "7 · final",
+  "versao": "v8",
+  "nota_final": 8,
+  "decisao": "volta 5 (mensagem digitada adiantada)",
+  "revisor": "agente separado"
+ },
+ {
+  "etapa": "7 · final",
+  "versao": "v9",
+  "nota_final": 8,
+  "decisao": "volta 5 (miniatura entra antes da emenda)",
+  "revisor": "agente separado"
+ },
+ {
+  "etapa": "7 · final",
+  "versao": "v10",
+  "notas": {
+   "audio": 9,
+   "imagem": 9,
+   "corte": 9,
+   "explica": 9,
+   "variedade": 9,
+   "composicao": 9,
+   "identidade": 9,
+   "referencia": 9,
+   "proposito": 9
+  },
+  "nota_final": 9,
+  "decisao": "libera",
+  "frase": "este vídeo está pronto para cumprir o propósito dele",
+  "menores_opcionais": [
+   "19,0 s legenda 'NO SEU PRODUTO' 4 quadros atrasada",
+   "29,1 s balão troca 0,55 s antes de 'preciso'",
+   "25,0 s 'PARA ELA' fica sobre o início da frase seguinte",
+   "7,4–9,9 s e 22,7–25,0 s tela parada ~2,4 s"
+  ],
+  "revisor": "agente separado"
+ }
+]
