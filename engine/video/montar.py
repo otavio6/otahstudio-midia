@@ -210,6 +210,10 @@ def main():
     ap.add_argument("--quadros", default="")
     a = ap.parse_args(); P = a.pasta
     plano = json.load(open(os.path.join(P, a.plano)))
+    # cena começa e termina no quadro exato (revisor 27/11: 32,167 < 772/24 deixava 1 quadro do trecho seguinte na cena anterior)
+    for c in plano["cenas"]:
+        c["de"] = round(c["de"] * FPS) / FPS - 1e-6
+        c["ate"] = round(c["ate"] * FPS) / FPS - 1e-6
     pal = json.load(open(os.path.join(P, "03_cortes.json")))["palavras"]
     dur = float(plano.get("duracao") or json.load(open(os.path.join(P, "03_cortes.json")))["duracao_final"])
     base = os.path.join(P, plano.get("base", "base.mp4"))
