@@ -87,13 +87,39 @@ def main():
     if dur_total > dur + 0.05:
         raw = subprocess.run(["ffmpeg", "-v", "error", "-i", out, "-f", "f32le", "-ac", "2", "-ar", str(SR), "-"], capture_output=True).stdout
         x = np.frombuffer(raw, np.float32).reshape(-1, 2).copy()
-        jan = int(0.5 * SR)
-        rms = [np.sqrt((x[i:i + jan] ** 2).mean()) for i in range(0, len(x) - jan, jan // 2)]
-        i0 = int(np.argmin(rms)) * (jan // 2)
-        amb = x[i0:i0 + jan]
         falta = int((dur_total - len(x) / SR) * SR) + SR // 10
         rampa = np.linspace(0, 1, SR // 20)[:, None]
-        cauda = np.tile(amb, (falta // jan + 2, 1))[:falta]
+        # Revisor 27/11: laço de 0,5 s fazia "tic-tic" na cartela. Agora: um trecho CONTÍNUO de ambiente do bruto inteiro
+        # (proxy_audio.wav), o mais calmo e sem transiente (menor pico de energia em quadros de 20 ms), com o mesmo tratamento da voz.
+        bruto = os.path.join(P, "proxy_audio.wav")
+        cauda = None
+        if os.path.exists(bruto):
+            rb = subprocess.run(["ffmpeg", "-v", "error", "-i", bruto, "-af", f"aresample=48000,highpass=f=70,volume={ganho:.2f}dB",
+                                 "-f", "f32le", "-ac", "2", "-ar", str(SR), "-"], capture_output=True).stdout
+            b = np.frombuffer(rb, np.float32).reshape(-1, 2)
+            q = int(0.02 * SR); nq = len(b) // q
+            if nq * q > falta + SR:
+                e = np.sqrt((b[:nq * q, 0].reshape(nq, q) ** 2).mean(1)) + 1e-9
+                from scipy.signal import butter, sosfilt  # agudo separado: estalo e tique aparecem ali antes
+                hf = sosfilt(butter(4, 2500, "hp", fs=SR, output="sos"), b[:nq * q, 0])
+                eh = np.sqrt((hf.reshape(nq, q) ** 2).mean(1)) + 1e-9
+                nw = falta // q + 1
+                pico = np.array([max(e[k:k + nw].max() / np.median(e[k:k + nw]), eh[k:k + nw].max() / np.median(eh[k:k + nw])) * e[k:k + nw].mean()
+                                 for k in range(0, nq - nw, 5)])
+                k0 = int(np.argmin(pico)) * 5
+                cauda = b[k0 * q:k0 * q + falta].copy()
+        if cauda is None:  # sem bruto: laço longo com cruzamento de 50 ms
+            jan = int(1.5 * SR)
+            rms = [np.sqrt((x[i:i + jan] ** 2).mean()) for i in range(0, max(1, len(x) - jan), jan // 4)]
+            i0 = int(np.argmin(rms)) * (jan // 4)
+            amb = x[i0:i0 + jan].copy(); cf = SR // 20
+            partes = [amb]
+            while sum(len(p_) for p_ in partes) - cf * (len(partes) - 1) < falta:
+                ant = partes[-1]; nov = amb.copy()
+                w = np.linspace(0, 1, cf)[:, None]
+                ant[-cf:] = ant[-cf:] * (1 - w) + nov[:cf] * w
+                partes.append(nov[cf:])
+            cauda = np.vstack(partes)[:falta]
         cauda[:len(rampa)] *= rampa
         cauda[-len(rampa) * 4:] *= np.linspace(1, 0, len(rampa) * 4)[:, None]
         x = np.vstack([x, cauda])
