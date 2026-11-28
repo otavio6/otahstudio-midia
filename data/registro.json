@@ -461,7 +461,8 @@
   "status": "publicado",
   "instagram_media_id": "17920501413537715",
   "permalink": "https://www.instagram.com/stories/otaviohenriqve/4036894770513376779",
-  "publicado_em": "2026-11-23T14:36-03:00"
+  "publicado_em": "2026-11-23T14:36-03:00",
+  "chama": "2026-11-24-black-friday-clinica"
  },
  {
   "id": "2026-11-25-whatsapp-agendar",
@@ -613,7 +614,8 @@
   "status": "publicado",
   "instagram_media_id": "18122933729004523",
   "permalink": "https://www.instagram.com/stories/otaviohenriqve/4037707311703687911",
-  "publicado_em": "2026-11-24T17:30-03:00"
+  "publicado_em": "2026-11-24T17:30-03:00",
+  "chama": "2026-11-24-black-friday-clinica"
  },
  {
   "id": "2026-11-27-qual-o-valor",
@@ -640,9 +642,9 @@
    "qualidade": 8.69
   },
   "metricool": null,
-  "status": "agendado",
-  "instagram_media_id": null,
-  "permalink": null
+  "status": "publicado",
+  "instagram_media_id": "18213501922318174",
+  "permalink": "https://www.instagram.com/p/DgPvQkXEjhO/"
  },
  {
   "id": "2026-12-01-avaliacao-paciente",
@@ -738,7 +740,8 @@
   "metricool": null,
   "status": "publicado",
   "instagram_media_id": "18018006728979164",
-  "permalink": "https://www.instagram.com/stories/otaviohenriqve/4038462565881410440"
+  "permalink": "https://www.instagram.com/stories/otaviohenriqve/4038462565881410440",
+  "chama": "2026-11-25-whatsapp-agendar"
  },
  {
   "id": "2026-12-03-atendente-sair",
@@ -796,7 +799,8 @@
   "instagram_media_id": "17880050499576526",
   "permalink": "https://www.instagram.com/stories/otaviohenriqve/4039202057521999575",
   "publicado_em": "2026-11-26T19:00-03:00",
-  "obs_postagem": "Aprovado às 18:42 para 19:00 (registro previa 18:00); saiu 19:00."
+  "obs_postagem": "Aprovado às 18:42 para 19:00 (registro previa 18:00); saiu 19:00.",
+  "chama": "2026-11-26-preco-explicacao"
  },
  {
   "id": "2026-11-28-nivea-cliente-escreveu",
@@ -928,13 +932,14 @@
    "uuid": "",
    "horario": "2026-11-27T18:00:00"
   },
-  "status": "rascunho",
+  "status": "publicado",
   "versao": 1,
-  "instagram_media_id": null,
-  "permalink": null,
+  "instagram_media_id": "18157675150529642",
+  "permalink": "https://www.instagram.com/stories/otaviohenriqve/4039896893857762123",
   "horario": "18:00",
   "titulo": "Story: visto às 14:31",
-  "slides": 3
+  "slides": 3,
+  "chama": "2026-11-27-qual-o-valor"
  },
  {
   "id": "2026-11-29-alguem-bom-em",
@@ -961,7 +966,7 @@
    "uuid": "",
    "horario": "2026-11-29T10:00:00"
   },
-  "status": "rascunho",
+  "status": "agendado",
   "versao": 1,
   "instagram_media_id": null,
   "permalink": null,
@@ -994,7 +999,7 @@
    "uuid": "",
    "horario": "2026-11-30T18:00:00"
   },
-  "status": "rascunho",
+  "status": "agendado",
   "versao": 1,
   "instagram_media_id": null,
   "permalink": null,

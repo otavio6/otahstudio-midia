@@ -74,3 +74,20 @@ Pedido do Otávio em 27/11/2026: ele gravou os reels, mandou pela aba Enviar ví
 - **Pelo teleprompter:** o botão Teleprompter já sabe qual reel é; depois de gravar, o "Enviar vídeo" aberto a partir dali vem com o roteiro já escolhido.
 - **Sem escolha:** se o bruto vier sem roteiro, a esteira associa pela fala (transcrição) e grava o `bruto` e o `gravado` no registro, como foi feito em 27/11.
 - Quando o vídeo editado entra (`video` no registro e status `rascunho`), o card vira "Aprovar reel", como hoje.
+
+---
+
+# Pedido 4: trava de horário e de ordem (o que o texto promete tem que ser verdade)
+
+Pedido do Otávio em 27/11/2026: "falou que o post sai 2 horas, tem que sair 2 horas; falou que já está no feed, tem que estar no feed".
+
+O que aconteceu e mostra o furo:
+- O story `2026-11-24-story-black-11h` diz "Hoje no feed · 11h". No registro ele era de 24/11 09:00, mas foi aprovado em 23/11 e publicado **em 23/11 às 14:35**, um dia antes do carrossel (que saiu 24/11 11:00). Para quem viu, "hoje às 11h" era mentira.
+- O story `2026-11-26-story-achou-caro` era 18:00, foi aprovado às 18:42 e saiu às 19:00. Aqui não quebrou nada (o post era das 11h), mas o atraso foi silencioso.
+
+O que o servidor precisa fazer:
+1. **Nunca antes da data do registro.** Aprovar só programa. A peça sai em `data` + `horario` do `registro.json`, nunca no momento da aprovação. "Postar agora" só com confirmação explícita no painel ("Sair agora, fora do calendário?").
+2. **Aprovação atrasada:** se o horário já passou, o painel pergunta "Sair agora (HH:MM) ou escolher outro horário?" e grava o horário real.
+3. **Story que chama post** tem o campo `"chama": "<id do post>"` no registro (já preenchido nos stories). O agendador só solta o story se o post chamado já estiver `publicado` (com permalink). Se o post atrasar ou der erro, o story fica segurado e o painel avisa ("Story segurado: o post X ainda não saiu").
+4. **Texto com tempo:** antes de publicar story, legenda ou arte, procure "hoje", "amanhã", "agora", "às HHh", "no feed", "post de hoje", "domingo", "sexta" etc. Se a data/hora de publicação não bater com o que o texto diz, segure e avise no painel. Exemplo: a legenda do estático da Nivea diz "até amanhã, domingo" e só pode sair em 28/11.
+5. **Volta para o registro:** quando algo é publicado, o servidor grava `status: publicado`, `instagram_media_id` e `permalink` no `registro.json` (ou a esteira faz isso a cada execução, lendo `painel_decisoes`). Hoje o registro só é atualizado à noite e passa o dia dizendo "agendado" para o que já está no ar.

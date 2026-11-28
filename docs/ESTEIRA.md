@@ -24,6 +24,13 @@ Sobre o que a esteira lê e grava:
 
 ---
 
+
+### Regra de tempo e ordem (Otávio, 27/11/2026)
+- Todo story que chama um post tem `"chama": "<id do post>"` no registro e o horário dele vem **depois** do post (mínimo 1 h).
+- Texto que fala de tempo ("hoje", "amanhã", "às 11h", "já está no feed", "até domingo") só vale na data e hora do registro. Se a peça mudar de dia, o texto muda junto, antes de ir para o painel.
+- A cada execução (não só à noite), a esteira lê `painel_decisoes` e atualiza `status`, `instagram_media_id` e `permalink` no registro.
+- O servidor tem a trava correspondente no pedido 4 de `docs/SERVIDOR-carrossel-video.md`.
+
 ## Diário de execução (vale para a Parte A e a Parte B)
 
 O painel do Otávio mostra se cada tarefa rodou, quando e como terminou, lendo `data/execucoes.json`. Toda execução, agendada ou manual, escreve nele:
